@@ -1,0 +1,9 @@
+C:\Users\Thenus\Documents\BC\ThirdYear\SEN\ProjectPractical\SEN_Project\SEN_Project\bin\Debug\SEN_Project.exe.config
+C:\Users\Thenus\Documents\BC\ThirdYear\SEN\ProjectPractical\SEN_Project\SEN_Project\bin\Debug\SEN_Project.exe
+C:\Users\Thenus\Documents\BC\ThirdYear\SEN\ProjectPractical\SEN_Project\SEN_Project\bin\Debug\SEN_Project.pdb
+C:\Users\Thenus\Documents\BC\ThirdYear\SEN\ProjectPractical\SEN_Project\SEN_Project\obj\Debug\SEN_Project.csproj.AssemblyReference.cache
+C:\Users\Thenus\Documents\BC\ThirdYear\SEN\ProjectPractical\SEN_Project\SEN_Project\obj\Debug\SEN_Project.Properties.Resources.resources
+C:\Users\Thenus\Documents\BC\ThirdYear\SEN\ProjectPractical\SEN_Project\SEN_Project\obj\Debug\SEN_Project.csproj.GenerateResource.cache
+C:\Users\Thenus\Documents\BC\ThirdYear\SEN\ProjectPractical\SEN_Project\SEN_Project\obj\Debug\SEN_Project.csproj.CoreCompileInputs.cache
+C:\Users\Thenus\Documents\BC\ThirdYear\SEN\ProjectPractical\SEN_Project\SEN_Project\obj\Debug\SEN_Project.exe
+C:\Users\Thenus\Documents\BC\ThirdYear\SEN\ProjectPractical\SEN_Project\SEN_Project\obj\Debug\SEN_Project.pdb

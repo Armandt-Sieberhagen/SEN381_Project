@@ -1,0 +1,18 @@
+{
+	Test,
+	69,
+	[
+	First treatment
+	Second treatment
+	Third treatment
+	]
+}
+{
+	Good policy
+	20
+	[
+	Blahblah
+	First treatment
+	Bad treatment
+	]
+}
