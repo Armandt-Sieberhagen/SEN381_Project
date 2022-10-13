@@ -53,5 +53,38 @@ namespace SEN_Project.PresentationLayer.Forms.ClientOptions
             }
             CurrentChangeList.Hide();
         }
+
+        private void lbxPerscriptions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnRemovePerscription.Enabled = lbxPerscriptions.SelectedItem != null;
+        }
+
+        private void btnAddPerscription_Click(object sender, EventArgs e)
+        {
+            if (txtPerscription.Text.Trim().Length>0)
+            {
+                lbxPerscriptions.Items.Add(txtPerscription.Text);
+                txtPerscription.Clear();
+            }
+            else
+            {
+                txtPerscription.Focus();
+            }
+        }
+
+        private void txtPerscription_TextChanged(object sender, EventArgs e)
+        {
+            btnAddPerscription.Enabled = txtPerscription.Text.Trim().Length > 0;
+        }
+
+        private void btnRemovePerscription_Click(object sender, EventArgs e)
+        {
+            lbxPerscriptions.Items.RemoveAt(lbxPerscriptions.SelectedIndex);
+        }
+
+        private void btnAddClient_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

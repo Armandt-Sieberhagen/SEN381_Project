@@ -43,6 +43,14 @@
             this.rtxtPolicies = new System.Windows.Forms.RichTextBox();
             this.lblPolicies = new System.Windows.Forms.Label();
             this.btnChangePolicies = new System.Windows.Forms.Button();
+            this.lbxPerscriptions = new System.Windows.Forms.ListBox();
+            this.lblPerscriptions = new System.Windows.Forms.Label();
+            this.txtPerscription = new System.Windows.Forms.TextBox();
+            this.btnAddPerscription = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnRemovePerscription = new System.Windows.Forms.Button();
+            this.btnAddClient = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtFirstName
@@ -159,12 +167,96 @@
             this.btnChangePolicies.UseVisualStyleBackColor = true;
             this.btnChangePolicies.Click += new System.EventHandler(this.btnChangePolicies_Click);
             // 
+            // lbxPerscriptions
+            // 
+            this.lbxPerscriptions.FormattingEnabled = true;
+            this.lbxPerscriptions.Location = new System.Drawing.Point(12, 424);
+            this.lbxPerscriptions.Name = "lbxPerscriptions";
+            this.lbxPerscriptions.Size = new System.Drawing.Size(246, 147);
+            this.lbxPerscriptions.TabIndex = 14;
+            this.lbxPerscriptions.SelectedIndexChanged += new System.EventHandler(this.lbxPerscriptions_SelectedIndexChanged);
+            // 
+            // lblPerscriptions
+            // 
+            this.lblPerscriptions.AutoSize = true;
+            this.lblPerscriptions.Location = new System.Drawing.Point(9, 408);
+            this.lblPerscriptions.Name = "lblPerscriptions";
+            this.lblPerscriptions.Size = new System.Drawing.Size(100, 13);
+            this.lblPerscriptions.TabIndex = 15;
+            this.lblPerscriptions.Text = "Active Perscriptions";
+            // 
+            // txtPerscription
+            // 
+            this.txtPerscription.Location = new System.Drawing.Point(12, 602);
+            this.txtPerscription.Name = "txtPerscription";
+            this.txtPerscription.Size = new System.Drawing.Size(118, 20);
+            this.txtPerscription.TabIndex = 16;
+            this.txtPerscription.TextChanged += new System.EventHandler(this.txtPerscription_TextChanged);
+            // 
+            // btnAddPerscription
+            // 
+            this.btnAddPerscription.Enabled = false;
+            this.btnAddPerscription.Location = new System.Drawing.Point(12, 628);
+            this.btnAddPerscription.Name = "btnAddPerscription";
+            this.btnAddPerscription.Size = new System.Drawing.Size(118, 23);
+            this.btnAddPerscription.TabIndex = 17;
+            this.btnAddPerscription.Text = "AddPerscription";
+            this.btnAddPerscription.UseVisualStyleBackColor = true;
+            this.btnAddPerscription.Click += new System.EventHandler(this.btnAddPerscription_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 586);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Add Perscription";
+            // 
+            // btnRemovePerscription
+            // 
+            this.btnRemovePerscription.Enabled = false;
+            this.btnRemovePerscription.Location = new System.Drawing.Point(136, 628);
+            this.btnRemovePerscription.Name = "btnRemovePerscription";
+            this.btnRemovePerscription.Size = new System.Drawing.Size(118, 23);
+            this.btnRemovePerscription.TabIndex = 19;
+            this.btnRemovePerscription.Text = "Remove Perscription";
+            this.btnRemovePerscription.UseVisualStyleBackColor = true;
+            this.btnRemovePerscription.Click += new System.EventHandler(this.btnRemovePerscription_Click);
+            // 
+            // btnAddClient
+            // 
+            this.btnAddClient.Location = new System.Drawing.Point(12, 675);
+            this.btnAddClient.Name = "btnAddClient";
+            this.btnAddClient.Size = new System.Drawing.Size(156, 43);
+            this.btnAddClient.TabIndex = 20;
+            this.btnAddClient.Text = "Add Client";
+            this.btnAddClient.UseVisualStyleBackColor = true;
+            this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(198, 675);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(156, 43);
+            this.btnCancel.TabIndex = 21;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
             // frmAddClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 665);
+            this.ClientSize = new System.Drawing.Size(378, 730);
             this.ControlBox = false;
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnAddClient);
+            this.Controls.Add(this.btnRemovePerscription);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnAddPerscription);
+            this.Controls.Add(this.txtPerscription);
+            this.Controls.Add(this.lblPerscriptions);
+            this.Controls.Add(this.lbxPerscriptions);
             this.Controls.Add(this.btnChangePolicies);
             this.Controls.Add(this.lblPolicies);
             this.Controls.Add(this.rtxtPolicies);
@@ -203,5 +295,13 @@
         private System.Windows.Forms.RichTextBox rtxtPolicies;
         private System.Windows.Forms.Label lblPolicies;
         private System.Windows.Forms.Button btnChangePolicies;
+        private System.Windows.Forms.ListBox lbxPerscriptions;
+        private System.Windows.Forms.Label lblPerscriptions;
+        private System.Windows.Forms.TextBox txtPerscription;
+        private System.Windows.Forms.Button btnAddPerscription;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnRemovePerscription;
+        private System.Windows.Forms.Button btnAddClient;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
