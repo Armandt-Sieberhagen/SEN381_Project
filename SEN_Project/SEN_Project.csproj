@@ -51,6 +51,7 @@
     <Compile Include="BusinessLogicLayer\Classes\Claim.cs" />
     <Compile Include="BusinessLogicLayer\Classes\Client.cs" />
     <Compile Include="BusinessLogicLayer\Classes\ClinicalProcedure.cs" />
+    <Compile Include="BusinessLogicLayer\Delegates.cs" />
     <Compile Include="BusinessLogicLayer\Classes\FamilyPolicy.cs" />
     <Compile Include="BusinessLogicLayer\Classes\IndividualPolicy.cs" />
     <Compile Include="BusinessLogicLayer\Classes\MedicalCondition.cs" />
@@ -70,11 +71,18 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\ChangeList\ChangeListOptions.cs" />
     <Compile Include="PresentationLayer\DatabaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PresentationLayer\DatabaseForm.Designer.cs">
       <DependentUpon>DatabaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\ChangeList\ChangeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\ChangeList\ChangeList.Designer.cs">
+      <DependentUpon>ChangeList.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\Forms\ClientOptions\frmAddClient.cs">
       <SubType>Form</SubType>
@@ -91,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\DatabaseForm.resx">
       <DependentUpon>DatabaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\ChangeList\ChangeList.resx">
+      <DependentUpon>ChangeList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Forms\ClientOptions\frmAddClient.resx">
       <DependentUpon>frmAddClient.cs</DependentUpon>

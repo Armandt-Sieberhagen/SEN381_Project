@@ -40,7 +40,9 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.rtxtPolicies = new System.Windows.Forms.RichTextBox();
+            this.lblPolicies = new System.Windows.Forms.Label();
+            this.btnChangePolicies = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtFirstName
@@ -128,17 +130,34 @@
             this.txtPhoneNumber.Size = new System.Drawing.Size(138, 20);
             this.txtPhoneNumber.TabIndex = 9;
             // 
-            // listBox1
+            // rtxtPolicies
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            "Policy 1",
-            "Policy 2",
-            "Policy 3"});
-            this.listBox1.Location = new System.Drawing.Point(15, 237);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(266, 173);
-            this.listBox1.TabIndex = 11;
+            this.rtxtPolicies.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rtxtPolicies.Location = new System.Drawing.Point(12, 209);
+            this.rtxtPolicies.Name = "rtxtPolicies";
+            this.rtxtPolicies.ReadOnly = true;
+            this.rtxtPolicies.Size = new System.Drawing.Size(246, 127);
+            this.rtxtPolicies.TabIndex = 11;
+            this.rtxtPolicies.Text = "";
+            // 
+            // lblPolicies
+            // 
+            this.lblPolicies.AutoSize = true;
+            this.lblPolicies.Location = new System.Drawing.Point(9, 193);
+            this.lblPolicies.Name = "lblPolicies";
+            this.lblPolicies.Size = new System.Drawing.Size(88, 13);
+            this.lblPolicies.TabIndex = 12;
+            this.lblPolicies.Text = "Selected Policies";
+            // 
+            // btnChangePolicies
+            // 
+            this.btnChangePolicies.Location = new System.Drawing.Point(12, 342);
+            this.btnChangePolicies.Name = "btnChangePolicies";
+            this.btnChangePolicies.Size = new System.Drawing.Size(138, 36);
+            this.btnChangePolicies.TabIndex = 13;
+            this.btnChangePolicies.Text = "Change Policies";
+            this.btnChangePolicies.UseVisualStyleBackColor = true;
+            this.btnChangePolicies.Click += new System.EventHandler(this.btnChangePolicies_Click);
             // 
             // frmAddClient
             // 
@@ -146,7 +165,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 665);
             this.ControlBox = false;
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.btnChangePolicies);
+            this.Controls.Add(this.lblPolicies);
+            this.Controls.Add(this.rtxtPolicies);
             this.Controls.Add(this.lblPhoneNumber);
             this.Controls.Add(this.txtPhoneNumber);
             this.Controls.Add(this.lblEmail);
@@ -179,6 +200,8 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblPhoneNumber;
         private System.Windows.Forms.TextBox txtPhoneNumber;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.RichTextBox rtxtPolicies;
+        private System.Windows.Forms.Label lblPolicies;
+        private System.Windows.Forms.Button btnChangePolicies;
     }
 }
