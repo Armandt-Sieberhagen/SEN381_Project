@@ -1,0 +1,838 @@
+Gauteng 
+{
+Alberton
+Alexandra
+Atteridgeville
+Bapsfontein
+Bedfordview
+Benoni
+Boksburg
+Brakpan
+Bronberg
+Bronkhorstspruit
+Centurion
+Clayville
+Cullinan
+Daveyton
+Diepsloot
+Duduza
+Dunnottar
+Edenvale
+Ekangala
+Ennerdale
+Etwatwa
+Ga-rankuwa
+Germiston
+Hammanskraal
+Irene
+Isando
+Johannesburg
+Katlehong
+Kempton park
+Kwathema
+Lenasia
+Mabopane
+Mamelodi
+Midrand
+Modderfontein
+Nigel
+Orange farm
+Pretoria
+Randburg
+Rayton
+Refilwe
+Reiger park
+Roodepoort
+Sandton
+Soshanguve
+Soweto	
+Springs
+Thembisa
+Thokoza
+Tsakane
+Vosloorus
+Wattville
+Zithobeni
+}
+
+Mpumalanga
+{
+Aankoms
+Acornhoek
+Amersfoort
+Amsterdam
+Anysspruit
+Argent
+Avoca
+Avontuur
+Badplaas
+Balfour
+Balmoral
+Bankkop
+Barberton
+Belfast
+Berbice
+Bethal
+Bettiesdam
+Branddraai
+Braunschweig
+Breyten
+Brondal
+Bushbuckridge
+Carolina
+Chrissiesmeer
+Davale
+Delmas
+Diepdale
+Diepgezet
+Dullstroom
+Dundonald
+Eerstehoek
+Ekulindeni
+Elukwatini
+Embhuleni
+Emphuluzi
+Enkhaba
+Ermelo
+Fernie
+Glenmore
+Graskop
+Greylingstad
+Hartebeeskop
+Hazyview
+Hectorspruit
+Kaapmuiden
+Kinross
+Komatipoort
+Kwamhlanga
+Lochiel
+Loopspruit
+Lydenburg
+Machadodorp
+Malelane
+Mbhejeka
+Mbombela
+Middelburg
+Moddergat
+Ngodwana
+Ohrigstad
+Perdekop
+Piet retief
+Pilgrim's rest
+Sabie
+Secunda
+Siyabuswa
+Skukuza
+Standerton
+Trichardt
+Vaalbank
+Volksrust
+Wakkerstroom
+Waterval boven
+Waterval onder
+White river
+Witbank
+}
+
+Limpopo
+{
+Afguns
+Alldays
+Ba-phalaborwa
+Bandelierkop
+Bela-bela
+Bochum
+Bosbokrand
+Dendron
+Duiwelskloof
+Elim
+Ellisras
+Gravelotte
+Haenertsburg
+Hoedspruit
+Klaserie
+Lebowakgomo
+Lephalale
+Letsitele
+Leydsdorp
+Louis trichardt
+Messina
+Modimolle
+Modjadjiskloof
+Mogwadi
+Mokopane
+Mookgophong
+Musina
+Naboomspruit
+Nylstroom
+Ofcolaco
+Phalaborwa
+Polokwane
+Roedtan
+Sekgopo
+Senwabarwana
+Seshego
+Thabazimbi
+Thohoyandou
+Tzaneen
+Vaalwater
+Vivo
+Zebedeila
+Zion city moria
+}
+
+Kwazulu-Natal
+{
+Adams mission
+Amanzimtoti
+Anerley
+Assagay
+Babanango
+Balgowan
+Ballito
+Bazley beach
+Bergville
+Boston
+Botha's hill
+Bulwer
+Cato ridge
+Charlestown
+Chatsworth
+Clermont
+Colenso
+Dalton
+Dannhauser
+Dududu
+Dundee
+Durban
+Ekuphakameni
+Elandslaagte
+Emadlangeni
+Emdloti
+Empangeni
+Eshowe
+Estcourt
+Ezinqoleni
+Franklin
+Gillitts
+Glencoe
+Greytown
+Harding
+Hattingspruit
+Hibberdene
+Hillcrest
+Hilton
+Himeville
+Hluhluwe
+Howick
+Ifafa beach
+Inanda
+Inchanga
+Ingwavuma
+Isipingo
+Ixopo
+Jozini
+Kelso
+Kingsburgh
+Kingsley
+Kloof
+Kokstad
+Kranskop
+Kwadukuza
+Kwamakhutha
+Kwamashu
+Ladysmith
+La mercy
+Louwsburg
+Madadeni
+Mahlabatini
+Mandeni
+Manguzi
+Maphumulo
+Margate
+Mbazwana
+Melmoth
+Melville
+Merrivale
+Mkuze
+Mooi river
+Mpumalanga
+Mtubatuba
+Mtunzini
+Mtwalume
+Munster
+Newcastle
+New germany
+New hanover
+Ngagane
+Nkandla
+Nongoma
+Nquthu
+Ntuzuma
+Osizweni
+Othongathi
+Palm beach
+Park rynie
+Paulpietersburg
+Pennington
+Phoenix
+Pietermaritzburg
+Pinetown
+Pomeroy
+Pongola
+Port edward
+Port shepstone
+Prospecton
+Queensburgh
+Ramsgate
+Richards bay
+Richmond
+Salt rock
+Scottburgh
+Sezela
+Shallcross
+Shelly beach
+Southbroom
+Ubombo
+Ulundi
+Umbumbulu
+Umgababa
+Umhlanga
+Umkomaas
+Umlazi
+Umtentweni
+Umzimkulu
+Umzinto
+Umzumbe
+Underberg
+Uvongo
+Verulam
+Vryheid
+Wartburg
+Wasbank
+Westville
+Weza
+}
+
+North West
+{
+Amalia
+Babelegi
+Beestekraal
+Bray
+Brits
+Broederstroom
+Coligny
+Delareyville
+Derby
+Ga-rankuwa
+Ganyesa
+Groot marico
+Hartbeesfontein/lethabong
+Hartbeespoort
+Hekpoort
+Jericho
+Kosmos
+Koster
+Kroondal
+Lehurutshe
+Lichtenburg
+Maanhaarrand
+Mabopane
+Magaliesburg
+Mahikeng
+Mareetsane
+Marikana
+Mathibestad
+Mmabatho
+Mogwase
+Mooinooi
+Morokweng
+Motlhabeng
+Ottosdal
+Ottoshoop
+Ramokokastad
+Reivilo
+Rustenburg
+Sannieshof
+Schweizer-reneke
+Setlagole
+Setlopo
+Skeerpoort
+Stella
+Swartruggens
+Taung
+Tlhabane
+Tosca
+Tsitsing
+Vryburg
+Zeerust
+}
+
+Free State
+{
+Allanridge
+Arlington
+Bethlehem
+Bethulie
+Bloemfontein
+Boshof
+Bothaville
+Botshabelo
+Brandfort
+Bultfontein
+Clarens
+Clocolan
+Cornelia
+Dealesville
+Deneysville
+Dewetsdorp
+Edenburg
+Edenville
+Excelsior
+Fauresmith
+Ficksburg
+Fouriesburg
+Frankfort
+Harrismith
+Heilbron
+Hennis
+Hertzogville
+Hobhouse
+Hoopstad
+Itumeleng
+Jacobsdal
+Jagersfontein
+Kestell
+Kgotsong
+Koffiefontein
+Koppies
+Kroonstad
+Kutlwanong
+Ladybrand
+Lindley
+Luckhoff
+Makeleketla
+Mangaung
+Marquard
+Memel
+Mvela
+Odendaalsrus
+Oranjeville
+Parys
+Paul roux
+Petrusburg
+Petrus steyn
+Philippolis
+Phuthaditjhaba
+Reddersburg
+Reitz
+Rosendal
+Rouxville
+Sasolburg
+Senekal
+Smithfield
+Springfontein
+Steynsrus
+Swinburne
+Thaba 'nchu
+Theunissen
+Trompsburg
+Tweeling
+Tweespruit
+Van reenen
+Van stadensrus
+Ventersburg
+Verkeerdevlei
+Viljoenskroon
+Villiers
+Virginia
+Vrede
+Vredefort
+Warden
+Welkom
+Wepener
+Wesselsbron
+Winburg
+Zastron
+}
+
+Northern Cape
+{
+Aggeneys
+Alexander bay
+Andriesvale
+Askham
+Augrabies
+Barkly west
+Britstown
+Campbell
+Carolusberg
+Colesberg
+Concordia
+Copperton
+Danielskuil
+De aar
+Delportshoop
+Douglas
+Garies
+Griquatown
+Groblershoop
+Hanover
+Hartswater
+Hondeklip
+Hopetown
+Hutchinson
+Jan kempdorp
+Kakamas
+Kamieskroon
+Kanoneiland
+Kathu
+Keimoes
+Kenhardt
+Kimberley
+Kleinzee
+Kuruman
+Lime acres
+Louisvale
+Loxton
+Marydale
+Mier
+Modder river
+Nababeep
+Norvalspont
+Noupoort
+Okiep
+Olifantshoek
+Onseepkans
+Orania
+Pella
+Petrusville
+Philipstown
+Pofadder
+Port nolloth
+Postmasburg
+Prieska
+Putsonderwater
+Richmond
+Riemvasmaak
+Soebatsfontein
+Springbok
+Steinkopf
+Strydenburg
+Ulco
+Upington
+Vanderkloof
+Victoria west
+Vosburg
+Warrenton
+Windsorton
+}
+
+Western Cape
+{
+Albertinia
+Arniston
+Ashton
+Atlantis
+Aurora
+Baardskeerdersbos
+Barrydale
+Beaufort west
+Bellville
+Betty's bay
+Birkenhead
+Bitterfontein
+Blue downs
+Boggomsbaai
+Bonnievale
+Botrivier
+Brackenfell
+Bredasdorp
+Brenton-on-sea
+Buffelsbaai
+Caledon
+Calitzdorp
+Cape town
+Ceres
+Chatsworth
+Citrusdal
+Clanwilliam
+Crossroads
+Dana baai
+Darling
+De doorns
+De kelders
+Denneburg
+Dennehof
+De rust
+Doringbaai
+Durbanville
+Dwarskersbos
+Dysselsdorp
+Ebenhaeser
+Eendekuil
+Eerste river
+Elands bay
+Elgin
+Elim
+Elsie's river
+Fisherhaven
+Fish hoek
+Franschhoek
+Franskraalstrand
+Friemersheim
+Gansbaai
+Genadendal
+George
+Glentana
+Goedverwacht
+Goodwood
+Gordon's bay
+Gouda
+Gouritsmond
+Graafwater
+Grabouw
+Great brak river
+Greyton
+Groot-jongensfontein
+Grotto bay
+Guguletu
+Haarlem
+Hartenbos
+Hawston
+Heidelberg
+Herbertsdale
+Hermanus
+Herolds bay
+Hopefield
+Hotagterklip
+Hout bay
+Infanta
+Jacobsbaai
+Jakkalsfontein
+Kalbaskraal
+Kayamandi
+Keurboomsrivier
+Keurboomstrand
+Khayelitsha
+Klapmuts
+Klawer
+Kleinbaai
+Kleinmond
+Knysna
+Koekenaap
+Koringberg
+Kraaifontein
+Kranshoek
+Kuils river
+Kurland estate
+Kylemore
+L'agulhas
+Ladismith
+Laingsburg
+Lamberts bay
+Langa
+Langebaan
+Langebaanweg
+Languedoc
+Leeu-gamka
+Little brak river
+Lutzville
+Macassar
+Malmesbury
+Matjiesfontein
+Mcgregor
+Melkbosstrand
+Merweville
+Mfuleni
+Milnerton
+Mitchell's plain
+Montagu
+Moorreesburg
+Mossel bay
+Murraysburg
+Napier
+Nature's valley
+Nelspoort
+Noetzie
+Noordhoek
+Nyanga
+Observatory
+Onrusrivier
+Op-die-berg
+Oudtshoorn
+Paarl
+Pacaltsdorp
+Parow
+Paternoster
+Pearly beach
+Piketberg
+Plettenberg bay
+Pniel
+Port beaufort
+Porterville
+Prince albert
+Prince alfred hamlet
+Pringle bay
+Rawsonville
+Redelinghuys
+Rheenendal
+Riebeek-kasteel
+Riebeek west
+Riversdale
+Riviersonderend
+Robertson
+Robertsvlei
+Rooi els
+Rozendal
+Saldanha
+Saron
+Sedgefield
+Simon's town
+Slangrivier
+Somerset west
+Stanford
+Stellenbosch
+St helena bay
+Stilbaai
+Strand
+Strandfontein
+Struisbaai
+Suiderstrand
+Suurbraak
+Swellendam
+Touws river
+Tulbagh
+Uniondale
+Van dyksbaai
+Vanrhynsdorp
+Velddrif
+Vermont
+Victoria bay
+Villiersdorp
+Volmoed
+Vredenburg
+Vredendal
+Wellington
+Wemmershoek
+Wilderness
+Wittedrift
+Wolseley
+Worcester
+Wupperthal
+Yzerfontein
+Zoar
+}
+
+Eastern Cape
+{
+Aberdeen
+Addo
+Adelaide (ikhobonqaba)
+Alexandria
+Alice (idikeni)
+Aliwal north (maletswai)
+Barkly east
+Bathurst
+Bedford
+Berlin
+Bethulie
+Bhisho, (previously bisho)
+Bizana
+Braunschweig
+Burgersdorp
+Cacadu (previously lady frere)
+Cala
+Cathcart
+Cedarville
+Centane
+Chintsa
+Coffee bay
+Cofimvaba
+Cookhouse
+Cradock
+Despatch
+Dohne
+Dordrecht
+Dutywa (previously idutywa)
+East london (emonti)
+Elliot
+Elliotdale
+Enon
+Flagstaff
+Fort beaufort (ebhofolo)
+Gatyane (previously willowvale)
+Gcuwa (previously butterworth)
+Gonubie
+Gqeberha (previously port elizabeth)
+Graaff reinet
+Haga-haga
+Hamburg
+Hankey
+Hofmeyr
+Hogsback
+Humansdorp
+Indwe
+Jamestown
+Jeffreys bay
+Joubertina
+Kareedouw
+Katberg
+Kei mouth
+Keiskammahoek
+Kenton-on-sea
+Kidds beach
+King william's town (qonce)
+Kirkwood
+Komani (previously queenstown)
+Komga
+Krakeelrivier
+Lady frere
+Lady grey
+Libode
+Lusikisiki
+Maclear
+Makhanda (previously grahamstown)
+Matatiele
+Mdantsane
+Mhlangeni
+Middelburg
+Molteno
+Morgan's bay
+Mount ayliff
+Mount fletcher
+Mount frere
+Mthatha (previously umtata)
+Ngcobo (previously engcobo)
+Ngqeleni
+Nieu-bethesda
+Nqamakwe
+Oyster bay
+Patensie
+Paterson
+Peddie
+Port alfred
+Port st johns
+Qolora mouth
+Qumbu
+Salem
+Seymour
+Somerset east
+Sophangisa's land
+Sterkspruit
+Sterkstroom
+Steynsburg, eastern cape
+Steytlerville
+St francis bay
+Stutterheim
+Tabankulu (previously ntabankulu)
+Tarkastad
+Tsolo
+Tsomo
+Uitenhage
+Venterstad
+Whittlesea
+Willowmore
+Zwelitsha
+}

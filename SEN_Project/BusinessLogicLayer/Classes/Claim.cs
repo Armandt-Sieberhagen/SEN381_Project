@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    class Claim
+    public class Claim
     {
         public  enum ClaimStatus
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    class MedicalPackage
+    public class MedicalPackage
     {
         bool available;
         List<Policy> policies;

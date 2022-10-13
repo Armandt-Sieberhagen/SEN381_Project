@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    class PolicyMember
+    public class PolicyMember
     {
         public enum PolicyRole
         {

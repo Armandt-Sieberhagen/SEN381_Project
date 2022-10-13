@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SEN_Project.PresentationLayer.ChangeList;
+using SEN_Project.PresentationLayer.Addresses.AddressCreator;
+using SEN_Project.BusinessLogicLayer;
+using SEN_Project.PresentationLayer.Addresses.AddressSelector;
 
 namespace SEN_Project.PresentationLayer.Forms.ClientOptions
 {
@@ -19,6 +22,22 @@ namespace SEN_Project.PresentationLayer.Forms.ClientOptions
         }
         ChangeList CurrentChangeList;
 
+        bool FlagFirstName
+        {
+            get
+            {
+                bool Result = txtFirstName.Text.Trim().Length > 0;
+                lblFirstName.ForeColor = Result ? Color.Black : Color.Red;
+                return Result;
+            }
+        }
+        bool FlagLastName => txtLastName.Text.Trim().Length > 0;
+        bool FlagID => txtID.Text.Trim().Length == 13;
+        bool FlagPhoneNumber => txtPhoneNumber.Text.Trim().Length == 10;
+        bool FlagAddress => address != null;
+        List<string> SelectedPolicies;
+        Address address;
+        
         private void btnChangePolicies_Click(object sender, EventArgs e)
         {
             ChangeListOptions Options = new ChangeListOptions();
@@ -52,6 +71,7 @@ namespace SEN_Project.PresentationLayer.Forms.ClientOptions
                 rtxtPolicies.Text += item + '\n';
             }
             CurrentChangeList.Hide();
+            SelectedPolicies = Items;
         }
 
         private void lbxPerscriptions_SelectedIndexChanged(object sender, EventArgs e)
@@ -84,13 +104,141 @@ namespace SEN_Project.PresentationLayer.Forms.ClientOptions
 
         private void btnAddClient_Click(object sender, EventArgs e)
         {
-
+            if (!FlagFirstName)
+            {
+                PresentationController.current.ShowError("Please enter a valid first name");
+                txtFirstName.Focus();
+                return;
+            }
+            if (!FlagLastName)
+            {
+                PresentationController.current.ShowError("Please enter a valid last name");
+                txtLastName.Focus();
+                return;
+            }
+            if (!FlagID)
+            {
+                PresentationController.current.ShowError("Please enter a valid ID");
+                txtID.Focus();
+                return;
+            }
+            if (!FlagPhoneNumber)
+            {
+                PresentationController.current.ShowError("Please enter a valid phone number");
+                txtPhoneNumber.Focus();
+                return;
+            }
+            if (!FlagAddress)
+            {
+                PresentationController.current.ShowError("Please enter a valid address");
+                btnNewAddress.Focus();
+                return;
+            }
+            List<string> Perscriptions = new List<string>();
+            foreach (var item in lbxPerscriptions.Items)
+            {
+                Perscriptions.Add(item.ToString());
+            }
+            string FirstName = txtFirstName.Text.Trim();
+            string LastName = txtLastName.Text.Trim();
+            string ID = txtID.Text.Trim();
+            string PhoneNumber = txtPhoneNumber.Text.Trim();
+            string Email = txtEmail.Text.Trim();
+            BusinessLogic.current.CreateClient(FirstName, LastName, ID, PhoneNumber, SelectedPolicies, Perscriptions, address,Email);
+            this.Hide();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
 
+        public  void    QuickValidation ()
+        {
+            //btnAddClient.Enabled = FlagFirstName && FlagLastName && FlagID && FlagPhoneNumber   &&  FlagAddress;
+            lblErrorDisplay.Enabled = !btnAddClient.Enabled;
+        }
+
+        private void txtFirstName_TextChanged(object sender, EventArgs e)
+        {
+            QuickValidation();
+        }
+
+        private void txtLastName_TextChanged(object sender, EventArgs e)
+        {
+            QuickValidation();
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+            QuickValidation();
+        }
+
+        private void txtPhoneNumber_TextChanged(object sender, EventArgs e)
+        {
+            QuickValidation();
+        }
+
+        private void btnNewAddress_Click(object sender, EventArgs e)
+        {
+            AddressCreator AC = new AddressCreator();
+            AC.Show();
+            AC.OnCancel = HideAddressCreator;
+            AC.OnConfirm = SetAddress;
+        }
+
+        public  void    HideAddressCreator  ()
+        {
+            AddressCreator.current.Hide();
+        }
+
+        public  void  SetAddress (Address _Address)
+        {
+            rtxtAddress.Text = _Address.ToString();
+            address = _Address;
+            HideAddressCreator();
+        }
+
+        private void btnAddClient_MouseHover(object sender, EventArgs e)
+        {
+            lblErrorDisplay.Enabled = true;
+            if (!FlagFirstName)
+            {
+                lblErrorDisplay.Text = "Please enter a valid first name";
+                return;
+            }
+            if (!FlagLastName)
+            {
+                lblErrorDisplay.Text = "Please enter a valid last name";
+                return;
+            }
+            if (!FlagID)
+            {
+                lblErrorDisplay.Text = "Please enter a valid ID";
+                return;
+            }
+            if (!FlagPhoneNumber)
+            {
+                lblErrorDisplay.Text = "Please enter a valid phone number";
+                return;
+            }
+            if (!FlagAddress)
+            {
+                lblErrorDisplay.Text = "Please enter a valid address";
+                return;
+            }
+            lblErrorDisplay.Enabled = false;
+        }
+
+        private void btnSelectAddress_Click(object sender, EventArgs e)
+        {
+            (AddressSelector.current ?? new AddressSelector()).Show();
+            AddressSelector.current.OnCancel    =   HideAddressSelector;            
+        }
+
+        public  void    HideAddressSelector ()
+        {
+            AddressSelector.current.Hide();
         }
     }
 }

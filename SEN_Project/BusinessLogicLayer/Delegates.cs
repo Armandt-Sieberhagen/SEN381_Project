@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SEN_Project.BusinessLogicLayer.Classes
+namespace SEN_Project.BusinessLogicLayer
 {
     public class Delegates
     {
@@ -12,4 +12,5 @@ namespace SEN_Project.BusinessLogicLayer.Classes
 
     public delegate void EmptyVoid();
     public delegate void StringListVoid(List<string> Items);
+    public delegate void AddressVoid(Address address);
 }

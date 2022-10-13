@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    class PolicyData
+    public  class PolicyData
     {
         string description;
         float price;

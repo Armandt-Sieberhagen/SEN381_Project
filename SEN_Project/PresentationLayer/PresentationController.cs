@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using SEN_Project.PresentationLayer.Forms.ClientOptions;
 
 namespace SEN_Project.PresentationLayer
@@ -50,6 +51,11 @@ namespace SEN_Project.PresentationLayer
                 }
                 currentState = value;
             }
+        }
+
+        public  void    ShowError   (string Message)
+        {
+            MessageBox.Show(Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

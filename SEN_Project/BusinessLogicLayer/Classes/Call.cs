@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    class Call
+    public class Call
     {
         DateTime startTime;
         DateTime endTime;

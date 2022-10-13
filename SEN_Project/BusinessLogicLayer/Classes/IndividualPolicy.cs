@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    class IndividualPolicy : Policy
+    public class IndividualPolicy : Policy
     {
         Client member;
         public Client Member

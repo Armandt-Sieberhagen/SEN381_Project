@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using SEN_Project.PresentationLayer;
 using SEN_Project.DataAccessLayer;
 using SEN_Project.BusinessLogicLayer;
+using SEN_Project.DataLayer;
 
 namespace SEN_Project
 {
@@ -29,8 +30,8 @@ namespace SEN_Project
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            new DataManager();
-            DataManager.current.Initialize();
+            new BusinessLogic();
+            new GlobalDataLayer().Initialize();
             new PresentationController();
         }
     }

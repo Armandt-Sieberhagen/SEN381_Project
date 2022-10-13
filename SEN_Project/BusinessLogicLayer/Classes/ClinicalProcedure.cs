@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    class ClinicalProcedure
+    public class ClinicalProcedure
     {
         List<MedicalCondition> conditions;
         List<Treatment> proposedTreatments;

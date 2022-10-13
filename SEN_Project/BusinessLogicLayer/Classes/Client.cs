@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    class Client
+    public class Client
     {
         int clientID;
         string firstName;

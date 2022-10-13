@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    class MedicalServiceProvider
+    public class MedicalServiceProvider
     {
         Address address;
         List<MedicalPackage> packages;

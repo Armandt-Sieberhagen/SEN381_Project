@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    abstract class Policy
+    public  abstract class Policy
     {
         PolicyData dataRef;
         public PolicyData DataRef {

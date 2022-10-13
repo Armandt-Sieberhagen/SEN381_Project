@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    class Address
+    public class Address
     {
         public Address() { }
 
@@ -33,6 +33,11 @@ namespace SEN_Project.BusinessLogicLayer
         {
             get { return postalCode; }
             set { postalCode = value; }
+        }
+
+        public  override    string  ToString    ()
+        {
+            return Street + '\n' + PostalCode + '\n' + City + '\n' + Province;
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SEN_Project.BusinessLogicLayer.Classes;
+using SEN_Project.BusinessLogicLayer;
 
 namespace SEN_Project.PresentationLayer.ChangeList
 {

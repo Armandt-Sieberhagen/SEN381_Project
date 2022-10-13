@@ -12,6 +12,7 @@ namespace SEN_Project.DataAccessLayer
     class FileManager
     {
         public static string PolicyDataFileName = "PolicyData.txt";
+        public static string ProvinceDataFileName = "ProvinceData.txt";
 
         public  static  void    SaveToFile  (PolicyData Data)
         {
