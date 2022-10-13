@@ -86,5 +86,11 @@ namespace SEN_Project.PresentationLayer.Forms.ClientOptions
         {
 
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+        }
     }
 }
