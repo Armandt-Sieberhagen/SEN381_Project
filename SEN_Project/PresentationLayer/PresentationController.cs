@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SEN_Project.PresentationLayer.Forms.ClientOptions;
 
 namespace SEN_Project.PresentationLayer
 {
@@ -12,6 +13,8 @@ namespace SEN_Project.PresentationLayer
         public PresentationController    ()
         {
             current = this;
+            ClientTableOptions = new TableOptions();
+            ClientTableOptions.AddForm = new frmAddClient();
         }
 
         public enum State
@@ -20,8 +23,12 @@ namespace SEN_Project.PresentationLayer
             Database,
         }
         Form1 MainForm => Form1.current ?? new Form1();
-        DatabaseForm DBFOrm => DatabaseForm.current ?? new DatabaseForm();
+        DatabaseForm DBForm => DatabaseForm.current ?? new DatabaseForm();
         State currentState;
+
+        TableOptions ClientTableOptions;
+        TableOptions CallTableOptions;
+
         public State CurrentState { 
             get {
                 return currentState;
@@ -31,11 +38,12 @@ namespace SEN_Project.PresentationLayer
                 {
                     case State.CallCenter:
                         MainForm.Show();
-                        DBFOrm.Hide();
+                        DBForm.Hide();
                         break;
                     case State.Database:
                         MainForm.Hide();
-                        DBFOrm.Show();
+                        DBForm.Show();
+                        DBForm.CurrentOptions = ClientTableOptions;
                         break;
                     default:
                         break;

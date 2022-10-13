@@ -127,5 +127,24 @@ namespace SEN_Project.BusinessLogicLayer
             Result.Description = Description;
             return Result;
         }
+
+        public  static Client CreateClient (string FirstName, string LastName, List<Call> CallHistory,List<Policy> Policies,string ID,Address address,string Email,string PhoneNumber,List<Claim> claims,List<ClinicalProcedure> Procedures,List<string> ActivePerscriptions)
+        {
+            Client Result = new Client();
+
+            Result.FirstName = FirstName;
+            Result.LastName = LastName;
+            Result.CallHistory = CallHistory;
+            Result.Policies = Policies;
+            Result.IDNumber = ID;
+            Result.ClientAddress = address;
+            Result.Email = Email;
+            Result.PhoneNumber = PhoneNumber;
+            Result.ClaimsHistory = claims;
+            Result.ClinicalHistory = Procedures;
+            Result.ActivePerscriptions = ActivePerscriptions;
+
+            return Result;
+        }
     }
 }
