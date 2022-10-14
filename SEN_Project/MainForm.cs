@@ -34,5 +34,10 @@ namespace SEN_Project
             new GlobalDataLayer().Initialize();
             new PresentationController();
         }
+
+        private void btnAddClient_Click(object sender, EventArgs e)
+        {
+            Factory.GetAddClientForm().Show();
+        }
     }
 }

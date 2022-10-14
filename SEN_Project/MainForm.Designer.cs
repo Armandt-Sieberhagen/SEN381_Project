@@ -30,6 +30,7 @@ namespace SEN_Project
         private void InitializeComponent()
         {
             this.btnViewDatabase = new System.Windows.Forms.Button();
+            this.btnAddClient = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnViewDatabase
@@ -42,11 +43,22 @@ namespace SEN_Project
             this.btnViewDatabase.UseVisualStyleBackColor = true;
             this.btnViewDatabase.Click += new System.EventHandler(this.btnViewDatabase_Click);
             // 
+            // btnAddClient
+            // 
+            this.btnAddClient.Location = new System.Drawing.Point(195, 610);
+            this.btnAddClient.Name = "btnAddClient";
+            this.btnAddClient.Size = new System.Drawing.Size(177, 74);
+            this.btnAddClient.TabIndex = 1;
+            this.btnAddClient.Text = "Add Client";
+            this.btnAddClient.UseVisualStyleBackColor = true;
+            this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1061, 696);
+            this.Controls.Add(this.btnAddClient);
             this.Controls.Add(this.btnViewDatabase);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -58,6 +70,7 @@ namespace SEN_Project
         #endregion
 
         private System.Windows.Forms.Button btnViewDatabase;
+        private System.Windows.Forms.Button btnAddClient;
     }
 }
 

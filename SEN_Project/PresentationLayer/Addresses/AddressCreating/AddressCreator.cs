@@ -38,6 +38,28 @@ namespace SEN_Project.PresentationLayer.Addresses.AddressCreator
             }
         }
 
+        public  void    SetAdreess (Address _Address)
+        {
+            if (_Address==null)
+            {
+                txtStreet.Clear();
+                txtPostalCode.Clear();
+                cbxCity.SelectedIndex = -1;
+                cbxProvince.SelectedIndex = 0;
+                txtStreet.Focus();
+                QuickValidate();
+            }
+            else
+            {
+                txtStreet.Text = _Address.Street;
+                txtPostalCode.Text = _Address.PostalCode;
+                cbxProvince.SelectedText = _Address.Province;
+                cbxCity.SelectedText = _Address.City;
+                txtStreet.Focus();
+                QuickValidate();
+            }
+        }
+
         private void cbxProvince_SelectedIndexChanged(object sender, EventArgs e)
         {
             QuickValidate();

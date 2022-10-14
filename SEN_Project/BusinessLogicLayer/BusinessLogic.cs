@@ -29,6 +29,7 @@ namespace SEN_Project.BusinessLogicLayer
 
         public  Policy  GetPolicyByName (string Name)
         {
+            //Not implemented yet
             return null;
         }
     }

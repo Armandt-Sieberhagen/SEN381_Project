@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SEN_Project.PresentationLayer.Forms.ClientOptions;
 
 namespace SEN_Project.BusinessLogicLayer
 {
@@ -145,6 +146,20 @@ namespace SEN_Project.BusinessLogicLayer
             Result.ActivePerscriptions = ActivePerscriptions;
 
             return Result;
+        }
+
+        static  frmAddClient    ClientForm;
+        public  static  frmAddClient GetAddClientForm    ()
+        {
+            if (ClientForm!=null)
+            {
+                ClientForm.Reset();
+            }
+            else
+            {
+                ClientForm = new frmAddClient();
+            }
+            return ClientForm;
         }
     }
 }

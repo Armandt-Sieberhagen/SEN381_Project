@@ -338,6 +338,7 @@
             this.MinimizeBox = false;
             this.Name = "frmAddClient";
             this.Text = "Add Client";
+            this.Load += new System.EventHandler(this.frmAddClient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

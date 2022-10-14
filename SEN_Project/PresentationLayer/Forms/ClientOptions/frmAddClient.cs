@@ -31,9 +31,30 @@ namespace SEN_Project.PresentationLayer.Forms.ClientOptions
                 return Result;
             }
         }
-        bool FlagLastName => txtLastName.Text.Trim().Length > 0;
-        bool FlagID => txtID.Text.Trim().Length == 13;
-        bool FlagPhoneNumber => txtPhoneNumber.Text.Trim().Length == 10;
+        bool FlagLastName {
+            get
+            {
+                bool Result = txtLastName.Text.Trim().Length > 0;
+                lblLastName.ForeColor = Result ? Color.Black : Color.Red;
+                return Result;
+            }
+        }
+        bool FlagID {
+            get
+            {
+                bool Result = txtID.Text.Trim().Length ==13;
+                lblID.ForeColor = Result ? Color.Black : Color.Red;
+                return Result;
+            }
+        }
+        bool FlagPhoneNumber {
+            get
+            {
+                bool Result = txtPhoneNumber.Text.Trim().Length ==10;
+                lblPhoneNumber.ForeColor = Result ? Color.Black : Color.Red;
+                return Result;
+            }
+        }
         bool FlagAddress => address != null;
         List<string> SelectedPolicies;
         Address address;
@@ -50,6 +71,7 @@ namespace SEN_Project.PresentationLayer.Forms.ClientOptions
             AllPolicies.Add("Policy 3");
             AllPolicies.Add("Policy 4");
             AllPolicies.Add("Policy 5");
+
             Options.AllOptions = AllPolicies;
             CurrentChangeList = new ChangeList();
             CurrentChangeList.CurrentOptions = Options;
@@ -156,7 +178,34 @@ namespace SEN_Project.PresentationLayer.Forms.ClientOptions
         public  void    QuickValidation ()
         {
             //btnAddClient.Enabled = FlagFirstName && FlagLastName && FlagID && FlagPhoneNumber   &&  FlagAddress;
-            lblErrorDisplay.Enabled = !btnAddClient.Enabled;
+            lblErrorDisplay.ForeColor = Color.Red;
+            if (!FlagFirstName)
+            {
+                lblErrorDisplay.Text = "Please enter a valid first name";
+                return;
+            }
+            if (!FlagLastName)
+            {
+                lblErrorDisplay.Text = "Please enter a valid last name";
+                return;
+            }
+            if (!FlagID)
+            {
+                lblErrorDisplay.Text = "Please enter a valid ID";
+                return;
+            }
+            if (!FlagPhoneNumber)
+            {
+                lblErrorDisplay.Text = "Please enter a valid phone number";
+                return;
+            }
+            if (!FlagAddress)
+            {
+                lblErrorDisplay.Text = "Please enter a valid address";
+                return;
+            }
+            lblErrorDisplay.ForeColor = Color.Green;
+            lblErrorDisplay.Text = "All good";
         }
 
         private void txtFirstName_TextChanged(object sender, EventArgs e)
@@ -197,37 +246,11 @@ namespace SEN_Project.PresentationLayer.Forms.ClientOptions
             rtxtAddress.Text = _Address.ToString();
             address = _Address;
             HideAddressCreator();
+            QuickValidation();
         }
 
         private void btnAddClient_MouseHover(object sender, EventArgs e)
         {
-            lblErrorDisplay.Enabled = true;
-            if (!FlagFirstName)
-            {
-                lblErrorDisplay.Text = "Please enter a valid first name";
-                return;
-            }
-            if (!FlagLastName)
-            {
-                lblErrorDisplay.Text = "Please enter a valid last name";
-                return;
-            }
-            if (!FlagID)
-            {
-                lblErrorDisplay.Text = "Please enter a valid ID";
-                return;
-            }
-            if (!FlagPhoneNumber)
-            {
-                lblErrorDisplay.Text = "Please enter a valid phone number";
-                return;
-            }
-            if (!FlagAddress)
-            {
-                lblErrorDisplay.Text = "Please enter a valid address";
-                return;
-            }
-            lblErrorDisplay.Enabled = false;
         }
 
         private void btnSelectAddress_Click(object sender, EventArgs e)
@@ -239,6 +262,26 @@ namespace SEN_Project.PresentationLayer.Forms.ClientOptions
         public  void    HideAddressSelector ()
         {
             AddressSelector.current.Hide();
+        }
+
+        private void frmAddClient_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public  void Reset ()
+        {
+            address = null;
+            SelectedPolicies.Clear();
+            txtFirstName.Clear();
+            txtLastName.Clear();
+            txtID.Clear();
+            txtPhoneNumber.Clear();
+            txtEmail.Clear();
+            rtxtAddress.Clear();
+            rtxtPolicies.Clear();
+            txtPerscription.Clear();
+            QuickValidation();
         }
     }
 }

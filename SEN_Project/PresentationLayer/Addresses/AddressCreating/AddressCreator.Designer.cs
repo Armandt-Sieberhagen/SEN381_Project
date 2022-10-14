@@ -124,7 +124,7 @@
             this.btnCreateAddress.Name = "btnCreateAddress";
             this.btnCreateAddress.Size = new System.Drawing.Size(117, 57);
             this.btnCreateAddress.TabIndex = 10;
-            this.btnCreateAddress.Text = "+Create";
+            this.btnCreateAddress.Text = "Confirm";
             this.btnCreateAddress.UseVisualStyleBackColor = true;
             this.btnCreateAddress.Click += new System.EventHandler(this.btnCreateAddress_Click);
             // 

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SEN_Project.PresentationLayer.Forms.ClientOptions;
+using SEN_Project.PresentationLayer.Addresses.AddressCreator;
 
 namespace SEN_Project.PresentationLayer
 {
@@ -14,8 +15,9 @@ namespace SEN_Project.PresentationLayer
         public PresentationController    ()
         {
             current = this;
-            ClientTableOptions = new TableOptions();
-            ClientTableOptions.AddForm = new frmAddClient();
+            AddressOptions = new TableOptions();
+            AddressOptions.AddForm = new AddressCreator();
+            AddressOptions.UpdateForm = new AddressCreator();
         }
 
         public enum State
@@ -27,8 +29,12 @@ namespace SEN_Project.PresentationLayer
         DatabaseForm DBForm => DatabaseForm.current ?? new DatabaseForm();
         State currentState;
 
-        TableOptions ClientTableOptions;
-        TableOptions CallTableOptions;
+        public TableOptions AddressOptions;
+        public TableOptions ConditionsOptions;
+        public TableOptions ProvidersOptions;
+        public TableOptions TreatmentsOptions;
+        public TableOptions PackagesOptions;
+        public TableOptions PolicyDataOptions;
 
         public State CurrentState { 
             get {
@@ -44,7 +50,6 @@ namespace SEN_Project.PresentationLayer
                     case State.Database:
                         MainForm.Hide();
                         DBForm.Show();
-                        DBForm.CurrentOptions = ClientTableOptions;
                         break;
                     default:
                         break;

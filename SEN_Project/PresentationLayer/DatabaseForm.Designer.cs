@@ -34,6 +34,8 @@ namespace SEN_Project.PresentationLayer
             this.btnDeleteRecord = new System.Windows.Forms.Button();
             this.btnUpdateRecord = new System.Windows.Forms.Button();
             this.btnSearchRecord = new System.Windows.Forms.Button();
+            this.cbxTable = new System.Windows.Forms.ComboBox();
+            this.lblTable = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnClientCenter
@@ -83,11 +85,38 @@ namespace SEN_Project.PresentationLayer
             this.btnSearchRecord.Text = "Search Record";
             this.btnSearchRecord.UseVisualStyleBackColor = true;
             // 
+            // cbxTable
+            // 
+            this.cbxTable.FormattingEnabled = true;
+            this.cbxTable.Items.AddRange(new object[] {
+            "Addresses",
+            "Conditions",
+            "Service Providers",
+            "Treatments",
+            "Packages",
+            "Policy Data"});
+            this.cbxTable.Location = new System.Drawing.Point(576, 28);
+            this.cbxTable.Name = "cbxTable";
+            this.cbxTable.Size = new System.Drawing.Size(178, 21);
+            this.cbxTable.TabIndex = 5;
+            this.cbxTable.SelectedIndexChanged += new System.EventHandler(this.cbxTable_SelectedIndexChanged);
+            // 
+            // lblTable
+            // 
+            this.lblTable.AutoSize = true;
+            this.lblTable.Location = new System.Drawing.Point(573, 12);
+            this.lblTable.Name = "lblTable";
+            this.lblTable.Size = new System.Drawing.Size(37, 13);
+            this.lblTable.TabIndex = 6;
+            this.lblTable.Text = "Table:";
+            // 
             // DatabaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1098, 578);
+            this.Controls.Add(this.lblTable);
+            this.Controls.Add(this.cbxTable);
             this.Controls.Add(this.btnSearchRecord);
             this.Controls.Add(this.btnUpdateRecord);
             this.Controls.Add(this.btnDeleteRecord);
@@ -96,6 +125,7 @@ namespace SEN_Project.PresentationLayer
             this.Name = "DatabaseForm";
             this.Text = "DatabaseForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -106,5 +136,7 @@ namespace SEN_Project.PresentationLayer
         private System.Windows.Forms.Button btnDeleteRecord;
         private System.Windows.Forms.Button btnUpdateRecord;
         private System.Windows.Forms.Button btnSearchRecord;
+        private System.Windows.Forms.ComboBox cbxTable;
+        private System.Windows.Forms.Label lblTable;
     }
 }
