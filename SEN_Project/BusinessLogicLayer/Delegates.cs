@@ -14,4 +14,5 @@ namespace SEN_Project.BusinessLogicLayer
     public delegate void StringListVoid(List<string> Items);
     public delegate void AddressVoid(Address address);
     public delegate void ClientVoid(Client client);
+    public delegate void TreatmentVoid(Treatment Treatment);
 }

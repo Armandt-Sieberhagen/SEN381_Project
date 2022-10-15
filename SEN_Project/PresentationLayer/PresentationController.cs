@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SEN_Project.PresentationLayer.Forms.ClientOptions;
 using SEN_Project.PresentationLayer.Addresses.AddressCreator;
+using SEN_Project.PresentationLayer.Treatments;
+using SEN_Project.BusinessLogicLayer;
 
 namespace SEN_Project.PresentationLayer
 {
@@ -17,7 +19,11 @@ namespace SEN_Project.PresentationLayer
             current = this;
             AddressOptions = new TableOptions();
             AddressOptions.AddForm = new AddressCreator();
-            AddressOptions.UpdateForm = new AddressCreator();
+            AddressOptions.UpdateForm = AddressOptions.AddForm;
+
+            TreatmentsOptions = new TableOptions();
+            TreatmentsOptions.AddForm = new frmTreatmentAddEdit();
+            TreatmentsOptions.UpdateForm = TreatmentsOptions.AddForm;
         }
 
         public enum State
@@ -61,6 +67,16 @@ namespace SEN_Project.PresentationLayer
         public  void    ShowError   (string Message)
         {
             MessageBox.Show(Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public void ShowSuccess(string Message)
+        {
+            MessageBox.Show(Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public  void    HideTreatmentAddEdit    ()
+        {
+            frmTreatmentAddEdit.current.Hide();
         }
     }
 }

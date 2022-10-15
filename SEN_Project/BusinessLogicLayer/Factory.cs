@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SEN_Project.PresentationLayer.Forms.ClientOptions;
+using System.Data;//For when we want to convert DataRows to Objects, and vice versa
 
 namespace SEN_Project.BusinessLogicLayer
 {
@@ -24,6 +25,18 @@ namespace SEN_Project.BusinessLogicLayer
             Result.City = City;
             Result.Province = Province;
             Result.PostalCode = PostalCode;
+
+            return Result;
+        }
+
+        public static Address CreateAddress(DataRow Row)
+        {
+            Address Result = new Address();
+            //Add validation stuffs??
+            Result.Street = Row[1].ToString();
+            Result.City = Row[2].ToString();
+            Result.Province = Row[3].ToString();
+            Result.PostalCode = Row[4].ToString();
 
             return Result;
         }
@@ -105,9 +118,10 @@ namespace SEN_Project.BusinessLogicLayer
             return Result;
         }
 
-        public static PolicyData CreatePolicyData (string Description,float   Price,List<Treatment>   TreatmentsCovered)
+        public static PolicyData CreatePolicyData (string Name,string Description,float   Price,List<Treatment>   TreatmentsCovered)
         {
             PolicyData Result = new PolicyData();
+            Result.Name = Name;
             Result.Description = Description;
             Result.Price = Price;
             Result.TreatmentsCovered = TreatmentsCovered;

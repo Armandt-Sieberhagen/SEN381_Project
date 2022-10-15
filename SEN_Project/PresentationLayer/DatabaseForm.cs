@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SEN_Project.DataLayer;
+using SEN_Project.BusinessLogicLayer;
+using SEN_Project.PresentationLayer.Treatments;
+using SEN_Project.PresentationLayer.Addresses.AddressCreator;
 
 namespace SEN_Project.PresentationLayer
 {
@@ -44,6 +48,34 @@ namespace SEN_Project.PresentationLayer
         {
             if (CurrentOptions != null)
             {
+                CurrentOptions.AddForm.Reset();
+
+                switch (cbxTable.SelectedItem.ToString())
+                {
+                    case "Addresses":
+                        AddressCreator.current.OnCancel = AddressCreator.current.Hide;
+                        AddressCreator.current.OnConfirm = BusinessLogic.current.AddAddress;
+                        break;
+                    case "Conditions":
+                        break;
+                    case "Service Providers":
+
+                        break;
+                    case "Treatments":
+                        frmTreatmentAddEdit.current.CancelCallback = frmTreatmentAddEdit.current.Hide;
+                        frmTreatmentAddEdit.current.ConfirmCallback = BusinessLogic.current.AddTreatment;
+                        break;
+                    case "Packages":
+
+                        break;
+                    case "Policy Data":
+
+                        break;
+                    default:
+                        CurrentOptions = null;
+                        break;
+                }
+
                 CurrentOptions.AddForm.Show();
             }
         }
@@ -54,25 +86,65 @@ namespace SEN_Project.PresentationLayer
             {
                 case "Addresses":
                     CurrentOptions = PresentationController.current.AddressOptions;
+                    dgvDatabase.DataSource    = DatabaseController.current.GetSource("tbl_Addresses");
                     break;
                 case "Conditions":
                     CurrentOptions = PresentationController.current.ConditionsOptions;
+                    dgvDatabase.DataSource = DatabaseController.current.GetSource("tbl_Conditions");
                     break;
                 case "Service Providers":
                     CurrentOptions = PresentationController.current.ProvidersOptions;
+                    dgvDatabase.DataSource = DatabaseController.current.GetSource("tbl_Service_Providers");
                     break;
                 case "Treatments":
                     CurrentOptions = PresentationController.current.TreatmentsOptions;
+                    dgvDatabase.DataSource = DatabaseController.current.GetSource("tbl_Treatments");
                     break;
                 case "Packages":
                     CurrentOptions = PresentationController.current.PackagesOptions;
+                    dgvDatabase.DataSource = DatabaseController.current.GetSource("tbl_Packages");
                     break;
                 case "Policy Data":
                     CurrentOptions = PresentationController.current.PolicyDataOptions;
+                    dgvDatabase.DataSource = DatabaseController.current.GetSource("tbl_Policy_Data");
                     break;
                 default:
                     CurrentOptions = null;
                     break;
+            }
+        }
+
+        private void btnUpdateRecord_Click(object sender, EventArgs e)
+        {
+            if (CurrentOptions != null)
+            {
+                CurrentOptions.AddForm.Reset();
+
+                switch (cbxTable.SelectedItem.ToString())
+                {
+                    case "Addresses":
+                        AddressCreator.current.OnCancel = AddressCreator.current.Hide;
+                        break;
+                    case "Conditions":
+                        break;
+                    case "Service Providers":
+
+                        break;
+                    case "Treatments":
+                        frmTreatmentAddEdit.current.CancelCallback = frmTreatmentAddEdit.current.Hide;
+                        break;
+                    case "Packages":
+
+                        break;
+                    case "Policy Data":
+
+                        break;
+                    default:
+                        CurrentOptions = null;
+                        break;
+                }
+
+                CurrentOptions.AddForm.Show();
             }
         }
     }

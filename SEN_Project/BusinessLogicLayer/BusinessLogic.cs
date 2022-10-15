@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SEN_Project.DataAccessLayer;
 
 namespace SEN_Project.BusinessLogicLayer
 {
@@ -26,6 +27,21 @@ namespace SEN_Project.BusinessLogicLayer
             }
             Client client = Factory.CreateClient(FirstName, LastName, new List<Call>(), Policies, ID, _Address, Email, PhoneNumber, new List<Claim>(), new List<ClinicalProcedure>(), Perscriptions ?? new List<string>());
             return client;
+        }
+
+        public  void    AddClient   (Client _Client)
+        {
+            DatabaseAccess.current.AddClient(_Client);
+        }
+
+        public  void    AddTreatment    (Treatment  _Treatment)
+        {
+            DatabaseAccess.current.AddTreatment(_Treatment);
+        }
+
+        public void AddAddress(Address _Address)
+        {
+            DatabaseAccess.current.AddAddress(_Address);
         }
 
         public  Policy  GetPolicyByName (string Name)

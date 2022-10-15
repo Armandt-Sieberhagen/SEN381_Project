@@ -54,6 +54,8 @@ namespace SEN_Project
             new BusinessLogic();
             new GlobalDataLayer().Initialize();
             new PresentationController();
+            new DatabaseController();
+            new DatabaseAccess();
         }
 
         private void btnAddClient_Click(object sender, EventArgs e)
@@ -68,7 +70,7 @@ namespace SEN_Project
         public  void    AddClient   (Client _Client)
         {
             //Do stuff here
-            PresentationController.current.ShowError("Client has been added");
+            BusinessLogic.current.AddClient(_Client);
             CloseAddClient();
         }
 

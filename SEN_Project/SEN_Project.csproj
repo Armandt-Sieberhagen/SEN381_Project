@@ -64,7 +64,9 @@
     <Compile Include="BusinessLogicLayer\Classes\Treatment.cs" />
     <Compile Include="BusinessLogicLayer\Factory.cs" />
     <Compile Include="BusinessLogicLayer\GlobalFunctions.cs" />
+    <Compile Include="DataAccessLayer\DatabaseAccess.cs" />
     <Compile Include="DataAccessLayer\FileManager.cs" />
+    <Compile Include="DataLayer\DatabaseController.cs" />
     <Compile Include="DataLayer\GlobalDataLayer.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -85,6 +87,10 @@
       <DependentUpon>AddressSelector.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\ChangeList\ChangeListOptions.cs" />
+    <Compile Include="PresentationLayer\IResetable.cs" />
+    <Compile Include="PresentationLayer\TableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PresentationLayer\DatabaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,8 +109,20 @@
     <Compile Include="PresentationLayer\Forms\ClientOptions\frmAddClient.Designer.cs">
       <DependentUpon>frmAddClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\PolicyData\frmPolicyDataAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\PolicyData\frmPolicyDataAddEdit.Designer.cs">
+      <DependentUpon>frmPolicyDataAddEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\PresentationController.cs" />
     <Compile Include="PresentationLayer\TableOptions.cs" />
+    <Compile Include="PresentationLayer\Treatments\frmTreatmentAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Treatments\frmTreatmentAddEdit.Designer.cs">
+      <DependentUpon>frmTreatmentAddEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
@@ -124,6 +142,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Forms\ClientOptions\frmAddClient.resx">
       <DependentUpon>frmAddClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\PolicyData\frmPolicyDataAddEdit.resx">
+      <DependentUpon>frmPolicyDataAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\TableForm.resx">
+      <DependentUpon>TableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Treatments\frmTreatmentAddEdit.resx">
+      <DependentUpon>frmTreatmentAddEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
