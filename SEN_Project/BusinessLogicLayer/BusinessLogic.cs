@@ -14,7 +14,7 @@ namespace SEN_Project.BusinessLogicLayer
             current = this;
         }
 
-        public  void    CreateClient    (string FirstName,string    LastName,string ID,string PhoneNumber,List<string> _Policies,List<string> Perscriptions,Address _Address,string Email="")
+        public  Client    CreateClient    (string FirstName,string    LastName,string ID,string PhoneNumber,List<string> _Policies,List<string> Perscriptions,Address _Address,string Email="")
         {
             List<Policy> Policies = new List<Policy>();
             if (_Policies!=null)
@@ -25,6 +25,7 @@ namespace SEN_Project.BusinessLogicLayer
                 }
             }
             Client client = Factory.CreateClient(FirstName, LastName, new List<Call>(), Policies, ID, _Address, Email, PhoneNumber, new List<Claim>(), new List<ClinicalProcedure>(), Perscriptions ?? new List<string>());
+            return client;
         }
 
         public  Policy  GetPolicyByName (string Name)

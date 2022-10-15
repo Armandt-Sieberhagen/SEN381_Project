@@ -161,5 +161,39 @@ namespace SEN_Project.BusinessLogicLayer
             }
             return ClientForm;
         }
+
+        public  static  Client  GetRandomClient ()
+        {
+            string[] FirstNames = new string[] { "John", "Sam", "Peter" };
+            string[] LastNames = new string[] { "Smith", "O`Neil", "Jackson" };
+
+            Random Rand = new Random();
+            string FirstName = FirstNames[Rand.Next(FirstNames.Length)];
+            string LastName = LastNames[Rand.Next(LastNames.Length)];
+            string ID = "";
+            for (int i = 0; i < 13; i++)
+            {
+                ID += Rand.Next(10).ToString();
+            }
+            string Phone = "";
+            for (int i = 0; i < 10; i++)
+            {
+                Phone += Rand.Next(10).ToString();
+            }
+            string email = "";
+            if (Rand.Next(2)==0)
+            {
+                email = FirstName + LastName + "@gmail.com";
+            }
+
+
+
+
+
+
+
+
+            return null;
+        }
     }
 }

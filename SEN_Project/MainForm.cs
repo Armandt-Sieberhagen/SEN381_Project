@@ -11,6 +11,7 @@ using SEN_Project.PresentationLayer;
 using SEN_Project.DataAccessLayer;
 using SEN_Project.BusinessLogicLayer;
 using SEN_Project.DataLayer;
+using SEN_Project.PresentationLayer.Forms.ClientOptions;
 
 namespace SEN_Project
 {
@@ -21,6 +22,26 @@ namespace SEN_Project
         {
             current = this;
             InitializeComponent();
+        }
+        frmAddClient AddClientForm;
+        Client currentClient;
+        public Client CurrentClient {
+            get {
+                return currentClient;
+            }
+            set {
+                if (value!=null)
+                {
+                    lblClientID.Text = "Client ID: " + value.ClientID;
+                    lblFirstName.Text = "First Name: " +value.FirstName;
+                    lblLastName.Text = "Last Name: "+value.LastName;
+                    lblIdNumber.Text = "ID Number: " + value.IDNumber;
+                    lblPhoneNumber.Text = "Phone Number: " + value.PhoneNumber;
+                    lblEmail.Text = "E-mail: " + value.Email;
+                    rtxtAddress.Text = value.ClientAddress.ToString();
+                }
+                currentClient = value;
+            }
         }
 
         private void btnViewDatabase_Click(object sender, EventArgs e)
@@ -37,7 +58,41 @@ namespace SEN_Project
 
         private void btnAddClient_Click(object sender, EventArgs e)
         {
-            Factory.GetAddClientForm().Show();
+            AddClientForm = AddClientForm ?? Factory.GetAddClientForm();
+            AddClientForm.Reset();
+            AddClientForm.CancelCallback = CloseAddClient;
+            AddClientForm.ConfirmCallback = AddClient;
+            AddClientForm.Show();
+        }
+
+        public  void    AddClient   (Client _Client)
+        {
+            //Do stuff here
+            PresentationController.current.ShowError("Client has been added");
+            CloseAddClient();
+        }
+
+        public  void    SetClient   (Client _Client)
+        {
+            CurrentClient = _Client;
+        }
+
+        public  void    CloseAddClient  ()
+        {
+            if (AddClientForm!=null)
+            {
+                AddClientForm.Hide();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSimulateClient_Click(object sender, EventArgs e)
+        {
+            SetClient(Factory.GetRandomClient());
         }
     }
 }
