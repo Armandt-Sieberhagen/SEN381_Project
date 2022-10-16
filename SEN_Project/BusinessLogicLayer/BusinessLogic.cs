@@ -31,17 +31,22 @@ namespace SEN_Project.BusinessLogicLayer
 
         public  void    AddClient   (Client _Client)
         {
-            DatabaseAccess.current.AddClient(_Client);
+            DatabaseAccess.current.Add(_Client);
         }
 
         public  void    AddTreatment    (Treatment  _Treatment)
         {
-            DatabaseAccess.current.AddTreatment(_Treatment);
+            DatabaseAccess.current.Add(_Treatment);
         }
 
         public void AddAddress(Address _Address)
         {
-            DatabaseAccess.current.AddAddress(_Address);
+            DatabaseAccess.current.Add(_Address);
+        }
+
+        public  void    Delete  (Address _Address)
+        {
+            DatabaseAccess.current.Delete(_Address);
         }
 
         public  Policy  GetPolicyByName (string Name)

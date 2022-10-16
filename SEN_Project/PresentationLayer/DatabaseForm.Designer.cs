@@ -37,6 +37,7 @@ namespace SEN_Project.PresentationLayer
             this.cbxTable = new System.Windows.Forms.ComboBox();
             this.lblTable = new System.Windows.Forms.Label();
             this.dgvDatabase = new System.Windows.Forms.DataGridView();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatabase)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +69,7 @@ namespace SEN_Project.PresentationLayer
             this.btnDeleteRecord.TabIndex = 2;
             this.btnDeleteRecord.Text = "Delete Record";
             this.btnDeleteRecord.UseVisualStyleBackColor = true;
+            this.btnDeleteRecord.Click += new System.EventHandler(this.btnDeleteRecord_Click);
             // 
             // btnUpdateRecord
             // 
@@ -121,11 +123,22 @@ namespace SEN_Project.PresentationLayer
             this.dgvDatabase.Size = new System.Drawing.Size(1074, 439);
             this.dgvDatabase.TabIndex = 7;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(405, 22);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(92, 27);
+            this.btnRefresh.TabIndex = 8;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // DatabaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1098, 578);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgvDatabase);
             this.Controls.Add(this.lblTable);
             this.Controls.Add(this.cbxTable);
@@ -152,5 +165,6 @@ namespace SEN_Project.PresentationLayer
         private System.Windows.Forms.ComboBox cbxTable;
         private System.Windows.Forms.Label lblTable;
         private System.Windows.Forms.DataGridView dgvDatabase;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

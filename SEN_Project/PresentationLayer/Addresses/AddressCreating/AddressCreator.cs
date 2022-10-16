@@ -82,6 +82,7 @@ namespace SEN_Project.PresentationLayer.Addresses.AddressCreator
                 //Do validation!!!
                 Address NewAddress = Factory.CreateAddress(txtStreet.Text.Trim(), cbxCity.SelectedItem.ToString(), cbxProvince.SelectedItem.ToString(), txtPostalCode.Text.Trim());
                 OnConfirm.Invoke(NewAddress);
+                Hide();
             }
         }
 

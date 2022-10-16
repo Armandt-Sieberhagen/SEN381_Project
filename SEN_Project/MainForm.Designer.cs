@@ -35,15 +35,16 @@ namespace SEN_Project
             this.btnDeleteClient = new System.Windows.Forms.Button();
             this.btnSearchClient = new System.Windows.Forms.Button();
             this.gbxPersonalDetails = new System.Windows.Forms.GroupBox();
-            this.lblFirstName = new System.Windows.Forms.Label();
-            this.lblLastName = new System.Windows.Forms.Label();
             this.lblIdNumber = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblFirstName = new System.Windows.Forms.Label();
             this.gbxContactInfo = new System.Windows.Forms.GroupBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
             this.lblClientID = new System.Windows.Forms.Label();
             this.rtxtAddress = new System.Windows.Forms.RichTextBox();
             this.btnSimulateClient = new System.Windows.Forms.Button();
+            this.lblAddress = new System.Windows.Forms.Label();
             this.gbxPersonalDetails.SuspendLayout();
             this.gbxContactInfo.SuspendLayout();
             this.SuspendLayout();
@@ -108,14 +109,14 @@ namespace SEN_Project
             this.gbxPersonalDetails.TabStop = false;
             this.gbxPersonalDetails.Text = "Personal Details";
             // 
-            // lblFirstName
+            // lblIdNumber
             // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(15, 29);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(35, 13);
-            this.lblFirstName.TabIndex = 0;
-            this.lblFirstName.Text = "label1";
+            this.lblIdNumber.AutoSize = true;
+            this.lblIdNumber.Location = new System.Drawing.Point(15, 80);
+            this.lblIdNumber.Name = "lblIdNumber";
+            this.lblIdNumber.Size = new System.Drawing.Size(35, 13);
+            this.lblIdNumber.TabIndex = 2;
+            this.lblIdNumber.Text = "label3";
             // 
             // lblLastName
             // 
@@ -126,14 +127,14 @@ namespace SEN_Project
             this.lblLastName.TabIndex = 1;
             this.lblLastName.Text = "label2";
             // 
-            // lblIdNumber
+            // lblFirstName
             // 
-            this.lblIdNumber.AutoSize = true;
-            this.lblIdNumber.Location = new System.Drawing.Point(15, 80);
-            this.lblIdNumber.Name = "lblIdNumber";
-            this.lblIdNumber.Size = new System.Drawing.Size(35, 13);
-            this.lblIdNumber.TabIndex = 2;
-            this.lblIdNumber.Text = "label3";
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Location = new System.Drawing.Point(15, 29);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(35, 13);
+            this.lblFirstName.TabIndex = 0;
+            this.lblFirstName.Text = "label1";
             // 
             // gbxContactInfo
             // 
@@ -193,11 +194,21 @@ namespace SEN_Project
             this.btnSimulateClient.UseVisualStyleBackColor = true;
             this.btnSimulateClient.Click += new System.EventHandler(this.btnSimulateClient_Click);
             // 
+            // lblAddress
+            // 
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Location = new System.Drawing.Point(385, 24);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(100, 13);
+            this.lblAddress.TabIndex = 9;
+            this.lblAddress.Text = "Address Information";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1111, 696);
+            this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.btnSimulateClient);
             this.Controls.Add(this.rtxtAddress);
             this.Controls.Add(this.lblClientID);
@@ -237,6 +248,7 @@ namespace SEN_Project
         private System.Windows.Forms.Label lblClientID;
         private System.Windows.Forms.RichTextBox rtxtAddress;
         private System.Windows.Forms.Button btnSimulateClient;
+        private System.Windows.Forms.Label lblAddress;
     }
 }
 

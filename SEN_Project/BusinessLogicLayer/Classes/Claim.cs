@@ -17,7 +17,7 @@ namespace SEN_Project.BusinessLogicLayer
 
         ClaimStatus status;
         Client client;
-        List<ClinicalProcedure> procedures;
+        ClinicalProcedure procedure;
 
         public ClaimStatus Status {
             get { return status; }
@@ -27,9 +27,9 @@ namespace SEN_Project.BusinessLogicLayer
             get { return client; }
             set { client = value; }
         }
-        public List<ClinicalProcedure> Procedures {
-            get { return procedures; }
-            set { procedures = value; }
+        public ClinicalProcedure Procedure {
+            get { return procedure; }
+            set { procedure = value; }
         }
     }
 }

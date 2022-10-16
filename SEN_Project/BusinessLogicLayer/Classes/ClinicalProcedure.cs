@@ -8,21 +8,27 @@ namespace SEN_Project.BusinessLogicLayer
 {
     public class ClinicalProcedure
     {
-        List<MedicalCondition> conditions;
-        List<Treatment> proposedTreatments;
+        MedicalCondition condition;
+        Treatment proposedTreatment;
         MedicalServiceProvider facility;
+        MedicalPackage package;
 
-        public List<MedicalCondition> Conditions {
-            get { return conditions; }
-            set { conditions = value; }
+        public MedicalCondition Condition {
+            get { return condition; }
+            set { condition = value; }
         }
-        public List<Treatment> ProposedTreatments {
-            get { return proposedTreatments; }
-            set { proposedTreatments = value; }
+        public Treatment ProposedTreatment {
+            get { return proposedTreatment; }
+            set { proposedTreatment = value; }
         }
         public MedicalServiceProvider Facility {
             get { return facility; }
             set { facility = value; }
+        }
+        public MedicalPackage Package
+        {
+            get { return package; }
+            set { package = value; }
         }
     }
 }

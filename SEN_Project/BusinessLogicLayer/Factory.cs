@@ -56,22 +56,23 @@ namespace SEN_Project.BusinessLogicLayer
             return CreateCall(StartTime, EndTime);
         }
 
-        public  static  Claim   CreateClaim (Client _Client,List<ClinicalProcedure> Procedures,Claim.ClaimStatus Status = Claim.ClaimStatus.Pending)
+        public  static  Claim   CreateClaim (Client _Client,ClinicalProcedure Procedure,Claim.ClaimStatus Status = Claim.ClaimStatus.Pending)
         {
             Claim Result = new Claim();
             Result.MyClient = _Client;
-            Result.Procedures = Procedures;
+            Result.Procedure = Procedure;
             Result.Status = Status;
 
             return Result;
         }
     
-        public static ClinicalProcedure   CreateClinicalProcedure (List<MedicalCondition> Conditions,List<Treatment> ProposedTreatments,MedicalServiceProvider Facility)
+        public static ClinicalProcedure   CreateClinicalProcedure (MedicalCondition Condition,Treatment ProposedTreatment,MedicalServiceProvider Facility,MedicalPackage    Package)
         {
             ClinicalProcedure Result = new ClinicalProcedure();
-            Result.Conditions = Conditions;
-            Result.ProposedTreatments = ProposedTreatments;
+            Result.Condition = Condition;
+            Result.ProposedTreatment = ProposedTreatment;
             Result.Facility = Facility;
+            Result.Package = Package;
 
             return Result;
         }

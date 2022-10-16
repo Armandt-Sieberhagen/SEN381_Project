@@ -32,7 +32,7 @@ namespace SEN_Project.PresentationLayer
             set
             {
                 btnAddRecord.Enabled = value != null ? value.AddForm != null : false;
-                btnDeleteRecord.Enabled = value != null ? value.DeleteForm != null : false;
+                btnDeleteRecord.Enabled = true;//value != null ? value.DeleteForm != null : false;
                 btnSearchRecord.Enabled = value != null ? value.SearchForm != null : false;
                 btnUpdateRecord.Enabled = value != null ? value.UpdateForm != null : false;
                 currentOptions = value;
@@ -78,6 +78,7 @@ namespace SEN_Project.PresentationLayer
 
                 CurrentOptions.AddForm.Show();
             }
+            RefreshDB();
         }
 
         private void cbxTable_SelectedIndexChanged(object sender, EventArgs e)
@@ -146,6 +147,85 @@ namespace SEN_Project.PresentationLayer
 
                 CurrentOptions.AddForm.Show();
             }
+            RefreshDB();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            RefreshDB();
+        }
+
+        void    RefreshDB ()
+        {
+            switch (cbxTable.SelectedItem.ToString())
+            {
+                case "Addresses":
+                    CurrentOptions = PresentationController.current.AddressOptions;
+                    dgvDatabase.DataSource = DatabaseController.current.GetSource("tbl_Addresses");
+                    break;
+                case "Conditions":
+                    CurrentOptions = PresentationController.current.ConditionsOptions;
+                    dgvDatabase.DataSource = DatabaseController.current.GetSource("tbl_Conditions");
+                    break;
+                case "Service Providers":
+                    CurrentOptions = PresentationController.current.ProvidersOptions;
+                    dgvDatabase.DataSource = DatabaseController.current.GetSource("tbl_Service_Providers");
+                    break;
+                case "Treatments":
+                    CurrentOptions = PresentationController.current.TreatmentsOptions;
+                    dgvDatabase.DataSource = DatabaseController.current.GetSource("tbl_Treatments");
+                    break;
+                case "Packages":
+                    CurrentOptions = PresentationController.current.PackagesOptions;
+                    dgvDatabase.DataSource = DatabaseController.current.GetSource("tbl_Packages");
+                    break;
+                case "Policy Data":
+                    CurrentOptions = PresentationController.current.PolicyDataOptions;
+                    dgvDatabase.DataSource = DatabaseController.current.GetSource("tbl_Policy_Data");
+                    break;
+                default:
+                    CurrentOptions = null;
+                    break;
+            }
+        }
+
+        private void btnDeleteRecord_Click(object sender, EventArgs e)
+        {
+            if (dgvDatabase.SelectedRows.Count>0)
+            {
+                if (MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    switch (cbxTable.SelectedItem.ToString())
+                    {
+                        case "Addresses":
+                            string Street = dgvDatabase.SelectedRows[0].Cells[1].Value.ToString();
+                            string City = dgvDatabase.SelectedRows[0].Cells[2].Value.ToString();
+                            string Postal = dgvDatabase.SelectedRows[0].Cells[3].Value.ToString();
+                            string Province = dgvDatabase.SelectedRows[0].Cells[4].Value.ToString();
+                            Address _add = Factory.CreateAddress(Street, City, Province, Postal);
+                            BusinessLogic.current.Delete(_add);
+                            break;
+                        case "Conditions":
+
+                            break;
+                        case "Service Providers":
+
+                            break;
+                        case "Treatments":
+
+                            break;
+                        case "Packages":
+
+                            break;
+                        case "Policy Data":
+
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+            RefreshDB();
         }
     }
 }
