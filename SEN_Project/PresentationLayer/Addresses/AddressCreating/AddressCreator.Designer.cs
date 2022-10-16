@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.txtStreet = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtPostalCode = new System.Windows.Forms.TextBox();
             this.cbxProvince = new System.Windows.Forms.ComboBox();
             this.cbxCity = new System.Windows.Forms.ComboBox();
@@ -49,11 +47,6 @@
             this.txtStreet.Size = new System.Drawing.Size(100, 20);
             this.txtStreet.TabIndex = 0;
             this.txtStreet.TextChanged += new System.EventHandler(this.txtStreet_TextChanged);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // txtPostalCode
             // 
@@ -165,7 +158,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtStreet;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TextBox txtPostalCode;
         private System.Windows.Forms.ComboBox cbxProvince;
         private System.Windows.Forms.ComboBox cbxCity;

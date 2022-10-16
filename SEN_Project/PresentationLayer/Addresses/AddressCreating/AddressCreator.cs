@@ -12,7 +12,7 @@ using SEN_Project.BusinessLogicLayer;
 
 namespace SEN_Project.PresentationLayer.Addresses.AddressCreator
 {
-    public partial class AddressCreator : Form
+    public partial class AddressCreator : TableForm
     {
         public static AddressCreator current;
         public AddressCreator()
@@ -111,6 +111,19 @@ namespace SEN_Project.PresentationLayer.Addresses.AddressCreator
         private void cbxCity_SelectedIndexChanged(object sender, EventArgs e)
         {
             QuickValidate();
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        public  override    void    Reset   ()
+        {
+            txtStreet.Clear();
+            txtPostalCode.Clear();
+            cbxProvince.SelectedIndex = -1;
+            cbxCity.SelectedIndex = -1;
         }
     }
 }

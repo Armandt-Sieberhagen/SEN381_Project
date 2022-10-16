@@ -38,3 +38,6 @@ C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Projec
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Forms.ClientOptions.ChangeList.resources
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Addresses.AddressCreator.AddressCreator.resources
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Addresses.AddressSelector.AddressSelector.resources
+C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.PolicyData.frmPolicyDataAddEdit.resources
+C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Treatments.frmTreatmentAddEdit.resources
+C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.TableForm.resources

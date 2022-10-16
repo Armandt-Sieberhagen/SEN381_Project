@@ -36,6 +36,8 @@ namespace SEN_Project.PresentationLayer
             this.btnSearchRecord = new System.Windows.Forms.Button();
             this.cbxTable = new System.Windows.Forms.ComboBox();
             this.lblTable = new System.Windows.Forms.Label();
+            this.dgvDatabase = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatabase)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClientCenter
@@ -75,6 +77,7 @@ namespace SEN_Project.PresentationLayer
             this.btnUpdateRecord.TabIndex = 3;
             this.btnUpdateRecord.Text = "Update Record";
             this.btnUpdateRecord.UseVisualStyleBackColor = true;
+            this.btnUpdateRecord.Click += new System.EventHandler(this.btnUpdateRecord_Click);
             // 
             // btnSearchRecord
             // 
@@ -110,11 +113,20 @@ namespace SEN_Project.PresentationLayer
             this.lblTable.TabIndex = 6;
             this.lblTable.Text = "Table:";
             // 
+            // dgvDatabase
+            // 
+            this.dgvDatabase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatabase.Location = new System.Drawing.Point(12, 127);
+            this.dgvDatabase.Name = "dgvDatabase";
+            this.dgvDatabase.Size = new System.Drawing.Size(1074, 439);
+            this.dgvDatabase.TabIndex = 7;
+            // 
             // DatabaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1098, 578);
+            this.Controls.Add(this.dgvDatabase);
             this.Controls.Add(this.lblTable);
             this.Controls.Add(this.cbxTable);
             this.Controls.Add(this.btnSearchRecord);
@@ -124,6 +136,7 @@ namespace SEN_Project.PresentationLayer
             this.Controls.Add(this.btnClientCenter);
             this.Name = "DatabaseForm";
             this.Text = "DatabaseForm";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatabase)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,5 +151,6 @@ namespace SEN_Project.PresentationLayer
         private System.Windows.Forms.Button btnSearchRecord;
         private System.Windows.Forms.ComboBox cbxTable;
         private System.Windows.Forms.Label lblTable;
+        private System.Windows.Forms.DataGridView dgvDatabase;
     }
 }

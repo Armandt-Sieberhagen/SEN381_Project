@@ -9,9 +9,9 @@ namespace SEN_Project.PresentationLayer
 {
     public class TableOptions
     {
-        public Form AddForm;
-        public Form DeleteForm;
-        public Form UpdateForm;
-        public Form SearchForm;
+        public TableForm AddForm;
+        public TableForm DeleteForm;
+        public TableForm UpdateForm;
+        public TableForm SearchForm;
     }
 }

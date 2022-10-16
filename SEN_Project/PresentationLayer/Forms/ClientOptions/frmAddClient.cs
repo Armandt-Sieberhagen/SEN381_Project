@@ -21,6 +21,8 @@ namespace SEN_Project.PresentationLayer.Forms.ClientOptions
             InitializeComponent();
         }
         ChangeList CurrentChangeList;
+        public EmptyVoid CancelCallback;
+        public ClientVoid ConfirmCallback;
 
         bool FlagFirstName
         {
@@ -166,13 +168,12 @@ namespace SEN_Project.PresentationLayer.Forms.ClientOptions
             string ID = txtID.Text.Trim();
             string PhoneNumber = txtPhoneNumber.Text.Trim();
             string Email = txtEmail.Text.Trim();
-            BusinessLogic.current.CreateClient(FirstName, LastName, ID, PhoneNumber, SelectedPolicies, Perscriptions, address,Email);
-            this.Hide();
+            ConfirmCallback.Invoke(BusinessLogic.current.CreateClient(FirstName, LastName, ID, PhoneNumber, SelectedPolicies, Perscriptions, address, Email));
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            CancelCallback.Invoke();
         }
 
         public  void    QuickValidation ()
@@ -272,7 +273,14 @@ namespace SEN_Project.PresentationLayer.Forms.ClientOptions
         public  void Reset ()
         {
             address = null;
-            SelectedPolicies.Clear();
+            if (SelectedPolicies!=null)
+            {
+                SelectedPolicies.Clear();
+            }
+            else
+            {
+                SelectedPolicies = new List<string>();
+            }
             txtFirstName.Clear();
             txtLastName.Clear();
             txtID.Clear();

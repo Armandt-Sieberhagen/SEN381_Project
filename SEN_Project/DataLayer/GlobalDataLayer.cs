@@ -41,52 +41,52 @@ namespace SEN_Project.DataLayer
             AllTreatments = new List<Treatment>();
             AllPolicyData = new List<PolicyData>();
 
-            string[] PolicyLines = FileManager.ReadFromFile(FileManager.PolicyDataFileName);
-            PolicyReadStage stage = PolicyReadStage.NotSet;
-            string Description = "";
-            float Price = 0;
-            string Temp = "";
-            List<Treatment> Treatments = new List<Treatment>();
-            foreach (string Line in PolicyLines)
-            {
-                switch (stage)
-                {
-                    case PolicyReadStage.NotSet:
-                        if (Line.Trim() == "{")
-                        {
-                            stage = PolicyReadStage.Name;
-                        }
-                        break;
-                    case PolicyReadStage.Name:
-                        Description = Line.Trim();
-                        stage = PolicyReadStage.Price;
-                        break;
-                    case PolicyReadStage.Price:
-                        Temp = Line.Trim();
-                        Price = float.Parse(Temp);//Add something for if this fails
-                        stage = PolicyReadStage.Treatments;
-                        break;
-                    case PolicyReadStage.Treatments:
-                        Temp = Line.Trim();
-                        if (Line.Trim() != "[")
-                        {
-                            if (Line.Trim() == "]")
-                            {
-                                stage = PolicyReadStage.NotSet;
-                                AllPolicyData.Add(Factory.CreatePolicyData(Description, Price, Treatments));
-                                Treatments.Clear();
-                            }
-                            else
-                            {
-                                Temp = Line.Trim();
-                                Treatments.Add(GetTreatmentByDescription(Temp));
-                            }
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }
+            //string[] PolicyLines = FileManager.ReadFromFile(FileManager.PolicyDataFileName);
+            //PolicyReadStage stage = PolicyReadStage.NotSet;
+            //string Description = "";
+            //float Price = 0;
+            //string Temp = "";
+            //List<Treatment> Treatments = new List<Treatment>();
+            //foreach (string Line in PolicyLines)
+            //{
+            //    switch (stage)
+            //    {
+            //        case PolicyReadStage.NotSet:
+            //            if (Line.Trim() == "{")
+            //            {
+            //                stage = PolicyReadStage.Name;
+            //            }
+            //            break;
+            //        case PolicyReadStage.Name:
+            //            Description = Line.Trim();
+            //            stage = PolicyReadStage.Price;
+            //            break;
+            //        case PolicyReadStage.Price:
+            //            Temp = Line.Trim();
+            //            Price = float.Parse(Temp);//Add something for if this fails
+            //            stage = PolicyReadStage.Treatments;
+            //            break;
+            //        case PolicyReadStage.Treatments:
+            //            Temp = Line.Trim();
+            //            if (Line.Trim() != "[")
+            //            {
+            //                if (Line.Trim() == "]")
+            //                {
+            //                    stage = PolicyReadStage.NotSet;
+            //                    AllPolicyData.Add(Factory.CreatePolicyData(Description, Price, Treatments));
+            //                    Treatments.Clear();
+            //                }
+            //                else
+            //                {
+            //                    Temp = Line.Trim();
+            //                    Treatments.Add(GetTreatmentByDescription(Temp));
+            //                }
+            //            }
+            //            break;
+            //        default:
+            //            break;
+            //    }
+            //}
         }
 
         public Treatment GetTreatmentByDescription(string Description)
