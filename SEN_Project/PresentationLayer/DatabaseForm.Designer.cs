@@ -122,6 +122,7 @@ namespace SEN_Project.PresentationLayer
             this.dgvDatabase.Name = "dgvDatabase";
             this.dgvDatabase.Size = new System.Drawing.Size(1074, 439);
             this.dgvDatabase.TabIndex = 7;
+            this.dgvDatabase.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatabase_CellContentClick);
             // 
             // btnRefresh
             // 

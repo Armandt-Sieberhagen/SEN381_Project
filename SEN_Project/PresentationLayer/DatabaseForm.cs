@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SEN_Project.DataLayer;
 using SEN_Project.BusinessLogicLayer;
+using SEN_Project.DataAccessLayer;
 using SEN_Project.PresentationLayer.Treatments;
 using SEN_Project.PresentationLayer.Addresses.AddressCreator;
 
@@ -226,6 +227,11 @@ namespace SEN_Project.PresentationLayer
                 }
             }
             RefreshDB();
+        }
+
+        private void dgvDatabase_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

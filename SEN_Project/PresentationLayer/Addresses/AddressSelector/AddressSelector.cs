@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SEN_Project.BusinessLogicLayer;
+using SEN_Project.DataAccessLayer;
 
 namespace SEN_Project.PresentationLayer.Addresses.AddressSelector
 {
@@ -27,6 +28,10 @@ namespace SEN_Project.PresentationLayer.Addresses.AddressSelector
             {
                 OnCancel.Invoke();
             }
+
+            string Street = "adbuia";
+            string City = "adwuh";
+            DatabaseAccess.current.SearchIndex(Factory.CreateAddress(Street,City));
         }
     }
 }

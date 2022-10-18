@@ -76,7 +76,7 @@ namespace SEN_Project.DataAccessLayer
         public void Add(Client _Client)
         {
             int Index = SearchIndex(_Client);
-            if (Index!=-1)
+            if (Index != -1)
             {
                 PresentationController.current.ShowError("Client is already in database");
                 return;
@@ -107,10 +107,10 @@ namespace SEN_Project.DataAccessLayer
                 return;
             }
             string Command = "INSERT INTO tbl_Procedures (Condition_ID,Service_Provider,Proposed_Treatment,Medical_Package) VALUES ('";
-                Command += SearchIndex(_Procedure.Condition) + "','";
-                Command += SearchIndex(_Procedure.Facility) + "','";
-                Command += SearchIndex(_Procedure.ProposedTreatment) + "','";
-                Command += SearchIndex(_Procedure.Package) + "')";
+            Command += SearchIndex(_Procedure.Condition) + "','";
+            Command += SearchIndex(_Procedure.Facility) + "','";
+            Command += SearchIndex(_Procedure.ProposedTreatment) + "','";
+            Command += SearchIndex(_Procedure.Package) + "')";
             if (DatabaseController.current.ExecuteCommand(Command))
             {
                 PresentationController.current.ShowSuccess("Procedure has been added!");
@@ -144,7 +144,7 @@ namespace SEN_Project.DataAccessLayer
                 PresentationController.current.ShowError("Policy is already in database");
                 return;
             }
-            string Command = "INSERT INTO tbl_Individual_Policies (Data_ID,Client_ID) VALUES ('" + SearchIndex(_Policy.DataRef)+"','"+SearchIndex(_Policy.Member) + "')";
+            string Command = "INSERT INTO tbl_Individual_Policies (Data_ID,Client_ID) VALUES ('" + SearchIndex(_Policy.DataRef) + "','" + SearchIndex(_Policy.Member) + "')";
             if (DatabaseController.current.ExecuteCommand(Command))
             {
                 PresentationController.current.ShowSuccess("Policy has been added!");
@@ -259,26 +259,144 @@ namespace SEN_Project.DataAccessLayer
             }
         }
 
-
-
-        public  void    Delete  (Address _Address)
+        public void Delete(Address _Address)
         {
             int Index = SearchIndex(_Address);
-            if (Index>-1)
+            if (Index > -1)
             {
                 string Command = "DELETE FROM tbl_Addresses WHERE ID='" + Index.ToString() + "'";
                 DatabaseController.current.ExecuteCommand(Command);
                 PresentationController.current.ShowSuccess("Record deleted");
             }
         }
+        public void Delete(Call _Call)
+        {
+            int Index = SearchIndex(_Call);
+            if (Index > -1)
+            {
+                string Command = "DELETE FROM tbl_Calls WHERE ID='" + Index.ToString() + "'";
+                DatabaseController.current.ExecuteCommand(Command);
+                PresentationController.current.ShowSuccess("Record deleted");
+            }
+        }
+        public void Delete(Claim _Claim)
+        {
+            int Index = SearchIndex(_Claim);
+            if (Index > -1)
+            {
+                string Command = "DELETE FROM tbl_Claims WHERE ID='" + Index.ToString() + "'";
+                DatabaseController.current.ExecuteCommand(Command);
+                PresentationController.current.ShowSuccess("Record deleted");
+            }
+        }
+        public void Delete(Client _Client)
+        {
+            int Index = SearchIndex(_Client);
+            if (Index > -1)
+            {
+                string Command = "DELETE FROM tbl_Clients WHERE Client_ID='" + Index.ToString() + "'";
+                DatabaseController.current.ExecuteCommand(Command);
+                PresentationController.current.ShowSuccess("Record deleted");
+            }
+        }
+        public void Delete(ClinicalProcedure _Procedure)
+        {
+            int Index = SearchIndex(_Procedure);
+            if (Index > -1)
+            {
+                string Command = "DELETE FROM tbl_Procedures WHERE ID='" + Index.ToString() + "'";
+                DatabaseController.current.ExecuteCommand(Command);
+                PresentationController.current.ShowSuccess("Record deleted");
+            }
+        }
+        public void Delete(FamilyPolicy _Policy)
+        {
+            int Index = SearchIndex(_Policy);
+            if (Index > -1)
+            {
+                string Command = "DELETE FROM tbl_Family_Policies WHERE ID='" + Index.ToString() + "'";
+                DatabaseController.current.ExecuteCommand(Command);
+                PresentationController.current.ShowSuccess("Record deleted");
+            }
+        }
+        public void Delete(IndividualPolicy _Policy)
+        {
+            int Index = SearchIndex(_Policy);
+            if (Index > -1)
+            {
+                string Command = "DELETE FROM tbl_Individual_Policies WHERE ID='" + Index.ToString() + "'";
+                DatabaseController.current.ExecuteCommand(Command);
+                PresentationController.current.ShowSuccess("Record deleted");
+            }
+        }
+        public void Delete(MedicalCondition _Condition)
+        {
+            int Index = SearchIndex(_Condition);
+            if (Index > -1)
+            {
+                string Command = "DELETE FROM tbl_Conditions WHERE ID='" + Index.ToString() + "'";
+                DatabaseController.current.ExecuteCommand(Command);
+                PresentationController.current.ShowSuccess("Record deleted");
+            }
+        }
+        public void Delete(MedicalPackage _Package)
+        {
+            int Index = SearchIndex(_Package);
+            if (Index > -1)
+            {
+                string Command = "DELETE FROM tbl_Packages WHERE ID='" + Index.ToString() + "'";
+                DatabaseController.current.ExecuteCommand(Command);
+                PresentationController.current.ShowSuccess("Record deleted");
+            }
+        }
+        public void Delete(MedicalServiceProvider _Facility)
+        {
+            int Index = SearchIndex(_Facility);
+            if (Index > -1)
+            {
+                string Command = "DELETE FROM tbl_Service_Providers WHERE ID='" + Index.ToString() + "'";
+                DatabaseController.current.ExecuteCommand(Command);
+                PresentationController.current.ShowSuccess("Record deleted");
+            }
+        }
+        public void Delete(PolicyData _Data)
+        {
+            int Index = SearchIndex(_Data);
+            if (Index > -1)
+            {
+                string Command = "DELETE FROM tbl_Policy_Data WHERE ID='" + Index.ToString() + "'";
+                DatabaseController.current.ExecuteCommand(Command);
+                PresentationController.current.ShowSuccess("Record deleted");
+            }
+        }
+        public void Delete(PolicyMember _Member)
+        {
+            int Index = SearchIndex(_Member);
+            if (Index > -1)
+            {
+                string Command = "DELETE FROM tbl_Policy_Members WHERE ID='" + Index.ToString() + "'";
+                DatabaseController.current.ExecuteCommand(Command);
+                PresentationController.current.ShowSuccess("Record deleted");
+            }
+        }
+        public void Delete(Treatment _Treatment)
+        {
+            int Index = SearchIndex(_Treatment);
+            if (Index > -1)
+            {
+                string Command = "DELETE FROM tbl_Treatments WHERE ID='" + Index.ToString() + "'";
+                DatabaseController.current.ExecuteCommand(Command);
+                PresentationController.current.ShowSuccess("Record deleted");
+            }
+        }
 
         public DataTable SearchForTable(Address _Address)
-        { 
+        {
             string Command = @"SELECT * FROM tbl_Addresses WHERE ";
             Command += "Street='" + _Address.Street + "' AND ";
             Command += "City='" + _Address.City + "' AND ";
             Command += "Postal_Code='" + _Address.PostalCode + "' AND ";
-            Command += "Province='" + _Address.Province+"'";
+            Command += "Province='" + _Address.Province + "'";
             DataTable DT = DatabaseController.current.GetTable(Command);
             return DT;
         }
@@ -376,7 +494,7 @@ namespace SEN_Project.DataAccessLayer
         public DataTable SearchForTable(PolicyMember _Member)
         {
             string Command = @"SELECT * FROM tbl_Policy_Members WHERE ";
-            Command += "MemberRole='" + _Member.Role+ "' AND ";
+            Command += "MemberRole='" + _Member.Role + "' AND ";
             Command += "Client_ID='" + SearchIndex(_Member.Person) + "'";
             DataTable DT = DatabaseController.current.GetTable(Command);
             return DT;
@@ -415,7 +533,7 @@ namespace SEN_Project.DataAccessLayer
         public int SearchIndex(Treatment _Treatment)
         {
             DataTable DT = null;
-            return (DT = SearchForTable(_Treatment)) != null ? (DT.Rows.Count>0 ? int.Parse(DT.Rows[0][0].ToString()) : -1) : -1;
+            return (DT = SearchForTable(_Treatment)) != null ? (DT.Rows.Count > 0 ? int.Parse(DT.Rows[0][0].ToString()) : -1) : -1;
         }
         public int SearchIndex(MedicalCondition _Condition)
         {
