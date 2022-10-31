@@ -52,6 +52,7 @@
     <Compile Include="BusinessLogicLayer\Classes\Claim.cs" />
     <Compile Include="BusinessLogicLayer\Classes\Client.cs" />
     <Compile Include="BusinessLogicLayer\Classes\ClinicalProcedure.cs" />
+    <Compile Include="BusinessLogicLayer\Clipboard.cs" />
     <Compile Include="BusinessLogicLayer\Delegates.cs" />
     <Compile Include="BusinessLogicLayer\Classes\FamilyPolicy.cs" />
     <Compile Include="BusinessLogicLayer\Classes\IndividualPolicy.cs" />
@@ -86,13 +87,85 @@
     <Compile Include="PresentationLayer\Addresses\AddressSelector\AddressSelector.Designer.cs">
       <DependentUpon>AddressSelector.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\CallCentre\frmCallCentre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\CallCentre\frmCallCentre.Designer.cs">
+      <DependentUpon>frmCallCentre.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\ChangeList\ChangeListOptions.cs" />
+    <Compile Include="PresentationLayer\Claims\frmClaim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Claims\frmClaim.Designer.cs">
+      <DependentUpon>frmClaim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Claims\frmViewPastClaims.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Claims\frmViewPastClaims.Designer.cs">
+      <DependentUpon>frmViewPastClaims.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Client\frmClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Client\frmClient.Designer.cs">
+      <DependentUpon>frmClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Client\frmSearchClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Client\frmSearchClient.Designer.cs">
+      <DependentUpon>frmSearchClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Conditions\frmCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Conditions\frmCondition.Designer.cs">
+      <DependentUpon>frmCondition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FamilyPolicies\frmFamilyPolicy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FamilyPolicies\frmFamilyPolicy.Designer.cs">
+      <DependentUpon>frmFamilyPolicy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Forms\ListSearchForm\frmSearchList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Forms\ListSearchForm\frmSearchList.Designer.cs">
+      <DependentUpon>frmSearchList.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\IResetable.cs" />
+    <Compile Include="PresentationLayer\PolicyData\frmPolicyManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\PolicyData\frmPolicyManagement.Designer.cs">
+      <DependentUpon>frmPolicyManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\PolicyData\frmPolicySearch.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PresentationLayer\PolicyData\frmPolicySearch.Designer.cs">
       <DependentUpon>frmPolicySearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\PolicyDetails\frmPolicyDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\PolicyDetails\frmPolicyDetails.Designer.cs">
+      <DependentUpon>frmPolicyDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Procedure\frmProcedure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Procedure\frmProcedure.Designer.cs">
+      <DependentUpon>frmProcedure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\SinglePolicies\frmSinglePolicy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\SinglePolicies\frmSinglePolicy.Designer.cs">
+      <DependentUpon>frmSinglePolicy.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\TableForm.cs">
       <SubType>Form</SubType>
@@ -140,17 +213,50 @@
     <EmbeddedResource Include="PresentationLayer\Addresses\AddressSelector\AddressSelector.resx">
       <DependentUpon>AddressSelector.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\CallCentre\frmCallCentre.resx">
+      <DependentUpon>frmCallCentre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Claims\frmClaim.resx">
+      <DependentUpon>frmClaim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Claims\frmViewPastClaims.resx">
+      <DependentUpon>frmViewPastClaims.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Client\frmClient.resx">
+      <DependentUpon>frmClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Client\frmSearchClient.resx">
+      <DependentUpon>frmSearchClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Conditions\frmCondition.resx">
+      <DependentUpon>frmCondition.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\DatabaseForm.resx">
       <DependentUpon>DatabaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\ChangeList\ChangeList.resx">
       <DependentUpon>ChangeList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FamilyPolicies\frmFamilyPolicy.resx">
+      <DependentUpon>frmFamilyPolicy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Forms\ClientOptions\frmAddClient.resx">
       <DependentUpon>frmAddClient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Forms\ListSearchForm\frmSearchList.resx">
+      <DependentUpon>frmSearchList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\PolicyData\frmPolicyDataAddEdit.resx">
       <DependentUpon>frmPolicyDataAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\PolicyDetails\frmPolicyDetails.resx">
+      <DependentUpon>frmPolicyDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Procedure\frmProcedure.resx">
+      <DependentUpon>frmProcedure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\SinglePolicies\frmSinglePolicy.resx">
+      <DependentUpon>frmSinglePolicy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\TableForm.resx">
       <DependentUpon>TableForm.cs</DependentUpon>

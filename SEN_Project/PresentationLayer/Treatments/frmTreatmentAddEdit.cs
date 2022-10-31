@@ -80,5 +80,10 @@ namespace SEN_Project.PresentationLayer.Treatments
         {
             rtxtDescr.Clear();
         }
+
+        private void lblTreatmentDesc_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

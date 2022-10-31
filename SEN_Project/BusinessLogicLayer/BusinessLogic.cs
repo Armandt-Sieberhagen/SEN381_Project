@@ -54,5 +54,25 @@ namespace SEN_Project.BusinessLogicLayer
             //Not implemented yet
             return null;
         }
+
+        public  List<Client>    GetAllClients   ()
+        {
+            return DatabaseAccess.current.GetAllClients();
+        }
+
+        public  List<Client>    GetClientsByID  (string ID)
+        {
+            return DatabaseAccess.current.GetClientsByID(ID);
+        }
+
+        public List<Client> GetClientsByFirstName(string Name)
+        {
+            return DatabaseAccess.current.GetClientsByFirstName(Name);
+        }
+
+        public List<Client> GetClientsByLastName(string LastName)
+        {
+            return DatabaseAccess.current.GetClientsByLastName(LastName);
+        }
     }
 }

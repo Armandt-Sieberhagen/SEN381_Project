@@ -233,6 +233,11 @@ namespace SEN_Project.PresentationLayer
         {
 
         }
+
+        private void DatabaseForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

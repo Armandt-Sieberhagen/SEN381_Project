@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    public class Client
+    public class Client : IComparable<Client>
     {
         int clientID;
         string firstName;
@@ -75,6 +75,38 @@ namespace SEN_Project.BusinessLogicLayer
         {
             get { return activePerscriptions; }
             set { activePerscriptions = value; }
+        }
+
+        public string ToLine => ClientID + '\t' + FirstName + '\t' + LastName + '\t' + IDNumber;
+
+        public int CompareTo(Client obj)
+        {
+            if (obj==null)
+            {
+                return 1;
+            }
+            return this.ClientID.CompareTo(obj.ClientID);
+        }
+
+        public  int CompareTo   (Client obj, int Mode)
+        {
+            if (obj == null)
+            {
+                return 1;
+            }
+            switch (Mode)
+            {
+                case 0:
+                    return this.FirstName.CompareTo(obj.FirstName);
+                case 1:
+                    return obj.FirstName.CompareTo(this.FirstName);
+                case 2:
+                    return this.LastName.CompareTo(obj.LastName);
+                case 3:
+                    return obj.LastName.CompareTo(this.LastName);
+                default:
+                    return CompareTo(obj);
+            }
         }
     }
 }

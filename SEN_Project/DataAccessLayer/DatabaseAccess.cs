@@ -585,5 +585,47 @@ namespace SEN_Project.DataAccessLayer
             DataTable DT = null;
             return (DT = SearchForTable(_Member)) != null ? (DT.Rows.Count > 0 ? int.Parse(DT.Rows[0][0].ToString()) : -1) : -1;
         }
+
+        public  List<Client>    GetAllClients   ()
+        {
+            //Implement
+            return null;
+        }
+
+        public  List<Client>    GetClientsByID  (string ID)
+        {
+            List<Client> Result = new List<Client>();
+            string Command = "SELECT * FROM tbl_Clients WHERE ClientID LIKE '" + ID + "%'";
+            DataTable DT = DatabaseController.current.GetTable(Command);
+            foreach (DataRow row in DT.Rows)
+            {
+                Result.Add(Factory.CreateClient(row));
+            }
+            return Result;
+        }
+
+        public  List<Client>    GetClientsByFirstName   (string FirstName)
+        {
+            List<Client> Result = new List<Client>();
+            string Command = "SELECT * FROM tbl_Clients WHERE First_Name LIKE '" + FirstName + "%'";
+            DataTable DT = DatabaseController.current.GetTable(Command);
+            foreach (DataRow row in DT.Rows)
+            {
+                Result.Add(Factory.CreateClient(row));
+            }
+            return Result;
+        }
+
+        public List<Client> GetClientsByLastName(string LastName)
+        {
+            List<Client> Result = new List<Client>();
+            string Command = "SELECT * FROM tbl_Clients WHERE Last_Name LIKE '" + LastName + "%'";
+            DataTable DT = DatabaseController.current.GetTable(Command);
+            foreach (DataRow row in DT.Rows)
+            {
+                Result.Add(Factory.CreateClient(row));
+            }
+            return Result;
+        }
     }
 }

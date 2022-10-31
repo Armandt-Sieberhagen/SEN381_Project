@@ -150,6 +150,7 @@ namespace SEN_Project.PresentationLayer
             this.Controls.Add(this.btnClientCenter);
             this.Name = "DatabaseForm";
             this.Text = "DatabaseForm";
+            this.Load += new System.EventHandler(this.DatabaseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatabase)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

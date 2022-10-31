@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    public  class PolicyData
+    public class PolicyData
     {
         string policyName;
         string description;
         float price;
         List<Treatment> treatmentsCovered;
-        public string Description {
+        bool available;
+        public string Description
+        {
             get { return description; }
             set { description = value; }
         }
@@ -21,17 +23,24 @@ namespace SEN_Project.BusinessLogicLayer
             get { return policyName; }
             set { policyName = value; }
         }
-        public  float Price {
+        public float Price
+        {
             get { return price; }
             set { price = value; }
         }
-        public List<Treatment> TreatmentsCovered {
+        public List<Treatment> TreatmentsCovered
+        {
             get { return treatmentsCovered; }
             set { treatmentsCovered = value; }
         }
-
-        public bool CheckTreatment(Treatment _Value) {
+        public bool Available
+        {
+            get { return available; }
+            set { available = value; }
+        }
+        public bool CheckTreatment(Treatment _Value)
+        {
             return TreatmentsCovered.Contains(_Value);
-        }  
+        }
     }
 }

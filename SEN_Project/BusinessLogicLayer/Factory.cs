@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SEN_Project.PresentationLayer.Forms.ClientOptions;
+using SEN_Project.PresentationLayer.Client;
 using System.Data;//For when we want to convert DataRows to Objects, and vice versa
 
 namespace SEN_Project.BusinessLogicLayer
@@ -163,6 +164,25 @@ namespace SEN_Project.BusinessLogicLayer
             return Result;
         }
 
+        public static Client CreateClient(DataRow Row)
+        {
+            Client Result = new Client();
+
+            Result.FirstName = Row[1].ToString();
+            Result.LastName = Row[1].ToString();
+            //Result.CallHistory = GetCa;
+            //Result.Policies = Policies;
+            //Result.IDNumber = ID;
+            //Result.ClientAddress = address;
+            //Result.Email = Email;
+            //Result.PhoneNumber = PhoneNumber;
+            //Result.ClaimsHistory = claims;
+            //Result.ClinicalHistory = Procedures;
+            //Result.ActivePerscriptions = ActivePerscriptions;
+
+            return Result;
+        }
+
         static  frmAddClient    ClientForm;
         public  static  frmAddClient GetAddClientForm    ()
         {
@@ -175,6 +195,19 @@ namespace SEN_Project.BusinessLogicLayer
                 ClientForm = new frmAddClient();
             }
             return ClientForm;
+        }
+        static frmSearchClient SearchClient;
+        public static frmSearchClient GetSearchClient()
+        {
+            if (SearchClient != null)
+            {
+                SearchClient.Reset();
+            }
+            else
+            {
+                SearchClient = new frmSearchClient();
+            }
+            return SearchClient;
         }
 
         public  static  Client  GetRandomClient ()
