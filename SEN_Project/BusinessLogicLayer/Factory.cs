@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SEN_Project.PresentationLayer.Forms.ClientOptions;
-using SEN_Project.PresentationLayer.Client;
+using SEN_Project.PresentationLayer.Clients;
+using SEN_Project.PresentationLayer.Claims;
 using System.Data;//For when we want to convert DataRows to Objects, and vice versa
+using SEN_Project.PresentationLayer.Forms.ListSearchForm;
 
 namespace SEN_Project.BusinessLogicLayer
 {
@@ -208,6 +210,45 @@ namespace SEN_Project.BusinessLogicLayer
                 SearchClient = new frmSearchClient();
             }
             return SearchClient;
+        }
+        static frmClaim ClaimForm;
+        public static frmClaim GetClaimForm()
+        {
+            if (ClaimForm != null)
+            {
+                ClaimForm.Reset();
+            }
+            else
+            {
+                ClaimForm = new frmClaim();
+            }
+            return ClaimForm;
+        }
+        static frmViewPastClaims PastClaimsForm;
+        public static frmViewPastClaims GetPastClaimsForm()
+        {
+            if (PastClaimsForm != null)
+            {
+                PastClaimsForm.Reset();
+            }
+            else
+            {
+                PastClaimsForm = new frmViewPastClaims();
+            }
+            return PastClaimsForm;
+        }
+        static frmSearchList ListSearch;
+        public  static  frmSearchList   GetSearchList   ()
+        {
+            if (ListSearch!=null)
+            {
+                ListSearch.Reset();
+            }
+            else
+            {
+                ListSearch = new frmSearchList();
+            }
+            return ListSearch();
         }
 
         public  static  Client  GetRandomClient ()

@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SEN_Project.PresentationLayer.Client
+namespace SEN_Project.PresentationLayer.Clients
 {
     public partial class frmClient : Form
     {
         public frmClient()
         {
             InitializeComponent();
+        }
+
+        private void frmClient_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

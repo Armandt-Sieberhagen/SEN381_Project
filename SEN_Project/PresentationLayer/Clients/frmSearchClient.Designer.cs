@@ -1,4 +1,4 @@
-﻿namespace SEN_Project.PresentationLayer.Client
+﻿namespace SEN_Project.PresentationLayer.Clients
 {
     partial class frmSearchClient
     {

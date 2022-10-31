@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SEN_Project.BusinessLogicLayer;
 
-namespace SEN_Project.PresentationLayer.Client
+namespace SEN_Project.PresentationLayer.Clients
 {
     public partial class frmSearchClient : TableForm
     {
@@ -20,7 +20,7 @@ namespace SEN_Project.PresentationLayer.Client
         List<SEN_Project.BusinessLogicLayer.Client> CurrentClients;
         public ClientVoid ConfirmCallback;
         public EmptyVoid CancelCallback;
-        SEN_Project.BusinessLogicLayer.Client   SelectedClient  => lbxClients.SelectedIndex>-1 ? CurrentClients[lbxClients.SelectedIndex] : null;
+        Client   SelectedClient  => lbxClients.SelectedIndex>-1 ? CurrentClients[lbxClients.SelectedIndex] : null;
 
         private void frmSearchClient_Load(object sender, EventArgs e)
         {
@@ -29,14 +29,14 @@ namespace SEN_Project.PresentationLayer.Client
 
         private void txtClientID_TextChanged(object sender, EventArgs e)
         {
-            List<SEN_Project.BusinessLogicLayer.Client> Clients = BusinessLogic.current.GetClientsByID(txtClientID.Text);
+            List<Client> Clients = BusinessLogic.current.GetClientsByID(txtClientID.Text);
             SetItems(Clients);
         }
 
-        void    SetItems    (List<SEN_Project.BusinessLogicLayer.Client>   Clients)
+        void    SetItems    (List<Client>   Clients)
         {
             CurrentClients = Clients;
-            foreach (SEN_Project.BusinessLogicLayer.Client client in Clients)
+            foreach (Client client in Clients)
             {
                 lbxClients.Items.Add(client.ToLine);
             }
@@ -44,13 +44,13 @@ namespace SEN_Project.PresentationLayer.Client
 
         private void txtFirstName_TextChanged(object sender, EventArgs e)
         {
-            List<SEN_Project.BusinessLogicLayer.Client> Clients = BusinessLogic.current.GetClientsByFirstName(txtFirstName.Text);
+            List<Client> Clients = BusinessLogic.current.GetClientsByFirstName(txtFirstName.Text);
             SetItems(Clients);
         }
 
         private void txtLastName_TextChanged(object sender, EventArgs e)
         {
-            List<SEN_Project.BusinessLogicLayer.Client> Clients = BusinessLogic.current.GetClientsByLastName(txtLastName.Text);
+            List<Client> Clients = BusinessLogic.current.GetClientsByLastName(txtLastName.Text);
             SetItems(Clients);
         }
 
@@ -101,7 +101,7 @@ namespace SEN_Project.PresentationLayer.Client
             btnConfirm.Enabled = false;
             btnCopyClient.Enabled = false;
 
-            List<SEN_Project.BusinessLogicLayer.Client> AllClients = BusinessLogic.current.GetAllClients();//Fix this. Why it give error?
+            List<Client> AllClients = BusinessLogic.current.GetAllClients();//Fix this. Why it give error?
             SetItems(AllClients);
         }
 

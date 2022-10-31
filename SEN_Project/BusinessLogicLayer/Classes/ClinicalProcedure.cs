@@ -12,6 +12,8 @@ namespace SEN_Project.BusinessLogicLayer
         Treatment proposedTreatment;
         MedicalServiceProvider facility;
         MedicalPackage package;
+        Client patient;
+        int id;
 
         public MedicalCondition Condition {
             get { return condition; }
@@ -29,6 +31,16 @@ namespace SEN_Project.BusinessLogicLayer
         {
             get { return package; }
             set { package = value; }
+        }
+        public Client Patient
+        {
+            get { return patient; }
+            set { patient = value; }
+        }
+        public int ID
+        {
+            get { return id; }
+            set { id = value; }
         }
     }
 }

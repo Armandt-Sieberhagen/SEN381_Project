@@ -45,13 +45,13 @@ namespace SEN_Project.BusinessLogicLayer
         }
         public string IDNumber {
             get { return idNumber; }
-            set { idNumber = value;}
+            set { idNumber = value; }
         }
         public Address ClientAddress {
             get { return address; }
             set { address = value; }
         }
-        public  string  Email
+        public string Email
         {
             get { return email; }
             set { email = value; }
@@ -78,6 +78,8 @@ namespace SEN_Project.BusinessLogicLayer
         }
 
         public string ToLine => ClientID + '\t' + FirstName + '\t' + LastName + '\t' + IDNumber;
+        public string PersonalDetails => $"Client ID: \t " + ClientID + " \n First Name: \t " + FirstName + " \t Last Name: " + LastName + " \n ID Number: \t" + IDNumber;
+        public string AddressDetails => ClientAddress.ToString();
 
         public int CompareTo(Client obj)
         {
@@ -106,6 +108,34 @@ namespace SEN_Project.BusinessLogicLayer
                     return obj.LastName.CompareTo(this.LastName);
                 default:
                     return CompareTo(obj);
+            }
+        }
+
+        public  void    AddClaim    (Claim  NewClaim)
+        {
+            if (!ClaimsHistory.Contains(NewClaim))
+            {
+                ClaimsHistory.Add(NewClaim);
+            }
+        }
+
+        public  void    ModifyClaim (Claim  _Claim)
+        {
+            foreach (Claim claim in ClaimsHistory)
+            {
+                if (claim.ID==_Claim.ID)
+                {
+                    claim.Set(_Claim);
+                    return;
+                }
+            }
+        }
+
+        public  void    RemoveClaim (int    Index)
+        {
+            if (Index>-1 && Index<ClaimsHistory.Count)
+            {
+                ClaimsHistory.RemoveAt(Index);
             }
         }
     }

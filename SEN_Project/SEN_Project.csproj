@@ -106,16 +106,16 @@
     <Compile Include="PresentationLayer\Claims\frmViewPastClaims.Designer.cs">
       <DependentUpon>frmViewPastClaims.cs</DependentUpon>
     </Compile>
-    <Compile Include="PresentationLayer\Client\frmClient.cs">
+    <Compile Include="PresentationLayer\Clients\frmClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PresentationLayer\Client\frmClient.Designer.cs">
+    <Compile Include="PresentationLayer\Clients\frmClient.Designer.cs">
       <DependentUpon>frmClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="PresentationLayer\Client\frmSearchClient.cs">
+    <Compile Include="PresentationLayer\Clients\frmSearchClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PresentationLayer\Client\frmSearchClient.Designer.cs">
+    <Compile Include="PresentationLayer\Clients\frmSearchClient.Designer.cs">
       <DependentUpon>frmSearchClient.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\Conditions\frmCondition.cs">
@@ -222,10 +222,10 @@
     <EmbeddedResource Include="PresentationLayer\Claims\frmViewPastClaims.resx">
       <DependentUpon>frmViewPastClaims.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PresentationLayer\Client\frmClient.resx">
+    <EmbeddedResource Include="PresentationLayer\Clients\frmClient.resx">
       <DependentUpon>frmClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PresentationLayer\Client\frmSearchClient.resx">
+    <EmbeddedResource Include="PresentationLayer\Clients\frmSearchClient.resx">
       <DependentUpon>frmSearchClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Conditions\frmCondition.resx">

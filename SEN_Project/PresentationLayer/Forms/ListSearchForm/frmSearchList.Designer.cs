@@ -40,6 +40,7 @@
             this.lbxItems.Name = "lbxItems";
             this.lbxItems.Size = new System.Drawing.Size(626, 290);
             this.lbxItems.TabIndex = 0;
+            this.lbxItems.SelectedIndexChanged += new System.EventHandler(this.lbxItems_SelectedIndexChanged);
             // 
             // btnConfirm
             // 
@@ -49,6 +50,7 @@
             this.btnConfirm.TabIndex = 1;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnCancel
             // 
@@ -58,6 +60,7 @@
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmSearchList
             // 
@@ -69,6 +72,7 @@
             this.Controls.Add(this.lbxItems);
             this.Name = "frmSearchList";
             this.Text = "frmSearchList";
+            this.Load += new System.EventHandler(this.frmSearchList_Load);
             this.ResumeLayout(false);
 
         }

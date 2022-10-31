@@ -237,6 +237,7 @@
             this.btnConfirm.TabIndex = 1;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnCancel
             // 
@@ -246,6 +247,7 @@
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // lblPrice
             // 
@@ -293,6 +295,7 @@
             this.Controls.Add(this.gbxClaim);
             this.Name = "frmClaim";
             this.Text = "frmClaim";
+            this.Load += new System.EventHandler(this.frmClaim_Load);
             this.gbxClaim.ResumeLayout(false);
             this.gbxClaim.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrice)).EndInit();

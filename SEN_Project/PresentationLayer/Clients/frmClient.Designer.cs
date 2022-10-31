@@ -1,4 +1,4 @@
-﻿namespace SEN_Project.PresentationLayer.Client
+﻿namespace SEN_Project.PresentationLayer.Clients
 {
     partial class frmClient
     {
@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(841, 542);
             this.Name = "frmClient";
             this.Text = "frmClient";
+            this.Load += new System.EventHandler(this.frmClient_Load);
             this.ResumeLayout(false);
 
         }

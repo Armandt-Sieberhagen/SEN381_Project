@@ -189,6 +189,7 @@
             this.btnPasteClient.TabIndex = 7;
             this.btnPasteClient.Text = "P";
             this.btnPasteClient.UseVisualStyleBackColor = true;
+            this.btnPasteClient.Click += new System.EventHandler(this.btnPasteClient_Click);
             // 
             // btnCopyClient
             // 
@@ -198,6 +199,7 @@
             this.btnCopyClient.TabIndex = 6;
             this.btnCopyClient.Text = "C";
             this.btnCopyClient.UseVisualStyleBackColor = true;
+            this.btnCopyClient.Click += new System.EventHandler(this.btnCopyClient_Click);
             // 
             // btnEndCall
             // 
@@ -229,6 +231,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Remove Claim";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnModifyClaim
             // 
@@ -238,6 +241,7 @@
             this.btnModifyClaim.TabIndex = 11;
             this.btnModifyClaim.Text = "Modify Claim";
             this.btnModifyClaim.UseVisualStyleBackColor = true;
+            this.btnModifyClaim.Click += new System.EventHandler(this.btnModifyClaim_Click);
             // 
             // btnViewPastClaims
             // 
@@ -247,6 +251,7 @@
             this.btnViewPastClaims.TabIndex = 10;
             this.btnViewPastClaims.Text = "View past Claims";
             this.btnViewPastClaims.UseVisualStyleBackColor = true;
+            this.btnViewPastClaims.Click += new System.EventHandler(this.btnViewPastClaims_Click);
             // 
             // btnCreateNewClaim
             // 
@@ -256,6 +261,7 @@
             this.btnCreateNewClaim.TabIndex = 9;
             this.btnCreateNewClaim.Text = "Create Claim";
             this.btnCreateNewClaim.UseVisualStyleBackColor = true;
+            this.btnCreateNewClaim.Click += new System.EventHandler(this.btnCreateNewClaim_Click);
             // 
             // gbxPolicyInfo
             // 
