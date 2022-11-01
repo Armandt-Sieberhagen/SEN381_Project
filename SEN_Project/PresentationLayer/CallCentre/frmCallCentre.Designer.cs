@@ -30,17 +30,19 @@
         {
             this.btnSimulateCall = new System.Windows.Forms.Button();
             this.gbxCallDetails = new System.Windows.Forms.GroupBox();
-            this.lblStartTime = new System.Windows.Forms.Label();
-            this.lblEndTime = new System.Windows.Forms.Label();
-            this.btnCopyCallDetails = new System.Windows.Forms.Button();
-            this.btnPasteCall = new System.Windows.Forms.Button();
-            this.rtxtEmployeeDetails = new System.Windows.Forms.RichTextBox();
+            this.btnCreateEmployee = new System.Windows.Forms.Button();
             this.btnSelectEmployee = new System.Windows.Forms.Button();
+            this.rtxtEmployeeDetails = new System.Windows.Forms.RichTextBox();
+            this.btnPasteCall = new System.Windows.Forms.Button();
+            this.btnCopyCallDetails = new System.Windows.Forms.Button();
+            this.lblEndTime = new System.Windows.Forms.Label();
+            this.lblStartTime = new System.Windows.Forms.Label();
             this.gbxClientDetails = new System.Windows.Forms.GroupBox();
-            this.btnSelectClient = new System.Windows.Forms.Button();
-            this.rtxtClientInfo = new System.Windows.Forms.RichTextBox();
+            this.rtxtAddressInfo = new System.Windows.Forms.RichTextBox();
             this.btnPasteClient = new System.Windows.Forms.Button();
             this.btnCopyClient = new System.Windows.Forms.Button();
+            this.rtxtClientInfo = new System.Windows.Forms.RichTextBox();
+            this.btnSelectClient = new System.Windows.Forms.Button();
             this.btnEndCall = new System.Windows.Forms.Button();
             this.gbxClaimOptions = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -48,10 +50,10 @@
             this.btnViewPastClaims = new System.Windows.Forms.Button();
             this.btnCreateNewClaim = new System.Windows.Forms.Button();
             this.gbxPolicyInfo = new System.Windows.Forms.GroupBox();
-            this.rtxtAddressInfo = new System.Windows.Forms.RichTextBox();
-            this.btnChangePolicy = new System.Windows.Forms.Button();
+            this.rtxtPolicyInfo = new System.Windows.Forms.RichTextBox();
             this.btnPasteSelectedPolicy = new System.Windows.Forms.Button();
             this.btnCopySelectedPolicy = new System.Windows.Forms.Button();
+            this.btnChangePolicy = new System.Windows.Forms.Button();
             this.gbxProcedureInfo = new System.Windows.Forms.GroupBox();
             this.btnPasteProcedure = new System.Windows.Forms.Button();
             this.btnCopyProcedure = new System.Windows.Forms.Button();
@@ -60,9 +62,7 @@
             this.btnAddProcedure = new System.Windows.Forms.Button();
             this.lbxProcedures = new System.Windows.Forms.ListBox();
             this.lblCallLength = new System.Windows.Forms.Label();
-            this.rtxtPolicyInfo = new System.Windows.Forms.RichTextBox();
             this.btnCreateNewClient = new System.Windows.Forms.Button();
-            this.btnCreateEmployee = new System.Windows.Forms.Button();
             this.gbxCallDetails.SuspendLayout();
             this.gbxClientDetails.SuspendLayout();
             this.gbxClaimOptions.SuspendLayout();
@@ -96,50 +96,15 @@
             this.gbxCallDetails.TabStop = false;
             this.gbxCallDetails.Text = "Call Details";
             // 
-            // lblStartTime
+            // btnCreateEmployee
             // 
-            this.lblStartTime.AutoSize = true;
-            this.lblStartTime.Location = new System.Drawing.Point(20, 111);
-            this.lblStartTime.Name = "lblStartTime";
-            this.lblStartTime.Size = new System.Drawing.Size(55, 13);
-            this.lblStartTime.TabIndex = 0;
-            this.lblStartTime.Text = "Start Time";
-            // 
-            // lblEndTime
-            // 
-            this.lblEndTime.AutoSize = true;
-            this.lblEndTime.Location = new System.Drawing.Point(20, 140);
-            this.lblEndTime.Name = "lblEndTime";
-            this.lblEndTime.Size = new System.Drawing.Size(52, 13);
-            this.lblEndTime.TabIndex = 1;
-            this.lblEndTime.Text = "End Time";
-            // 
-            // btnCopyCallDetails
-            // 
-            this.btnCopyCallDetails.Location = new System.Drawing.Point(236, 19);
-            this.btnCopyCallDetails.Name = "btnCopyCallDetails";
-            this.btnCopyCallDetails.Size = new System.Drawing.Size(25, 23);
-            this.btnCopyCallDetails.TabIndex = 4;
-            this.btnCopyCallDetails.Text = "C";
-            this.btnCopyCallDetails.UseVisualStyleBackColor = true;
-            // 
-            // btnPasteCall
-            // 
-            this.btnPasteCall.Location = new System.Drawing.Point(265, 19);
-            this.btnPasteCall.Name = "btnPasteCall";
-            this.btnPasteCall.Size = new System.Drawing.Size(25, 23);
-            this.btnPasteCall.TabIndex = 5;
-            this.btnPasteCall.Text = "P";
-            this.btnPasteCall.UseVisualStyleBackColor = true;
-            // 
-            // rtxtEmployeeDetails
-            // 
-            this.rtxtEmployeeDetails.Location = new System.Drawing.Point(23, 19);
-            this.rtxtEmployeeDetails.Name = "rtxtEmployeeDetails";
-            this.rtxtEmployeeDetails.ReadOnly = true;
-            this.rtxtEmployeeDetails.Size = new System.Drawing.Size(118, 71);
-            this.rtxtEmployeeDetails.TabIndex = 6;
-            this.rtxtEmployeeDetails.Text = "";
+            this.btnCreateEmployee.Location = new System.Drawing.Point(147, 38);
+            this.btnCreateEmployee.Name = "btnCreateEmployee";
+            this.btnCreateEmployee.Size = new System.Drawing.Size(75, 23);
+            this.btnCreateEmployee.TabIndex = 8;
+            this.btnCreateEmployee.Text = "Create";
+            this.btnCreateEmployee.UseVisualStyleBackColor = true;
+            this.btnCreateEmployee.Click += new System.EventHandler(this.btnCreateEmployee_Click);
             // 
             // btnSelectEmployee
             // 
@@ -150,6 +115,51 @@
             this.btnSelectEmployee.Text = "Select Employee";
             this.btnSelectEmployee.UseVisualStyleBackColor = true;
             this.btnSelectEmployee.Click += new System.EventHandler(this.btnSelectEmployee_Click);
+            // 
+            // rtxtEmployeeDetails
+            // 
+            this.rtxtEmployeeDetails.Location = new System.Drawing.Point(23, 19);
+            this.rtxtEmployeeDetails.Name = "rtxtEmployeeDetails";
+            this.rtxtEmployeeDetails.ReadOnly = true;
+            this.rtxtEmployeeDetails.Size = new System.Drawing.Size(118, 71);
+            this.rtxtEmployeeDetails.TabIndex = 6;
+            this.rtxtEmployeeDetails.Text = "";
+            // 
+            // btnPasteCall
+            // 
+            this.btnPasteCall.Location = new System.Drawing.Point(265, 19);
+            this.btnPasteCall.Name = "btnPasteCall";
+            this.btnPasteCall.Size = new System.Drawing.Size(25, 23);
+            this.btnPasteCall.TabIndex = 5;
+            this.btnPasteCall.Text = "P";
+            this.btnPasteCall.UseVisualStyleBackColor = true;
+            // 
+            // btnCopyCallDetails
+            // 
+            this.btnCopyCallDetails.Location = new System.Drawing.Point(236, 19);
+            this.btnCopyCallDetails.Name = "btnCopyCallDetails";
+            this.btnCopyCallDetails.Size = new System.Drawing.Size(25, 23);
+            this.btnCopyCallDetails.TabIndex = 4;
+            this.btnCopyCallDetails.Text = "C";
+            this.btnCopyCallDetails.UseVisualStyleBackColor = true;
+            // 
+            // lblEndTime
+            // 
+            this.lblEndTime.AutoSize = true;
+            this.lblEndTime.Location = new System.Drawing.Point(20, 140);
+            this.lblEndTime.Name = "lblEndTime";
+            this.lblEndTime.Size = new System.Drawing.Size(52, 13);
+            this.lblEndTime.TabIndex = 1;
+            this.lblEndTime.Text = "End Time";
+            // 
+            // lblStartTime
+            // 
+            this.lblStartTime.AutoSize = true;
+            this.lblStartTime.Location = new System.Drawing.Point(20, 111);
+            this.lblStartTime.Name = "lblStartTime";
+            this.lblStartTime.Size = new System.Drawing.Size(55, 13);
+            this.lblStartTime.TabIndex = 0;
+            this.lblStartTime.Text = "Start Time";
             // 
             // gbxClientDetails
             // 
@@ -164,24 +174,14 @@
             this.gbxClientDetails.TabStop = false;
             this.gbxClientDetails.Text = "Client Details";
             // 
-            // btnSelectClient
+            // rtxtAddressInfo
             // 
-            this.btnSelectClient.Location = new System.Drawing.Point(12, 123);
-            this.btnSelectClient.Name = "btnSelectClient";
-            this.btnSelectClient.Size = new System.Drawing.Size(75, 23);
-            this.btnSelectClient.TabIndex = 4;
-            this.btnSelectClient.Text = "Select Client";
-            this.btnSelectClient.UseVisualStyleBackColor = true;
-            this.btnSelectClient.Click += new System.EventHandler(this.btnSelectClient_Click);
-            // 
-            // rtxtClientInfo
-            // 
-            this.rtxtClientInfo.Location = new System.Drawing.Point(6, 19);
-            this.rtxtClientInfo.Name = "rtxtClientInfo";
-            this.rtxtClientInfo.ReadOnly = true;
-            this.rtxtClientInfo.Size = new System.Drawing.Size(208, 95);
-            this.rtxtClientInfo.TabIndex = 0;
-            this.rtxtClientInfo.Text = "";
+            this.rtxtAddressInfo.Location = new System.Drawing.Point(220, 19);
+            this.rtxtAddressInfo.Name = "rtxtAddressInfo";
+            this.rtxtAddressInfo.ReadOnly = true;
+            this.rtxtAddressInfo.Size = new System.Drawing.Size(208, 95);
+            this.rtxtAddressInfo.TabIndex = 8;
+            this.rtxtAddressInfo.Text = "";
             // 
             // btnPasteClient
             // 
@@ -202,6 +202,25 @@
             this.btnCopyClient.Text = "C";
             this.btnCopyClient.UseVisualStyleBackColor = true;
             this.btnCopyClient.Click += new System.EventHandler(this.btnCopyClient_Click);
+            // 
+            // rtxtClientInfo
+            // 
+            this.rtxtClientInfo.Location = new System.Drawing.Point(6, 19);
+            this.rtxtClientInfo.Name = "rtxtClientInfo";
+            this.rtxtClientInfo.ReadOnly = true;
+            this.rtxtClientInfo.Size = new System.Drawing.Size(208, 95);
+            this.rtxtClientInfo.TabIndex = 0;
+            this.rtxtClientInfo.Text = "";
+            // 
+            // btnSelectClient
+            // 
+            this.btnSelectClient.Location = new System.Drawing.Point(12, 123);
+            this.btnSelectClient.Name = "btnSelectClient";
+            this.btnSelectClient.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectClient.TabIndex = 4;
+            this.btnSelectClient.Text = "Select Client";
+            this.btnSelectClient.UseVisualStyleBackColor = true;
+            this.btnSelectClient.Click += new System.EventHandler(this.btnSelectClient_Click);
             // 
             // btnEndCall
             // 
@@ -279,24 +298,14 @@
             this.gbxPolicyInfo.TabStop = false;
             this.gbxPolicyInfo.Text = "Police Info";
             // 
-            // rtxtAddressInfo
+            // rtxtPolicyInfo
             // 
-            this.rtxtAddressInfo.Location = new System.Drawing.Point(220, 19);
-            this.rtxtAddressInfo.Name = "rtxtAddressInfo";
-            this.rtxtAddressInfo.ReadOnly = true;
-            this.rtxtAddressInfo.Size = new System.Drawing.Size(208, 95);
-            this.rtxtAddressInfo.TabIndex = 8;
-            this.rtxtAddressInfo.Text = "";
-            // 
-            // btnChangePolicy
-            // 
-            this.btnChangePolicy.Location = new System.Drawing.Point(12, 19);
-            this.btnChangePolicy.Name = "btnChangePolicy";
-            this.btnChangePolicy.Size = new System.Drawing.Size(134, 33);
-            this.btnChangePolicy.TabIndex = 15;
-            this.btnChangePolicy.Text = "Change Policy";
-            this.btnChangePolicy.UseVisualStyleBackColor = true;
-            this.btnChangePolicy.Click += new System.EventHandler(this.btnChangePolicy_Click);
+            this.rtxtPolicyInfo.Location = new System.Drawing.Point(12, 58);
+            this.rtxtPolicyInfo.Name = "rtxtPolicyInfo";
+            this.rtxtPolicyInfo.ReadOnly = true;
+            this.rtxtPolicyInfo.Size = new System.Drawing.Size(569, 140);
+            this.rtxtPolicyInfo.TabIndex = 18;
+            this.rtxtPolicyInfo.Text = "";
             // 
             // btnPasteSelectedPolicy
             // 
@@ -315,6 +324,16 @@
             this.btnCopySelectedPolicy.TabIndex = 16;
             this.btnCopySelectedPolicy.Text = "C";
             this.btnCopySelectedPolicy.UseVisualStyleBackColor = true;
+            // 
+            // btnChangePolicy
+            // 
+            this.btnChangePolicy.Location = new System.Drawing.Point(12, 19);
+            this.btnChangePolicy.Name = "btnChangePolicy";
+            this.btnChangePolicy.Size = new System.Drawing.Size(134, 33);
+            this.btnChangePolicy.TabIndex = 15;
+            this.btnChangePolicy.Text = "Change Policy";
+            this.btnChangePolicy.UseVisualStyleBackColor = true;
+            this.btnChangePolicy.Click += new System.EventHandler(this.btnChangePolicy_Click);
             // 
             // gbxProcedureInfo
             // 
@@ -394,15 +413,6 @@
             this.lblCallLength.TabIndex = 19;
             this.lblCallLength.Text = "Call Length: 00:00:00";
             // 
-            // rtxtPolicyInfo
-            // 
-            this.rtxtPolicyInfo.Location = new System.Drawing.Point(12, 58);
-            this.rtxtPolicyInfo.Name = "rtxtPolicyInfo";
-            this.rtxtPolicyInfo.ReadOnly = true;
-            this.rtxtPolicyInfo.Size = new System.Drawing.Size(569, 140);
-            this.rtxtPolicyInfo.TabIndex = 18;
-            this.rtxtPolicyInfo.Text = "";
-            // 
             // btnCreateNewClient
             // 
             this.btnCreateNewClient.Location = new System.Drawing.Point(93, 123);
@@ -412,16 +422,6 @@
             this.btnCreateNewClient.Text = "Create Client";
             this.btnCreateNewClient.UseVisualStyleBackColor = true;
             this.btnCreateNewClient.Click += new System.EventHandler(this.btnCreateNewClient_Click);
-            // 
-            // btnCreateEmployee
-            // 
-            this.btnCreateEmployee.Location = new System.Drawing.Point(147, 38);
-            this.btnCreateEmployee.Name = "btnCreateEmployee";
-            this.btnCreateEmployee.Size = new System.Drawing.Size(75, 23);
-            this.btnCreateEmployee.TabIndex = 8;
-            this.btnCreateEmployee.Text = "Create";
-            this.btnCreateEmployee.UseVisualStyleBackColor = true;
-            this.btnCreateEmployee.Click += new System.EventHandler(this.btnCreateEmployee_Click);
             // 
             // frmCallCentre
             // 

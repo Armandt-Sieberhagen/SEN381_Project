@@ -19,6 +19,51 @@ namespace SEN_Project.DataAccessLayer
             current = this;
         }
 
+        public  void    Add<T>  (T  Item) where T : IDBItem
+        {
+            if (SearchIndex<T>(Item)==-1)
+            {
+                string Command = "INSERT INTO " + GlobalDataLayer.current.GetInsertCommand<T>(Item);
+                DatabaseController.current.ExecuteCommand(Command);
+            }
+        }
+
+        public  DataTable   SearchForTable<T>   (T Item) where T: IDBItem
+        {
+            string Command = @"SELECT * FROM " + GlobalDataLayer.current.GetSearchCommand<T>(Item);
+            DataTable DT = DatabaseController.current.GetTable(Command);
+            return DT;
+        }
+
+        public int SearchIndex<T>(T Item) where T : IDBItem
+        {
+            DataTable DT = null;
+            return (DT = SearchForTable<T>(Item)) != null ? (DT.Rows[0] != null ? int.Parse(DT.Rows[0][0].ToString()) : -1) : -1;
+        }
+
+        public  void    Delete<T>   (T  Item) where T: IDBItem
+        {
+            int Index = SearchIndex<T>(Item);
+            if (Index > -1)
+            {
+                string Command = "DELETE FROM "+ GlobalDataLayer.current.GetTable(typeof(T)) +" WHERE ID='" + Index.ToString() + "'";
+                DatabaseController.current.ExecuteCommand(Command);
+                //PresentationController.current.ShowSuccess("Record deleted");
+            }
+        }
+
+        public List<T> GetAll<T>() where T : IDBItem
+        {
+            string Command = "SELECT * FROM " + GlobalDataLayer.current.GetTable(typeof(T));
+            DataTable DT = DatabaseController.current.GetTable(Command);
+            List<T> Result = new List<T>();
+            foreach (DataRow row in DT.Rows)
+            {
+                Result.Add(Factory.Create<T>(row));
+            }
+            return Result;
+        }
+
         public void Add(Address _Address)
         {
             //First we check if the address has already been added
@@ -110,7 +155,7 @@ namespace SEN_Project.DataAccessLayer
             Command += SearchIndex(_Procedure.Condition) + "','";
             Command += SearchIndex(_Procedure.Facility) + "','";
             Command += SearchIndex(_Procedure.ProposedTreatment) + "','";
-            Command += SearchIndex(_Procedure.Package) + "')";
+            //Command += SearchIndex(_Procedure.Package) + "')";
             if (DatabaseController.current.ExecuteCommand(Command))
             {
                 PresentationController.current.ShowSuccess("Procedure has been added!");
@@ -194,23 +239,23 @@ namespace SEN_Project.DataAccessLayer
                 PresentationController.current.ShowError("Condition could not be added");
             }
         }
-        public void Add(MedicalPackage _Package)
-        {
-            if (SearchIndex(_Package) != -1)
-            {
-                PresentationController.current.ShowError("Package is already in database");
-                return;
-            }
-            string Command = "INSERT INTO tbl_Packages (Available,Price) VALUES ('" + _Package.Available + "','" + _Package.Price + "')";
-            if (DatabaseController.current.ExecuteCommand(Command))
-            {
-                PresentationController.current.ShowSuccess("Package has been added!");
-            }
-            else
-            {
-                PresentationController.current.ShowError("Package could not be added");
-            }
-        }
+        //public void Add(MedicalPackage _Package)
+        //{
+        //    if (SearchIndex(_Package) != -1)
+        //    {
+        //        PresentationController.current.ShowError("Package is already in database");
+        //        return;
+        //    }
+        //    string Command = "INSERT INTO tbl_Packages (Available,Price) VALUES ('" + _Package.Available + "','" + _Package.Price + "')";
+        //    if (DatabaseController.current.ExecuteCommand(Command))
+        //    {
+        //        PresentationController.current.ShowSuccess("Package has been added!");
+        //    }
+        //    else
+        //    {
+        //        PresentationController.current.ShowError("Package could not be added");
+        //    }
+        //}
         public void Add(MedicalServiceProvider _Facility)
         {
             if (SearchIndex(_Facility) != -1)
@@ -362,16 +407,16 @@ namespace SEN_Project.DataAccessLayer
                 PresentationController.current.ShowSuccess("Record deleted");
             }
         }
-        public void Delete(MedicalPackage _Package)
-        {
-            int Index = SearchIndex(_Package);
-            if (Index > -1)
-            {
-                string Command = "DELETE FROM tbl_Packages WHERE ID='" + Index.ToString() + "'";
-                DatabaseController.current.ExecuteCommand(Command);
-                PresentationController.current.ShowSuccess("Record deleted");
-            }
-        }
+        //public void Delete(MedicalPackage _Package)
+        //{
+        //    int Index = SearchIndex(_Package);
+        //    if (Index > -1)
+        //    {
+        //        string Command = "DELETE FROM tbl_Packages WHERE ID='" + Index.ToString() + "'";
+        //        DatabaseController.current.ExecuteCommand(Command);
+        //        PresentationController.current.ShowSuccess("Record deleted");
+        //    }
+        //}
         public void Delete(MedicalServiceProvider _Facility)
         {
             int Index = SearchIndex(_Facility);
@@ -478,7 +523,7 @@ namespace SEN_Project.DataAccessLayer
             Command += "Condition_ID='" + SearchIndex(_Procedure.Condition) + "' AND ";
             Command += "Service_Provider='" + SearchIndex(_Procedure.Facility) + "' AND ";
             Command += "Proposed_Treatment='" + SearchIndex(_Procedure.ProposedTreatment) + "' AND ";
-            Command += "Medical_Package='" + SearchIndex(_Procedure.Package) + "'";
+            //Command += "Medical_Package='" + SearchIndex(_Procedure.Package) + "'";
             DataTable DT = DatabaseController.current.GetTable(Command);
             return DT;
         }
@@ -489,14 +534,14 @@ namespace SEN_Project.DataAccessLayer
             DataTable DT = DatabaseController.current.GetTable(Command);
             return DT;
         }
-        public DataTable SearchForTable(MedicalPackage _Package)
-        {
-            string Command = @"SELECT * FROM tbl_Packages WHERE ";
-            Command += "Available='" + _Package.Available + "' AND ";
-            Command += "Price='" + _Package.Price + "'";
-            DataTable DT = DatabaseController.current.GetTable(Command);
-            return DT;
-        }
+        //public DataTable SearchForTable(MedicalPackage _Package)
+        //{
+        //    string Command = @"SELECT * FROM tbl_Packages WHERE ";
+        //    Command += "Available='" + _Package.Available + "' AND ";
+        //    Command += "Price='" + _Package.Price + "'";
+        //    DataTable DT = DatabaseController.current.GetTable(Command);
+        //    return DT;
+        //}
         public DataTable SearchForTable(FamilyPolicy _Policy)
         {
             string Command = @"SELECT * FROM tbl_Family_Policies WHERE ";
@@ -590,11 +635,11 @@ namespace SEN_Project.DataAccessLayer
             DataTable DT = null;
             return (DT = SearchForTable(_Facility)) != null ? (DT.Rows.Count > 0 ? int.Parse(DT.Rows[0][0].ToString()) : -1) : -1;
         }
-        public int SearchIndex(MedicalPackage _Package)
+        /*public int SearchIndex(MedicalPackage _Package)
         {
             DataTable DT = null;
             return (DT = SearchForTable(_Package)) != null ? (DT.Rows.Count > 0 ? int.Parse(DT.Rows[0][0].ToString()) : -1) : -1;
-        }
+        }*/
         public int SearchIndex(Claim _Claim)
         {
             DataTable DT = null;
@@ -708,6 +753,18 @@ namespace SEN_Project.DataAccessLayer
             foreach (DataRow row in DT.Rows)
             {
                 Result.Add(Factory.CreateEmployee(row));
+            }
+            return Result;
+        }
+
+        public List<Call> GetAllCalls()
+        {
+            string Command = "SELECT * FROM tbl_Calls";
+            DataTable DT = DatabaseController.current.GetTable(Command);
+            List<Call> Result = new List<Call>();
+            foreach (DataRow row in DT.Rows)
+            {
+                Result.Add(Factory.CreateCall(row));
             }
             return Result;
         }

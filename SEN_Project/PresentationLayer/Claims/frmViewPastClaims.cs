@@ -45,7 +45,7 @@ namespace SEN_Project.PresentationLayer.Claims
             lbxClaims.Items.Clear();
             foreach (Claim claim in CurrentClient.ClaimsHistory)
             {
-                lbxClaims.Items.Add(claim.ToLine);
+                lbxClaims.Items.Add(claim.ToLine());
             }
             rtxtClaimInfo.Clear();
         }

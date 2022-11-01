@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    public class Employee : Person, IComparable<Employee>
+    public class Employee : Person, IComparable<Employee>,ILineable, IDBItem
     {
         int id;
 
@@ -24,7 +24,17 @@ namespace SEN_Project.BusinessLogicLayer
             return EmployeeID.CompareTo(other.EmployeeID);
         }
 
-        public string ToLine => FirstName + '\t' + FullName + '\t' + IDNumber;
+        public string GetSearchString()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetValuesString()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string ToLine() { return FirstName + '\t' + FullName + '\t' + IDNumber; }
 
         public  override    string  ToString    ()
         {

@@ -197,6 +197,7 @@
             // 
             this.rtxtAddressInfo.Location = new System.Drawing.Point(21, 249);
             this.rtxtAddressInfo.Name = "rtxtAddressInfo";
+            this.rtxtAddressInfo.ReadOnly = true;
             this.rtxtAddressInfo.Size = new System.Drawing.Size(156, 115);
             this.rtxtAddressInfo.TabIndex = 4;
             this.rtxtAddressInfo.Text = "";

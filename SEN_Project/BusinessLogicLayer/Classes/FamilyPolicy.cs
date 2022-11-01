@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    public class FamilyPolicy : Policy
+    public class FamilyPolicy : Policy, ILineable, IDBItem
     {
         List<PolicyMember> members;
         public List<PolicyMember> Members {
@@ -38,6 +38,6 @@ namespace SEN_Project.BusinessLogicLayer
                 return null;
             }
         }
-        public override string ToLine => ID.ToString() + '\t' + HeadMember.Person.FullName + '\t' + HeadMember.Person.IDNumber + '\t' + DataRef.Name;
+        public override string ToLine() { return ID.ToString() + '\t' + HeadMember.Person.FullName + '\t' + HeadMember.Person.IDNumber + '\t' + DataRef.Name; }
     }
 }

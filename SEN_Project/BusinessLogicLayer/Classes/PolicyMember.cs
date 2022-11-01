@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    public class PolicyMember
+    public class PolicyMember : ILineable, IDBItem
     {
         public enum PolicyRole
         {
@@ -23,6 +23,21 @@ namespace SEN_Project.BusinessLogicLayer
         public PolicyRole Role {
             get { return role; }
             set { role = value; }
+        }
+
+        public string ToLine()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetValuesString()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetSearchString()
+        {
+            throw new NotImplementedException();
         }
     }
 }

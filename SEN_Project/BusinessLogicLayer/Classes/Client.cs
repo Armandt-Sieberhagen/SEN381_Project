@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    public class Client : Person,IComparable<Client>
+    public class Client : Person,IComparable<Client>, ILineable, IDBItem
     {
         int clientID;
         
         List<Call> callHistory;
         Policy policy;
+        List<Policy> pastPolicies;
+        //List<Policy> futurePolicies;
         List<Claim> claimsHistory;
         List<ClinicalProcedure> clinicalHistory;
         List<string> activePerscriptions;
@@ -45,8 +47,18 @@ namespace SEN_Project.BusinessLogicLayer
             get { return activePerscriptions; }
             set { activePerscriptions = value; }
         }
+        public List<Policy> PastPolicies
+        {
+            get { return pastPolicies; }
+            set { pastPolicies = value; }
+        }
+        //public List<Policy> FuturePolicies
+        //{
+        //    get { return futurePolicies; }
+        //    set { futurePolicies = value; }
+        //}
 
-        public string ToLine => ClientID + '\t' + FullName + '\t' + IDNumber;
+        public string ToLine() { return ClientID + '\t' + FullName + '\t' + IDNumber; }
         public string PersonalDetails => $"Client ID: \t " + ClientID + " \n First Name: \t " + FirstName + " \t Last Name: " + LastName + " \n ID Number: \t" + IDNumber;
         public string AddressDetails => PersonAddress.ToString();
 
@@ -114,6 +126,16 @@ namespace SEN_Project.BusinessLogicLayer
             {
                 CallHistory.Add(_Call);
             }
+        }
+
+        public string GetValuesString()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetSearchString()
+        {
+            throw new NotImplementedException();
         }
     }
 }

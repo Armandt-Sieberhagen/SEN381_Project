@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    public class Address
+    public class Address : IDBItem
     {
         public Address() { }
 
@@ -42,6 +42,16 @@ namespace SEN_Project.BusinessLogicLayer
         "\n Postal Code: \t" + PostalCode +
         "\n City: \t" + City +
         "Province: \t" + Province;
+        }
+
+        public string GetValuesString()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetSearchString()
+        {
+            throw new NotImplementedException();
         }
 
         public string ToLine => Street + '\n' + PostalCode + '\n' + City + '\n' + Province;

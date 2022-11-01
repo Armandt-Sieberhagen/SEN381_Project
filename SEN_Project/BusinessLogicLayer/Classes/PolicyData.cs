@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    public class PolicyData
+    public class PolicyData : ILineable, IDBItem
     {
         string policyName;
         string description;
@@ -43,7 +43,17 @@ namespace SEN_Project.BusinessLogicLayer
             return TreatmentsCovered.Contains(_Value);
         }
 
-        public string ToLine => Name + '\t' + Price + '\t' + Available;
+        public string GetSearchString()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetValuesString()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string ToLine() { return Name + '\t' + Price + '\t' + Available; }
 
         public  override    string  ToString    ()
         {

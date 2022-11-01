@@ -38,7 +38,7 @@ namespace SEN_Project.PresentationLayer.Clients
             CurrentClients = Clients;
             foreach (Client client in Clients)
             {
-                lbxClients.Items.Add(client.ToLine);
+                lbxClients.Items.Add(client.ToLine());
             }
         }
 

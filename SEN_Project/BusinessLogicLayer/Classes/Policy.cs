@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    public  abstract class Policy
+    public  abstract class Policy : ILineable,IDBItem
     {
         int id;
         PolicyData dataRef;
@@ -19,6 +19,17 @@ namespace SEN_Project.BusinessLogicLayer
             get { return id; }
             set { id = value; }
         }
-        public virtual string ToLine => "ID \t"+ID.ToString();
+
+        public string GetSearchString()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetValuesString()
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual string ToLine() { return "ID \t" + ID.ToString(); }
     }
 }

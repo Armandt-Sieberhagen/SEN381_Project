@@ -13,6 +13,7 @@ using System.Data;//For when we want to convert DataRows to Objects, and vice ve
 using SEN_Project.PresentationLayer.Forms.ListSearchForm;
 using SEN_Project.PresentationLayer.Employees;
 using SEN_Project.PresentationLayer.Addresses;
+using SEN_Project.PresentationLayer.Procedure;
 
 namespace SEN_Project.BusinessLogicLayer
 {
@@ -22,6 +23,11 @@ namespace SEN_Project.BusinessLogicLayer
         public  Factory ()
         {
             current = this;
+        }
+
+        public  static T   Create<T>(DataRow   Row) where T : Address, IDBItem
+        {
+            return (T)CreateAddress(Row);
         }
 
         public  static  Address CreateAddress  (string Street=null,string   City=null,string Province=null,string PostalCode=null)
@@ -63,7 +69,13 @@ namespace SEN_Project.BusinessLogicLayer
             DateTime EndTime = StartTime.AddMinutes(LengthInMinutes);
             return CreateCall(StartTime, EndTime, employee);
         }
-
+        public static Call CreateCall(DataRow Row)
+        {
+            Employee employee = BusinessLogic.current.GetEmployeeByID(int.Parse(Row[1].ToString()));//Add Validation
+            DateTime StartTime = DateTime.Parse(Row[2].ToString());
+            DateTime EndTime = DateTime.Parse(Row[3].ToString());
+            return CreateCall(StartTime, EndTime, employee);
+        }
         public  static  Claim   CreateClaim (Client _Client,ClinicalProcedure Procedure,Claim.ClaimStatus Status = Claim.ClaimStatus.Pending)
         {
             Claim Result = new Claim();
@@ -74,13 +86,15 @@ namespace SEN_Project.BusinessLogicLayer
             return Result;
         }
     
-        public static ClinicalProcedure   CreateClinicalProcedure (MedicalCondition Condition,Treatment ProposedTreatment,MedicalServiceProvider Facility,MedicalPackage    Package)
+        public static ClinicalProcedure   CreateClinicalProcedure (MedicalCondition Condition,Treatment ProposedTreatment,MedicalServiceProvider Facility,Policy pol,Client _Patient)
         {
             ClinicalProcedure Result = new ClinicalProcedure();
             Result.Condition = Condition;
             Result.ProposedTreatment = ProposedTreatment;
             Result.Facility = Facility;
-            Result.Package = Package;
+            Result.PolicySelected = pol;
+            Result.Patient = _Patient;
+            //Result.Package = Package;
 
             return Result;
         }
@@ -165,21 +179,21 @@ namespace SEN_Project.BusinessLogicLayer
             return Result;
         }
 
-        public static MedicalPackage  CreatePackage   (bool   Available,List<Policy>  Policies,float  Price,List<Treatment>    AdditionalTreatments = null)
-        {
-            MedicalPackage Result = new MedicalPackage();
-            Result.Available = Available;
-            Result.Policies = Policies;
-            Result.Price = Price;
-            Result.AdditionalTreatments = AdditionalTreatments;
-            return Result;
-        }
+        //public static MedicalPackage  CreatePackage   (bool   Available,List<Policy>  Policies,float  Price,List<Treatment>    AdditionalTreatments = null)
+        //{
+        //    MedicalPackage Result = new MedicalPackage();
+        //    Result.Available = Available;
+        //    Result.Policies = Policies;
+        //    Result.Price = Price;
+        //    Result.AdditionalTreatments = AdditionalTreatments;
+        //    return Result;
+        //}
 
-        public static MedicalServiceProvider  CreateMedicalServiceProvider    (Address    _Address,List<MedicalPackage>   Packages)
+        public static MedicalServiceProvider  CreateMedicalServiceProvider    (Address    _Address,List<Policy>   Policies)
         {
             MedicalServiceProvider Result = new MedicalServiceProvider();
             Result.MyAddress = _Address;
-            Result.Packages = Packages;
+            Result.Policies = Policies;
             return Result;
         }
 
@@ -208,7 +222,7 @@ namespace SEN_Project.BusinessLogicLayer
             return Result;
         }
 
-        public  static Client CreateClient (string FirstName, string LastName, List<Call> CallHistory,Policy _Policy,string ID,Address address,string Email,string PhoneNumber,List<Claim> claims,List<ClinicalProcedure> Procedures,List<string> ActivePerscriptions)
+        public static Client CreateClient(string FirstName, string LastName, List<Call> CallHistory, Policy _Policy, string ID, Address address, string Email, string PhoneNumber, List<Claim> claims, List<ClinicalProcedure> Procedures, List<string> ActivePerscriptions)
         {
             Client Result = new Client();
 
@@ -349,6 +363,19 @@ namespace SEN_Project.BusinessLogicLayer
                 AddressCreatorForm = new AddressCreator();
             }
             return AddressCreatorForm;
+        }
+        static frmProcedure ProcedureForm;
+        public static frmProcedure GetProcedureForm()
+        {
+            if (ProcedureForm != null)
+            {
+                ProcedureForm.Reset();
+            }
+            else
+            {
+                ProcedureForm = new frmProcedure();
+            }
+            return ProcedureForm;
         }
 
         public  static  Client  GetRandomClient ()

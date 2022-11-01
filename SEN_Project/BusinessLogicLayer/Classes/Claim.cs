@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    public class Claim
+    public class Claim : ILineable, IDBItem
     {
         public  enum ClaimStatus
         {
@@ -43,7 +43,7 @@ namespace SEN_Project.BusinessLogicLayer
             set { price = value; }
         }
 
-        public string ToLine => ID.ToString() + '\t' + Procedure.ID.ToString() + '\t' + Price.ToString() + '\t' + Status.ToString();
+        public string ToLine() { return ID.ToString() + '\t' + Procedure.ID.ToString() + '\t' + Price.ToString() + '\t' + Status.ToString(); }
 
         public  override    string  ToString    ()
         {
@@ -61,6 +61,16 @@ namespace SEN_Project.BusinessLogicLayer
             MyClient = _Other.MyClient;
             Procedure = _Other.Procedure;
             Price = _Other.Price;
+        }
+
+        public string GetValuesString()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetSearchString()
+        {
+            throw new NotImplementedException();
         }
     }
 }

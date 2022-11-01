@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SEN_Project.PresentationLayer.Forms.ListSearchForm;
 
 namespace SEN_Project.BusinessLogicLayer
 {
@@ -16,6 +17,31 @@ namespace SEN_Project.BusinessLogicLayer
             {
                 Output.Add(t);
             }
+        }
+
+        public static frmSearchList CreateSearchForm<T>() where T : ILineable,IDBItem
+        {
+            frmSearchList SearchForm = Factory.GetSearchList();
+            List<T> AllItems = BusinessLogic.current.GetAll<T>();
+            List<string> Options = new List<string>();
+            foreach (T item in AllItems)
+            {
+                Options.Add(item.ToLine());
+            }
+            SearchForm.SetItems(Options);
+            return SearchForm;
+        }
+
+        public static frmSearchList CreateSearchForm<T>(List<T> AllItems) where T : ILineable, IDBItem
+        {
+            frmSearchList SearchForm = Factory.GetSearchList();
+            List<string> Options = new List<string>();
+            foreach (T item in AllItems)
+            {
+                Options.Add(item.ToLine());
+            }
+            SearchForm.SetItems(Options);
+            return SearchForm;
         }
     }
 }

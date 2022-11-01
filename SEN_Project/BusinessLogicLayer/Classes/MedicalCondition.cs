@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    public class MedicalCondition
+    public class MedicalCondition : ILineable, IDBItem
     {
         string name;
         string description;
@@ -23,6 +23,21 @@ namespace SEN_Project.BusinessLogicLayer
         public List<Treatment> PossibleTreatments {
             get { return possibleTreatments; }
             set { possibleTreatments = value; }
+        }
+
+        public string GetSearchString()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetValuesString()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string ToLine()
+        {
+            return Name + "\t" + Description + "\t";
         }
     }
 }

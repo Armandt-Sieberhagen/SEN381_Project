@@ -59,7 +59,6 @@
     <Compile Include="BusinessLogicLayer\Classes\FamilyPolicy.cs" />
     <Compile Include="BusinessLogicLayer\Classes\IndividualPolicy.cs" />
     <Compile Include="BusinessLogicLayer\Classes\MedicalCondition.cs" />
-    <Compile Include="BusinessLogicLayer\Classes\MedicalPackage.cs" />
     <Compile Include="BusinessLogicLayer\Classes\MedicalServiceProvider.cs" />
     <Compile Include="BusinessLogicLayer\Classes\Policy.cs" />
     <Compile Include="BusinessLogicLayer\Classes\PolicyData.cs" />
@@ -67,6 +66,8 @@
     <Compile Include="BusinessLogicLayer\Classes\Treatment.cs" />
     <Compile Include="BusinessLogicLayer\Factory.cs" />
     <Compile Include="BusinessLogicLayer\GlobalFunctions.cs" />
+    <Compile Include="BusinessLogicLayer\IDBItem.cs" />
+    <Compile Include="BusinessLogicLayer\ILineable.cs" />
     <Compile Include="DataAccessLayer\DatabaseAccess.cs" />
     <Compile Include="DataAccessLayer\FileManager.cs" />
     <Compile Include="DataLayer\DatabaseController.cs" />
@@ -156,6 +157,12 @@
     </Compile>
     <Compile Include="PresentationLayer\PolicyForms\frmChoosePolicy.Designer.cs">
       <DependentUpon>frmChoosePolicy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\PolicyForms\frmSearchPolicy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\PolicyForms\frmSearchPolicy.Designer.cs">
+      <DependentUpon>frmSearchPolicy.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\Procedure\frmProcedure.cs">
       <SubType>Form</SubType>
@@ -250,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\PolicyForms\frmChoosePolicy.resx">
       <DependentUpon>frmChoosePolicy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\PolicyForms\frmSearchPolicy.resx">
+      <DependentUpon>frmSearchPolicy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Procedure\frmProcedure.resx">
       <DependentUpon>frmProcedure.cs</DependentUpon>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    public class IndividualPolicy : Policy
+    public class IndividualPolicy : Policy, ILineable, IDBItem
     {
         Client member;
         public Client Member
@@ -23,6 +23,6 @@ namespace SEN_Project.BusinessLogicLayer
                 "\n Client ID: " + Member.ClientID.ToString();
         }
 
-        public override string ToLine => ID.ToString() + '\t' + Member.FullName + '\t' + Member.IDNumber + '\t' + DataRef.Name;
+        public override string ToLine() { return ID.ToString() + '\t' + Member.FullName + '\t' + Member.IDNumber + '\t' + DataRef.Name; }
     }
 }

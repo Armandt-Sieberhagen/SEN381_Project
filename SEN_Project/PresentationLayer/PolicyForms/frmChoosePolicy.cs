@@ -74,7 +74,7 @@ namespace SEN_Project.PresentationLayer.PolicyForms
             lbxFamilyMembers.Items.Clear();
             foreach (PolicyMember member in _Members)
             {
-                lbxFamilyMembers.Items.Add(member.Person.ToLine);
+                lbxFamilyMembers.Items.Add(member.Person.ToLine());
             }
         }
 

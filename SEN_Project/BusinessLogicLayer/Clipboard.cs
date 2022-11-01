@@ -16,7 +16,7 @@ namespace SEN_Project.BusinessLogicLayer
         public static FamilyPolicy _FamilyPolicy;
         public static IndividualPolicy _IndividualPolicy;
         public static MedicalCondition _MedicalCondition;
-        public static MedicalPackage _MedicalPackage;
+        //public static MedicalPackage _MedicalPackage;
         public static MedicalServiceProvider _MedicalServiceProvider;
         public static PolicyData _PolicyData;
         public static PolicyMember _PolicyMember;

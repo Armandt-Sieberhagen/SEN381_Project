@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    public class Call
+    public class Call : ILineable, IDBItem
     {
         DateTime startTime;
         DateTime endTime;
@@ -26,5 +26,22 @@ namespace SEN_Project.BusinessLogicLayer
         }
         public float LengthInSeconds => (float)EndTime.Subtract(StartTime).TotalSeconds;
         public float LengthInMinutes => (float)EndTime.Subtract(StartTime).TotalMinutes;
+
+        public string ToLine => CallTaker + "\t" + StartTime.ToString() + "\t" + EndTime.ToString();
+
+        public string GetSearchString()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetValuesString()
+        {
+            throw new NotImplementedException();
+        }
+
+        string ILineable.ToLine()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

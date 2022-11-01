@@ -15,12 +15,109 @@ namespace SEN_Project.DataLayer
         public GlobalDataLayer  ()
         {
             current = this;
+            DataCaches = new Dictionary<Type, DBListItem>();
+            DataCaches.Add(typeof(Address), new DbList<Address>());
+            DataCaches.Add(typeof(Call), new DbList<Call>());
+            DataCaches.Add(typeof(Claim), new DbList<Claim>());
+            DataCaches.Add(typeof(Client), new DbList<Client>());
+            DataCaches.Add(typeof(ClinicalProcedure), new DbList<ClinicalProcedure>());
+            DataCaches.Add(typeof(Employee), new DbList<Employee>());
+            DataCaches.Add(typeof(FamilyPolicy), new DbList<FamilyPolicy>());
+            DataCaches.Add(typeof(IndividualPolicy), new DbList<IndividualPolicy>());
+            DataCaches.Add(typeof(MedicalCondition), new DbList<MedicalCondition>());
+            //DataCaches.Add(typeof(MedicalPackage), new DbList<MedicalPackage>());
+            DataCaches.Add(typeof(MedicalServiceProvider), new DbList<MedicalServiceProvider>());
+            DataCaches.Add(typeof(PolicyData), new DbList<PolicyData>());
+            DataCaches.Add(typeof(Policy), new DbList<Policy>());
+            DataCaches.Add(typeof(PolicyMember), new DbList<PolicyMember>());
+            DataCaches.Add(typeof(Treatment), new DbList<Treatment>());
+
+            TableNames = new Dictionary<Type, string>();
+            TableNames.Add(typeof(Address), "tbl_Addresses");
+            TableNames.Add(typeof(Call), "tbl_Calls");
+            TableNames.Add(typeof(Claim), "tbl_Claims");
+            TableNames.Add(typeof(Client), "tbl_Clients");
+            TableNames.Add(typeof(ClinicalProcedure),"tbl_Procedures");
+            TableNames.Add(typeof(Employee), "tbl_Employees");
+            TableNames.Add(typeof(FamilyPolicy), "tbl_Family_Policies");
+            TableNames.Add(typeof(IndividualPolicy), "tbl_Individual_Policies");
+            TableNames.Add(typeof(MedicalCondition), "tbl_Conditions");
+            //TableNames.Add(typeof(MedicalPackage), "tbl_Packages");
+            TableNames.Add(typeof(MedicalServiceProvider), "tbl_Service_Providers");
+            TableNames.Add(typeof(PolicyData), "tbl_Policy_Data");
+            TableNames.Add(typeof(PolicyMember), "tbl_Policy_Members");
+            TableNames.Add(typeof(Treatment), "tbl_Treatments");
+
+            InsertCommands = new Dictionary<Type, string>();
+            InsertCommands.Add(typeof(Address), "(Street,City,Postal_Code,Province) VALUES (");
+            InsertCommands.Add(typeof(Call), "(StartTime,EndTime,Employee_ID) VALUES (");
+            InsertCommands.Add(typeof(Claim), "(ClientID,ProcedureID) VALUES (");
+            InsertCommands.Add(typeof(Client), "(FirstName,LastName,ID_Number,Email,Phone,Address_ID) VALUES (");
+            InsertCommands.Add(typeof(ClinicalProcedure), "(Condition_ID,Service_Provider,Proposed_Treatment,Medical_Package) VALUES (");
+            InsertCommands.Add(typeof(Employee), "(FirstName,LastName,ID,PhoneNumber,Email,Address_ID) VALUES (");
+            InsertCommands.Add(typeof(FamilyPolicy), "(Data_ID) VALUES (");
+            InsertCommands.Add(typeof(IndividualPolicy), "(Data_ID,Client_ID) VALUES (");
+            InsertCommands.Add(typeof(MedicalCondition), "(Condition_Description) VALUES (");
+            //InsertCommands.Add(typeof(MedicalPackage), "(Available,Price) VALUES (");
+            InsertCommands.Add(typeof(MedicalServiceProvider), "(Address_ID) VALUES (");
+            InsertCommands.Add(typeof(PolicyData), "(PolicyName,Policy_Description,Price) VALUES (");
+            InsertCommands.Add(typeof(PolicyMember), "(MemberRole,Client_ID) VALUES (");
+            InsertCommands.Add(typeof(Treatment), "(Treatment_Description) VALUES (");
+
             ReadProvinces();
+        }
+        public Dictionary<Type, DBListItem> DataCaches;
+        public Dictionary<Type, string> TableNames;
+        public Dictionary<Type, string> InsertCommands;
+        public  class DBListItem
+        {
+
+        }
+
+        public class DbList<T> : DBListItem
+        {
+            public List<T> MyList;
+
+            public DbList() {
+                MyList = new List<T>();
+            }
+        }
+
+        public  List<T> GetCache<T>() where T: IDBItem
+        {
+            if (DataCaches.ContainsKey(typeof(T)))
+            {
+                return ((DbList<T>)DataCaches[typeof(T)]).MyList;
+            }
+            return null;
+        }
+
+        public  void    SetCache<T>(List<T> Values) where T:IDBItem
+        {
+            if (DataCaches.ContainsKey(typeof(T)))
+            {
+                ((DbList<T>)DataCaches[typeof(T)]).MyList   =   Values;
+            }
+        }
+
+        public  string  GetTable    (Type   T)
+        {
+            return TableNames[T];
+        }
+
+        public  string  GetInsertCommand<T> (T Item) where T : IDBItem
+        {
+            return TableNames[typeof(T)] + " " + InsertCommands[typeof(T)] + Item.GetValuesString(); 
+        }
+
+        public string GetSearchCommand<T>(T Item) where T : IDBItem {
+            return TableNames[typeof(T)] + " WHERE " + Item.GetSearchString();
         }
 
         public List<Treatment> AllTreatments;
         public List<PolicyData> AllPolicyData;
         public List<Employee> AllEmployees;
+        public List<Call> AllCalls;
         Dictionary<string, string[]> AllProvinces;
 
         enum PolicyReadStage

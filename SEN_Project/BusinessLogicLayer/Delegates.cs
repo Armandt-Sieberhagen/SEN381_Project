@@ -18,5 +18,6 @@ namespace SEN_Project.BusinessLogicLayer
     public delegate void TreatmentVoid(Treatment _Treatment);
     public delegate void PolicyVoid(Policy _Policy);
     public delegate void EmployeeVoid(Employee _Employee);
+    public delegate void ProcedureVoid(ClinicalProcedure _Procedure);
     public delegate void ListItemVoid(int   Index,string    Line);
 }

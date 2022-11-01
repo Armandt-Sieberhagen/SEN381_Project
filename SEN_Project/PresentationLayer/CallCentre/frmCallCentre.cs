@@ -139,7 +139,7 @@ namespace SEN_Project.PresentationLayer.CallCentre
             List<string> Options = new List<string>();
             foreach (Claim claim in CurrentClient.ClaimsHistory)
             {
-                Options.Add(claim.ToLine);
+                Options.Add(claim.ToLine());
             }
             SearchForm.SetItems(Options);
             SearchForm.Show();
@@ -218,7 +218,7 @@ namespace SEN_Project.PresentationLayer.CallCentre
             List<string> Options = new List<string>();
             foreach (Employee Emp in AllEmployees)
             {
-                Options.Add(Emp.ToLine);
+                Options.Add(Emp.ToLine());
             }
 
             frmSearchList SearchList = Factory.GetSearchList();

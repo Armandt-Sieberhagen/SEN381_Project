@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    public class ClinicalProcedure
+    public class ClinicalProcedure : ILineable,IDBItem
     {
         MedicalCondition condition;
         Treatment proposedTreatment;
         MedicalServiceProvider facility;
-        MedicalPackage package;
+        Policy policy;
         Client patient;
         int id;
 
@@ -27,10 +27,10 @@ namespace SEN_Project.BusinessLogicLayer
             get { return facility; }
             set { facility = value; }
         }
-        public MedicalPackage Package
+        public Policy PolicySelected
         {
-            get { return package; }
-            set { package = value; }
+            get { return policy; }
+            set { policy = value; }
         }
         public Client Patient
         {
@@ -41,6 +41,21 @@ namespace SEN_Project.BusinessLogicLayer
         {
             get { return id; }
             set { id = value; }
+        }
+
+        public string GetSearchString()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetValuesString()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string ToLine()
+        {
+            return ID.ToString() + "\t" + Patient.FullName + "\t" + Condition.Name + "\t" + ProposedTreatment.Name;
         }
     }
 }

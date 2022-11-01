@@ -22,6 +22,32 @@ namespace SEN_Project.BusinessLogicLayer
             return client;
         }
 
+        public void Add<T>(T Item) where T : IDBItem
+        {
+            DatabaseAccess.current.Add<T>(Item);
+        }
+
+        public List<T> GetAll<T>() where T : IDBItem
+        {
+            if (GlobalDataLayer.current.GetCache<T>() == null ? true : GlobalDataLayer.current.GetCache<T>().Count == 0)
+            {
+                //GlobalDataLayer.current.GetCache<T>() = new List<T>();
+                GlobalDataLayer.current.SetCache<T>(DatabaseAccess.current.GetAll<T>());
+            }
+            GlobalDataLayer.current.GetCache<T>().Sort();
+            return GlobalDataLayer.current.GetCache<T>();
+        }
+
+        public T GetByID<T>(int ID) where T : IDBItem
+        {
+            List<T> Cache = GlobalDataLayer.current.GetCache<T>();
+            if (ID >= 0 && ID < Cache.Count)
+            {
+                return Cache[ID];
+            }
+            return default(T);
+        }
+
         public  void    AddClient   (Client _Client)
         {
             DatabaseAccess.current.Add(_Client);
@@ -102,9 +128,21 @@ namespace SEN_Project.BusinessLogicLayer
             return GlobalDataLayer.current.AllEmployees;
         }
 
+
+        public List<Call> GetAllCalls()
+        {
+            if (GlobalDataLayer.current.AllCalls == null)
+            {
+                GlobalDataLayer.current.AllCalls = new List<Call>();
+                GlobalDataLayer.current.AllCalls = DatabaseAccess.current.GetAllCalls();
+            }
+            GlobalDataLayer.current.AllCalls.Sort();
+            return GlobalDataLayer.current.AllCalls;
+        }
+
         public  Employee    GetEmployeeByID (int    ID)
         {
-            List<Employee> AllEmployees = GlobalDataLayer.current.AllEmployees;
+            List<Employee> AllEmployees = GetAllEmployees();
             if (ID>=0  && ID<AllEmployees.Count)
             {
                 return AllEmployees[ID];
@@ -121,6 +159,16 @@ namespace SEN_Project.BusinessLogicLayer
                     DatabaseAccess.current.Add(emp);
                 }
             }
+        }
+
+        public  Call    GetCallByID (int    ID)
+        {
+            List<Call> AllCalls = GetAllCalls();
+            if (ID>=0 && ID<AllCalls.Count)
+            {
+                return AllCalls[ID];
+            }
+            return null;
         }
     }
 }
