@@ -81,8 +81,8 @@ namespace SEN_Project.DataAccessLayer
                 PresentationController.current.ShowError("Client is already in database");
                 return;
             }
-            Add(_Client.ClientAddress);
-            int AddressID = SearchIndex(_Client.ClientAddress);
+            Add(_Client.PersonAddress);
+            int AddressID = SearchIndex(_Client.PersonAddress);
             string Command = @"INSERT INTO tbl_Clients (FirstName,LastName,ID_Number,Email,Phone,Address_ID) VALUES (";
             Command += "'" + _Client.FirstName + "',";
             Command += "'" + _Client.LastName + "',";
@@ -120,6 +120,29 @@ namespace SEN_Project.DataAccessLayer
                 PresentationController.current.ShowError("Procedure could not be added");
             }
         }
+        public bool Add(Employee _Employee)
+        {
+            if (SearchIndex(_Employee) != -1)
+            {
+                return false;
+            }
+            string Command = "INSERT INTO tbl_Employees (FirstName,LastName,ID,PhoneNumber,Email,Address_ID) VALUES ('";
+            Command += "'" + _Employee.FirstName + "',";
+            Command += "'" + _Employee.LastName + "',";
+            Command += "'" + _Employee.IDNumber + "',";
+            Command += "'" + _Employee.PhoneNumber + "',";
+            Command += "'" + _Employee.Email + "',";
+            Command += "'" + _Employee + "')";
+            if (DatabaseController.current.ExecuteCommand(Command))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public void Add(FamilyPolicy _Policy)
         {
             if (SearchIndex(_Policy) != -1)
@@ -408,7 +431,7 @@ namespace SEN_Project.DataAccessLayer
             Command += "ID_Number='" + _Client.IDNumber + "' AND ";
             Command += "Email='" + _Client.Email + "' AND ";
             Command += "Phone='" + _Client.PhoneNumber + "' AND ";
-            Command += "Address_ID='" + SearchIndex(_Client.ClientAddress).ToString() + "'";
+            Command += "Address_ID='" + SearchIndex(_Client.PersonAddress).ToString() + "'";
             DataTable DT = DatabaseController.current.GetTable(Command);
             return DT;
         }
@@ -425,6 +448,13 @@ namespace SEN_Project.DataAccessLayer
             string Command = @"SELECT * FROM tbl_Claims WHERE ";
             Command += "ClientID='" + SearchIndex(_Claim.MyClient) + "' AND ";
             Command += "ProcedureID='" + SearchIndex(_Claim.Procedure) + "'";
+            DataTable DT = DatabaseController.current.GetTable(Command);
+            return DT;
+        }
+        public DataTable SearchForTable(Employee _employee)
+        {
+            string Command = @"SELECT * FROM tbl_Employees WHERE ";
+            Command += "Employee_ID='" + _employee.EmployeeID;
             DataTable DT = DatabaseController.current.GetTable(Command);
             return DT;
         }
@@ -530,6 +560,11 @@ namespace SEN_Project.DataAccessLayer
             DataTable DT = null;
             return (DT = SearchForTable(_Client)) != null ? (DT.Rows[0] != null ? int.Parse(DT.Rows[0][0].ToString()) : -1) : -1;
         }
+        public int SearchIndex(Employee _Employee)
+        {
+            DataTable DT = null;
+            return (DT = SearchForTable(_Employee)) != null ? (DT.Rows[0] != null ? int.Parse(DT.Rows[0][0].ToString()) : -1) : -1;
+        }
         public int SearchIndex(Treatment _Treatment)
         {
             DataTable DT = null;
@@ -588,14 +623,20 @@ namespace SEN_Project.DataAccessLayer
 
         public  List<Client>    GetAllClients   ()
         {
-            //Implement
-            return null;
+            string Command = "SELECT * FROM tbl_Clients";
+            DataTable DT = DatabaseController.current.GetTable(Command);
+            List<Client>    Result  =   new List<Client>();
+            foreach (DataRow row in DT.Rows)
+            {
+                Result.Add(Factory.CreateClient(row));
+            }
+            return Result;
         }
 
         public  List<Client>    GetClientsByID  (string ID)
         {
             List<Client> Result = new List<Client>();
-            string Command = "SELECT * FROM tbl_Clients WHERE ClientID LIKE '" + ID + "%'";
+            string Command = "SELECT * FROM tbl_Clients WHERE Client_ID LIKE '" + ID + "%'";
             DataTable DT = DatabaseController.current.GetTable(Command);
             foreach (DataRow row in DT.Rows)
             {
@@ -607,7 +648,7 @@ namespace SEN_Project.DataAccessLayer
         public  List<Client>    GetClientsByFirstName   (string FirstName)
         {
             List<Client> Result = new List<Client>();
-            string Command = "SELECT * FROM tbl_Clients WHERE First_Name LIKE '" + FirstName + "%'";
+            string Command = "SELECT * FROM tbl_Clients WHERE FirstName LIKE '" + FirstName + "%'";
             DataTable DT = DatabaseController.current.GetTable(Command);
             foreach (DataRow row in DT.Rows)
             {
@@ -619,11 +660,54 @@ namespace SEN_Project.DataAccessLayer
         public List<Client> GetClientsByLastName(string LastName)
         {
             List<Client> Result = new List<Client>();
-            string Command = "SELECT * FROM tbl_Clients WHERE Last_Name LIKE '" + LastName + "%'";
+            string Command = "SELECT * FROM tbl_Clients WHERE LastName LIKE '" + LastName + "%'";
             DataTable DT = DatabaseController.current.GetTable(Command);
             foreach (DataRow row in DT.Rows)
             {
                 Result.Add(Factory.CreateClient(row));
+            }
+            return Result;
+        }
+
+        public  List<Policy>    GetAllPolicies  ()
+        {
+            string Command = "SELECT * FROM tbl_Individual_Policies";
+            DataTable DT = DatabaseController.current.GetTable(Command);
+            List<Policy> Result = new List<Policy>();
+            foreach (DataRow row in DT.Rows)
+            {
+                Result.Add(Factory.CreateIndividualPolicy(row));
+            }
+
+            Command = "SELECT * FROM tbl_Family_Policies";
+            DT = DatabaseController.current.GetTable(Command);
+            foreach (DataRow row in DT.Rows)
+            {
+                Result.Add(Factory.CreateFamilyPolicy(row));
+            }
+            return Result;
+        }
+
+        public List<Address> GetAllAddresses()
+        {
+            string Command = "SELECT * FROM tbl_Addresses";
+            DataTable DT = DatabaseController.current.GetTable(Command);
+            List<Address> Result = new List<Address>();
+            foreach (DataRow row in DT.Rows)
+            {
+                Result.Add(Factory.CreateAddress(row));
+            }
+            return Result;
+        }
+
+        public  List<Employee>  GetAllEmployees ()
+        {
+            string Command = "SELECT * FROM tbl_Employees";
+            DataTable DT = DatabaseController.current.GetTable(Command);
+            List<Employee> Result = new List<Employee>();
+            foreach (DataRow row in DT.Rows)
+            {
+                Result.Add(Factory.CreateEmployee(row));
             }
             return Result;
         }

@@ -10,6 +10,7 @@ namespace SEN_Project.BusinessLogicLayer
     {
         DateTime startTime;
         DateTime endTime;
+        Employee employee;
         public DateTime StartTime {
             get { return startTime; }
             set { startTime = value; }
@@ -17,6 +18,11 @@ namespace SEN_Project.BusinessLogicLayer
         public DateTime EndTime {
             get { return endTime; }
             set { endTime = value; }
+        }
+        public Employee CallTaker
+        {
+            get { return employee; }
+            set { employee = value; }
         }
         public float LengthInSeconds => (float)EndTime.Subtract(StartTime).TotalSeconds;
         public float LengthInMinutes => (float)EndTime.Subtract(StartTime).TotalMinutes;

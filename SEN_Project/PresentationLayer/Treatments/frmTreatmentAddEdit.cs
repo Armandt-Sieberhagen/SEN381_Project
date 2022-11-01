@@ -47,20 +47,7 @@ namespace SEN_Project.PresentationLayer.Treatments
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (rtxtDescr.Text.Trim().Length==0)
-            {
-                PresentationController.current.ShowError("Please enter a description for the treatment");
-                return;
-            }
-            if (ConfirmCallback!=null)
-            {
-                ConfirmCallback.Invoke(Factory.CreateTreatment(rtxtDescr.Text));
-                Hide();
-            }
-            else
-            {
-                PresentationController.current.ShowError("No callback");
-            }
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -69,6 +56,7 @@ namespace SEN_Project.PresentationLayer.Treatments
             {
                 CancelCallback.Invoke();
             }
+            Hide();
         }
 
         private void frmTreatmentAddEdit_Load(object sender, EventArgs e)
@@ -78,7 +66,7 @@ namespace SEN_Project.PresentationLayer.Treatments
 
         public  override    void    Reset   ()
         {
-            rtxtDescr.Clear();
+
         }
 
         private void lblTreatmentDesc_Click(object sender, EventArgs e)

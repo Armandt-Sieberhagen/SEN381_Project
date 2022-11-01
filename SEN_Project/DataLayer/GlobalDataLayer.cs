@@ -20,6 +20,7 @@ namespace SEN_Project.DataLayer
 
         public List<Treatment> AllTreatments;
         public List<PolicyData> AllPolicyData;
+        public List<Employee> AllEmployees;
         Dictionary<string, string[]> AllProvinces;
 
         enum PolicyReadStage

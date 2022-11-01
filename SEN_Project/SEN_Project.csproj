@@ -52,6 +52,8 @@
     <Compile Include="BusinessLogicLayer\Classes\Claim.cs" />
     <Compile Include="BusinessLogicLayer\Classes\Client.cs" />
     <Compile Include="BusinessLogicLayer\Classes\ClinicalProcedure.cs" />
+    <Compile Include="BusinessLogicLayer\Classes\Employee.cs" />
+    <Compile Include="BusinessLogicLayer\Classes\Person.cs" />
     <Compile Include="BusinessLogicLayer\Clipboard.cs" />
     <Compile Include="BusinessLogicLayer\Delegates.cs" />
     <Compile Include="BusinessLogicLayer\Classes\FamilyPolicy.cs" />
@@ -124,6 +126,12 @@
     <Compile Include="PresentationLayer\Conditions\frmCondition.Designer.cs">
       <DependentUpon>frmCondition.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\Employees\frmCreateEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Employees\frmCreateEmployee.Designer.cs">
+      <DependentUpon>frmCreateEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\FamilyPolicies\frmFamilyPolicy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,23 +145,17 @@
       <DependentUpon>frmSearchList.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\IResetable.cs" />
-    <Compile Include="PresentationLayer\PolicyData\frmPolicyManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PresentationLayer\PolicyData\frmPolicyManagement.Designer.cs">
-      <DependentUpon>frmPolicyManagement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PresentationLayer\PolicyData\frmPolicySearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PresentationLayer\PolicyData\frmPolicySearch.Designer.cs">
-      <DependentUpon>frmPolicySearch.cs</DependentUpon>
-    </Compile>
     <Compile Include="PresentationLayer\PolicyDetails\frmPolicyDetails.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PresentationLayer\PolicyDetails\frmPolicyDetails.Designer.cs">
       <DependentUpon>frmPolicyDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\PolicyForms\frmChoosePolicy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\PolicyForms\frmChoosePolicy.Designer.cs">
+      <DependentUpon>frmChoosePolicy.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\Procedure\frmProcedure.cs">
       <SubType>Form</SubType>
@@ -187,12 +189,6 @@
     </Compile>
     <Compile Include="PresentationLayer\Forms\ClientOptions\frmAddClient.Designer.cs">
       <DependentUpon>frmAddClient.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PresentationLayer\PolicyData\frmPolicyDataAddEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PresentationLayer\PolicyData\frmPolicyDataAddEdit.Designer.cs">
-      <DependentUpon>frmPolicyDataAddEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\PresentationController.cs" />
     <Compile Include="PresentationLayer\TableOptions.cs" />
@@ -237,6 +233,9 @@
     <EmbeddedResource Include="PresentationLayer\ChangeList\ChangeList.resx">
       <DependentUpon>ChangeList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Employees\frmCreateEmployee.resx">
+      <DependentUpon>frmCreateEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\FamilyPolicies\frmFamilyPolicy.resx">
       <DependentUpon>frmFamilyPolicy.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,11 +245,11 @@
     <EmbeddedResource Include="PresentationLayer\Forms\ListSearchForm\frmSearchList.resx">
       <DependentUpon>frmSearchList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PresentationLayer\PolicyData\frmPolicyDataAddEdit.resx">
-      <DependentUpon>frmPolicyDataAddEdit.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\PolicyDetails\frmPolicyDetails.resx">
       <DependentUpon>frmPolicyDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\PolicyForms\frmChoosePolicy.resx">
+      <DependentUpon>frmChoosePolicy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Procedure\frmProcedure.resx">
       <DependentUpon>frmProcedure.cs</DependentUpon>

@@ -11,7 +11,7 @@ using SEN_Project.DataLayer;
 using SEN_Project.BusinessLogicLayer;
 using SEN_Project.DataAccessLayer;
 using SEN_Project.PresentationLayer.Treatments;
-using SEN_Project.PresentationLayer.Addresses.AddressCreator;
+using SEN_Project.PresentationLayer.Addresses;
 
 namespace SEN_Project.PresentationLayer
 {

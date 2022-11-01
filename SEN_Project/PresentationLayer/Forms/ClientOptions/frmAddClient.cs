@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SEN_Project.PresentationLayer.ChangeList;
-using SEN_Project.PresentationLayer.Addresses.AddressCreator;
+using SEN_Project.PresentationLayer.Addresses;
 using SEN_Project.BusinessLogicLayer;
 using SEN_Project.PresentationLayer.Addresses.AddressSelector;
 
@@ -168,7 +168,8 @@ namespace SEN_Project.PresentationLayer.Forms.ClientOptions
             string ID = txtID.Text.Trim();
             string PhoneNumber = txtPhoneNumber.Text.Trim();
             string Email = txtEmail.Text.Trim();
-            ConfirmCallback.Invoke(BusinessLogic.current.CreateClient(FirstName, LastName, ID, PhoneNumber, SelectedPolicies, Perscriptions, address, Email));
+            //Fix this!!!
+            ConfirmCallback.Invoke(BusinessLogic.current.CreateClient(FirstName, LastName, ID, PhoneNumber, SelectedPolicies[0], Perscriptions, address, Email));
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

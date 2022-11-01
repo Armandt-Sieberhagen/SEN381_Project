@@ -14,5 +14,15 @@ namespace SEN_Project.BusinessLogicLayer
             get { return member; }
             set { member = value; }
         }
+
+        public  override    string    ToString    ()
+        {
+            return "Policy ID: \t" + ID.ToString() +
+                "\n Policy Name: \t" + DataRef.Name +
+                "\n Member Name: " + Member.FullName +
+                "\n Client ID: " + Member.ClientID.ToString();
+        }
+
+        public override string ToLine => ID.ToString() + '\t' + Member.FullName + '\t' + Member.IDNumber + '\t' + DataRef.Name;
     }
 }

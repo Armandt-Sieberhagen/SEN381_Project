@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using SEN_Project.DataLayer;
 using SEN_Project.BusinessLogicLayer;
 
-namespace SEN_Project.PresentationLayer.Addresses.AddressCreator
+namespace SEN_Project.PresentationLayer.Addresses
 {
     public partial class AddressCreator : TableForm
     {
@@ -38,7 +38,7 @@ namespace SEN_Project.PresentationLayer.Addresses.AddressCreator
             }
         }
 
-        public  void    SetAdreess (Address _Address)
+        public  void    SetAddress (Address _Address)
         {
             if (_Address==null)
             {
@@ -60,11 +60,67 @@ namespace SEN_Project.PresentationLayer.Addresses.AddressCreator
             }
         }
 
-        private void cbxProvince_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnCreateAddress_Click(object sender, EventArgs e)
+        {
+            Address Result = GetResult();
+            if (OnConfirm!=null && Result!=null)
+            {
+               OnConfirm.Invoke(Result);
+            }
+            Hide();
+        }
+
+        Address GetResult   ()
+        {
+            //Do validation!!!
+            return Factory.CreateAddress(txtStreet.Text.Trim(), cbxCity.SelectedItem.ToString(), cbxProvince.SelectedItem.ToString(), txtPostalCode.Text.Trim());
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (OnCancel!=null)
+            {
+                OnCancel.Invoke();
+            }
+            Hide();
+        }
+
+        public  void    QuickValidate   ()
+        {
+            btnCreateAddress.Enabled = FlagStreet && FlagPostal && FlagCity && FlagProvince;
+        }
+
+
+        public  override    void    Reset   ()
+        {
+            txtStreet.Clear();
+            txtPostalCode.Clear();
+            cbxProvince.SelectedIndex = -1;
+            cbxCity.SelectedIndex = -1;
+        }
+
+        private void btnCopyAddress_Click(object sender, EventArgs e)
+        {
+            Address Result = GetResult();
+            if (Result != null)
+            {
+                SEN_Clipboard._Address = Result;
+            }
+        }
+
+        private void btnPaste_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._Address!=null)
+            {
+                SetAddress(SEN_Clipboard._Address);
+            }
+        }
+
+        private void cbxProvince_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             QuickValidate();
             cbxCity.Enabled = cbxProvince.SelectedIndex > -1;
-            if (cbxProvince.SelectedIndex>-1)
+            if (cbxProvince.SelectedIndex > -1)
             {
                 cbxCity.Items.Clear();
                 string[] Cities = GlobalDataLayer.CitiesOfProvince(cbxProvince.SelectedItem.ToString());
@@ -75,56 +131,19 @@ namespace SEN_Project.PresentationLayer.Addresses.AddressCreator
             }
         }
 
-        private void btnCreateAddress_Click(object sender, EventArgs e)
-        {
-            if (OnConfirm!=null)
-            {
-                //Do validation!!!
-                Address NewAddress = Factory.CreateAddress(txtStreet.Text.Trim(), cbxCity.SelectedItem.ToString(), cbxProvince.SelectedItem.ToString(), txtPostalCode.Text.Trim());
-                OnConfirm.Invoke(NewAddress);
-                Hide();
-            }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            if (OnCancel!=null)
-            {
-                OnCancel.Invoke();
-            }
-        }
-
-        public  void    QuickValidate   ()
-        {
-            btnCreateAddress.Enabled = FlagStreet && FlagPostal && FlagCity && FlagProvince;
-        }
-
-        private void txtStreet_TextChanged(object sender, EventArgs e)
+        private void txtStreet_TextChanged_1(object sender, EventArgs e)
         {
             QuickValidate();
         }
 
-        private void txtPostalCode_TextChanged(object sender, EventArgs e)
+        private void txtPostalCode_TextChanged_1(object sender, EventArgs e)
         {
             QuickValidate();
         }
 
-        private void cbxCity_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbxCity_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             QuickValidate();
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        public  override    void    Reset   ()
-        {
-            txtStreet.Clear();
-            txtPostalCode.Clear();
-            cbxProvince.SelectedIndex = -1;
-            cbxCity.SelectedIndex = -1;
         }
     }
 }

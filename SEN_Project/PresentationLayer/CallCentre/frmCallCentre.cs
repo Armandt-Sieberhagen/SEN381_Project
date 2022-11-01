@@ -10,7 +10,9 @@ using System.Windows.Forms;
 using SEN_Project.BusinessLogicLayer;
 using SEN_Project.PresentationLayer.Clients;
 using SEN_Project.PresentationLayer.Claims;
+using SEN_Project.PresentationLayer.PolicyForms;
 using SEN_Project.PresentationLayer.Forms.ListSearchForm;
+using SEN_Project.PresentationLayer.Employees;
 
 namespace SEN_Project.PresentationLayer.CallCentre
 {
@@ -20,6 +22,9 @@ namespace SEN_Project.PresentationLayer.CallCentre
         Call CurrentCall;
         DateTime CallStart;
         Client CurrentClient;
+        Employee CurrentEmployee;
+        bool CallOperating;
+        Claim CurrentClaim;
 
         public frmCallCentre()
         {
@@ -28,13 +33,18 @@ namespace SEN_Project.PresentationLayer.CallCentre
 
         private void frmCallCentre_Load(object sender, EventArgs e)
         {
-
+            btnSimulateCall.Enabled = CurrentEmployee != null;
+            gbxClaimOptions.Enabled = CurrentClient != null &&  CallOperating;
+            gbxClientDetails.Enabled = CallOperating;
+            gbxPolicyInfo.Enabled = CallOperating && CurrentClient != null;
+            gbxProcedureInfo.Enabled = CallOperating && CurrentClient != null;
         }
 
         private void btnSimulateCall_Click(object sender, EventArgs e)
         {
             CallStart = DateTime.Now;
             lblStartTime.Text = CallStart.ToString();
+            CallOperating = true;
             //Start Timer
         }
 
@@ -42,6 +52,7 @@ namespace SEN_Project.PresentationLayer.CallCentre
         {
             frmSearchClient SearchFrm   =   Factory.GetSearchClient();
             SearchFrm.ConfirmCallback = SetClient;
+            SearchFrm.Show();
         }
 
         public  void    SetClient   (Client _Client)
@@ -55,6 +66,7 @@ namespace SEN_Project.PresentationLayer.CallCentre
             rtxtAddressInfo.Clear();
             rtxtAddressInfo.Text = _Client.AddressDetails;
             CurrentClient = _Client;
+            rtxtPolicyInfo.Text = CurrentClient.MyPolicy.ToString();
         }
 
         private void btnCopyClient_Click(object sender, EventArgs e)
@@ -118,6 +130,10 @@ namespace SEN_Project.PresentationLayer.CallCentre
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (CurrentClient == null)
+            {
+                return;
+            }
             frmSearchList SearchForm = Factory.GetSearchList();
             SearchForm.ConfirmCallback = RemoveClaim;
             List<string> Options = new List<string>();
@@ -138,6 +154,77 @@ namespace SEN_Project.PresentationLayer.CallCentre
                     CurrentClient.RemoveClaim(Index);
                 }
             }
+        }
+
+        private void btnChangePolicy_Click(object sender, EventArgs e)
+        {
+            frmChoosePolicy ChooseForm = Factory.GetPolicyForm();
+            ChooseForm.ConfirmCallback = SetPolicy;
+            if (CurrentClient!=null ? CurrentClient.MyPolicy!=null : false)
+            {
+                ChooseForm.SetAll(CurrentClient);
+            }
+            ChooseForm.Show();
+        }
+
+        public  void    SetPolicy   (Policy Pol)
+        {
+            if (CurrentClient!=null)
+            {
+                CurrentClient.MyPolicy = Pol;
+                rtxtPolicyInfo.Text = CurrentClient.MyPolicy.ToString();
+            }
+        }
+
+        private void btnCreateNewClient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEndCall_Click(object sender, EventArgs e)
+        {
+            CallOperating = false;
+            if (CurrentClient==null || CurrentClaim==null)
+            {
+                return;
+            }
+            CurrentCall = Factory.CreateCall(CallStart,DateTime.Now,CurrentEmployee);
+            CurrentClient.AddCall(CurrentCall);
+            CurrentCall = null;
+        }
+
+        private void btnCreateEmployee_Click(object sender, EventArgs e)
+        {
+            frmCreateEmployee CreateEmployee = Factory.GetCreateEmployeeForm();
+            CreateEmployee.ConfirmCallback = SetEmployee;
+            CreateEmployee.Show();
+        }
+
+        public  void    SetEmployee (Employee   _employee)
+        {
+            CurrentEmployee = _employee;
+            rtxtEmployeeDetails.Text = _employee.ToString();
+            btnSimulateCall.Enabled = _employee != null;
+        }
+
+        public  void    SetEmployee (int    Index,string    Line)
+        {
+            SetEmployee(BusinessLogic.current.GetEmployeeByID(Index));
+        }
+
+        private void btnSelectEmployee_Click(object sender, EventArgs e)
+        {
+            List<Employee> AllEmployees = BusinessLogic.current.GetAllEmployees();
+            List<string> Options = new List<string>();
+            foreach (Employee Emp in AllEmployees)
+            {
+                Options.Add(Emp.ToLine);
+            }
+
+            frmSearchList SearchList = Factory.GetSearchList();
+            SearchList.SetItems(Options);
+            SearchList.ConfirmCallback = SetEmployee;
+            SearchList.Show();
         }
     }
 }

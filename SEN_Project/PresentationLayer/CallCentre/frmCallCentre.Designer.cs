@@ -49,10 +49,7 @@
             this.btnCreateNewClaim = new System.Windows.Forms.Button();
             this.gbxPolicyInfo = new System.Windows.Forms.GroupBox();
             this.rtxtAddressInfo = new System.Windows.Forms.RichTextBox();
-            this.lbxPolicyInfo = new System.Windows.Forms.ListBox();
-            this.btnAddPolicy = new System.Windows.Forms.Button();
-            this.btnRemovePolicy = new System.Windows.Forms.Button();
-            this.btnEditPolicy = new System.Windows.Forms.Button();
+            this.btnChangePolicy = new System.Windows.Forms.Button();
             this.btnPasteSelectedPolicy = new System.Windows.Forms.Button();
             this.btnCopySelectedPolicy = new System.Windows.Forms.Button();
             this.gbxProcedureInfo = new System.Windows.Forms.GroupBox();
@@ -63,6 +60,9 @@
             this.btnAddProcedure = new System.Windows.Forms.Button();
             this.lbxProcedures = new System.Windows.Forms.ListBox();
             this.lblCallLength = new System.Windows.Forms.Label();
+            this.rtxtPolicyInfo = new System.Windows.Forms.RichTextBox();
+            this.btnCreateNewClient = new System.Windows.Forms.Button();
+            this.btnCreateEmployee = new System.Windows.Forms.Button();
             this.gbxCallDetails.SuspendLayout();
             this.gbxClientDetails.SuspendLayout();
             this.gbxClaimOptions.SuspendLayout();
@@ -82,6 +82,7 @@
             // 
             // gbxCallDetails
             // 
+            this.gbxCallDetails.Controls.Add(this.btnCreateEmployee);
             this.gbxCallDetails.Controls.Add(this.btnSelectEmployee);
             this.gbxCallDetails.Controls.Add(this.rtxtEmployeeDetails);
             this.gbxCallDetails.Controls.Add(this.btnPasteCall);
@@ -148,6 +149,7 @@
             this.btnSelectEmployee.TabIndex = 7;
             this.btnSelectEmployee.Text = "Select Employee";
             this.btnSelectEmployee.UseVisualStyleBackColor = true;
+            this.btnSelectEmployee.Click += new System.EventHandler(this.btnSelectEmployee_Click);
             // 
             // gbxClientDetails
             // 
@@ -209,6 +211,7 @@
             this.btnEndCall.TabIndex = 9;
             this.btnEndCall.Text = "End Call";
             this.btnEndCall.UseVisualStyleBackColor = true;
+            this.btnEndCall.Click += new System.EventHandler(this.btnEndCall_Click);
             // 
             // gbxClaimOptions
             // 
@@ -265,12 +268,10 @@
             // 
             // gbxPolicyInfo
             // 
+            this.gbxPolicyInfo.Controls.Add(this.rtxtPolicyInfo);
             this.gbxPolicyInfo.Controls.Add(this.btnPasteSelectedPolicy);
             this.gbxPolicyInfo.Controls.Add(this.btnCopySelectedPolicy);
-            this.gbxPolicyInfo.Controls.Add(this.btnEditPolicy);
-            this.gbxPolicyInfo.Controls.Add(this.btnRemovePolicy);
-            this.gbxPolicyInfo.Controls.Add(this.btnAddPolicy);
-            this.gbxPolicyInfo.Controls.Add(this.lbxPolicyInfo);
+            this.gbxPolicyInfo.Controls.Add(this.btnChangePolicy);
             this.gbxPolicyInfo.Location = new System.Drawing.Point(12, 405);
             this.gbxPolicyInfo.Name = "gbxPolicyInfo";
             this.gbxPolicyInfo.Size = new System.Drawing.Size(601, 204);
@@ -287,40 +288,15 @@
             this.rtxtAddressInfo.TabIndex = 8;
             this.rtxtAddressInfo.Text = "";
             // 
-            // lbxPolicyInfo
+            // btnChangePolicy
             // 
-            this.lbxPolicyInfo.FormattingEnabled = true;
-            this.lbxPolicyInfo.Location = new System.Drawing.Point(12, 19);
-            this.lbxPolicyInfo.Name = "lbxPolicyInfo";
-            this.lbxPolicyInfo.Size = new System.Drawing.Size(339, 173);
-            this.lbxPolicyInfo.TabIndex = 0;
-            // 
-            // btnAddPolicy
-            // 
-            this.btnAddPolicy.Location = new System.Drawing.Point(357, 19);
-            this.btnAddPolicy.Name = "btnAddPolicy";
-            this.btnAddPolicy.Size = new System.Drawing.Size(134, 57);
-            this.btnAddPolicy.TabIndex = 13;
-            this.btnAddPolicy.Text = "Add Policy";
-            this.btnAddPolicy.UseVisualStyleBackColor = true;
-            // 
-            // btnRemovePolicy
-            // 
-            this.btnRemovePolicy.Location = new System.Drawing.Point(357, 82);
-            this.btnRemovePolicy.Name = "btnRemovePolicy";
-            this.btnRemovePolicy.Size = new System.Drawing.Size(134, 50);
-            this.btnRemovePolicy.TabIndex = 14;
-            this.btnRemovePolicy.Text = "Remove Policy";
-            this.btnRemovePolicy.UseVisualStyleBackColor = true;
-            // 
-            // btnEditPolicy
-            // 
-            this.btnEditPolicy.Location = new System.Drawing.Point(357, 138);
-            this.btnEditPolicy.Name = "btnEditPolicy";
-            this.btnEditPolicy.Size = new System.Drawing.Size(134, 54);
-            this.btnEditPolicy.TabIndex = 15;
-            this.btnEditPolicy.Text = "Edit Policy";
-            this.btnEditPolicy.UseVisualStyleBackColor = true;
+            this.btnChangePolicy.Location = new System.Drawing.Point(12, 19);
+            this.btnChangePolicy.Name = "btnChangePolicy";
+            this.btnChangePolicy.Size = new System.Drawing.Size(134, 33);
+            this.btnChangePolicy.TabIndex = 15;
+            this.btnChangePolicy.Text = "Change Policy";
+            this.btnChangePolicy.UseVisualStyleBackColor = true;
+            this.btnChangePolicy.Click += new System.EventHandler(this.btnChangePolicy_Click);
             // 
             // btnPasteSelectedPolicy
             // 
@@ -418,11 +394,41 @@
             this.lblCallLength.TabIndex = 19;
             this.lblCallLength.Text = "Call Length: 00:00:00";
             // 
+            // rtxtPolicyInfo
+            // 
+            this.rtxtPolicyInfo.Location = new System.Drawing.Point(12, 58);
+            this.rtxtPolicyInfo.Name = "rtxtPolicyInfo";
+            this.rtxtPolicyInfo.ReadOnly = true;
+            this.rtxtPolicyInfo.Size = new System.Drawing.Size(569, 140);
+            this.rtxtPolicyInfo.TabIndex = 18;
+            this.rtxtPolicyInfo.Text = "";
+            // 
+            // btnCreateNewClient
+            // 
+            this.btnCreateNewClient.Location = new System.Drawing.Point(93, 123);
+            this.btnCreateNewClient.Name = "btnCreateNewClient";
+            this.btnCreateNewClient.Size = new System.Drawing.Size(75, 23);
+            this.btnCreateNewClient.TabIndex = 20;
+            this.btnCreateNewClient.Text = "Create Client";
+            this.btnCreateNewClient.UseVisualStyleBackColor = true;
+            this.btnCreateNewClient.Click += new System.EventHandler(this.btnCreateNewClient_Click);
+            // 
+            // btnCreateEmployee
+            // 
+            this.btnCreateEmployee.Location = new System.Drawing.Point(147, 38);
+            this.btnCreateEmployee.Name = "btnCreateEmployee";
+            this.btnCreateEmployee.Size = new System.Drawing.Size(75, 23);
+            this.btnCreateEmployee.TabIndex = 8;
+            this.btnCreateEmployee.Text = "Create";
+            this.btnCreateEmployee.UseVisualStyleBackColor = true;
+            this.btnCreateEmployee.Click += new System.EventHandler(this.btnCreateEmployee_Click);
+            // 
             // frmCallCentre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(885, 898);
+            this.Controls.Add(this.btnCreateNewClient);
             this.Controls.Add(this.lblCallLength);
             this.Controls.Add(this.gbxProcedureInfo);
             this.Controls.Add(this.gbxPolicyInfo);
@@ -471,10 +477,7 @@
         private System.Windows.Forms.GroupBox gbxPolicyInfo;
         private System.Windows.Forms.Button btnPasteSelectedPolicy;
         private System.Windows.Forms.Button btnCopySelectedPolicy;
-        private System.Windows.Forms.Button btnEditPolicy;
-        private System.Windows.Forms.Button btnRemovePolicy;
-        private System.Windows.Forms.Button btnAddPolicy;
-        private System.Windows.Forms.ListBox lbxPolicyInfo;
+        private System.Windows.Forms.Button btnChangePolicy;
         private System.Windows.Forms.GroupBox gbxProcedureInfo;
         private System.Windows.Forms.Button btnPasteProcedure;
         private System.Windows.Forms.Button btnCopyProcedure;
@@ -483,5 +486,8 @@
         private System.Windows.Forms.Button btnAddProcedure;
         private System.Windows.Forms.ListBox lbxProcedures;
         private System.Windows.Forms.Label lblCallLength;
+        private System.Windows.Forms.RichTextBox rtxtPolicyInfo;
+        private System.Windows.Forms.Button btnCreateNewClient;
+        private System.Windows.Forms.Button btnCreateEmployee;
     }
 }

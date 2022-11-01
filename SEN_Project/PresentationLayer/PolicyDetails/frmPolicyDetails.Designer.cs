@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtxtPolicyDescription = new System.Windows.Forms.RichTextBox();
             this.txtPolicyName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,7 +55,7 @@
             this.groupBox1.Controls.Add(this.btnChangeTreatments);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.rtxtTreatmentCovered);
-            this.groupBox1.Controls.Add(this.richTextBox1);
+            this.groupBox1.Controls.Add(this.rtxtPolicyDescription);
             this.groupBox1.Controls.Add(this.txtPolicyName);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -66,13 +66,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // richTextBox1
+            // rtxtPolicyDescription
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(9, 83);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(178, 143);
-            this.richTextBox1.TabIndex = 7;
-            this.richTextBox1.Text = "";
+            this.rtxtPolicyDescription.Location = new System.Drawing.Point(9, 83);
+            this.rtxtPolicyDescription.Name = "rtxtPolicyDescription";
+            this.rtxtPolicyDescription.Size = new System.Drawing.Size(178, 143);
+            this.rtxtPolicyDescription.TabIndex = 7;
+            this.rtxtPolicyDescription.Text = "";
             // 
             // txtPolicyName
             // 
@@ -198,7 +198,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtxtPolicyDescription;
         private System.Windows.Forms.TextBox txtPolicyName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

@@ -4,10 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SEN_Project.PresentationLayer.Forms.ClientOptions;
+using SEN_Project.DataLayer;
+using SEN_Project.DataAccessLayer;
 using SEN_Project.PresentationLayer.Clients;
 using SEN_Project.PresentationLayer.Claims;
+using SEN_Project.PresentationLayer.PolicyForms;
 using System.Data;//For when we want to convert DataRows to Objects, and vice versa
 using SEN_Project.PresentationLayer.Forms.ListSearchForm;
+using SEN_Project.PresentationLayer.Employees;
+using SEN_Project.PresentationLayer.Addresses;
 
 namespace SEN_Project.BusinessLogicLayer
 {
@@ -44,19 +49,19 @@ namespace SEN_Project.BusinessLogicLayer
             return Result;
         }
 
-        public  static  Call    CreateCall  (DateTime   StartTime,DateTime  EndTime)
+        public  static  Call    CreateCall  (DateTime   StartTime,DateTime  EndTime,Employee    employee)
         {
             Call Result = new Call();
             Result.StartTime = StartTime;
             Result.EndTime = EndTime;
-
+            Result.CallTaker = employee;
             return Result;
         }
 
-        public  static  Call    CreateCall  (DateTime   StartTime,float LengthInMinutes)
+        public  static  Call    CreateCall  (DateTime   StartTime,float LengthInMinutes,Employee employee)
         {
             DateTime EndTime = StartTime.AddMinutes(LengthInMinutes);
-            return CreateCall(StartTime, EndTime);
+            return CreateCall(StartTime, EndTime, employee);
         }
 
         public  static  Claim   CreateClaim (Client _Client,ClinicalProcedure Procedure,Claim.ClaimStatus Status = Claim.ClaimStatus.Pending)
@@ -80,11 +85,59 @@ namespace SEN_Project.BusinessLogicLayer
             return Result;
         }
 
+        public  static  Employee    CreateEmployee  (string FName,string    LName,string ID,string Phone,string Email,Address _Address)
+        {
+            Employee Result = new Employee();
+
+            Result.FirstName = FName;
+            Result.LastName = LName;
+            Result.IDNumber = ID;
+            Result.PhoneNumber = Phone;
+            Result.Email = Email;
+            Result.PersonAddress = _Address;
+
+            List<Employee>  AllEmployees = BusinessLogic.current.GetAllEmployees();
+            if (!AllEmployees.Contains(Result))
+            {
+                AllEmployees.Add(Result);
+            }
+
+            return Result;
+        }
+        public static Employee CreateEmployee(DataRow Row)
+        {
+            Employee Result = new Employee();
+
+            Result.EmployeeID = int.Parse(Row[0].ToString());//Add exception handling here!!!****
+            Result.FirstName = Row[1].ToString();
+            Result.LastName = Row[2].ToString();
+            Result.IDNumber = Row[3].ToString();
+            Result.PhoneNumber = Row[4].ToString();
+            Result.Email = Row[5].ToString();
+            Result.PersonAddress = BusinessLogic.current.GetAddressByID(int.Parse(Row[6].ToString()));//Add exception handling here!!!****
+
+            List<Employee> AllEmployees = BusinessLogic.current.GetAllEmployees();
+            if (!AllEmployees.Contains(Result))
+            {
+                AllEmployees.Add(Result);
+            }
+
+            return Result;
+        }
+
         public static FamilyPolicy    CreateFamilyPolicy  (List<PolicyMember> Members,PolicyData DataRef)
         {
             FamilyPolicy Result = new FamilyPolicy();
             Result.Members = Members;
             Result.DataRef = DataRef;
+            return Result;
+        }
+        public static FamilyPolicy CreateFamilyPolicy(DataRow Row)
+        {
+            FamilyPolicy Result = new FamilyPolicy();
+            //IMPLEMENT!!!
+            //Result.Members = Members;
+            //Result.DataRef = DataRef;
             return Result;
         }
 
@@ -93,6 +146,14 @@ namespace SEN_Project.BusinessLogicLayer
             IndividualPolicy Result = new IndividualPolicy();
             Result.Member = Member;
             Result.DataRef = DataRef;
+            return Result;
+        }
+        public static IndividualPolicy CreateIndividualPolicy(DataRow Row)
+        {
+            IndividualPolicy Result = new IndividualPolicy();
+            //IMPLEMENT!!!
+            //Result.Member = Member;
+            //Result.DataRef = DataRef;
             return Result;
         }
 
@@ -147,16 +208,16 @@ namespace SEN_Project.BusinessLogicLayer
             return Result;
         }
 
-        public  static Client CreateClient (string FirstName, string LastName, List<Call> CallHistory,List<Policy> Policies,string ID,Address address,string Email,string PhoneNumber,List<Claim> claims,List<ClinicalProcedure> Procedures,List<string> ActivePerscriptions)
+        public  static Client CreateClient (string FirstName, string LastName, List<Call> CallHistory,Policy _Policy,string ID,Address address,string Email,string PhoneNumber,List<Claim> claims,List<ClinicalProcedure> Procedures,List<string> ActivePerscriptions)
         {
             Client Result = new Client();
 
             Result.FirstName = FirstName;
             Result.LastName = LastName;
             Result.CallHistory = CallHistory;
-            Result.Policies = Policies;
+            Result.MyPolicy = _Policy;
             Result.IDNumber = ID;
-            Result.ClientAddress = address;
+            Result.PersonAddress = address;
             Result.Email = Email;
             Result.PhoneNumber = PhoneNumber;
             Result.ClaimsHistory = claims;
@@ -248,7 +309,46 @@ namespace SEN_Project.BusinessLogicLayer
             {
                 ListSearch = new frmSearchList();
             }
-            return ListSearch();
+            return ListSearch;
+        }
+        static frmChoosePolicy PolicyForm;
+        public static frmChoosePolicy GetPolicyForm()
+        {
+            if (PolicyForm != null)
+            {
+                PolicyForm.Reset();
+            }
+            else
+            {
+                PolicyForm = new frmChoosePolicy();
+            }
+            return PolicyForm;
+        }
+        static frmCreateEmployee CreateEmployeeForm;
+        public  static frmCreateEmployee GetCreateEmployeeForm()
+        {
+            if (CreateEmployeeForm != null)
+            {
+                CreateEmployeeForm.Reset();
+            }
+            else
+            {
+                CreateEmployeeForm = new frmCreateEmployee();
+            }
+            return CreateEmployeeForm;
+        }
+        static AddressCreator AddressCreatorForm;
+        public static AddressCreator GetAddressCreator()
+        {
+            if (AddressCreatorForm != null)
+            {
+                AddressCreatorForm.Reset();
+            }
+            else
+            {
+                AddressCreatorForm = new AddressCreator();
+            }
+            return AddressCreatorForm;
         }
 
         public  static  Client  GetRandomClient ()

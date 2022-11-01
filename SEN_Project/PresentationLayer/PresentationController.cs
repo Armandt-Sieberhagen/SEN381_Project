@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SEN_Project.PresentationLayer.Forms.ClientOptions;
-using SEN_Project.PresentationLayer.Addresses.AddressCreator;
+using SEN_Project.PresentationLayer.Addresses;
 using SEN_Project.PresentationLayer.Treatments;
 using SEN_Project.BusinessLogicLayer;
 

@@ -6,17 +6,12 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    public class Client : IComparable<Client>
+    public class Client : Person,IComparable<Client>
     {
         int clientID;
-        string firstName;
-        string lastName;
+        
         List<Call> callHistory;
-        List<Policy> policies;
-        string idNumber;
-        Address address;
-        string email;
-        string phoneNumber;
+        Policy policy;
         List<Claim> claimsHistory;
         List<ClinicalProcedure> clinicalHistory;
         List<string> activePerscriptions;
@@ -26,40 +21,14 @@ namespace SEN_Project.BusinessLogicLayer
             get { return clientID; }
             set { clientID = value; }
         }
-        public string FirstName {
-            get { return firstName; }
-            set { firstName = value; }
-        }
-        public string LastName {
-            get { return lastName; }
-            set { lastName = value; }
-        }
-        public string FullName => FirstName + " " + LastName;
+
         public List<Call> CallHistory {
             get { return callHistory; }
             set { callHistory = value; }
         }
-        public List<Policy> Policies {
-            get { return policies; }
-            set { policies = value; }
-        }
-        public string IDNumber {
-            get { return idNumber; }
-            set { idNumber = value; }
-        }
-        public Address ClientAddress {
-            get { return address; }
-            set { address = value; }
-        }
-        public string Email
-        {
-            get { return email; }
-            set { email = value; }
-        }
-        public string PhoneNumber
-        {
-            get { return phoneNumber; }
-            set { phoneNumber = value; }
+        public Policy MyPolicy {
+            get { return policy; }
+            set { policy = value; }
         }
         public List<Claim> ClaimsHistory
         {
@@ -77,9 +46,9 @@ namespace SEN_Project.BusinessLogicLayer
             set { activePerscriptions = value; }
         }
 
-        public string ToLine => ClientID + '\t' + FirstName + '\t' + LastName + '\t' + IDNumber;
+        public string ToLine => ClientID + '\t' + FullName + '\t' + IDNumber;
         public string PersonalDetails => $"Client ID: \t " + ClientID + " \n First Name: \t " + FirstName + " \t Last Name: " + LastName + " \n ID Number: \t" + IDNumber;
-        public string AddressDetails => ClientAddress.ToString();
+        public string AddressDetails => PersonAddress.ToString();
 
         public int CompareTo(Client obj)
         {
@@ -136,6 +105,14 @@ namespace SEN_Project.BusinessLogicLayer
             if (Index>-1 && Index<ClaimsHistory.Count)
             {
                 ClaimsHistory.RemoveAt(Index);
+            }
+        }
+
+        public  void    AddCall (Call   _Call)
+        {
+            if (!CallHistory.Contains(_Call))
+            {
+                CallHistory.Add(_Call);
             }
         }
     }

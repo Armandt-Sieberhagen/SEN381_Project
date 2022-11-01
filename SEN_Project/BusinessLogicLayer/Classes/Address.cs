@@ -15,7 +15,8 @@ namespace SEN_Project.BusinessLogicLayer
         string province;
         string postalCode;
 
-        public string Street {
+        public string Street
+        {
             get { return street; }
             set { street = value; }
         }
@@ -35,9 +36,14 @@ namespace SEN_Project.BusinessLogicLayer
             set { postalCode = value; }
         }
 
-        public  override    string  ToString    ()
+        public override string ToString()
         {
-            return Street + '\n' + PostalCode + '\n' + City + '\n' + Province;
+            return "Street: \t" + Street +
+        "\n Postal Code: \t" + PostalCode +
+        "\n City: \t" + City +
+        "Province: \t" + Province;
         }
+
+        public string ToLine => Street + '\n' + PostalCode + '\n' + City + '\n' + Province;
     }
 }

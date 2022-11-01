@@ -42,5 +42,21 @@ namespace SEN_Project.BusinessLogicLayer
         {
             return TreatmentsCovered.Contains(_Value);
         }
+
+        public string ToLine => Name + '\t' + Price + '\t' + Available;
+
+        public  override    string  ToString    ()
+        {
+            string Result = "Name: \t" + Name +
+                "\n Price: \t R" + Price.ToString() +
+                "\n Available: \t" + Available.ToString() +
+                "\n \n Description: \n" + Description +
+                "\n \n Treatments Covered: \n";
+            foreach (Treatment treatment in TreatmentsCovered)
+            {
+                Result += treatment.Name + "\n";
+            }
+            return Result;
+        }
     }
 }

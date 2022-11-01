@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SEN_Project.DataAccessLayer;
+using SEN_Project.DataLayer;
 
 namespace SEN_Project.BusinessLogicLayer
 {
@@ -15,17 +16,9 @@ namespace SEN_Project.BusinessLogicLayer
             current = this;
         }
 
-        public  Client    CreateClient    (string FirstName,string    LastName,string ID,string PhoneNumber,List<string> _Policies,List<string> Perscriptions,Address _Address,string Email="")
+        public  Client    CreateClient    (string FirstName,string    LastName,string ID,string PhoneNumber,string _Policy,List<string> Perscriptions,Address _Address,string Email="")
         {
-            List<Policy> Policies = new List<Policy>();
-            if (_Policies!=null)
-            {
-                foreach (string PolicyName in _Policies)
-                {
-                    Policies.Add(GetPolicyByName(PolicyName));
-                }
-            }
-            Client client = Factory.CreateClient(FirstName, LastName, new List<Call>(), Policies, ID, _Address, Email, PhoneNumber, new List<Claim>(), new List<ClinicalProcedure>(), Perscriptions ?? new List<string>());
+            Client client = Factory.CreateClient(FirstName, LastName, new List<Call>(), GetPolicyByName(_Policy), ID, _Address, Email, PhoneNumber, new List<Claim>(), new List<ClinicalProcedure>(), Perscriptions ?? new List<string>());
             return client;
         }
 
@@ -73,6 +66,61 @@ namespace SEN_Project.BusinessLogicLayer
         public List<Client> GetClientsByLastName(string LastName)
         {
             return DatabaseAccess.current.GetClientsByLastName(LastName);
+        }
+
+        public  List<Policy>    GetAllPolicies  ()
+        {
+            return DatabaseAccess.current.GetAllPolicies();
+        }
+
+        public  List<Address>   GetAllAddresses ()
+        {
+            return DatabaseAccess.current.GetAllAddresses();
+        }
+
+        public  Address GetAddressByID  (int    ID)
+        {
+            List<Address> AllAddresses = GetAllAddresses();
+            if (ID>=0 && ID<AllAddresses.Count)
+            {
+                return AllAddresses[ID];
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public  List<Employee>  GetAllEmployees ()
+        {
+            if (GlobalDataLayer.current.AllEmployees==null)
+            {
+                GlobalDataLayer.current.AllEmployees = new List<Employee>();
+                GlobalDataLayer.current.AllEmployees = DatabaseAccess.current.GetAllEmployees();
+            }
+            GlobalDataLayer.current.AllEmployees.Sort();
+            return GlobalDataLayer.current.AllEmployees;
+        }
+
+        public  Employee    GetEmployeeByID (int    ID)
+        {
+            List<Employee> AllEmployees = GlobalDataLayer.current.AllEmployees;
+            if (ID>=0  && ID<AllEmployees.Count)
+            {
+                return AllEmployees[ID];
+            }
+            return null;
+        }
+
+        public  void    CloseOff   ()
+        {
+            if (GlobalDataLayer.current.AllEmployees!=null)
+            {
+                foreach (Employee emp in GlobalDataLayer.current.AllEmployees)
+                {
+                    DatabaseAccess.current.Add(emp);
+                }
+            }
         }
     }
 }

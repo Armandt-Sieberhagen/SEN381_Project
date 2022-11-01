@@ -45,6 +45,7 @@ namespace SEN_Project
             this.rtxtAddress = new System.Windows.Forms.RichTextBox();
             this.btnSimulateClient = new System.Windows.Forms.Button();
             this.lblAddress = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.gbxPersonalDetails.SuspendLayout();
             this.gbxContactInfo.SuspendLayout();
             this.SuspendLayout();
@@ -203,11 +204,22 @@ namespace SEN_Project
             this.lblAddress.TabIndex = 9;
             this.lblAddress.Text = "Address Information";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(213, 452);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(231, 127);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1111, 696);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.btnSimulateClient);
             this.Controls.Add(this.rtxtAddress);
@@ -221,6 +233,7 @@ namespace SEN_Project
             this.Controls.Add(this.btnViewDatabase);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gbxPersonalDetails.ResumeLayout(false);
             this.gbxPersonalDetails.PerformLayout();
@@ -249,6 +262,7 @@ namespace SEN_Project
         private System.Windows.Forms.RichTextBox rtxtAddress;
         private System.Windows.Forms.Button btnSimulateClient;
         private System.Windows.Forms.Label lblAddress;
+        private System.Windows.Forms.Button button1;
     }
 }
 

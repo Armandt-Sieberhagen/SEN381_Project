@@ -12,6 +12,7 @@ using SEN_Project.DataAccessLayer;
 using SEN_Project.BusinessLogicLayer;
 using SEN_Project.DataLayer;
 using SEN_Project.PresentationLayer.Forms.ClientOptions;
+using SEN_Project.PresentationLayer.CallCentre;
 
 namespace SEN_Project
 {
@@ -38,7 +39,7 @@ namespace SEN_Project
                     lblIdNumber.Text = "ID Number: " + value.IDNumber;
                     lblPhoneNumber.Text = "Phone Number: " + value.PhoneNumber;
                     lblEmail.Text = "E-mail: " + value.Email;
-                    rtxtAddress.Text = value.ClientAddress.ToString();
+                    rtxtAddress.Text = value.PersonAddress.ToString();
                 }
                 currentClient = value;
             }
@@ -95,6 +96,18 @@ namespace SEN_Project
         private void btnSimulateClient_Click(object sender, EventArgs e)
         {
             SetClient(Factory.GetRandomClient());
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            frmCallCentre CallCentre = new frmCallCentre();
+            CallCentre.Show();
+            Hide();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            BusinessLogic.current.CloseOff();
         }
     }
 }

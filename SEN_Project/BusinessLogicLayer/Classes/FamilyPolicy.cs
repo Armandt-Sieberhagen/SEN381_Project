@@ -13,5 +13,31 @@ namespace SEN_Project.BusinessLogicLayer
             get { return members; }
             set { members = value; }
         }
+
+        public  override    string  ToString    ()
+        {
+            string Result = "Policy ID: \t" + ID.ToString() +
+                "\n Policy Name: \t" + DataRef.Name +
+                "\n \n Members:" +
+                "\n Member Name \t \t \t Member Role \t \t \t Member Client ID";
+            foreach (PolicyMember Member in Members)
+            {
+                Result += "\n " + Member.Person.FullName + "\t \t \t" + Member.Role.ToString() + "\t \t \t" + Member.Person.ClientID;
+            }
+            return Result;
+        }
+        public PolicyMember HeadMember {
+            get {
+                foreach (PolicyMember member in members)
+                {
+                    if (member.Role==PolicyMember.PolicyRole.Head)
+                    {
+                        return member;
+                    }
+                }
+                return null;
+            }
+        }
+        public override string ToLine => ID.ToString() + '\t' + HeadMember.Person.FullName + '\t' + HeadMember.Person.IDNumber + '\t' + DataRef.Name;
     }
 }
