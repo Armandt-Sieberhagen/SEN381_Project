@@ -106,6 +106,7 @@ namespace SEN_Project.BusinessLogicLayer
             Claim Result = new Claim();
             Result.MyClient = BusinessLogic.current.GetByID<Client>(int.Parse(Row[0].ToString()));
             Result.Procedure = BusinessLogic.current.GetByID<ClinicalProcedure>(int.Parse(Row[1].ToString()));
+            Result.Price = float.Parse(Row[2].ToString());
             Result.Status = (Claim.ClaimStatus)int.Parse(Row[3].ToString());
 
             return Result;
@@ -186,9 +187,8 @@ namespace SEN_Project.BusinessLogicLayer
         public static FamilyPolicy CreateFamilyPolicy(DataRow Row)
         {
             FamilyPolicy Result = new FamilyPolicy();
-            //IMPLEMENT!!!
-            //Result.Members = Members;
-            //Result.DataRef = DataRef;
+            Result.Members = BusinessLogic.current.GetByID<FamilyPolicy>(int.Parse(Row[0].ToString())).Members;
+            Result.DataRef = BusinessLogic.current.GetByID<PolicyData>(int.Parse(Row[1].ToString()));
             return Result;
         }
 
@@ -202,17 +202,25 @@ namespace SEN_Project.BusinessLogicLayer
         public static IndividualPolicy CreateIndividualPolicy(DataRow Row)
         {
             IndividualPolicy Result = new IndividualPolicy();
-            //IMPLEMENT!!!
-            //Result.Member = Member;
-            //Result.DataRef = DataRef;
+            Result.Member = BusinessLogic.current.GetByID<Client>(int.Parse(Row[2].ToString()));
+            Result.DataRef = BusinessLogic.current.GetByID<PolicyData>(int.Parse(Row[1].ToString()));
             return Result;
         }
 
-        public static MedicalCondition    CreateCondition (string Description,List<Treatment> PossibleTreatments)
+        public static MedicalCondition    CreateCondition (string Name,string Description,List<Treatment> PossibleTreatments)
         {
             MedicalCondition Result = new MedicalCondition();
+            Result.Name = Name;
             Result.Description = Description;
             Result.PossibleTreatments = PossibleTreatments;
+            return Result;
+        }
+        public static MedicalCondition CreateCondition(DataRow Row)
+        {
+            MedicalCondition Result = new MedicalCondition();
+            Result.Name = Row[1].ToString();
+            Result.Description = Row[2].ToString();
+            //Implement this Result.PossibleTreatments = PossibleTreatments;
             return Result;
         }
 
@@ -233,6 +241,13 @@ namespace SEN_Project.BusinessLogicLayer
             Result.Policies = Policies;
             return Result;
         }
+        public static MedicalServiceProvider CreateMedicalServiceProvider(DataRow Row)
+        {
+            MedicalServiceProvider Result = new MedicalServiceProvider();
+            //Result.MyAddress = _Address;
+            //Result.Policies = Policies;
+            return Result;
+        }
 
         public static PolicyData CreatePolicyData (string Name,string Description,float   Price,List<Treatment>   TreatmentsCovered)
         {
@@ -243,6 +258,15 @@ namespace SEN_Project.BusinessLogicLayer
             Result.TreatmentsCovered = TreatmentsCovered;
             return Result;
         }
+        public static PolicyData CreatePolicyData(DataRow Row)
+        {
+            PolicyData Result = new PolicyData();
+            //Result.Name = Name;
+            //Result.Description = Description;
+            //Result.Price = Price;
+            //Result.TreatmentsCovered = TreatmentsCovered;
+            return Result;
+        }
 
         public static PolicyMember    CreatePolicyMember  (Client Person,PolicyMember.PolicyRole  Role    =   PolicyMember.PolicyRole.Secondary)
         {
@@ -251,11 +275,23 @@ namespace SEN_Project.BusinessLogicLayer
             Result.Role = Role;
             return Result;
         }
+        public static PolicyMember CreatePolicyMember(DataRow row)
+        {
+            PolicyMember Result = new PolicyMember();
+            //Result.Person = Person;
+            //Result.Role = Role;
+            return Result;
+        }
 
         public static Treatment   CreateTreatment (string Description)
         {
             Treatment Result = new Treatment();
             Result.Description = Description;
+            return Result;
+        }
+        public static Treatment CreateTreatment(DataRow row)
+        {
+            Treatment Result = new Treatment();
             return Result;
         }
 

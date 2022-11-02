@@ -19,7 +19,6 @@ namespace SEN_Project.BusinessLogicLayer
         ClaimStatus status;
         Client client;
         ClinicalProcedure procedure;
-        int id;
         float price;
 
         public ClaimStatus Status {
@@ -34,22 +33,17 @@ namespace SEN_Project.BusinessLogicLayer
             get { return procedure; }
             set { procedure = value; }
         }
-        public int ID
-        {
-            get { return id; }
-            set { id = value; }
-        }
         public float Price {
             get { return price; }
             set { price = value; }
         }
+        public string ID => MyClient.ClientID.ToString() +"|"+ Procedure.ID.ToString();
 
-        public string ToLine() { return ID.ToString() + '\t' + Procedure.ID.ToString() + '\t' + Price.ToString() + '\t' + Status.ToString(); }
+        public string ToLine() { return Procedure.ID.ToString() + '\t' + Price.ToString() + '\t' + Status.ToString(); }
 
         public  override    string  ToString    ()
         {
-            return "Claim ID: \t" + ID.ToString() +
-                    "\n Procedure ID: \t" + Procedure.ID.ToString() +
+            return  "Procedure ID: \t" + Procedure.ID.ToString() +
                     "\n Condition Name: \t" + Procedure.Condition.Name +
                     "\n Treatment Name: \t" + Procedure.ProposedTreatment.Name +
                     "\n Patient Name: \t" + Procedure.Patient.FullName +
