@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,11 @@ namespace SEN_Project.BusinessLogicLayer
         public float LengthInMinutes => (float)EndTime.Subtract(StartTime).TotalMinutes;
 
         public string ToLine => CallTaker + "\t" + StartTime.ToString() + "\t" + EndTime.ToString();
+
+        public object Create(DataRow Row)
+        {
+            return Factory.CreateCall(Row);
+        }
 
         public string GetSearchString()
         {

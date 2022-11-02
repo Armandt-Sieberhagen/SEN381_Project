@@ -25,10 +25,27 @@ namespace SEN_Project.BusinessLogicLayer
             current = this;
         }
 
-        public  static T   Create<T>(DataRow   Row) where T : Address, IDBItem
-        {
-            return (T)CreateAddress(Row);
-        }
+        //public static void TryCreate<T>(DataRow Row, List<T> Output) where T : class, IDBItem,ILineable
+        //{
+        //    switch (typeof(T).Name)
+        //    {
+        //        case "Address":
+        //            Output.Add((T)CreateAddress(Row));
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //}
+
+        //public static T Create<T>(DataRow Row) where T : IDBItem
+        //{
+        //    return default(T);
+        //}
+
+        //public  static T   Create<T>(DataRow   Row) where T : Address,IDBItem
+        //{
+        //    return (T)CreateAddress(Row);
+        //}
 
         public  static  Address CreateAddress  (string Street=null,string   City=null,string Province=null,string PostalCode=null)
         {
@@ -42,7 +59,6 @@ namespace SEN_Project.BusinessLogicLayer
 
             return Result;
         }
-
         public static Address CreateAddress(DataRow Row)
         {
             Address Result = new Address();
@@ -63,7 +79,6 @@ namespace SEN_Project.BusinessLogicLayer
             Result.CallTaker = employee;
             return Result;
         }
-
         public  static  Call    CreateCall  (DateTime   StartTime,float LengthInMinutes,Employee employee)
         {
             DateTime EndTime = StartTime.AddMinutes(LengthInMinutes);
@@ -76,6 +91,7 @@ namespace SEN_Project.BusinessLogicLayer
             DateTime EndTime = DateTime.Parse(Row[3].ToString());
             return CreateCall(StartTime, EndTime, employee);
         }
+
         public  static  Claim   CreateClaim (Client _Client,ClinicalProcedure Procedure,Claim.ClaimStatus Status = Claim.ClaimStatus.Pending)
         {
             Claim Result = new Claim();
@@ -85,7 +101,16 @@ namespace SEN_Project.BusinessLogicLayer
 
             return Result;
         }
-    
+        public static Claim CreateClaim(DataRow Row)
+        {
+            Claim Result = new Claim();
+            Result.MyClient = BusinessLogic.current.GetByID<Client>(int.Parse(Row[0].ToString()));
+            Result.Procedure = BusinessLogic.current.GetByID<ClinicalProcedure>(int.Parse(Row[1].ToString()));
+            Result.Status = (Claim.ClaimStatus)int.Parse(Row[3].ToString());
+
+            return Result;
+        }
+
         public static ClinicalProcedure   CreateClinicalProcedure (MedicalCondition Condition,Treatment ProposedTreatment,MedicalServiceProvider Facility,Policy pol,Client _Patient)
         {
             ClinicalProcedure Result = new ClinicalProcedure();
@@ -94,6 +119,18 @@ namespace SEN_Project.BusinessLogicLayer
             Result.Facility = Facility;
             Result.PolicySelected = pol;
             Result.Patient = _Patient;
+            //Result.Package = Package;
+
+            return Result;
+        }
+        public static ClinicalProcedure CreateClinicalProcedure(DataRow Row)
+        {
+            ClinicalProcedure Result = new ClinicalProcedure();
+            Result.Condition = BusinessLogic.current.GetByID<MedicalCondition>(int.Parse(Row[1].ToString()));
+            Result.ProposedTreatment = BusinessLogic.current.GetByID<Treatment>(int.Parse(Row[3].ToString()));
+            Result.Facility = BusinessLogic.current.GetByID<MedicalServiceProvider>(int.Parse(Row[2].ToString()));
+            Result.PolicySelected = BusinessLogic.current.GetByID<Policy>(int.Parse(Row[4].ToString()));
+            Result.Patient = BusinessLogic.current.GetByID<Client>(int.Parse(Row[5].ToString()));
             //Result.Package = Package;
 
             return Result;

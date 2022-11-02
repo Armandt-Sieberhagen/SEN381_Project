@@ -19,7 +19,7 @@ namespace SEN_Project.BusinessLogicLayer
             }
         }
 
-        public static frmSearchList CreateSearchForm<T>() where T : ILineable,IDBItem
+        public static frmSearchList CreateSearchForm<T>() where T : ILineable,IDBItem,new()
         {
             frmSearchList SearchForm = Factory.GetSearchList();
             List<T> AllItems = BusinessLogic.current.GetAll<T>();

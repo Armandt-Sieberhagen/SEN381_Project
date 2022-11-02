@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;//For when we want to convert DataRows to Objects, and vice versa
 
 namespace SEN_Project.BusinessLogicLayer
 {
@@ -41,6 +42,11 @@ namespace SEN_Project.BusinessLogicLayer
             return "Name: \n" + FullName +
                     "\n \n ID: \n" + IDNumber +
                     "\n \n Email: \n" + Email;
+        }
+
+        public object Create(DataRow Row)
+        {
+            return Factory.CreateEmployee(Row);
         }
     }
 }

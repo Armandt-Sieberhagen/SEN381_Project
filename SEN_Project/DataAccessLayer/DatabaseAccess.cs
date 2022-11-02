@@ -52,14 +52,17 @@ namespace SEN_Project.DataAccessLayer
             }
         }
 
-        public List<T> GetAll<T>() where T : IDBItem
+        public List<T> GetAll<T>() where T : IDBItem,new()
         {
             string Command = "SELECT * FROM " + GlobalDataLayer.current.GetTable(typeof(T));
             DataTable DT = DatabaseController.current.GetTable(Command);
             List<T> Result = new List<T>();
+            T Instance = new T();
             foreach (DataRow row in DT.Rows)
             {
-                Result.Add(Factory.Create<T>(row));
+                //Factory.TryCreate<T>(row,Result);
+                //Result.Add(Factory.Create<T>(row));
+                Result.Add((T)Instance.Create(row));
             }
             return Result;
         }

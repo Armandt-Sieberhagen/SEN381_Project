@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,6 +53,11 @@ namespace SEN_Project.BusinessLogicLayer
         public string GetSearchString()
         {
             throw new NotImplementedException();
+        }
+
+        public object Create(DataRow Row)
+        {
+            return Factory.CreateAddress(Row);
         }
 
         public string ToLine => Street + '\n' + PostalCode + '\n' + City + '\n' + Province;

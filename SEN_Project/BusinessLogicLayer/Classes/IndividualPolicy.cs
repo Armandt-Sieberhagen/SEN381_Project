@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;//For when we want to convert DataRows to Objects, and vice versa
 
 namespace SEN_Project.BusinessLogicLayer
 {
@@ -24,5 +25,10 @@ namespace SEN_Project.BusinessLogicLayer
         }
 
         public override string ToLine() { return ID.ToString() + '\t' + Member.FullName + '\t' + Member.IDNumber + '\t' + DataRef.Name; }
+
+        public override object Create(DataRow Row)
+        {
+            return Factory.CreateIndividualPolicy(Row);
+        }
     }
 }

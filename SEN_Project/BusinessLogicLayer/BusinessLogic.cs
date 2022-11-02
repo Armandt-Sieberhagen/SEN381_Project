@@ -27,7 +27,7 @@ namespace SEN_Project.BusinessLogicLayer
             DatabaseAccess.current.Add<T>(Item);
         }
 
-        public List<T> GetAll<T>() where T : IDBItem
+        public List<T> GetAll<T>() where T : IDBItem,new()
         {
             if (GlobalDataLayer.current.GetCache<T>() == null ? true : GlobalDataLayer.current.GetCache<T>().Count == 0)
             {

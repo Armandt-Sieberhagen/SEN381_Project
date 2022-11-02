@@ -54,3 +54,4 @@ C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Projec
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Employees.frmCreateEmployee.resources
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Addresses.AddressCreator.resources
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Clients.btnPasteAddress.resources
+C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.PolicyForms.frmSearchPolicy.resources
