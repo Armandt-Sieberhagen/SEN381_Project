@@ -101,7 +101,7 @@ namespace SEN_Project.PresentationLayer.Clients
             btnConfirm.Enabled = false;
             btnCopyClient.Enabled = false;
 
-            List<Client> AllClients = BusinessLogic.current.GetAllClients();//Fix this. Why it give error?
+            List<Client> AllClients = BusinessLogic.current.GetAll<Client>();//Fix this. Why it give error?
             SetItems(AllClients);
         }
 

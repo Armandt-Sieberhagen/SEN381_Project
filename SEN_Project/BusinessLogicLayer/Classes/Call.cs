@@ -28,8 +28,6 @@ namespace SEN_Project.BusinessLogicLayer
         public float LengthInSeconds => (float)EndTime.Subtract(StartTime).TotalSeconds;
         public float LengthInMinutes => (float)EndTime.Subtract(StartTime).TotalMinutes;
 
-        public string ToLine => CallTaker + "\t" + StartTime.ToString() + "\t" + EndTime.ToString();
-
         public object Create(DataRow Row)
         {
             return Factory.CreateCall(Row);
@@ -37,17 +35,24 @@ namespace SEN_Project.BusinessLogicLayer
 
         public string GetSearchString()
         {
-            throw new NotImplementedException();
+            return "Employee_ID='" + CallTaker.EmployeeID.ToString() + "' AND StartTime='" + StartTime.ToString() + "' AND EndTime='" + EndTime.ToString() + "'";
         }
 
         public string GetValuesString()
         {
-            throw new NotImplementedException();
+            return "'" + CallTaker.EmployeeID.ToString() + "','" + StartTime.ToString() + "'" + EndTime.ToString() + "')";
         }
 
-        string ILineable.ToLine()
+        public  string ToLine()
         {
-            throw new NotImplementedException();
+            return CallTaker + "\t" + StartTime.ToString() + "\t" + EndTime.ToString();
+        }
+
+        public  override    string  ToString    ()
+        {
+            return "Employee ID: \t" + CallTaker.EmployeeID.ToString() +
+                "\n Start Time: \t" + StartTime.ToString() +
+                "\n End TimeL \t" + EndTime.ToString();
         }
     }
 }

@@ -146,11 +146,13 @@
             this.btnSelectPolicyData.TabIndex = 1;
             this.btnSelectPolicyData.Text = "Select";
             this.btnSelectPolicyData.UseVisualStyleBackColor = true;
+            this.btnSelectPolicyData.Click += new System.EventHandler(this.btnSelectPolicyData_Click);
             // 
             // rtxtPolicyData
             // 
             this.rtxtPolicyData.Location = new System.Drawing.Point(6, 67);
             this.rtxtPolicyData.Name = "rtxtPolicyData";
+            this.rtxtPolicyData.ReadOnly = true;
             this.rtxtPolicyData.Size = new System.Drawing.Size(304, 374);
             this.rtxtPolicyData.TabIndex = 0;
             this.rtxtPolicyData.Text = "";
@@ -181,6 +183,7 @@
             // 
             this.rtxtHeadMemberAddress.Location = new System.Drawing.Point(152, 32);
             this.rtxtHeadMemberAddress.Name = "rtxtHeadMemberAddress";
+            this.rtxtHeadMemberAddress.ReadOnly = true;
             this.rtxtHeadMemberAddress.Size = new System.Drawing.Size(110, 78);
             this.rtxtHeadMemberAddress.TabIndex = 11;
             this.rtxtHeadMemberAddress.Text = "";
@@ -256,6 +259,7 @@
             this.btnChangeHeadMember.TabIndex = 3;
             this.btnChangeHeadMember.Text = "Select";
             this.btnChangeHeadMember.UseVisualStyleBackColor = true;
+            this.btnChangeHeadMember.Click += new System.EventHandler(this.btnChangeHeadMember_Click);
             // 
             // btnAddMember
             // 
@@ -265,6 +269,7 @@
             this.btnAddMember.TabIndex = 2;
             this.btnAddMember.Text = "Add Member";
             this.btnAddMember.UseVisualStyleBackColor = true;
+            this.btnAddMember.Click += new System.EventHandler(this.btnAddMember_Click);
             // 
             // lbxFamilyMembers
             // 
@@ -278,6 +283,7 @@
             // 
             this.rtxtHeadMemberInfo.Location = new System.Drawing.Point(6, 32);
             this.rtxtHeadMemberInfo.Name = "rtxtHeadMemberInfo";
+            this.rtxtHeadMemberInfo.ReadOnly = true;
             this.rtxtHeadMemberInfo.Size = new System.Drawing.Size(140, 78);
             this.rtxtHeadMemberInfo.TabIndex = 0;
             this.rtxtHeadMemberInfo.Text = "";
@@ -304,6 +310,7 @@
             this.btnChangeIndividual.TabIndex = 4;
             this.btnChangeIndividual.Text = "Select";
             this.btnChangeIndividual.UseVisualStyleBackColor = true;
+            this.btnChangeIndividual.Click += new System.EventHandler(this.btnChangeIndividual_Click);
             // 
             // btnPasteIndividual
             // 
@@ -327,6 +334,7 @@
             // 
             this.rtxtIndividualAddress.Location = new System.Drawing.Point(136, 19);
             this.rtxtIndividualAddress.Name = "rtxtIndividualAddress";
+            this.rtxtIndividualAddress.ReadOnly = true;
             this.rtxtIndividualAddress.Size = new System.Drawing.Size(124, 153);
             this.rtxtIndividualAddress.TabIndex = 1;
             this.rtxtIndividualAddress.Text = "";
@@ -335,6 +343,7 @@
             // 
             this.rtxtIndividualInfo.Location = new System.Drawing.Point(6, 19);
             this.rtxtIndividualInfo.Name = "rtxtIndividualInfo";
+            this.rtxtIndividualInfo.ReadOnly = true;
             this.rtxtIndividualInfo.Size = new System.Drawing.Size(124, 153);
             this.rtxtIndividualInfo.TabIndex = 0;
             this.rtxtIndividualInfo.Text = "";

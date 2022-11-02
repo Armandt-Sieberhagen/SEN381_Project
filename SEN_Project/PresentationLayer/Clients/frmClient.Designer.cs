@@ -1,6 +1,6 @@
 ﻿namespace SEN_Project.PresentationLayer.Clients
 {
-    partial class btnPasteAddress
+    partial class frmClient
     {
         /// <summary>
         /// Required designer variable.
@@ -29,28 +29,15 @@
         private void InitializeComponent()
         {
             this.gbxClient = new System.Windows.Forms.GroupBox();
-            this.btnChangePolicy = new System.Windows.Forms.Button();
             this.txtPerscription = new System.Windows.Forms.TextBox();
             this.btnRemovePerscription = new System.Windows.Forms.Button();
             this.btnAddPerscription = new System.Windows.Forms.Button();
             this.lblPerscriptions = new System.Windows.Forms.Label();
             this.lbxPerscriptions = new System.Windows.Forms.ListBox();
-            this.btnRemoveClaim = new System.Windows.Forms.Button();
-            this.btnAddClaim = new System.Windows.Forms.Button();
-            this.lblClaimHistory = new System.Windows.Forms.Label();
-            this.lbxClaimsHistory = new System.Windows.Forms.ListBox();
-            this.btnRemoveClinicalProcedure = new System.Windows.Forms.Button();
-            this.btnAddClinicalProcedure = new System.Windows.Forms.Button();
             this.btnRemoveCall = new System.Windows.Forms.Button();
-            this.lblClinicalHistory = new System.Windows.Forms.Label();
-            this.lbxClinicalHistory = new System.Windows.Forms.ListBox();
             this.btnAddCall = new System.Windows.Forms.Button();
             this.lblCallsHistory = new System.Windows.Forms.Label();
             this.lbxCallsHistory = new System.Windows.Forms.ListBox();
-            this.btnPastePolicy = new System.Windows.Forms.Button();
-            this.btnCopyPolicy = new System.Windows.Forms.Button();
-            this.lblPolicyDetails = new System.Windows.Forms.Label();
-            this.rtxtPolicyDetails = new System.Windows.Forms.RichTextBox();
             this.btnPasteClient = new System.Windows.Forms.Button();
             this.btnCopyClient = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -76,28 +63,15 @@
             // 
             // gbxClient
             // 
-            this.gbxClient.Controls.Add(this.btnChangePolicy);
             this.gbxClient.Controls.Add(this.txtPerscription);
             this.gbxClient.Controls.Add(this.btnRemovePerscription);
             this.gbxClient.Controls.Add(this.btnAddPerscription);
             this.gbxClient.Controls.Add(this.lblPerscriptions);
             this.gbxClient.Controls.Add(this.lbxPerscriptions);
-            this.gbxClient.Controls.Add(this.btnRemoveClaim);
-            this.gbxClient.Controls.Add(this.btnAddClaim);
-            this.gbxClient.Controls.Add(this.lblClaimHistory);
-            this.gbxClient.Controls.Add(this.lbxClaimsHistory);
-            this.gbxClient.Controls.Add(this.btnRemoveClinicalProcedure);
-            this.gbxClient.Controls.Add(this.btnAddClinicalProcedure);
             this.gbxClient.Controls.Add(this.btnRemoveCall);
-            this.gbxClient.Controls.Add(this.lblClinicalHistory);
-            this.gbxClient.Controls.Add(this.lbxClinicalHistory);
             this.gbxClient.Controls.Add(this.btnAddCall);
             this.gbxClient.Controls.Add(this.lblCallsHistory);
             this.gbxClient.Controls.Add(this.lbxCallsHistory);
-            this.gbxClient.Controls.Add(this.btnPastePolicy);
-            this.gbxClient.Controls.Add(this.btnCopyPolicy);
-            this.gbxClient.Controls.Add(this.lblPolicyDetails);
-            this.gbxClient.Controls.Add(this.rtxtPolicyDetails);
             this.gbxClient.Controls.Add(this.btnPasteClient);
             this.gbxClient.Controls.Add(this.btnCopyClient);
             this.gbxClient.Controls.Add(this.button3);
@@ -118,24 +92,14 @@
             this.gbxClient.Controls.Add(this.lblFirstName);
             this.gbxClient.Location = new System.Drawing.Point(12, 12);
             this.gbxClient.Name = "gbxClient";
-            this.gbxClient.Size = new System.Drawing.Size(677, 587);
+            this.gbxClient.Size = new System.Drawing.Size(677, 456);
             this.gbxClient.TabIndex = 0;
             this.gbxClient.TabStop = false;
             this.gbxClient.Text = "Client Form";
             // 
-            // btnChangePolicy
-            // 
-            this.btnChangePolicy.Location = new System.Drawing.Point(303, 239);
-            this.btnChangePolicy.Name = "btnChangePolicy";
-            this.btnChangePolicy.Size = new System.Drawing.Size(75, 23);
-            this.btnChangePolicy.TabIndex = 48;
-            this.btnChangePolicy.Text = "Change";
-            this.btnChangePolicy.UseVisualStyleBackColor = true;
-            this.btnChangePolicy.Click += new System.EventHandler(this.btnChangePolicy_Click);
-            // 
             // txtPerscription
             // 
-            this.txtPerscription.Location = new System.Drawing.Point(365, 552);
+            this.txtPerscription.Location = new System.Drawing.Point(21, 407);
             this.txtPerscription.Name = "txtPerscription";
             this.txtPerscription.Size = new System.Drawing.Size(142, 20);
             this.txtPerscription.TabIndex = 47;
@@ -143,7 +107,7 @@
             // 
             // btnRemovePerscription
             // 
-            this.btnRemovePerscription.Location = new System.Drawing.Point(595, 552);
+            this.btnRemovePerscription.Location = new System.Drawing.Point(251, 407);
             this.btnRemovePerscription.Name = "btnRemovePerscription";
             this.btnRemovePerscription.Size = new System.Drawing.Size(75, 23);
             this.btnRemovePerscription.TabIndex = 46;
@@ -153,17 +117,18 @@
             // 
             // btnAddPerscription
             // 
-            this.btnAddPerscription.Location = new System.Drawing.Point(512, 552);
+            this.btnAddPerscription.Location = new System.Drawing.Point(168, 407);
             this.btnAddPerscription.Name = "btnAddPerscription";
             this.btnAddPerscription.Size = new System.Drawing.Size(75, 23);
             this.btnAddPerscription.TabIndex = 45;
             this.btnAddPerscription.Text = "Add";
             this.btnAddPerscription.UseVisualStyleBackColor = true;
+            this.btnAddPerscription.Click += new System.EventHandler(this.btnAddPerscription_Click);
             // 
             // lblPerscriptions
             // 
             this.lblPerscriptions.AutoSize = true;
-            this.lblPerscriptions.Location = new System.Drawing.Point(362, 435);
+            this.lblPerscriptions.Location = new System.Drawing.Point(18, 290);
             this.lblPerscriptions.Name = "lblPerscriptions";
             this.lblPerscriptions.Size = new System.Drawing.Size(100, 13);
             this.lblPerscriptions.TabIndex = 44;
@@ -172,73 +137,15 @@
             // lbxPerscriptions
             // 
             this.lbxPerscriptions.FormattingEnabled = true;
-            this.lbxPerscriptions.Location = new System.Drawing.Point(365, 451);
+            this.lbxPerscriptions.Location = new System.Drawing.Point(21, 306);
             this.lbxPerscriptions.Name = "lbxPerscriptions";
             this.lbxPerscriptions.Size = new System.Drawing.Size(306, 95);
             this.lbxPerscriptions.TabIndex = 43;
             this.lbxPerscriptions.SelectedIndexChanged += new System.EventHandler(this.lbxPerscriptions_SelectedIndexChanged);
             // 
-            // btnRemoveClaim
-            // 
-            this.btnRemoveClaim.Location = new System.Drawing.Point(104, 552);
-            this.btnRemoveClaim.Name = "btnRemoveClaim";
-            this.btnRemoveClaim.Size = new System.Drawing.Size(75, 23);
-            this.btnRemoveClaim.TabIndex = 42;
-            this.btnRemoveClaim.Text = "Remove";
-            this.btnRemoveClaim.UseVisualStyleBackColor = true;
-            this.btnRemoveClaim.Click += new System.EventHandler(this.btnRemoveClaim_Click);
-            // 
-            // btnAddClaim
-            // 
-            this.btnAddClaim.Location = new System.Drawing.Point(21, 552);
-            this.btnAddClaim.Name = "btnAddClaim";
-            this.btnAddClaim.Size = new System.Drawing.Size(75, 23);
-            this.btnAddClaim.TabIndex = 41;
-            this.btnAddClaim.Text = "Add";
-            this.btnAddClaim.UseVisualStyleBackColor = true;
-            this.btnAddClaim.Click += new System.EventHandler(this.btnAddClaim_Click);
-            // 
-            // lblClaimHistory
-            // 
-            this.lblClaimHistory.AutoSize = true;
-            this.lblClaimHistory.Location = new System.Drawing.Point(18, 435);
-            this.lblClaimHistory.Name = "lblClaimHistory";
-            this.lblClaimHistory.Size = new System.Drawing.Size(72, 13);
-            this.lblClaimHistory.TabIndex = 40;
-            this.lblClaimHistory.Text = "Claims History";
-            // 
-            // lbxClaimsHistory
-            // 
-            this.lbxClaimsHistory.FormattingEnabled = true;
-            this.lbxClaimsHistory.Location = new System.Drawing.Point(21, 451);
-            this.lbxClaimsHistory.Name = "lbxClaimsHistory";
-            this.lbxClaimsHistory.Size = new System.Drawing.Size(338, 95);
-            this.lbxClaimsHistory.TabIndex = 39;
-            this.lbxClaimsHistory.SelectedIndexChanged += new System.EventHandler(this.lbxClaimsHistory_SelectedIndexChanged);
-            // 
-            // btnRemoveClinicalProcedure
-            // 
-            this.btnRemoveClinicalProcedure.Location = new System.Drawing.Point(381, 397);
-            this.btnRemoveClinicalProcedure.Name = "btnRemoveClinicalProcedure";
-            this.btnRemoveClinicalProcedure.Size = new System.Drawing.Size(75, 23);
-            this.btnRemoveClinicalProcedure.TabIndex = 38;
-            this.btnRemoveClinicalProcedure.Text = "Remove";
-            this.btnRemoveClinicalProcedure.UseVisualStyleBackColor = true;
-            this.btnRemoveClinicalProcedure.Click += new System.EventHandler(this.btnRemoveClinicalProcedure_Click);
-            // 
-            // btnAddClinicalProcedure
-            // 
-            this.btnAddClinicalProcedure.Location = new System.Drawing.Point(303, 397);
-            this.btnAddClinicalProcedure.Name = "btnAddClinicalProcedure";
-            this.btnAddClinicalProcedure.Size = new System.Drawing.Size(75, 23);
-            this.btnAddClinicalProcedure.TabIndex = 37;
-            this.btnAddClinicalProcedure.Text = "Add";
-            this.btnAddClinicalProcedure.UseVisualStyleBackColor = true;
-            this.btnAddClinicalProcedure.Click += new System.EventHandler(this.btnAddClinicalProcedure_Click);
-            // 
             // btnRemoveCall
             // 
-            this.btnRemoveCall.Location = new System.Drawing.Point(104, 397);
+            this.btnRemoveCall.Location = new System.Drawing.Point(375, 238);
             this.btnRemoveCall.Name = "btnRemoveCall";
             this.btnRemoveCall.Size = new System.Drawing.Size(75, 23);
             this.btnRemoveCall.TabIndex = 36;
@@ -246,27 +153,9 @@
             this.btnRemoveCall.UseVisualStyleBackColor = true;
             this.btnRemoveCall.Click += new System.EventHandler(this.btnRemoveCall_Click);
             // 
-            // lblClinicalHistory
-            // 
-            this.lblClinicalHistory.AutoSize = true;
-            this.lblClinicalHistory.Location = new System.Drawing.Point(300, 280);
-            this.lblClinicalHistory.Name = "lblClinicalHistory";
-            this.lblClinicalHistory.Size = new System.Drawing.Size(75, 13);
-            this.lblClinicalHistory.TabIndex = 33;
-            this.lblClinicalHistory.Text = "Clinical History";
-            // 
-            // lbxClinicalHistory
-            // 
-            this.lbxClinicalHistory.FormattingEnabled = true;
-            this.lbxClinicalHistory.Location = new System.Drawing.Point(303, 296);
-            this.lbxClinicalHistory.Name = "lbxClinicalHistory";
-            this.lbxClinicalHistory.Size = new System.Drawing.Size(338, 95);
-            this.lbxClinicalHistory.TabIndex = 32;
-            this.lbxClinicalHistory.SelectedIndexChanged += new System.EventHandler(this.lbxClinicalHistory_SelectedIndexChanged);
-            // 
             // btnAddCall
             // 
-            this.btnAddCall.Location = new System.Drawing.Point(21, 397);
+            this.btnAddCall.Location = new System.Drawing.Point(292, 238);
             this.btnAddCall.Name = "btnAddCall";
             this.btnAddCall.Size = new System.Drawing.Size(75, 23);
             this.btnAddCall.TabIndex = 31;
@@ -277,7 +166,7 @@
             // lblCallsHistory
             // 
             this.lblCallsHistory.AutoSize = true;
-            this.lblCallsHistory.Location = new System.Drawing.Point(18, 280);
+            this.lblCallsHistory.Location = new System.Drawing.Point(289, 121);
             this.lblCallsHistory.Name = "lblCallsHistory";
             this.lblCallsHistory.Size = new System.Drawing.Size(64, 13);
             this.lblCallsHistory.TabIndex = 30;
@@ -286,51 +175,15 @@
             // lbxCallsHistory
             // 
             this.lbxCallsHistory.FormattingEnabled = true;
-            this.lbxCallsHistory.Location = new System.Drawing.Point(21, 296);
+            this.lbxCallsHistory.Location = new System.Drawing.Point(292, 137);
             this.lbxCallsHistory.Name = "lbxCallsHistory";
             this.lbxCallsHistory.Size = new System.Drawing.Size(191, 95);
             this.lbxCallsHistory.TabIndex = 29;
             this.lbxCallsHistory.SelectedIndexChanged += new System.EventHandler(this.lbxCallsHistory_SelectedIndexChanged);
             // 
-            // btnPastePolicy
-            // 
-            this.btnPastePolicy.Location = new System.Drawing.Point(500, 135);
-            this.btnPastePolicy.Name = "btnPastePolicy";
-            this.btnPastePolicy.Size = new System.Drawing.Size(27, 23);
-            this.btnPastePolicy.TabIndex = 28;
-            this.btnPastePolicy.Text = "P";
-            this.btnPastePolicy.UseVisualStyleBackColor = true;
-            // 
-            // btnCopyPolicy
-            // 
-            this.btnCopyPolicy.Location = new System.Drawing.Point(467, 135);
-            this.btnCopyPolicy.Name = "btnCopyPolicy";
-            this.btnCopyPolicy.Size = new System.Drawing.Size(27, 23);
-            this.btnCopyPolicy.TabIndex = 27;
-            this.btnCopyPolicy.Text = "C";
-            this.btnCopyPolicy.UseVisualStyleBackColor = true;
-            // 
-            // lblPolicyDetails
-            // 
-            this.lblPolicyDetails.AutoSize = true;
-            this.lblPolicyDetails.Location = new System.Drawing.Point(300, 121);
-            this.lblPolicyDetails.Name = "lblPolicyDetails";
-            this.lblPolicyDetails.Size = new System.Drawing.Size(70, 13);
-            this.lblPolicyDetails.TabIndex = 24;
-            this.lblPolicyDetails.Text = "Policy Details";
-            // 
-            // rtxtPolicyDetails
-            // 
-            this.rtxtPolicyDetails.Location = new System.Drawing.Point(303, 137);
-            this.rtxtPolicyDetails.Name = "rtxtPolicyDetails";
-            this.rtxtPolicyDetails.ReadOnly = true;
-            this.rtxtPolicyDetails.Size = new System.Drawing.Size(158, 96);
-            this.rtxtPolicyDetails.TabIndex = 23;
-            this.rtxtPolicyDetails.Text = "";
-            // 
             // btnPasteClient
             // 
-            this.btnPasteClient.Location = new System.Drawing.Point(614, 16);
+            this.btnPasteClient.Location = new System.Drawing.Point(551, 16);
             this.btnPasteClient.Name = "btnPasteClient";
             this.btnPasteClient.Size = new System.Drawing.Size(27, 23);
             this.btnPasteClient.TabIndex = 22;
@@ -339,7 +192,7 @@
             // 
             // btnCopyClient
             // 
-            this.btnCopyClient.Location = new System.Drawing.Point(581, 16);
+            this.btnCopyClient.Location = new System.Drawing.Point(518, 16);
             this.btnCopyClient.Name = "btnCopyClient";
             this.btnCopyClient.Size = new System.Drawing.Size(27, 23);
             this.btnCopyClient.TabIndex = 21;
@@ -485,7 +338,7 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(169, 605);
+            this.btnConfirm.Location = new System.Drawing.Point(180, 474);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(145, 103);
             this.btnConfirm.TabIndex = 1;
@@ -495,22 +348,23 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(323, 605);
+            this.btnCancel.Location = new System.Drawing.Point(334, 474);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(145, 103);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnPasteAddress
+            // frmClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 737);
+            this.ClientSize = new System.Drawing.Size(711, 598);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.gbxClient);
-            this.Name = "btnPasteAddress";
+            this.Name = "frmClient";
             this.Text = "frmClient";
             this.Load += new System.EventHandler(this.frmClient_Load);
             this.gbxClient.ResumeLayout(false);
@@ -538,10 +392,6 @@
         private System.Windows.Forms.Label lblPhoneNumber;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnCopyAddress;
-        private System.Windows.Forms.Button btnPastePolicy;
-        private System.Windows.Forms.Button btnCopyPolicy;
-        private System.Windows.Forms.Label lblPolicyDetails;
-        private System.Windows.Forms.RichTextBox rtxtPolicyDetails;
         private System.Windows.Forms.Button btnPasteClient;
         private System.Windows.Forms.Button btnCopyClient;
         private System.Windows.Forms.TextBox txtPerscription;
@@ -549,20 +399,11 @@
         private System.Windows.Forms.Button btnAddPerscription;
         private System.Windows.Forms.Label lblPerscriptions;
         private System.Windows.Forms.ListBox lbxPerscriptions;
-        private System.Windows.Forms.Button btnRemoveClaim;
-        private System.Windows.Forms.Button btnAddClaim;
-        private System.Windows.Forms.Label lblClaimHistory;
-        private System.Windows.Forms.ListBox lbxClaimsHistory;
-        private System.Windows.Forms.Button btnRemoveClinicalProcedure;
-        private System.Windows.Forms.Button btnAddClinicalProcedure;
         private System.Windows.Forms.Button btnRemoveCall;
-        private System.Windows.Forms.Label lblClinicalHistory;
-        private System.Windows.Forms.ListBox lbxClinicalHistory;
         private System.Windows.Forms.Button btnAddCall;
         private System.Windows.Forms.Label lblCallsHistory;
         private System.Windows.Forms.ListBox lbxCallsHistory;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnChangePolicy;
     }
 }

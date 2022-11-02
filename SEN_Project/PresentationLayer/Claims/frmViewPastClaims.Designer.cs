@@ -101,6 +101,7 @@
             this.btnSelectClient.TabIndex = 2;
             this.btnSelectClient.Text = "Select Client";
             this.btnSelectClient.UseVisualStyleBackColor = true;
+            this.btnSelectClient.Click += new System.EventHandler(this.btnSelectClient_Click);
             // 
             // gbxClaimDetails
             // 

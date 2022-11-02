@@ -33,8 +33,13 @@ namespace SEN_Project.PresentationLayer.CallCentre
 
         private void frmCallCentre_Load(object sender, EventArgs e)
         {
+            Evaluate();
+        }
+
+        void    Evaluate    ()
+        {
             btnSimulateCall.Enabled = CurrentEmployee != null;
-            gbxClaimOptions.Enabled = CurrentClient != null &&  CallOperating;
+            gbxClaimOptions.Enabled = CurrentClient != null && CallOperating;
             gbxClientDetails.Enabled = CallOperating;
             gbxPolicyInfo.Enabled = CallOperating && CurrentClient != null;
             gbxProcedureInfo.Enabled = CallOperating && CurrentClient != null;
@@ -45,6 +50,7 @@ namespace SEN_Project.PresentationLayer.CallCentre
             CallStart = DateTime.Now;
             lblStartTime.Text = CallStart.ToString();
             CallOperating = true;
+            Evaluate();
             //Start Timer
         }
 
@@ -66,7 +72,8 @@ namespace SEN_Project.PresentationLayer.CallCentre
             rtxtAddressInfo.Clear();
             rtxtAddressInfo.Text = _Client.AddressDetails;
             CurrentClient = _Client;
-            rtxtPolicyInfo.Text = CurrentClient.MyPolicy.ToString();
+            rtxtPolicyInfo.Text = CurrentClient.MyPolicy !=null ? CurrentClient.MyPolicy.ToString() : "";
+            Evaluate();
         }
 
         private void btnCopyClient_Click(object sender, EventArgs e)
@@ -178,7 +185,9 @@ namespace SEN_Project.PresentationLayer.CallCentre
 
         private void btnCreateNewClient_Click(object sender, EventArgs e)
         {
-
+            frmClient ClientCreator = Factory.GetClientForm();
+            ClientCreator.ConfirmCallback = SetClient;
+            ClientCreator.Show();
         }
 
         private void btnEndCall_Click(object sender, EventArgs e)
@@ -205,6 +214,7 @@ namespace SEN_Project.PresentationLayer.CallCentre
             CurrentEmployee = _employee;
             rtxtEmployeeDetails.Text = _employee.ToString();
             btnSimulateCall.Enabled = _employee != null;
+            Evaluate();
         }
 
         public  void    SetEmployee (int    Index,string    Line)

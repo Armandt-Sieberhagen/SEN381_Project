@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SEN_Project.BusinessLogicLayer;
+using SEN_Project.PresentationLayer.Clients;
+using SEN_Project.PresentationLayer.Forms.ListSearchForm;
 
 namespace SEN_Project.PresentationLayer.PolicyForms
 {
@@ -58,7 +60,17 @@ namespace SEN_Project.PresentationLayer.PolicyForms
 
         public  void    SetPolicy   (Policy Pol)
         {
-            rtxtPolicyData.Text = Pol.DataRef.ToString();
+            SetPolicy(Pol.DataRef);
+        }
+
+        public void SetPolicy(PolicyData Pol)
+        {
+            rtxtPolicyData.Text = Pol.ToString();
+        }
+
+        public void SetPolicy(int Index,string Line)
+        {
+            SetPolicy(BusinessLogic.current.GetByID<PolicyData>(Index));
         }
 
         public  void    SetIndividualMember (Client _Client)
@@ -152,6 +164,40 @@ namespace SEN_Project.PresentationLayer.PolicyForms
             Family = Mode;
             gbxIndividualPolicy.Enabled = !Family;
             gbxFamilyPolicy.Enabled = Family;
+        }
+
+        private void btnChangeIndividual_Click(object sender, EventArgs e)
+        {
+            frmSearchClient ClientSearch = Factory.GetSearchClient();
+            ClientSearch.ConfirmCallback = SetIndividualMember;
+            ClientSearch.Show();
+        }
+
+        private void btnChangeHeadMember_Click(object sender, EventArgs e)
+        {
+            frmSearchClient ClientSearch = Factory.GetSearchClient();
+            ClientSearch.ConfirmCallback = SetHeadMember;
+            ClientSearch.Show();
+        }
+
+        private void btnAddMember_Click(object sender, EventArgs e)
+        {
+            frmSearchClient ClientSearch = Factory.GetSearchClient();
+            ClientSearch.ConfirmCallback = AddMember;
+            ClientSearch.Show();
+        }
+
+        public  void    AddMember   (Client NewMember)
+        {
+            Members.Add(Factory.CreatePolicyMember(NewMember));
+            lbxFamilyMembers.Items.Add(NewMember.ToLine());
+        }
+
+        private void btnSelectPolicyData_Click(object sender, EventArgs e)
+        {
+            frmSearchList SearchList = GlobalFunctions.CreateSearchForm<PolicyData>();
+            SearchList.ConfirmCallback = SetPolicy;
+            SearchList.Show();
         }
     }
 }

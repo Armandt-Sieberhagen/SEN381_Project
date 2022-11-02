@@ -19,6 +19,8 @@ namespace SEN_Project.BusinessLogicLayer
         ClaimStatus status;
         Client client;
         ClinicalProcedure procedure;
+        Call call;
+        Policy policy;
         float price;
 
         public ClaimStatus Status {
@@ -36,6 +38,14 @@ namespace SEN_Project.BusinessLogicLayer
         public float Price {
             get { return price; }
             set { price = value; }
+        }
+        public Call _Call {
+            get { return call; }
+            set { call = value; }
+        }
+        public Policy _Policy {
+            get { return policy; }
+            set { policy = value; }
         }
         public string ID => MyClient.ClientID.ToString() +"|"+ Procedure.ID.ToString();
 

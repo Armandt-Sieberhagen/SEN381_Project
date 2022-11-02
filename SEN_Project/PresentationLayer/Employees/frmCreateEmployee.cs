@@ -94,7 +94,7 @@ namespace SEN_Project.PresentationLayer.Employees
             List<string> Options = new List<string>();
             foreach (Address address in AllAddresses)
             {
-                Options.Add(address.ToLine);
+                Options.Add(address.ToLine());
             }
             AddressSearch.SetItems(Options);
             AddressSearch.ConfirmCallback = SetAddress;

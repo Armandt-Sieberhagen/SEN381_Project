@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    public class Address : IDBItem
+    public class Address : ILineable, IDBItem
     {
         public Address() { }
 
@@ -42,17 +42,23 @@ namespace SEN_Project.BusinessLogicLayer
             return "Street: \t" + Street +
         "\n Postal Code: \t" + PostalCode +
         "\n City: \t" + City +
-        "Province: \t" + Province;
+        "\n Province: \t" + Province;
         }
 
         public string GetValuesString()
         {
-            throw new NotImplementedException();
+            return "'" + Street + "'," +
+            "'" + City + "'," +
+            "'" + PostalCode + "'," +
+            "'" + Province + "')";
         }
 
         public string GetSearchString()
         {
-            throw new NotImplementedException();
+            return "Street='" + Street + "' AND " +
+            "City='" + City + "' AND " +
+             "Postal_Code='" + PostalCode + "' AND " +
+             "Province='" + Province + "'";
         }
 
         public object Create(DataRow Row)
@@ -60,6 +66,6 @@ namespace SEN_Project.BusinessLogicLayer
             return Factory.CreateAddress(Row);
         }
 
-        public string ToLine => Street + '\n' + PostalCode + '\n' + City + '\n' + Province;
+        public string ToLine() { return Street + '\t' + PostalCode + '\t' + City + '\t' + Province; }
     }
 }

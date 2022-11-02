@@ -16,9 +16,9 @@ using SEN_Project.PresentationLayer.Procedure;
 
 namespace SEN_Project.PresentationLayer.Clients
 {
-    public partial class btnPasteAddress : TableForm
+    public partial class frmClient : TableForm
     {
-        public btnPasteAddress()
+        public frmClient()
         {
             InitializeComponent();
         }
@@ -26,15 +26,12 @@ namespace SEN_Project.PresentationLayer.Clients
         Address _Address;
         public ClientVoid ConfirmCallback;
         public EmptyVoid CancelCallback;
-        Policy MyPolicy;
         List<Call> CallHistory;
-        List<ClinicalProcedure> PastProcedures;
-        List<Claim> ClaimHistory;
         List<string> Perscriptions;
 
         private void frmClient_Load(object sender, EventArgs e)
         {
-
+            Reset();
         }
 
         private void lblLastName_Click(object sender, EventArgs e)
@@ -49,7 +46,7 @@ namespace SEN_Project.PresentationLayer.Clients
             List<string> Options = new List<string>();
             foreach (Address address in AllAddresses)
             {
-                Options.Add(address.ToLine);
+                Options.Add(address.ToLine());
             }
             AddressSearch.SetItems(Options);
             AddressSearch.ConfirmCallback = SetAddress;
@@ -76,7 +73,30 @@ namespace SEN_Project.PresentationLayer.Clients
 
         public  override    void    Reset   ()
         {
-
+            txtFirstName.Clear();
+            txtLastName.Clear();
+            txtIDNumber.Clear();
+            txtEmail.Clear();
+            txtPerscription.Clear();
+            txtPhoneNumber.Clear();
+            rtxtAddress.Clear();
+            _Address = null;
+            if (CallHistory==null)
+            {
+                CallHistory = new List<Call>();
+            }
+            else
+            {
+                CallHistory.Clear();
+            }
+            if (Perscriptions==null)
+            {
+                Perscriptions = new List<string>();
+            }
+            else
+            {
+                Perscriptions.Clear();
+            }
         }
 
         Client  GetResult   ()
@@ -89,7 +109,7 @@ namespace SEN_Project.PresentationLayer.Clients
             string Phone = txtPhoneNumber.Text.Trim();
             string Email = txtEmail.Text.Trim();
 
-            return Factory.CreateClient(FirstName,LastName,CallHistory,MyPolicy,IDnumber,_Address,Email,Phone,ClaimHistory, PastProcedures, Perscriptions);
+            return Factory.CreateClient(FirstName,LastName,CallHistory,null,IDnumber,_Address,Email,Phone,new List<Claim>(), new List<ClinicalProcedure>(), Perscriptions);
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
@@ -108,20 +128,8 @@ namespace SEN_Project.PresentationLayer.Clients
 
         private void btnChangePolicy_Click(object sender, EventArgs e)
         {
-            frmChoosePolicy PolicyForm = Factory.GetPolicyForm();
-            if (MyPolicy != null)
-            {
-                PolicyForm.SetPolicy(MyPolicy);
-            }
-            PolicyForm.ConfirmCallback = SetPolicy;
-            PolicyForm.Show();
         }
 
-        public  void    SetPolicy   (Policy Pol)
-        {
-            MyPolicy = Pol;
-            rtxtPolicyDetails.Text = Pol.ToString();
-        }
 
         private void btnAddCall_Click(object sender, EventArgs e)
         {
@@ -130,7 +138,7 @@ namespace SEN_Project.PresentationLayer.Clients
             List<string> Options = new List<string>();
             foreach (Call call in AllCalls)
             {
-                Options.Add(call.ToLine);
+                Options.Add(call.ToLine());
             }
             CallSearch.SetItems(Options);
             CallSearch.ConfirmCallback = AddCall;
@@ -143,7 +151,7 @@ namespace SEN_Project.PresentationLayer.Clients
             if (!CallHistory.Contains(NewCall))
             {
                 CallHistory.Add(NewCall);
-                lbxCallsHistory.Items.Add(NewCall.ToLine);
+                lbxCallsHistory.Items.Add(NewCall.ToLine());
             }
         }
 
@@ -160,56 +168,34 @@ namespace SEN_Project.PresentationLayer.Clients
 
         private void btnAddClinicalProcedure_Click(object sender, EventArgs e)
         {
-            frmProcedure ProcedureForm = Factory.GetProcedureForm();
-            ProcedureForm.ConfirmCallback = AddProcedure;
-            ProcedureForm.Show();
+
         }
 
-        public  void    AddProcedure    (ClinicalProcedure Proc)
-        {
-            if (!PastProcedures.Contains(Proc))
-            {
-                PastProcedures.Add(Proc);
-                lbxClinicalHistory.Items.Add(Proc.ToLine());
-            }
-        }
 
         private void btnRemoveClinicalProcedure_Click(object sender, EventArgs e)
         {
-            PastProcedures.RemoveAt(lbxClinicalHistory.SelectedIndex);
-            lbxClinicalHistory.Items.RemoveAt(lbxClinicalHistory.SelectedIndex);
+
         }
 
         private void lbxClinicalHistory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnRemoveClinicalProcedure.Enabled = lbxClinicalHistory.SelectedIndex > -1;
+
         }
 
         private void btnAddClaim_Click(object sender, EventArgs e)
         {
-            frmClaim ClaimForm = Factory.GetClaimForm();
-            ClaimForm.ConfirmCallback = AddClaim;
-            ClaimForm.Show();
+
         }
 
-        public  void    AddClaim    (Claim  newClaim)
-        {
-            if (!ClaimHistory.Contains(newClaim))
-            {
-                ClaimHistory.Add(newClaim);
-                lbxClaimsHistory.Items.Add(newClaim.ToLine());
-            }
-        }
 
         private void btnRemoveClaim_Click(object sender, EventArgs e)
         {
-            ClaimHistory.RemoveAt(lbxClaimsHistory.SelectedIndex);
-            lbxClaimsHistory.Items.RemoveAt(lbxClaimsHistory.SelectedIndex);
+
         }
 
         private void lbxClaimsHistory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnRemoveClaim.Enabled = lbxClaimsHistory.SelectedIndex>-1;
+
         }
 
         private void txtPerscription_TextChanged(object sender, EventArgs e)
@@ -226,6 +212,22 @@ namespace SEN_Project.PresentationLayer.Clients
         {
             Perscriptions.RemoveAt(lbxPerscriptions.SelectedIndex);
             lbxPerscriptions.Items.RemoveAt(lbxPerscriptions.SelectedIndex);
+        }
+
+        private void btnAddPerscription_Click(object sender, EventArgs e)
+        {
+            lbxPerscriptions.Items.Add(txtPerscription.Text.Trim());
+            Perscriptions.Add(txtPerscription.Text.Trim());
+            txtPerscription.Clear();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (CancelCallback!=null)
+            {
+                CancelCallback.Invoke();
+            }
+            Hide();
         }
     }
 }

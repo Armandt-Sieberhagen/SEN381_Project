@@ -29,28 +29,30 @@
         private void InitializeComponent()
         {
             this.gbxClaim = new System.Windows.Forms.GroupBox();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.btnPasteClaim = new System.Windows.Forms.Button();
+            this.btnCopyClaim = new System.Windows.Forms.Button();
             this.numPrice = new System.Windows.Forms.NumericUpDown();
             this.lblClaimID = new System.Windows.Forms.Label();
             this.btnSelectPolicyInfo = new System.Windows.Forms.Button();
             this.gbxPolicyInfo = new System.Windows.Forms.GroupBox();
+            this.rtxtPolicyInfo = new System.Windows.Forms.RichTextBox();
             this.btnPastePolicyInfo = new System.Windows.Forms.Button();
             this.btnCopyPolicyInfo = new System.Windows.Forms.Button();
             this.btnSelectCall = new System.Windows.Forms.Button();
             this.btnSelectProcedure = new System.Windows.Forms.Button();
             this.gbxCallDetails = new System.Windows.Forms.GroupBox();
+            this.rtxtCallDetails = new System.Windows.Forms.RichTextBox();
             this.btnPasteCallInfo = new System.Windows.Forms.Button();
             this.btnCopyCallInfo = new System.Windows.Forms.Button();
             this.gbxProcedureInfo = new System.Windows.Forms.GroupBox();
+            this.rtxtProcedureDetails = new System.Windows.Forms.RichTextBox();
             this.btnPasteProcedureInfo = new System.Windows.Forms.Button();
             this.btnCopyProcedureInfo = new System.Windows.Forms.Button();
-            this.btnPasteClaim = new System.Windows.Forms.Button();
-            this.btnCopyClaim = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.lblPrice = new System.Windows.Forms.Label();
-            this.rtxtProcedureDetails = new System.Windows.Forms.RichTextBox();
-            this.rtxtCallDetails = new System.Windows.Forms.RichTextBox();
-            this.rtxtPolicyInfo = new System.Windows.Forms.RichTextBox();
+            this.cbxStatus = new System.Windows.Forms.ComboBox();
+            this.lblClaimStatus = new System.Windows.Forms.Label();
             this.gbxClaim.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrice)).BeginInit();
             this.gbxPolicyInfo.SuspendLayout();
@@ -60,6 +62,8 @@
             // 
             // gbxClaim
             // 
+            this.gbxClaim.Controls.Add(this.lblClaimStatus);
+            this.gbxClaim.Controls.Add(this.cbxStatus);
             this.gbxClaim.Controls.Add(this.lblPrice);
             this.gbxClaim.Controls.Add(this.btnPasteClaim);
             this.gbxClaim.Controls.Add(this.btnCopyClaim);
@@ -77,6 +81,33 @@
             this.gbxClaim.TabIndex = 0;
             this.gbxClaim.TabStop = false;
             this.gbxClaim.Text = "Claim Form";
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Location = new System.Drawing.Point(20, 40);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(34, 13);
+            this.lblPrice.TabIndex = 22;
+            this.lblPrice.Text = "Price:";
+            // 
+            // btnPasteClaim
+            // 
+            this.btnPasteClaim.Location = new System.Drawing.Point(436, 21);
+            this.btnPasteClaim.Name = "btnPasteClaim";
+            this.btnPasteClaim.Size = new System.Drawing.Size(22, 27);
+            this.btnPasteClaim.TabIndex = 21;
+            this.btnPasteClaim.Text = "P";
+            this.btnPasteClaim.UseVisualStyleBackColor = true;
+            // 
+            // btnCopyClaim
+            // 
+            this.btnCopyClaim.Location = new System.Drawing.Point(408, 21);
+            this.btnCopyClaim.Name = "btnCopyClaim";
+            this.btnCopyClaim.Size = new System.Drawing.Size(22, 27);
+            this.btnCopyClaim.TabIndex = 20;
+            this.btnCopyClaim.Text = "C";
+            this.btnCopyClaim.UseVisualStyleBackColor = true;
             // 
             // numPrice
             // 
@@ -102,6 +133,7 @@
             this.btnSelectPolicyInfo.TabIndex = 17;
             this.btnSelectPolicyInfo.Text = "Select Policy";
             this.btnSelectPolicyInfo.UseVisualStyleBackColor = true;
+            this.btnSelectPolicyInfo.Click += new System.EventHandler(this.btnSelectPolicyInfo_Click);
             // 
             // gbxPolicyInfo
             // 
@@ -114,6 +146,15 @@
             this.gbxPolicyInfo.TabIndex = 16;
             this.gbxPolicyInfo.TabStop = false;
             this.gbxPolicyInfo.Text = "Policy";
+            // 
+            // rtxtPolicyInfo
+            // 
+            this.rtxtPolicyInfo.Location = new System.Drawing.Point(6, 20);
+            this.rtxtPolicyInfo.Name = "rtxtPolicyInfo";
+            this.rtxtPolicyInfo.ReadOnly = true;
+            this.rtxtPolicyInfo.Size = new System.Drawing.Size(249, 118);
+            this.rtxtPolicyInfo.TabIndex = 9;
+            this.rtxtPolicyInfo.Text = "";
             // 
             // btnPastePolicyInfo
             // 
@@ -141,6 +182,7 @@
             this.btnSelectCall.TabIndex = 15;
             this.btnSelectCall.Text = "Select Call";
             this.btnSelectCall.UseVisualStyleBackColor = true;
+            this.btnSelectCall.Click += new System.EventHandler(this.btnSelectCall_Click);
             // 
             // btnSelectProcedure
             // 
@@ -150,6 +192,7 @@
             this.btnSelectProcedure.TabIndex = 14;
             this.btnSelectProcedure.Text = "Select Procedure";
             this.btnSelectProcedure.UseVisualStyleBackColor = true;
+            this.btnSelectProcedure.Click += new System.EventHandler(this.btnSelectProcedure_Click);
             // 
             // gbxCallDetails
             // 
@@ -162,6 +205,15 @@
             this.gbxCallDetails.TabIndex = 13;
             this.gbxCallDetails.TabStop = false;
             this.gbxCallDetails.Text = "Call Details";
+            // 
+            // rtxtCallDetails
+            // 
+            this.rtxtCallDetails.Location = new System.Drawing.Point(9, 22);
+            this.rtxtCallDetails.Name = "rtxtCallDetails";
+            this.rtxtCallDetails.ReadOnly = true;
+            this.rtxtCallDetails.Size = new System.Drawing.Size(218, 126);
+            this.rtxtCallDetails.TabIndex = 7;
+            this.rtxtCallDetails.Text = "";
             // 
             // btnPasteCallInfo
             // 
@@ -193,6 +245,15 @@
             this.gbxProcedureInfo.TabStop = false;
             this.gbxProcedureInfo.Text = "Procedure";
             // 
+            // rtxtProcedureDetails
+            // 
+            this.rtxtProcedureDetails.Location = new System.Drawing.Point(9, 19);
+            this.rtxtProcedureDetails.Name = "rtxtProcedureDetails";
+            this.rtxtProcedureDetails.ReadOnly = true;
+            this.rtxtProcedureDetails.Size = new System.Drawing.Size(246, 96);
+            this.rtxtProcedureDetails.TabIndex = 5;
+            this.rtxtProcedureDetails.Text = "";
+            // 
             // btnPasteProcedureInfo
             // 
             this.btnPasteProcedureInfo.Location = new System.Drawing.Point(294, 15);
@@ -210,24 +271,6 @@
             this.btnCopyProcedureInfo.TabIndex = 3;
             this.btnCopyProcedureInfo.Text = "C";
             this.btnCopyProcedureInfo.UseVisualStyleBackColor = true;
-            // 
-            // btnPasteClaim
-            // 
-            this.btnPasteClaim.Location = new System.Drawing.Point(436, 21);
-            this.btnPasteClaim.Name = "btnPasteClaim";
-            this.btnPasteClaim.Size = new System.Drawing.Size(22, 27);
-            this.btnPasteClaim.TabIndex = 21;
-            this.btnPasteClaim.Text = "P";
-            this.btnPasteClaim.UseVisualStyleBackColor = true;
-            // 
-            // btnCopyClaim
-            // 
-            this.btnCopyClaim.Location = new System.Drawing.Point(408, 21);
-            this.btnCopyClaim.Name = "btnCopyClaim";
-            this.btnCopyClaim.Size = new System.Drawing.Size(22, 27);
-            this.btnCopyClaim.TabIndex = 20;
-            this.btnCopyClaim.Text = "C";
-            this.btnCopyClaim.UseVisualStyleBackColor = true;
             // 
             // btnConfirm
             // 
@@ -249,41 +292,26 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // lblPrice
+            // cbxStatus
             // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(20, 40);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(34, 13);
-            this.lblPrice.TabIndex = 22;
-            this.lblPrice.Text = "Price:";
+            this.cbxStatus.FormattingEnabled = true;
+            this.cbxStatus.Items.AddRange(new object[] {
+            "Pending",
+            "Approved",
+            "Declined"});
+            this.cbxStatus.Location = new System.Drawing.Point(220, 56);
+            this.cbxStatus.Name = "cbxStatus";
+            this.cbxStatus.Size = new System.Drawing.Size(121, 21);
+            this.cbxStatus.TabIndex = 23;
             // 
-            // rtxtProcedureDetails
+            // lblClaimStatus
             // 
-            this.rtxtProcedureDetails.Location = new System.Drawing.Point(9, 19);
-            this.rtxtProcedureDetails.Name = "rtxtProcedureDetails";
-            this.rtxtProcedureDetails.ReadOnly = true;
-            this.rtxtProcedureDetails.Size = new System.Drawing.Size(246, 96);
-            this.rtxtProcedureDetails.TabIndex = 5;
-            this.rtxtProcedureDetails.Text = "";
-            // 
-            // rtxtCallDetails
-            // 
-            this.rtxtCallDetails.Location = new System.Drawing.Point(9, 22);
-            this.rtxtCallDetails.Name = "rtxtCallDetails";
-            this.rtxtCallDetails.ReadOnly = true;
-            this.rtxtCallDetails.Size = new System.Drawing.Size(218, 126);
-            this.rtxtCallDetails.TabIndex = 7;
-            this.rtxtCallDetails.Text = "";
-            // 
-            // rtxtPolicyInfo
-            // 
-            this.rtxtPolicyInfo.Location = new System.Drawing.Point(6, 20);
-            this.rtxtPolicyInfo.Name = "rtxtPolicyInfo";
-            this.rtxtPolicyInfo.ReadOnly = true;
-            this.rtxtPolicyInfo.Size = new System.Drawing.Size(249, 118);
-            this.rtxtPolicyInfo.TabIndex = 9;
-            this.rtxtPolicyInfo.Text = "";
+            this.lblClaimStatus.AutoSize = true;
+            this.lblClaimStatus.Location = new System.Drawing.Point(217, 40);
+            this.lblClaimStatus.Name = "lblClaimStatus";
+            this.lblClaimStatus.Size = new System.Drawing.Size(65, 13);
+            this.lblClaimStatus.TabIndex = 24;
+            this.lblClaimStatus.Text = "Claim Status";
             // 
             // frmClaim
             // 
@@ -331,5 +359,7 @@
         private System.Windows.Forms.RichTextBox rtxtProcedureDetails;
         private System.Windows.Forms.RichTextBox rtxtCallDetails;
         private System.Windows.Forms.RichTextBox rtxtPolicyInfo;
+        private System.Windows.Forms.Label lblClaimStatus;
+        private System.Windows.Forms.ComboBox cbxStatus;
     }
 }

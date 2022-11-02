@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SEN_Project.BusinessLogicLayer;
+using SEN_Project.PresentationLayer.Clients;
 
 namespace SEN_Project.PresentationLayer.Claims
 {
@@ -43,9 +44,12 @@ namespace SEN_Project.PresentationLayer.Claims
             CurrentClient = _Client;
             rtxtClientInfo.Text = CurrentClient.PersonalDetails;
             lbxClaims.Items.Clear();
-            foreach (Claim claim in CurrentClient.ClaimsHistory)
+            if (CurrentClient.ClaimsHistory!=null)
             {
-                lbxClaims.Items.Add(claim.ToLine());
+                foreach (Claim claim in CurrentClient.ClaimsHistory)
+                {
+                    lbxClaims.Items.Add(claim.ToLine());
+                }
             }
             rtxtClaimInfo.Clear();
         }
@@ -99,6 +103,13 @@ namespace SEN_Project.PresentationLayer.Claims
         private void btnClose_Click(object sender, EventArgs e)
         {
             Hide();
+        }
+
+        private void btnSelectClient_Click(object sender, EventArgs e)
+        {
+            frmSearchClient ClientSearch = Factory.GetSearchClient();
+            ClientSearch.ConfirmCallback = SetClient;
+            ClientSearch.Show();
         }
     }
 }

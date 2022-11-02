@@ -125,6 +125,10 @@ namespace SEN_Project.PresentationLayer.Procedure
 
         private void btnSelectPolicy_Click(object sender, EventArgs e)
         {
+            if (SelectedClient==null)
+            {
+                return;
+            }
             frmSearchList PolicySearch = GlobalFunctions.CreateSearchForm<Policy>(SelectedClient.PastPolicies);
             PolicySearch.ConfirmCallback = SetPolicy;
             PolicySearch.Show();

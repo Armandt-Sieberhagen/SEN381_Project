@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;//For when we want to convert DataRows to Objects, and vice versa
+using SEN_Project.DataAccessLayer;
 
 namespace SEN_Project.BusinessLogicLayer
 {
@@ -60,8 +61,8 @@ namespace SEN_Project.BusinessLogicLayer
         //}
 
         public string ToLine() { return ClientID + '\t' + FullName + '\t' + IDNumber; }
-        public string PersonalDetails => $"Client ID: \t " + ClientID + " \n First Name: \t " + FirstName + " \t Last Name: " + LastName + " \n ID Number: \t" + IDNumber;
-        public string AddressDetails => PersonAddress.ToString();
+        public string PersonalDetails => "Client ID: \t " + ClientID + " \n First Name: \t " + FirstName + " \t Last Name: " + LastName + " \n ID Number: \t" + IDNumber;
+        public string AddressDetails => PersonAddress!=null ? PersonAddress.ToString() : "No Address";
 
         public int CompareTo(Client obj)
         {
@@ -131,12 +132,22 @@ namespace SEN_Project.BusinessLogicLayer
 
         public string GetValuesString()
         {
-            throw new NotImplementedException();
+            return "'" + FirstName + "',"+
+            "'" + LastName + "'," +
+            "'" + IDNumber + "'," +
+            "'" + Email + "'," +
+            "'" + PhoneNumber + "'," +
+            "'" + DatabaseAccess.current.SearchIndex<Address>(PersonAddress) + "')";
         }
 
         public string GetSearchString()
         {
-            throw new NotImplementedException();
+            return "FirstName='" + FirstName + "' AND "+
+            "LastName='" + LastName + "' AND "+
+            "ID_Number='" + IDNumber + "' AND "+
+            "Email='" + Email + "' AND "+
+            "Phone='" + PhoneNumber + "' AND "+
+            "Address_ID='" + DatabaseAccess.current.SearchIndex(PersonAddress).ToString() + "'";
         }
 
         public object Create(DataRow Row)

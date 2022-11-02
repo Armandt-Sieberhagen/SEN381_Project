@@ -57,18 +57,14 @@ namespace SEN_Project.BusinessLogicLayer
             Result.Province = Province;
             Result.PostalCode = PostalCode;
 
+            BusinessLogic.current.Add<Address>(Result);
+
             return Result;
         }
         public static Address CreateAddress(DataRow Row)
         {
-            Address Result = new Address();
-            //Add validation stuffs??
-            Result.Street = Row[1].ToString();
-            Result.City = Row[2].ToString();
-            Result.Province = Row[3].ToString();
-            Result.PostalCode = Row[4].ToString();
-
-            return Result;
+            //Validation? Never heard of her
+            return CreateAddress(Row[1].ToString(), Row[2].ToString(), Row[3].ToString(), Row[4].ToString());
         }
 
         public  static  Call    CreateCall  (DateTime   StartTime,DateTime  EndTime,Employee    employee)
@@ -92,24 +88,30 @@ namespace SEN_Project.BusinessLogicLayer
             return CreateCall(StartTime, EndTime, employee);
         }
 
-        public  static  Claim   CreateClaim (Client _Client,ClinicalProcedure Procedure,Claim.ClaimStatus Status = Claim.ClaimStatus.Pending)
+        public  static  Claim   CreateClaim (Client _Client,ClinicalProcedure Procedure,Call _Call,Policy Pol,float Price,Claim.ClaimStatus Status = Claim.ClaimStatus.Pending)
         {
             Claim Result = new Claim();
             Result.MyClient = _Client;
             Result.Procedure = Procedure;
             Result.Status = Status;
+            Result.Price = Price;
+            Result._Call = _Call;
+            Result._Policy = Pol;
+
+            DatabaseAccess.current.Add<Claim>(Result);
 
             return Result;
         }
         public static Claim CreateClaim(DataRow Row)
         {
-            Claim Result = new Claim();
-            Result.MyClient = BusinessLogic.current.GetByID<Client>(int.Parse(Row[0].ToString()));
-            Result.Procedure = BusinessLogic.current.GetByID<ClinicalProcedure>(int.Parse(Row[1].ToString()));
-            Result.Price = float.Parse(Row[2].ToString());
-            Result.Status = (Claim.ClaimStatus)int.Parse(Row[3].ToString());
+            Client MyClient = BusinessLogic.current.GetByID<Client>(int.Parse(Row[0].ToString()));
+            ClinicalProcedure Procedure = BusinessLogic.current.GetByID<ClinicalProcedure>(int.Parse(Row[1].ToString()));
+            float Price = float.Parse(Row[2].ToString());
+            Claim.ClaimStatus Status = (Claim.ClaimStatus)int.Parse(Row[3].ToString());
+            Call _Call = BusinessLogic.current.GetByID<Call>(int.Parse(Row[4].ToString()));
+            Policy Pol = BusinessLogic.current.GetByID<Policy>(int.Parse(Row[5].ToString()));
 
-            return Result;
+            return CreateClaim(MyClient, Procedure, _Call,Pol,Price,Status);
         }
 
         public static ClinicalProcedure   CreateClinicalProcedure (MedicalCondition Condition,Treatment ProposedTreatment,MedicalServiceProvider Facility,Policy pol,Client _Patient)
@@ -120,26 +122,30 @@ namespace SEN_Project.BusinessLogicLayer
             Result.Facility = Facility;
             Result.PolicySelected = pol;
             Result.Patient = _Patient;
-            //Result.Package = Package;
+
+            DatabaseAccess.current.Add<ClinicalProcedure>(Result);
 
             return Result;
         }
         public static ClinicalProcedure CreateClinicalProcedure(DataRow Row)
         {
-            ClinicalProcedure Result = new ClinicalProcedure();
-            Result.Condition = BusinessLogic.current.GetByID<MedicalCondition>(int.Parse(Row[1].ToString()));
-            Result.ProposedTreatment = BusinessLogic.current.GetByID<Treatment>(int.Parse(Row[3].ToString()));
-            Result.Facility = BusinessLogic.current.GetByID<MedicalServiceProvider>(int.Parse(Row[2].ToString()));
-            Result.PolicySelected = BusinessLogic.current.GetByID<Policy>(int.Parse(Row[4].ToString()));
-            Result.Patient = BusinessLogic.current.GetByID<Client>(int.Parse(Row[5].ToString()));
-            //Result.Package = Package;
+            MedicalCondition Condition = BusinessLogic.current.GetByID<MedicalCondition>(int.Parse(Row[1].ToString()));
+            Treatment ProposedTreatment = BusinessLogic.current.GetByID<Treatment>(int.Parse(Row[3].ToString()));
+            MedicalServiceProvider Facility = BusinessLogic.current.GetByID<MedicalServiceProvider>(int.Parse(Row[2].ToString()));
+            Policy PolicySelected = BusinessLogic.current.GetByID<Policy>(int.Parse(Row[4].ToString()));
+            Client Patient = BusinessLogic.current.GetByID<Client>(int.Parse(Row[5].ToString()));
 
-            return Result;
+            return CreateClinicalProcedure(Condition,ProposedTreatment,Facility,PolicySelected,Patient);
         }
 
-        public  static  Employee    CreateEmployee  (string FName,string    LName,string ID,string Phone,string Email,Address _Address)
+        public  static  Employee    CreateEmployee  (string FName,string    LName,string ID,string Phone,string Email,Address _Address,int EmpID = -1)
         {
             Employee Result = new Employee();
+
+            if (EmpID>-1)
+            {
+                Result.EmployeeID = EmpID;
+            }
 
             Result.FirstName = FName;
             Result.LastName = LName;
@@ -148,33 +154,21 @@ namespace SEN_Project.BusinessLogicLayer
             Result.Email = Email;
             Result.PersonAddress = _Address;
 
-            List<Employee>  AllEmployees = BusinessLogic.current.GetAllEmployees();
-            if (!AllEmployees.Contains(Result))
-            {
-                AllEmployees.Add(Result);
-            }
+            DatabaseAccess.current.Add<Employee>(Result);
 
             return Result;
         }
         public static Employee CreateEmployee(DataRow Row)
         {
-            Employee Result = new Employee();
+            int ID = int.Parse(Row[0].ToString());//Add exception handling here!!!****
+            string FirstName = Row[1].ToString();
+            string LastName = Row[2].ToString();
+            string IDNumber = Row[3].ToString();
+            string PhoneNumber = Row[4].ToString();
+            string Email = Row[5].ToString();
+            Address PersonAddress = BusinessLogic.current.GetAddressByID(int.Parse(Row[6].ToString()));//Add exception handling here!!!****
 
-            Result.EmployeeID = int.Parse(Row[0].ToString());//Add exception handling here!!!****
-            Result.FirstName = Row[1].ToString();
-            Result.LastName = Row[2].ToString();
-            Result.IDNumber = Row[3].ToString();
-            Result.PhoneNumber = Row[4].ToString();
-            Result.Email = Row[5].ToString();
-            Result.PersonAddress = BusinessLogic.current.GetAddressByID(int.Parse(Row[6].ToString()));//Add exception handling here!!!****
-
-            List<Employee> AllEmployees = BusinessLogic.current.GetAllEmployees();
-            if (!AllEmployees.Contains(Result))
-            {
-                AllEmployees.Add(Result);
-            }
-
-            return Result;
+            return CreateEmployee(FirstName,LastName,IDNumber,PhoneNumber,Email,PersonAddress,ID);
         }
 
         public static FamilyPolicy    CreateFamilyPolicy  (List<PolicyMember> Members,PolicyData DataRef)
@@ -182,14 +176,16 @@ namespace SEN_Project.BusinessLogicLayer
             FamilyPolicy Result = new FamilyPolicy();
             Result.Members = Members;
             Result.DataRef = DataRef;
+
+            DatabaseAccess.current.Add<FamilyPolicy>(Result);
+
             return Result;
         }
         public static FamilyPolicy CreateFamilyPolicy(DataRow Row)
         {
-            FamilyPolicy Result = new FamilyPolicy();
-            Result.Members = BusinessLogic.current.GetByID<FamilyPolicy>(int.Parse(Row[0].ToString())).Members;
-            Result.DataRef = BusinessLogic.current.GetByID<PolicyData>(int.Parse(Row[1].ToString()));
-            return Result;
+            List<PolicyMember> Members = BusinessLogic.current.GetByID<FamilyPolicy>(int.Parse(Row[0].ToString())).Members;
+            PolicyData DataRef = BusinessLogic.current.GetByID<PolicyData>(int.Parse(Row[1].ToString()));
+            return CreateFamilyPolicy(Members,DataRef);
         }
 
         public static IndividualPolicy    CreateIndividualPolicy  (Client Member,PolicyData   DataRef)
@@ -197,14 +193,17 @@ namespace SEN_Project.BusinessLogicLayer
             IndividualPolicy Result = new IndividualPolicy();
             Result.Member = Member;
             Result.DataRef = DataRef;
+
+            DatabaseAccess.current.Add<IndividualPolicy>(Result);
+
             return Result;
         }
         public static IndividualPolicy CreateIndividualPolicy(DataRow Row)
         {
             IndividualPolicy Result = new IndividualPolicy();
-            Result.Member = BusinessLogic.current.GetByID<Client>(int.Parse(Row[2].ToString()));
-            Result.DataRef = BusinessLogic.current.GetByID<PolicyData>(int.Parse(Row[1].ToString()));
-            return Result;
+            Client Member = BusinessLogic.current.GetByID<Client>(int.Parse(Row[2].ToString()));
+            PolicyData DataRef = BusinessLogic.current.GetByID<PolicyData>(int.Parse(Row[1].ToString()));
+            return CreateIndividualPolicy(Member,DataRef);
         }
 
         public static MedicalCondition    CreateCondition (string Name,string Description,List<Treatment> PossibleTreatments)
@@ -310,6 +309,8 @@ namespace SEN_Project.BusinessLogicLayer
             Result.ClaimsHistory = claims;
             Result.ClinicalHistory = Procedures;
             Result.ActivePerscriptions = ActivePerscriptions;
+
+            BusinessLogic.current.Add<Client>(Result);
 
             return Result;
         }
@@ -449,6 +450,19 @@ namespace SEN_Project.BusinessLogicLayer
                 ProcedureForm = new frmProcedure();
             }
             return ProcedureForm;
+        }
+        static frmClient ClientCreator;
+        public static frmClient GetClientForm()
+        {
+            if (ClientCreator != null)
+            {
+                ClientCreator.Reset();
+            }
+            else
+            {
+                ClientCreator = new frmClient();
+            }
+            return ClientCreator;
         }
 
         public  static  Client  GetRandomClient ()
