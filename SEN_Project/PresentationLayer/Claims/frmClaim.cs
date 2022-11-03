@@ -17,6 +17,7 @@ namespace SEN_Project.PresentationLayer.Claims
         public frmClaim()
         {
             InitializeComponent();
+            Reset();
         }
         public ClaimVoid ConfirmCallback;
         public EmptyVoid CancelCallback;
@@ -34,20 +35,20 @@ namespace SEN_Project.PresentationLayer.Claims
 
         private void frmClaim_Load(object sender, EventArgs e)
         {
-            Reset();
         }
 
         public  Claim   GetResult   ()
         {
             //DO VALIDATION!!!
-            return Factory.CreateClaim(CurrentClient,Procedure,numPrice.Value,_Call,_Policy,Status);
+            return Factory.CreateClaim(CurrentClient,Procedure, _Call, _Policy,(float)numPrice.Value,(Claim.ClaimStatus)Status);
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (ConfirmCallback!=null)
+            Claim Result = GetResult();
+            if (ConfirmCallback!=null   &&  Result!=null)
             {
-                ConfirmCallback.Invoke(GetResult());
+                ConfirmCallback.Invoke(Result);
             }
             Hide();
         }
@@ -73,15 +74,22 @@ namespace SEN_Project.PresentationLayer.Claims
         public  void    SetClient   (Client _Client)
         {
             CurrentClient = _Client;
+            rtxtClientInfo.Text = _Client.ToString();
         }
 
         private void btnSelectProcedure_Click(object sender, EventArgs e)
         {
             if (CurrentClient==null)
             {
+                PresentationController.current.ShowError("Please select a client first");
                 return;
             }
             frmSearchList SearchList = GlobalFunctions.CreateSearchForm<ClinicalProcedure>(CurrentClient.ClinicalHistory);
+            if (SearchList==null)
+            {
+                PresentationController.current.ShowError("Client has no past procedures");
+                return;
+            }
             SearchList.ConfirmCallback = SetProcedure;
             SearchList.Show();
         }
@@ -101,9 +109,15 @@ namespace SEN_Project.PresentationLayer.Claims
         {
             if (CurrentClient == null)
             {
+                PresentationController.current.ShowError("Please select a client first");
                 return;
             }
             frmSearchList SearchList = GlobalFunctions.CreateSearchForm<Call>(CurrentClient.CallHistory);
+            if (SearchList == null)
+            {
+                PresentationController.current.ShowError("Client has no past calls");
+                return;
+            }
             SearchList.ConfirmCallback = SetCall;
             SearchList.Show();
         }
@@ -123,9 +137,15 @@ namespace SEN_Project.PresentationLayer.Claims
         {
             if (CurrentClient == null)
             {
+                PresentationController.current.ShowError("Please select a client first");
                 return;
             }
             frmSearchList SearchList = GlobalFunctions.CreateSearchForm<Policy>(CurrentClient.PastPolicies);
+            if (SearchList == null)
+            {
+                PresentationController.current.ShowError("Client has no past policies");
+                return;
+            }
             SearchList.ConfirmCallback = SetPolicy;
             SearchList.Show();
         }

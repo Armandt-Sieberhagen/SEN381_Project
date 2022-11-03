@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;//For when we want to convert DataRows to Objects, and vice versa
+using SEN_Project.DataAccessLayer;
 
 namespace SEN_Project.BusinessLogicLayer
 {
@@ -70,7 +71,7 @@ namespace SEN_Project.BusinessLogicLayer
 
         public string GetValuesString()
         {
-            throw new NotImplementedException();
+            return DatabaseAccess.current.SearchIndex<Client>(MyClient) + "','" + DatabaseAccess.current.SearchIndex(Procedure) + "')";
         }
 
         public object Create(DataRow Row)
@@ -80,7 +81,8 @@ namespace SEN_Project.BusinessLogicLayer
 
         public string GetSearchString()
         {
-            throw new NotImplementedException();
+            return "ClientID='" + DatabaseAccess.current.SearchIndex<Client>(MyClient) + "' AND "+
+            "ProcedureID='" + DatabaseAccess.current.SearchIndex<ClinicalProcedure>(Procedure) + "'";
         }
     }
 }

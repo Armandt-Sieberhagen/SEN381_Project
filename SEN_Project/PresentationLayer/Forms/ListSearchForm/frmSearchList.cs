@@ -16,13 +16,13 @@ namespace SEN_Project.PresentationLayer.Forms.ListSearchForm
         public frmSearchList()
         {
             InitializeComponent();
+            Reset();
         }
         public ListItemVoid ConfirmCallback;
         public EmptyVoid CancelCallback;
 
         private void frmSearchList_Load(object sender, EventArgs e)
         {
-            Reset();
         }
 
         public override void    Reset   ()

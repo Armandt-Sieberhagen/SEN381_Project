@@ -139,6 +139,12 @@ namespace SEN_Project.PresentationLayer.CallCentre
         {
             if (CurrentClient == null)
             {
+                PresentationController.current.ShowError("Please select a client first");
+                return;
+            }
+            if (CurrentClient.ClaimsHistory == null)
+            {
+                PresentationController.current.ShowError("The selected client does not have any claims yet");
                 return;
             }
             frmSearchList SearchForm = Factory.GetSearchList();
@@ -224,15 +230,7 @@ namespace SEN_Project.PresentationLayer.CallCentre
 
         private void btnSelectEmployee_Click(object sender, EventArgs e)
         {
-            List<Employee> AllEmployees = BusinessLogic.current.GetAllEmployees();
-            List<string> Options = new List<string>();
-            foreach (Employee Emp in AllEmployees)
-            {
-                Options.Add(Emp.ToLine());
-            }
-
-            frmSearchList SearchList = Factory.GetSearchList();
-            SearchList.SetItems(Options);
+            frmSearchList SearchList = GlobalFunctions.CreateSearchForm<Employee>();
             SearchList.ConfirmCallback = SetEmployee;
             SearchList.Show();
         }

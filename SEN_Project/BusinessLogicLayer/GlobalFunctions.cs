@@ -34,6 +34,10 @@ namespace SEN_Project.BusinessLogicLayer
 
         public static frmSearchList CreateSearchForm<T>(List<T> AllItems) where T : ILineable, IDBItem
         {
+            if (AllItems==null)
+            {
+                return null;
+            }
             frmSearchList SearchForm = Factory.GetSearchList();
             List<string> Options = new List<string>();
             foreach (T item in AllItems)

@@ -111,6 +111,10 @@ namespace SEN_Project.DataLayer
         }
 
         public string GetSearchCommand<T>(T Item) where T : IDBItem {
+            if (Item==null)
+            {
+                return "";
+            }
             return TableNames[typeof(T)] + " WHERE " + Item.GetSearchString();
         }
 

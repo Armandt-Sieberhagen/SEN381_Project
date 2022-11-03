@@ -395,14 +395,7 @@ namespace SEN_Project.DataAccessLayer
         //    DataTable DT = DatabaseController.current.GetTable(Command);
         //    return DT;
         //}
-        //public DataTable SearchForTable(Claim _Claim)
-        //{
-        //    string Command = @"SELECT * FROM tbl_Claims WHERE ";
-        //    Command += "ClientID='" + SearchIndex(_Claim.MyClient) + "' AND ";
-        //    Command += "ProcedureID='" + SearchIndex(_Claim.Procedure) + "'";
-        //    DataTable DT = DatabaseController.current.GetTable(Command);
-        //    return DT;
-        //}
+
         //public DataTable SearchForTable(Employee _employee)
         //{
         //    string Command = @"SELECT * FROM tbl_Employees WHERE ";
