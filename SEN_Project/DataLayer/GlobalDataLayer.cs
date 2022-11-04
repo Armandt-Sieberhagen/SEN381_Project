@@ -57,7 +57,7 @@ namespace SEN_Project.DataLayer
             InsertCommands.Add(typeof(Employee), "(FirstName,LastName,ID_Number,Phone,Email,Address_ID) VALUES (");
             InsertCommands.Add(typeof(FamilyPolicy), "(Data_ID) VALUES (");
             InsertCommands.Add(typeof(IndividualPolicy), "(Data_ID,Client_ID) VALUES (");
-            InsertCommands.Add(typeof(MedicalCondition), "(Condition_Description) VALUES (");
+            InsertCommands.Add(typeof(MedicalCondition), "(Condition_Name,Condition_Description) VALUES (");
             //InsertCommands.Add(typeof(MedicalPackage), "(Available,Price) VALUES (");
             InsertCommands.Add(typeof(MedicalServiceProvider), "(Address_ID) VALUES (");
             InsertCommands.Add(typeof(PolicyData), "(PolicyName,Policy_Description,Price) VALUES (");

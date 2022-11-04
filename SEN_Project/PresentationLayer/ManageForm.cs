@@ -11,7 +11,7 @@ using SEN_Project.BusinessLogicLayer;
 
 namespace SEN_Project.PresentationLayer
 {
-    public partial class ManageForm : Form
+    public partial class ManageForm : TableForm
     {
         public ManageForm()
         {

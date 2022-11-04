@@ -8,12 +8,14 @@ using SEN_Project.DataLayer;
 using SEN_Project.DataAccessLayer;
 using SEN_Project.PresentationLayer.Clients;
 using SEN_Project.PresentationLayer.Claims;
+using SEN_Project.PresentationLayer.Forms;
 using SEN_Project.PresentationLayer.PolicyForms;
 using System.Data;//For when we want to convert DataRows to Objects, and vice versa
 using SEN_Project.PresentationLayer.Forms.ListSearchForm;
 using SEN_Project.PresentationLayer.Employees;
 using SEN_Project.PresentationLayer.Addresses;
 using SEN_Project.PresentationLayer.Procedure;
+using SEN_Project.PresentationLayer.Conditions;
 
 namespace SEN_Project.BusinessLogicLayer
 {
@@ -206,21 +208,21 @@ namespace SEN_Project.BusinessLogicLayer
             return CreateIndividualPolicy(Member,DataRef);
         }
 
-        public static MedicalCondition    CreateCondition (string Name,string Description,List<Treatment> PossibleTreatments)
+        public static MedicalCondition    CreateCondition (string Name,string Description)
         {
             MedicalCondition Result = new MedicalCondition();
             Result.Name = Name;
             Result.Description = Description;
-            Result.PossibleTreatments = PossibleTreatments;
+
+            BusinessLogic.current.Add<MedicalCondition>(Result);
+
             return Result;
         }
         public static MedicalCondition CreateCondition(DataRow Row)
         {
             MedicalCondition Result = new MedicalCondition();
-            Result.Name = Row[1].ToString();
-            Result.Description = Row[2].ToString();
-            //Implement this Result.PossibleTreatments = PossibleTreatments;
-            return Result;
+
+            return CreateCondition(Row[1].ToString(), Row[2].ToString());
         }
 
         //public static MedicalPackage  CreatePackage   (bool   Available,List<Policy>  Policies,float  Price,List<Treatment>    AdditionalTreatments = null)
@@ -463,6 +465,32 @@ namespace SEN_Project.BusinessLogicLayer
                 ClientCreator = new frmClient();
             }
             return ClientCreator;
+        }
+        static frmManagement ManagementForm;
+        public static frmManagement GetManagementForm()
+        {
+            if (ManagementForm != null)
+            {
+                ManagementForm.Reset();
+            }
+            else
+            {
+                ManagementForm = new frmManagement();
+            }
+            return ManagementForm;
+        }
+        static frmCondition ConditionForm;
+        public static frmCondition GetConditionForm()
+        {
+            if (ConditionForm != null)
+            {
+                ConditionForm.Reset();
+            }
+            else
+            {
+                ConditionForm = new frmCondition();
+            }
+            return ConditionForm;
         }
 
         public  static  Client  GetRandomClient ()

@@ -48,6 +48,11 @@ namespace SEN_Project.BusinessLogicLayer
             return default(T);
         }
 
+        public  void   Delete  <T>(T Item) where T : IDBItem
+        {
+            DatabaseAccess.current.Delete<T>(Item);
+        }
+
         public  void    AddClient   (Client _Client)
         {
             DatabaseAccess.current.Add(_Client);

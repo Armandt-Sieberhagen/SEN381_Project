@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SEN_Project.PresentationLayer;
+using SEN_Project.PresentationLayer.Conditions;
+using SEN_Project.PresentationLayer.Forms;
 using SEN_Project.DataAccessLayer;
 using SEN_Project.BusinessLogicLayer;
 using SEN_Project.DataLayer;
@@ -108,6 +110,22 @@ namespace SEN_Project
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             BusinessLogic.current.CloseOff();
+        }
+
+        private void btnConditionCentre_Click(object sender, EventArgs e)
+        {
+            frmManagement ManagementForm = Factory.GetManagementForm();
+            ManagementForm.AddForm = Factory.GetConditionForm();
+            ManagementForm.ModifyForm = Factory.GetConditionForm();
+            List<object> Items = new List<object>();
+            List<MedicalCondition> Conditions = BusinessLogic.current.GetAll<MedicalCondition>();
+            foreach (MedicalCondition item in Conditions)
+            {
+                Items.Add((object)item);
+            }
+            ManagementForm.SetItems(Items);
+            ManagementForm.Show();
+            Hide();
         }
     }
 }

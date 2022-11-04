@@ -71,6 +71,7 @@ namespace SEN_Project
             this.btnConditionCentre.TabIndex = 13;
             this.btnConditionCentre.Text = "Open Condition Centre";
             this.btnConditionCentre.UseVisualStyleBackColor = true;
+            this.btnConditionCentre.Click += new System.EventHandler(this.btnConditionCentre_Click);
             // 
             // Form1
             // 

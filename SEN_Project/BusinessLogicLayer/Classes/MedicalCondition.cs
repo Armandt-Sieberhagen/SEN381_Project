@@ -7,11 +7,10 @@ using System.Data;//For when we want to convert DataRows to Objects, and vice ve
 
 namespace SEN_Project.BusinessLogicLayer
 {
-    public class MedicalCondition : ILineable, IDBItem
+    public class MedicalCondition : ILineable, IDBItem, IComparable<MedicalCondition>
     {
         string name;
         string description;
-        List<Treatment> possibleTreatments;
 
         public string Name {
             get { return name; }
@@ -21,19 +20,16 @@ namespace SEN_Project.BusinessLogicLayer
             get { return description; }
             set { description = value; }
         }
-        public List<Treatment> PossibleTreatments {
-            get { return possibleTreatments; }
-            set { possibleTreatments = value; }
-        }
 
         public string GetSearchString()
         {
-            throw new NotImplementedException();
+            return "Condition_Name='" + Name +
+                    "' AND Condition_Description='" + Description + "'";
         }
 
         public string GetValuesString()
         {
-            throw new NotImplementedException();
+            return  "'"+Name+"','"+Description+"')";
         }
 
         public string ToLine()
@@ -44,6 +40,15 @@ namespace SEN_Project.BusinessLogicLayer
         public object Create(DataRow Row)
         {
             return Factory.CreateCondition(Row);
+        }
+
+        public int CompareTo(MedicalCondition other)
+        {
+            if (other == null)
+            {
+                return 1;
+            }
+            return this.Name.CompareTo(other.Name);
         }
     }
 }
