@@ -40,6 +40,22 @@ namespace SEN_Project.PresentationLayer.Claims
         public  Claim   GetResult   ()
         {
             //DO VALIDATION!!!
+            if (_Policy==null)
+            {
+                return null;
+            }
+            if (_Call==null)
+            {
+                return null;
+            }
+            if (CurrentClient==null)
+            {
+                return null;
+            }
+            if (Procedure==null)
+            {
+                return null;
+            }
             return Factory.CreateClaim(CurrentClient,Procedure, _Call, _Policy,(float)numPrice.Value,(Claim.ClaimStatus)Status);
         }
 

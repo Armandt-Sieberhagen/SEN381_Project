@@ -33,13 +33,13 @@ namespace SEN_Project
             set {
                 if (value!=null)
                 {
-                    lblClientID.Text = "Client ID: " + value.ClientID;
-                    lblFirstName.Text = "First Name: " +value.FirstName;
-                    lblLastName.Text = "Last Name: "+value.LastName;
-                    lblIdNumber.Text = "ID Number: " + value.IDNumber;
-                    lblPhoneNumber.Text = "Phone Number: " + value.PhoneNumber;
-                    lblEmail.Text = "E-mail: " + value.Email;
-                    rtxtAddress.Text = value.PersonAddress.ToString();
+                    //lblClientID.Text = "Client ID: " + value.ClientID;
+                    //lblFirstName.Text = "First Name: " +value.FirstName;
+                    //lblLastName.Text = "Last Name: "+value.LastName;
+                    //lblIdNumber.Text = "ID Number: " + value.IDNumber;
+                    //lblPhoneNumber.Text = "Phone Number: " + value.PhoneNumber;
+                    //lblEmail.Text = "E-mail: " + value.Email;
+                    //rtxtAddress.Text = value.PersonAddress.ToString();
                 }
                 currentClient = value;
             }

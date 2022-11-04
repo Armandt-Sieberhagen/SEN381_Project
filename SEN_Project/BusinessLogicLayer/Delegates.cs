@@ -20,4 +20,7 @@ namespace SEN_Project.BusinessLogicLayer
     public delegate void EmployeeVoid(Employee _Employee);
     public delegate void ProcedureVoid(ClinicalProcedure _Procedure);
     public delegate void ListItemVoid(int   Index,string    Line);
+    public delegate void ObjectListVoid(List<object>    Objects);
+    public delegate void DBItemVoid<T>(T _Object) where T : class, ILineable, IDBItem;
+    public delegate void ObjectVoid(object _Object);
 }
