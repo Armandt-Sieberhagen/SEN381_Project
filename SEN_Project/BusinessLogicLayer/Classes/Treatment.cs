@@ -11,6 +11,7 @@ namespace SEN_Project.BusinessLogicLayer
     {
         string description;
         string name;
+        List<MedicalCondition> conditionsCovered;
         public string Description
         {
             get { return description; }
@@ -21,15 +22,20 @@ namespace SEN_Project.BusinessLogicLayer
             get { return name; }
             set { name = value; }
         }
+        public List<MedicalCondition> ConditionsCovered
+        {
+            get { return conditionsCovered; }
+            set { conditionsCovered = value; }
+        }
 
         public string GetSearchString()
         {
-            throw new NotImplementedException();
+            return "Treatment_Name='" + Name + "' AND Treatment_Description='" + Description + "'";
         }
 
         public string GetValuesString()
         {
-            throw new NotImplementedException();
+            return "'" + Name + "','" + Description + "')";
         }
 
         public string ToLine()

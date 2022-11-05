@@ -9,45 +9,77 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SEN_Project.BusinessLogicLayer;
 using SEN_Project.PresentationLayer;
+using SEN_Project.PresentationLayer.Forms;
 
 namespace SEN_Project.PresentationLayer.Treatments
 {
-    public partial class frmTreatmentAddEdit : TableForm
+    public partial class frmTreatmentAddEdit : ManageForm
     {
-        public static frmTreatmentAddEdit current;
         public frmTreatmentAddEdit()
         {
             InitializeComponent();
-            current = this;
-            NormalColor = btnConfirm.BackColor;
+            Reset();
         }
-        Color NormalColor;
-        public TreatmentVoid ConfirmCallback;
         public EmptyVoid CancelCallback;
+        List<MedicalCondition> Conditions;
+        
+        
+        public  override    void    Reset   ()
+        {
+            txtTreatmentName.Clear();
+            rtxtDescription.Clear();
+            if (Conditions==null)
+            {
+                Conditions = new List<MedicalCondition>();
+            }
+            else
+            {
+                Conditions.Clear();
+            }
+        }
+
+        public override void SetObject(object _Object)
+        {
+            SetTreatment((Treatment)_Object);
+        }
+
+        public  void    SetTreatment    (Treatment  _NewTreatment)
+        {
+            txtTreatmentName.Text = _NewTreatment.Name;
+            rtxtDescription.Text = _NewTreatment.Description;
+            Conditions = _NewTreatment.ConditionsCovered;
+        }
 
         private void btnConfirm_MouseEnter(object sender, EventArgs e)
         {
-            btnConfirm.BackColor = Color.LightGreen;
         }
 
         private void btnConfirm_MouseLeave(object sender, EventArgs e)
         {
-            btnConfirm.BackColor = NormalColor;
         }
 
         private void btnCancel_MouseEnter(object sender, EventArgs e)
         {
-            btnCancel.BackColor = Color.Maroon;
         }
 
         private void btnCancel_MouseLeave(object sender, EventArgs e)
         {
-            btnCancel.BackColor = NormalColor;
+        }
+
+        public  Treatment   GetResult   ()
+        {
+            //validation
+            return Factory.CreateTreatment(txtTreatmentName.Text,rtxtDescription.Text,Conditions);
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-
+            Treatment Result = GetResult();
+            if (ConfirmCallback != null && Result != null)
+            {
+                ConfirmCallback.Invoke(Result);
+            }
+            Hide();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -64,14 +96,33 @@ namespace SEN_Project.PresentationLayer.Treatments
 
         }
 
-        public  override    void    Reset   ()
+        private void lblTreatmentDesc_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void lblTreatmentDesc_Click(object sender, EventArgs e)
+        private void btnSelect_Click(object sender, EventArgs e)
         {
+            ChangeList OptionsChange = GlobalFunctions.CreateChangeList<MedicalCondition>(Conditions);
+            OptionsChange.ConfirmCallback = SetConditions;
+            OptionsChange.Show();
+        }
 
+        public  void    SetConditions   (List<object>   Objects)
+        {
+            foreach (object item in Objects)
+            {
+                AddCondition((MedicalCondition)item);
+            }
+        }
+
+        public  void    AddCondition    (MedicalCondition   Condition)
+        {
+            if (!Conditions.Contains(Condition))
+            {
+                Conditions.Add(Condition);
+                lbxConditionsCovered.Items.Add(Condition.ToLine());
+            }
         }
     }
 }

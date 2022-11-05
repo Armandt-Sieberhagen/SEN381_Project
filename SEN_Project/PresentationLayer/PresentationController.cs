@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SEN_Project.PresentationLayer.Forms.ClientOptions;
+using SEN_Project.PresentationLayer.Forms;
 using SEN_Project.PresentationLayer.Addresses;
 using SEN_Project.PresentationLayer.Treatments;
 using SEN_Project.BusinessLogicLayer;
@@ -72,11 +72,6 @@ namespace SEN_Project.PresentationLayer
         public void ShowSuccess(string Message)
         {
             MessageBox.Show(Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        public  void    HideTreatmentAddEdit    ()
-        {
-            frmTreatmentAddEdit.current.Hide();
         }
     }
 }

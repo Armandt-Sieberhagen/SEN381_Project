@@ -63,8 +63,8 @@ namespace SEN_Project.PresentationLayer
 
                         break;
                     case "Treatments":
-                        frmTreatmentAddEdit.current.CancelCallback = frmTreatmentAddEdit.current.Hide;
-                        frmTreatmentAddEdit.current.ConfirmCallback = BusinessLogic.current.AddTreatment;
+                        //frmTreatmentAddEdit.current.CancelCallback = frmTreatmentAddEdit.current.Hide;
+                        //frmTreatmentAddEdit.current.ConfirmCallback = BusinessLogic.current.AddTreatment;
                         break;
                     case "Packages":
 
@@ -133,7 +133,7 @@ namespace SEN_Project.PresentationLayer
 
                         break;
                     case "Treatments":
-                        frmTreatmentAddEdit.current.CancelCallback = frmTreatmentAddEdit.current.Hide;
+                        //frmTreatmentAddEdit.current.CancelCallback = frmTreatmentAddEdit.current.Hide;
                         break;
                     case "Packages":
 

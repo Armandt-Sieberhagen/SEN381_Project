@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SEN_Project.PresentationLayer.Forms.ClientOptions;
+using SEN_Project.PresentationLayer.Forms;
 using SEN_Project.DataLayer;
 using SEN_Project.DataAccessLayer;
 using SEN_Project.PresentationLayer.Clients;
 using SEN_Project.PresentationLayer.Claims;
 using SEN_Project.PresentationLayer.Forms;
+using SEN_Project.PresentationLayer.Treatments;
 using SEN_Project.PresentationLayer.PolicyForms;
 using System.Data;//For when we want to convert DataRows to Objects, and vice versa
 using SEN_Project.PresentationLayer.Forms.ListSearchForm;
@@ -284,16 +285,25 @@ namespace SEN_Project.BusinessLogicLayer
             return Result;
         }
 
-        public static Treatment   CreateTreatment (string Description)
+        public static Treatment   CreateTreatment (string Name,string Description,List<MedicalCondition> Conditions)
         {
             Treatment Result = new Treatment();
+            Result.Name = Name;
             Result.Description = Description;
+            Result.ConditionsCovered = Conditions;
+
+            BusinessLogic.current.Add<Treatment>(Result);
+
             return Result;
         }
         public static Treatment CreateTreatment(DataRow row)
         {
-            Treatment Result = new Treatment();
-            return Result;
+            string Name = row[1].ToString();
+            string Description = row[2].ToString();
+
+            List<MedicalCondition> Conditions = BusinessLogic.current.GetConditionsTreatmentsByID(int.Parse(row[0].ToString()));
+
+            return CreateTreatment(Name,Description,Conditions);
         }
 
         public static Client CreateClient(string FirstName, string LastName, List<Call> CallHistory, Policy _Policy, string ID, Address address, string Email, string PhoneNumber, List<Claim> claims, List<ClinicalProcedure> Procedures, List<string> ActivePerscriptions)
@@ -336,19 +346,19 @@ namespace SEN_Project.BusinessLogicLayer
             return Result;
         }
 
-        static  frmAddClient    ClientForm;
-        public  static  frmAddClient GetAddClientForm    ()
-        {
-            if (ClientForm!=null)
-            {
-                ClientForm.Reset();
-            }
-            else
-            {
-                ClientForm = new frmAddClient();
-            }
-            return ClientForm;
-        }
+        //static  frmAddClient    ClientForm;
+        //public  static  frmAddClient GetAddClientForm    ()
+        //{
+        //    if (ClientForm!=null)
+        //    {
+        //        ClientForm.Reset();
+        //    }
+        //    else
+        //    {
+        //        ClientForm = new frmAddClient();
+        //    }
+        //    return ClientForm;
+        //}
         static frmSearchClient SearchClient;
         public static frmSearchClient GetSearchClient()
         {
@@ -491,6 +501,32 @@ namespace SEN_Project.BusinessLogicLayer
                 ConditionForm = new frmCondition();
             }
             return ConditionForm;
+        }
+        static ChangeList ChangeForm;
+        public static ChangeList GetChangeForm()
+        {
+            if (ChangeForm != null)
+            {
+                ChangeForm.Reset();
+            }
+            else
+            {
+                ChangeForm = new ChangeList();
+            }
+            return ChangeForm;
+        }
+        static frmTreatmentAddEdit TreatmentForm;
+        public static frmTreatmentAddEdit GetTreatmentForm()
+        {
+            if (TreatmentForm != null)
+            {
+                TreatmentForm.Reset();
+            }
+            else
+            {
+                TreatmentForm = new frmTreatmentAddEdit();
+            }
+            return TreatmentForm;
         }
 
         public  static  Client  GetRandomClient ()

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SEN_Project.PresentationLayer.Forms.ListSearchForm;
+using SEN_Project.PresentationLayer.Forms;
 
 namespace SEN_Project.BusinessLogicLayer
 {
@@ -46,6 +47,28 @@ namespace SEN_Project.BusinessLogicLayer
             }
             SearchForm.SetItems(Options);
             return SearchForm;
+        }
+
+        public static ChangeList CreateChangeList<T>(List<T>  RightItems = null) where T : IDBItem,new()
+        {
+            ChangeList ChangeForm = Factory.GetChangeForm();
+            List<T> LeftItems = BusinessLogic.current.GetAll<T>();
+            List<object> Objects = new List<object>();
+            foreach (T item in LeftItems)
+            {
+                Objects.Add(item);
+            }
+            ChangeForm.SetLeftItems(Objects);
+            if (RightItems!=null)
+            {
+                Objects = new List<object>();
+                foreach (T item in RightItems)
+                {
+                    Objects.Add(item);
+                }
+                ChangeForm.SetRightItems(Objects);
+            }
+            return ChangeForm;
         }
     }
 }

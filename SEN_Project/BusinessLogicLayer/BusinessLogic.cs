@@ -53,6 +53,11 @@ namespace SEN_Project.BusinessLogicLayer
             DatabaseAccess.current.Delete<T>(Item);
         }
 
+        public  List<MedicalCondition> GetConditionsTreatmentsByID  (int    Index)
+        {
+            return DatabaseAccess.current.GetConditionsTreatmentsByID(Index);
+        }
+
         public  void    AddClient   (Client _Client)
         {
             DatabaseAccess.current.Add(_Client);

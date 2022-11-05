@@ -62,6 +62,7 @@ namespace SEN_Project
             this.btnTreatmentManagement.TabIndex = 12;
             this.btnTreatmentManagement.Text = "Open Treatment Management";
             this.btnTreatmentManagement.UseVisualStyleBackColor = true;
+            this.btnTreatmentManagement.Click += new System.EventHandler(this.btnTreatmentManagement_Click);
             // 
             // btnConditionCentre
             // 

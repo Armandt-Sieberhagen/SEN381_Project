@@ -62,7 +62,7 @@ namespace SEN_Project.DataLayer
             InsertCommands.Add(typeof(MedicalServiceProvider), "(Address_ID) VALUES (");
             InsertCommands.Add(typeof(PolicyData), "(PolicyName,Policy_Description,Price) VALUES (");
             InsertCommands.Add(typeof(PolicyMember), "(MemberRole,Client_ID) VALUES (");
-            InsertCommands.Add(typeof(Treatment), "(Treatment_Description) VALUES (");
+            InsertCommands.Add(typeof(Treatment), "(Treatment_Name,Treatment_Description) VALUES (");
 
             ReadProvinces();
         }
@@ -191,26 +191,26 @@ namespace SEN_Project.DataLayer
             //}
         }
 
-        public Treatment GetTreatmentByDescription(string Description)
-        {
-            if (AllTreatments != null)
-            {
-                //Improve this? Maybe use dictionary?
-                foreach (Treatment treatment in AllTreatments)
-                {
-                    if (treatment.Description == Description)
-                    {
-                        return treatment;
-                    }
-                }
-                Treatment Result = Factory.CreateTreatment(Description);
-                AllTreatments.Add(Result);
-                return Result;
-            }
-            AllTreatments = new List<Treatment>();
-            AllTreatments.Add(Factory.CreateTreatment(Description));
-            return AllTreatments[0];
-        }
+        //public Treatment GetTreatmentByDescription(string Description)
+        //{
+        //    //if (AllTreatments != null)
+        //    //{
+        //    //    //Improve this? Maybe use dictionary?
+        //    //    foreach (Treatment treatment in AllTreatments)
+        //    //    {
+        //    //        if (treatment.Description == Description)
+        //    //        {
+        //    //            return treatment;
+        //    //        }
+        //    //    }
+        //    //    Treatment Result = Factory.CreateTreatment(Description);
+        //    //    AllTreatments.Add(Result);
+        //    //    return Result;
+        //    //}
+        //    //AllTreatments = new List<Treatment>();
+        //    //AllTreatments.Add(Factory.CreateTreatment(Description));
+        //    //return AllTreatments[0];
+        //}
 
         public  static string[] ProvinceNames   ()
         {

@@ -96,7 +96,6 @@
     <Compile Include="PresentationLayer\CallCentre\frmCallCentre.Designer.cs">
       <DependentUpon>frmCallCentre.cs</DependentUpon>
     </Compile>
-    <Compile Include="PresentationLayer\ChangeList\ChangeListOptions.cs" />
     <Compile Include="PresentationLayer\Claims\frmClaim.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,17 +196,11 @@
     <Compile Include="PresentationLayer\DatabaseForm.Designer.cs">
       <DependentUpon>DatabaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PresentationLayer\ChangeList\ChangeList.cs">
+    <Compile Include="PresentationLayer\Forms\ChangeList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PresentationLayer\ChangeList\ChangeList.Designer.cs">
+    <Compile Include="PresentationLayer\Forms\ChangeList.Designer.cs">
       <DependentUpon>ChangeList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PresentationLayer\Forms\ClientOptions\frmAddClient.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PresentationLayer\Forms\ClientOptions\frmAddClient.Designer.cs">
-      <DependentUpon>frmAddClient.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\PresentationController.cs" />
     <Compile Include="PresentationLayer\TableOptions.cs" />
@@ -249,7 +242,7 @@
     <EmbeddedResource Include="PresentationLayer\DatabaseForm.resx">
       <DependentUpon>DatabaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PresentationLayer\ChangeList\ChangeList.resx">
+    <EmbeddedResource Include="PresentationLayer\Forms\ChangeList.resx">
       <DependentUpon>ChangeList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Employees\frmCreateEmployee.resx">
@@ -257,9 +250,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\FamilyPolicies\frmFamilyPolicy.resx">
       <DependentUpon>frmFamilyPolicy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PresentationLayer\Forms\ClientOptions\frmAddClient.resx">
-      <DependentUpon>frmAddClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Forms\ListSearchForm\frmSearchList.resx">
       <DependentUpon>frmSearchList.cs</DependentUpon>

@@ -67,6 +67,18 @@ namespace SEN_Project.DataAccessLayer
             return Result;
         }
 
+        public  List<MedicalCondition> GetConditionsTreatmentsByID  (int    Index)
+        {
+            string Command = "SELECT * FROM tbl_Treatments_Conditions WHERE Treatment_ID='" + Index.ToString() + "'";
+            DataTable TableResult = DatabaseController.current.GetTable(Command);
+            List<MedicalCondition> Result = new List<MedicalCondition>();
+            foreach (DataRow row in TableResult.Rows)
+            {
+                Result.Add(Factory.CreateCondition(row));
+            }
+            return Result;
+        }
+
 
 
         //public void Add(Claim _Claim)

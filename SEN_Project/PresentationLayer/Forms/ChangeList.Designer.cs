@@ -1,4 +1,4 @@
-﻿namespace SEN_Project.PresentationLayer.Forms.ClientOptions
+﻿namespace SEN_Project.PresentationLayer.Forms
 {
     partial class ChangeList
     {
@@ -132,6 +132,7 @@
             this.Controls.Add(this.lbxAll);
             this.Name = "ChangeList";
             this.Text = "ChangeList";
+            this.Load += new System.EventHandler(this.ChangeList_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

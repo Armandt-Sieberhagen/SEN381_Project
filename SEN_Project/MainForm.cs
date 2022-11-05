@@ -13,7 +13,8 @@ using SEN_Project.PresentationLayer.Forms;
 using SEN_Project.DataAccessLayer;
 using SEN_Project.BusinessLogicLayer;
 using SEN_Project.DataLayer;
-using SEN_Project.PresentationLayer.Forms.ClientOptions;
+using SEN_Project.PresentationLayer.Forms;
+using SEN_Project.PresentationLayer.Treatments;
 using SEN_Project.PresentationLayer.CallCentre;
 
 namespace SEN_Project
@@ -26,7 +27,6 @@ namespace SEN_Project
             current = this;
             InitializeComponent();
         }
-        frmAddClient AddClientForm;
         Client currentClient;
         public Client CurrentClient {
             get {
@@ -63,11 +63,11 @@ namespace SEN_Project
 
         private void btnAddClient_Click(object sender, EventArgs e)
         {
-            AddClientForm = AddClientForm ?? Factory.GetAddClientForm();
-            AddClientForm.Reset();
-            AddClientForm.CancelCallback = CloseAddClient;
-            AddClientForm.ConfirmCallback = AddClient;
-            AddClientForm.Show();
+            //AddClientForm = AddClientForm ?? Factory.GetAddClientForm();
+            //AddClientForm.Reset();
+            //AddClientForm.CancelCallback = CloseAddClient;
+            //AddClientForm.ConfirmCallback = AddClient;
+            //AddClientForm.Show();
         }
 
         public  void    AddClient   (Client _Client)
@@ -84,10 +84,10 @@ namespace SEN_Project
 
         public  void    CloseAddClient  ()
         {
-            if (AddClientForm!=null)
-            {
-                AddClientForm.Hide();
-            }
+            //if (AddClientForm!=null)
+            //{
+            //    AddClientForm.Hide();
+            //}
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -122,6 +122,22 @@ namespace SEN_Project
             foreach (MedicalCondition item in Conditions)
             {
                 Items.Add((object)item);
+            }
+            ManagementForm.SetItems(Items);
+            ManagementForm.Show();
+            Hide();
+        }
+
+        private void btnTreatmentManagement_Click(object sender, EventArgs e)
+        {
+            frmManagement ManagementForm = Factory.GetManagementForm();
+            ManagementForm.AddForm = Factory.GetTreatmentForm();
+            ManagementForm.ModifyForm = Factory.GetTreatmentForm();
+            List<object> Items = new List<object>();
+            List<Treatment> Treatments = BusinessLogic.current.GetAll<Treatment>();
+            foreach (Treatment treatment in Treatments)
+            {
+                Items.Add(treatment);
             }
             ManagementForm.SetItems(Items);
             ManagementForm.Show();
