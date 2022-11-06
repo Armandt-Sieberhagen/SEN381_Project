@@ -16,6 +16,7 @@ using SEN_Project.DataLayer;
 using SEN_Project.PresentationLayer.Forms;
 using SEN_Project.PresentationLayer.Treatments;
 using SEN_Project.PresentationLayer.CallCentre;
+using SEN_Project.PresentationLayer.Tree;
 
 namespace SEN_Project
 {
@@ -141,6 +142,14 @@ namespace SEN_Project
             }
             ManagementForm.SetItems(Items);
             ManagementForm.Show();
+            Hide();
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            Tree tree = Factory.GetTreeForm();
+            
+            tree.Show();
             Hide();
         }
     }
