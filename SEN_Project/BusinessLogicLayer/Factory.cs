@@ -280,19 +280,26 @@ namespace SEN_Project.BusinessLogicLayer
             return Result;
         }
 
-        public static PolicyMember    CreatePolicyMember  (Client Person,PolicyMember.PolicyRole  Role    =   PolicyMember.PolicyRole.Secondary)
+        public static PolicyMember    CreatePolicyMember  (Client Person, int PolicyID, PolicyMember.PolicyRole  Role    =   PolicyMember.PolicyRole.Secondary)
         {
             PolicyMember Result = new PolicyMember();
             Result.Person = Person;
             Result.Role = Role;
+            Result.PolicyID = PolicyID;
+
+            BusinessLogic.current.Add<PolicyMember>(Result);
+
             return Result;
         }
         public static PolicyMember CreatePolicyMember(DataRow row)
         {
             PolicyMember Result = new PolicyMember();
-            //Result.Person = Person;
-            //Result.Role = Role;
-            return Result;
+
+            Client Person = BusinessLogic.current.GetByID<Client>(int.Parse(row[1].ToString()));
+            PolicyMember.PolicyRole Role = (PolicyMember.PolicyRole)int.Parse(row[2].ToString());
+            int PolicyID = int.Parse(row[3].ToString());
+
+            return CreatePolicyMember(Person,PolicyID,Role);
         }
 
         public static Treatment   CreateTreatment (string Name,string Description,List<MedicalCondition> Conditions)
@@ -341,19 +348,20 @@ namespace SEN_Project.BusinessLogicLayer
         {
             Client Result = new Client();
 
-            Result.FirstName = Row[1].ToString();
-            Result.LastName = Row[1].ToString();
-            //Result.CallHistory = GetCa;
-            //Result.Policies = Policies;
-            //Result.IDNumber = ID;
-            //Result.ClientAddress = address;
-            //Result.Email = Email;
-            //Result.PhoneNumber = PhoneNumber;
-            //Result.ClaimsHistory = claims;
-            //Result.ClinicalHistory = Procedures;
-            //Result.ActivePerscriptions = ActivePerscriptions;
+            string FirstName = Row[1].ToString();
+            string LastName = Row[2].ToString();
+            string ID_Number = Row[3].ToString();
+            string Email = Row[4].ToString();
+            string Phone = Row[5].ToString();
+            Address _Address = BusinessLogic.current.GetByID<Address>(int.Parse(Row[6].ToString()));
+            int ClientID = int.Parse(Row[0].ToString());
+            List<Call> Calls = DatabaseAccess.current.GetCallsByClient(ClientID);
+            Policy Pol = DatabaseAccess.current.GetPolicyByClient(ClientID);
+            List<Claim> Claims = DatabaseAccess.current.GetClaimByClientID(ClientID);
+            List<ClinicalProcedure> Procedures = DatabaseAccess.current.GetProceduresByClient(ClientID);
 
-            return Result;
+
+            return CreateClient(FirstName, LastName, Calls, Pol, ID_Number, _Address, Email, Phone, Claims, Procedures, new List<string>());
         }
 
         //static  frmAddClient    ClientForm;

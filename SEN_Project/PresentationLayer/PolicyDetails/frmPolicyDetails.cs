@@ -21,6 +21,19 @@ namespace SEN_Project.PresentationLayer.PolicyDetails
         }
         List<Treatment> TreatmentsCovered;
 
+        public  void    SetPolicyData   (PolicyData Data)
+        {
+            TreatmentsCovered.Clear();
+            foreach (Treatment treatment in Data.TreatmentsCovered)
+            {
+                AddTreatment(treatment);
+            }
+            txtPolicyName.Text = Data.Name;
+            rtxtPolicyDescription.Text = Data.Description;
+            numPrice.Value = (decimal)Data.Price;
+            cbxAvailable.Checked = Data.Available;
+        }
+
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             PolicyData Result = GetResult();
@@ -90,6 +103,23 @@ namespace SEN_Project.PresentationLayer.PolicyDetails
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Hide();
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            PolicyData Result = GetResult();
+            if (Result!=null)
+            {
+                SEN_Clipboard._PolicyData = Result;
+            }
+        }
+
+        private void btnPaste_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._PolicyData!=null)
+            {
+                SetPolicyData(SEN_Clipboard._PolicyData);
+            }
         }
     }
 }

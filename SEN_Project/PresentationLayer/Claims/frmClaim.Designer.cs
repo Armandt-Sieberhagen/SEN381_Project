@@ -209,6 +209,7 @@
             this.btnPastePolicyInfo.TabIndex = 8;
             this.btnPastePolicyInfo.Text = "P";
             this.btnPastePolicyInfo.UseVisualStyleBackColor = true;
+            this.btnPastePolicyInfo.Click += new System.EventHandler(this.btnPastePolicyInfo_Click);
             // 
             // btnCopyPolicyInfo
             // 

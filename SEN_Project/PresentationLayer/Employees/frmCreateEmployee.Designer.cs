@@ -88,6 +88,7 @@
             this.btnPasteEmployee.TabIndex = 17;
             this.btnPasteEmployee.Text = "P";
             this.btnPasteEmployee.UseVisualStyleBackColor = true;
+            this.btnPasteEmployee.Click += new System.EventHandler(this.btnPasteEmployee_Click);
             // 
             // btnCopyEmployee
             // 
@@ -97,6 +98,7 @@
             this.btnCopyEmployee.TabIndex = 16;
             this.btnCopyEmployee.Text = "C";
             this.btnCopyEmployee.UseVisualStyleBackColor = true;
+            this.btnCopyEmployee.Click += new System.EventHandler(this.btnCopyEmployee_Click);
             // 
             // txtEmail
             // 
@@ -154,6 +156,7 @@
             this.btnPasteAddress.TabIndex = 9;
             this.btnPasteAddress.Text = "P";
             this.btnPasteAddress.UseVisualStyleBackColor = true;
+            this.btnPasteAddress.Click += new System.EventHandler(this.btnPasteAddress_Click);
             // 
             // btnCopyAddress
             // 
@@ -163,6 +166,7 @@
             this.btnCopyAddress.TabIndex = 8;
             this.btnCopyAddress.Text = "C";
             this.btnCopyAddress.UseVisualStyleBackColor = true;
+            this.btnCopyAddress.Click += new System.EventHandler(this.btnCopyAddress_Click);
             // 
             // btnSelectAddress
             // 

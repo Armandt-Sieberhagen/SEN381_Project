@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.gbxFacilityDetails = new System.Windows.Forms.GroupBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
             this.btnCreateAddress = new System.Windows.Forms.Button();
             this.btnChangePolicies = new System.Windows.Forms.Button();
             this.lblPolicyData = new System.Windows.Forms.Label();
@@ -38,13 +40,19 @@
             this.rtxAddressDetails = new System.Windows.Forms.RichTextBox();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.lblName = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.btnCopyFacility = new System.Windows.Forms.Button();
+            this.btnPasteFacility = new System.Windows.Forms.Button();
+            this.btnPasteAddress = new System.Windows.Forms.Button();
+            this.btnCopyAddress = new System.Windows.Forms.Button();
             this.gbxFacilityDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbxFacilityDetails
             // 
+            this.gbxFacilityDetails.Controls.Add(this.btnPasteAddress);
+            this.gbxFacilityDetails.Controls.Add(this.btnCopyAddress);
+            this.gbxFacilityDetails.Controls.Add(this.btnPasteFacility);
+            this.gbxFacilityDetails.Controls.Add(this.btnCopyFacility);
             this.gbxFacilityDetails.Controls.Add(this.txtName);
             this.gbxFacilityDetails.Controls.Add(this.lblName);
             this.gbxFacilityDetails.Controls.Add(this.btnCreateAddress);
@@ -60,6 +68,22 @@
             this.gbxFacilityDetails.TabIndex = 0;
             this.gbxFacilityDetails.TabStop = false;
             this.gbxFacilityDetails.Text = "Medical Service Provider Details";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(9, 43);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(100, 20);
+            this.txtName.TabIndex = 8;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(6, 27);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(116, 13);
+            this.lblName.TabIndex = 7;
+            this.lblName.Text = "Service Provider Name";
             // 
             // btnCreateAddress
             // 
@@ -146,21 +170,45 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // lblName
+            // btnCopyFacility
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(6, 27);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(116, 13);
-            this.lblName.TabIndex = 7;
-            this.lblName.Text = "Service Provider Name";
+            this.btnCopyFacility.Location = new System.Drawing.Point(384, 17);
+            this.btnCopyFacility.Name = "btnCopyFacility";
+            this.btnCopyFacility.Size = new System.Drawing.Size(25, 23);
+            this.btnCopyFacility.TabIndex = 9;
+            this.btnCopyFacility.Text = "C";
+            this.btnCopyFacility.UseVisualStyleBackColor = true;
+            this.btnCopyFacility.Click += new System.EventHandler(this.btnCopyFacility_Click);
             // 
-            // txtName
+            // btnPasteFacility
             // 
-            this.txtName.Location = new System.Drawing.Point(9, 43);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(100, 20);
-            this.txtName.TabIndex = 8;
+            this.btnPasteFacility.Location = new System.Drawing.Point(415, 17);
+            this.btnPasteFacility.Name = "btnPasteFacility";
+            this.btnPasteFacility.Size = new System.Drawing.Size(25, 23);
+            this.btnPasteFacility.TabIndex = 10;
+            this.btnPasteFacility.Text = "P";
+            this.btnPasteFacility.UseVisualStyleBackColor = true;
+            this.btnPasteFacility.Click += new System.EventHandler(this.btnPasteFacility_Click);
+            // 
+            // btnPasteAddress
+            // 
+            this.btnPasteAddress.Location = new System.Drawing.Point(214, 125);
+            this.btnPasteAddress.Name = "btnPasteAddress";
+            this.btnPasteAddress.Size = new System.Drawing.Size(25, 23);
+            this.btnPasteAddress.TabIndex = 12;
+            this.btnPasteAddress.Text = "P";
+            this.btnPasteAddress.UseVisualStyleBackColor = true;
+            this.btnPasteAddress.Click += new System.EventHandler(this.btnPasteAddress_Click);
+            // 
+            // btnCopyAddress
+            // 
+            this.btnCopyAddress.Location = new System.Drawing.Point(183, 125);
+            this.btnCopyAddress.Name = "btnCopyAddress";
+            this.btnCopyAddress.Size = new System.Drawing.Size(25, 23);
+            this.btnCopyAddress.TabIndex = 11;
+            this.btnCopyAddress.Text = "C";
+            this.btnCopyAddress.UseVisualStyleBackColor = true;
+            this.btnCopyAddress.Click += new System.EventHandler(this.btnCopyAddress_Click);
             // 
             // frmFacility
             // 
@@ -192,5 +240,9 @@
         private System.Windows.Forms.Button btnCreateAddress;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Button btnPasteAddress;
+        private System.Windows.Forms.Button btnCopyAddress;
+        private System.Windows.Forms.Button btnPasteFacility;
+        private System.Windows.Forms.Button btnCopyFacility;
     }
 }

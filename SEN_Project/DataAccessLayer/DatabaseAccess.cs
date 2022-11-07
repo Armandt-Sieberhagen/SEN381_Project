@@ -705,5 +705,55 @@ namespace SEN_Project.DataAccessLayer
             return Result;
 
         }
+
+        public  List<Call> GetCallsByClient (int    ID)
+        {
+            string Command = "SELECT * FROM tbl_Calls WHERE Client_ID = '" + ID + "'";
+            DataTable DT = DatabaseController.current.GetTable(Command);
+            List<Call> Result = new List<Call>();
+            foreach (DataRow row in DT.Rows)
+            {
+                Result.Add(Factory.CreateCall(row));
+            }
+            return Result;
+        }
+
+        public  Policy GetPolicyByClient    (int    ID)
+        {
+            string Command = "SELECT * FROM tbl_Individual_Policies WHERE Client_ID = '" + ID + "'";
+            DataTable DT = DatabaseController.current.GetTable(Command);
+            if (DT!=null ? DT.Rows.Count>0 : false)
+            {
+                return Factory.CreateIndividualPolicy(DT.Rows[0]);
+            }
+            else
+            {
+                Command = "SELECT * FROM tbl_Policy_Members WHERE Client_ID = '" + ID + "'";
+                DT = DatabaseController.current.GetTable(Command);
+                if (DT != null ? DT.Rows.Count > 0 : false)
+                {
+                    PolicyMember Member = Factory.CreatePolicyMember(DT.Rows[0]);
+                    Command = "SELECT * FROM tbl_Family_Policies WHERE ID = '" + Member.PolicyID + "'";
+                    DT = DatabaseController.current.GetTable(Command);
+                    if (DT != null ? DT.Rows.Count > 0 : false)
+                    {
+                        return Factory.CreateFamilyPolicy(DT.Rows[0]);
+                    }
+                }
+            }
+            return null;
+        }
+
+        public List<ClinicalProcedure> GetProceduresByClient    (int    ID)
+        {
+            string Command = "SELECT * FROM tbl_Procedures WHERE Patient = '" + ID + "'";
+            DataTable DT = DatabaseController.current.GetTable(Command);
+            List<ClinicalProcedure> Result = new List<ClinicalProcedure>();
+            foreach (DataRow row in DT.Rows)
+            {
+                Result.Add(Factory.CreateClinicalProcedure(row));
+            }
+            return Result;
+        }
     }
 }

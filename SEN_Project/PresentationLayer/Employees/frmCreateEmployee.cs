@@ -28,6 +28,19 @@ namespace SEN_Project.PresentationLayer.Employees
 
         }
 
+        public  void    SetEmployee (Employee   Emp)
+        {
+            if (Emp!=null)
+            {
+                SetAddress(Emp.PersonAddress);
+                txtFirstName.Text = Emp.FirstName;
+                txtLastName.Text = Emp.LastName;
+                txtID.Text = Emp.IDNumber;
+                txtPhoneNumber.Text = Emp.PhoneNumber;
+                txtEmail.Text = Emp.Email;
+            }
+        }
+
         private bool EmailValidation()
         {
             if (txtEmail.Text.Contains("@"))
@@ -113,13 +126,6 @@ namespace SEN_Project.PresentationLayer.Employees
 
         }
 
-        /*	Employee_ID INT IDENTITY( 1 ,1 )PRIMARY  KEY,
-	FirstName VARCHAR(20)	NOT  NULL,
-	LastName VARCHAR(20)	NOT  NULL,
-	ID_Number VARCHAR(13)	NOT  NULL,
-	Email VARCHAR(20)	NOT  NULL,
-	Phone VARCHAR(10)	NOT  NULL,
-	Address_ID INT REFERENCES tbl_Addresses(ID)*/
 
         public void    SetAddress  (Address    _address)
         {
@@ -186,6 +192,39 @@ namespace SEN_Project.PresentationLayer.Employees
         public  void    SetAddress (int ID,string   Line)
         {
             SetAddress(BusinessLogic.current.GetByID<Address>(ID));
+        }
+
+        private void btnCopyEmployee_Click(object sender, EventArgs e)
+        {
+            Employee Result = GetResult();
+            if (Result!=null)
+            {
+                SEN_Clipboard._Employee = Result;
+            }
+        }
+
+        private void btnPasteEmployee_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._Employee!=null)
+            {
+                SetEmployee(SEN_Clipboard._Employee);
+            }
+        }
+
+        private void btnCopyAddress_Click(object sender, EventArgs e)
+        {
+            if (_Address!=null)
+            {
+                SEN_Clipboard._Address = _Address;
+            }
+        }
+
+        private void btnPasteAddress_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._Address!=null)
+            {
+                SetAddress(SEN_Clipboard._Address);
+            }
         }
     }
 }

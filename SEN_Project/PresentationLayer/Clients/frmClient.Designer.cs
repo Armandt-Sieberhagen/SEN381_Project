@@ -189,6 +189,7 @@
             this.btnPasteClient.TabIndex = 22;
             this.btnPasteClient.Text = "P";
             this.btnPasteClient.UseVisualStyleBackColor = true;
+            this.btnPasteClient.Click += new System.EventHandler(this.btnPasteClient_Click);
             // 
             // btnCopyClient
             // 
@@ -198,6 +199,7 @@
             this.btnCopyClient.TabIndex = 21;
             this.btnCopyClient.Text = "C";
             this.btnCopyClient.UseVisualStyleBackColor = true;
+            this.btnCopyClient.Click += new System.EventHandler(this.btnCopyClient_Click);
             // 
             // button3
             // 

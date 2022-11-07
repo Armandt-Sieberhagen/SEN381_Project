@@ -18,6 +18,7 @@ namespace SEN_Project.BusinessLogicLayer
 
         Client person;
         PolicyRole role;
+        int polId;
         public Client Person {
             get { return person; }
             set { person = value; }
@@ -26,6 +27,11 @@ namespace SEN_Project.BusinessLogicLayer
             get { return role; }
             set { role = value; }
         }
+        public int PolicyID {
+            get { return polId; }
+            set { polId = value; }
+        }
+        
 
         public string ToLine()
         {
@@ -39,7 +45,7 @@ namespace SEN_Project.BusinessLogicLayer
 
         public string GetValuesString()
         {
-            return "'" + Role.ToString() + "','" + DatabaseAccess.current.SearchIndex<Client>(Person)+"')";
+            return "'" + (int)Role + "','" + DatabaseAccess.current.SearchIndex<Client>(Person)+"')";
         }
 
         public string GetSearchString()
