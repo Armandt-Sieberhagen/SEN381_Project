@@ -45,7 +45,7 @@ namespace SEN_Project.BusinessLogicLayer
         "\n Province: \t" + Province;
         }
 
-        public string GetValuesString()
+        public string GetValuesString() //Converts address into a string to be used in an SQL statement
         {
             return "'" + Street + "'," +
             "'" + City + "'," +
@@ -53,7 +53,7 @@ namespace SEN_Project.BusinessLogicLayer
             "'" + Province + "')";
         }
 
-        public string GetSearchString()
+        public string GetSearchString() //Converts address into a string to be used in an SQL search statement
         {
             return "Street='" + Street + "' AND " +
             "City='" + City + "' AND " +
@@ -61,7 +61,7 @@ namespace SEN_Project.BusinessLogicLayer
              "Province='" + Province + "'";
         }
 
-        public object Create(DataRow Row)
+        public object Create(DataRow Row) //this creates a new address using the factory
         {
             return Factory.CreateAddress(Row);
         }

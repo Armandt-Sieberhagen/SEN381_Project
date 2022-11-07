@@ -27,7 +27,7 @@ namespace SEN_Project.BusinessLogicLayer
 
         public override string ToLine() { return ID.ToString() + '\t' + Member.FullName + '\t' + Member.IDNumber + '\t' + DataRef.Name; }
 
-        public override object Create(DataRow Row)
+        public override object Create(DataRow Row) // creates a new policy using the factory class
         {
             return Factory.CreateIndividualPolicy(Row);
         }

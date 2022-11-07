@@ -37,12 +37,12 @@ namespace SEN_Project.BusinessLogicLayer
             return Name + "\t" + Description + "\t";
         }
 
-        public object Create(DataRow Row)
+        public object Create(DataRow Row) // creates a new medical condition using the factory class
         {
             return Factory.CreateCondition(Row);
         }
 
-        public int CompareTo(MedicalCondition other)
+        public int CompareTo(MedicalCondition other) //compare medical conditions
         {
             if (other == null)
             {

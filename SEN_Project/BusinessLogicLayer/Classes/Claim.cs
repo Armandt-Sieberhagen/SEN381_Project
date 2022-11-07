@@ -61,7 +61,7 @@ namespace SEN_Project.BusinessLogicLayer
                     "\n Price: \t R" + Price;
         }
 
-        public  void    Set (Claim  _Other)
+        public  void    Set (Claim  _Other) //sets the value of the current claim
         {
             Status = _Other.Status;
             MyClient = _Other.MyClient;
@@ -69,17 +69,17 @@ namespace SEN_Project.BusinessLogicLayer
             Price = _Other.Price;
         }
 
-        public string GetValuesString()
+        public string GetValuesString() //creates a string to be used as a value in a sql query
         {
             return DatabaseAccess.current.SearchIndex<Client>(MyClient) + "','" + DatabaseAccess.current.SearchIndex(Procedure) + "')";
         }
 
-        public object Create(DataRow Row)
+        public object Create(DataRow Row) //creates a claim using the factory object
         {
             return Factory.CreateClaim(Row);
         }
 
-        public string GetSearchString()
+        public string GetSearchString() // creates an sql search string
         {
             return "ClientID='" + DatabaseAccess.current.SearchIndex<Client>(MyClient) + "' AND "+
             "ProcedureID='" + DatabaseAccess.current.SearchIndex<ClinicalProcedure>(Procedure) + "'";

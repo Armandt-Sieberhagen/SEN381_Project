@@ -28,7 +28,7 @@ namespace SEN_Project.BusinessLogicLayer
             }
             return Result;
         }
-        public PolicyMember HeadMember {
+        public PolicyMember HeadMember { // creates a new head member
             get {
                 foreach (PolicyMember member in members)
                 {
@@ -42,7 +42,7 @@ namespace SEN_Project.BusinessLogicLayer
         }
         public override string ToLine() { return ID.ToString() + '\t' + HeadMember.Person.FullName + '\t' + HeadMember.Person.IDNumber + '\t' + DataRef.Name; }
 
-        public override object Create(DataRow Row)
+        public override object Create(DataRow Row) // creares a family policy using the factory
         {
             return Factory.CreateFamilyPolicy(Row);
         }

@@ -44,7 +44,23 @@ namespace SEN_Project.PresentationLayer.Conditions
 
         public  MedicalCondition    GetResult   ()
         {
-            return Factory.CreateCondition(txtName.Text, rtxtDescription.Text);
+            if (txtName.Text.Length > 0 && txtName.Text.Length < 50)
+            {
+                if (rtxtDescription.Text.Length>0 && rtxtDescription.Text.Length<50)
+                {
+                    return Factory.CreateCondition(txtName.Text, rtxtDescription.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Description must be between 1 and 50 characters");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid name");
+            }
+            return null;
+            
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)

@@ -109,7 +109,53 @@ namespace SEN_Project.PresentationLayer.Clients
             string Phone = txtPhoneNumber.Text.Trim();
             string Email = txtEmail.Text.Trim();
 
-            return Factory.CreateClient(FirstName,LastName,CallHistory,null,IDnumber,_Address,Email,Phone,new List<Claim>(), new List<ClinicalProcedure>(), Perscriptions);
+            if (FirstName.Length > 0 && FirstName.Length < 20)
+            {
+                if (LastName.Length > 0 && LastName.Length < 20)
+                {
+                    if (IDnumber.Length > 0 && IDnumber.Length < 20)
+                    {
+                        if (Phone.Length > 0 && Phone.Length < 10)
+                        {
+                            if (Email.Length > 0 && Email.Length < 20)
+                            {
+                                if (_Address != null)
+                                {
+                                    return Factory.CreateClient(FirstName, LastName, CallHistory, null, IDnumber, _Address, Email, Phone, new List<Claim>(), new List<ClinicalProcedure>(), Perscriptions);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Please select an address, tip: create one from the table");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Please enter a valid email, its length must be less than 20");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter a valid phone number, its length must be less than 10");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a valid ID number, its length must be less than 20");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a valid last name, its length must be less than 20");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid first name, its length must be less than 20");
+            }
+
+            return null;
+
+            
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)

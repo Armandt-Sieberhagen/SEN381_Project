@@ -23,7 +23,7 @@ namespace SEN_Project.PresentationLayer.Tree
 
         }
 
-        private void UpdateNodes()
+        private void UpdateNodes() //This looks in the database and adds the appropriate nodes
         {
             DataAccessLayer.DatabaseAccess databaseAccess = new DataAccessLayer.DatabaseAccess();
             List<Client> Clients =  databaseAccess.GetAllClients();
