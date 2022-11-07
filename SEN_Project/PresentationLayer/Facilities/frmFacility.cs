@@ -42,7 +42,7 @@ namespace SEN_Project.PresentationLayer.Facilities
         private void btnChangeAddress_Click(object sender, EventArgs e)
         {
             frmSearchList AddressSearch = Factory.GetSearchList();
-            List<Address> AllAddresses = BusinessLogic.current.GetAllAddresses();
+            List<Address> AllAddresses = BusinessLogic.current.GetAll<Address>();
             List<string> Options = new List<string>();
             foreach (Address address in AllAddresses)
             {

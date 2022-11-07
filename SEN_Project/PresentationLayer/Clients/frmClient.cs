@@ -42,7 +42,7 @@ namespace SEN_Project.PresentationLayer.Clients
         private void btnSelect_Click(object sender, EventArgs e)
         {
             frmSearchList AddressSearch = Factory.GetSearchList();
-            List<Address> AllAddresses = BusinessLogic.current.GetAllAddresses();
+            List<Address> AllAddresses = BusinessLogic.current.GetAll<Address>();
             List<string> Options = new List<string>();
             foreach (Address address in AllAddresses)
             {
@@ -68,7 +68,7 @@ namespace SEN_Project.PresentationLayer.Clients
 
         public void SetAddress(int ID, string Line)
         {
-            SetAddress(BusinessLogic.current.GetAddressByID(ID));
+            SetAddress(BusinessLogic.current.GetByID<Address>(ID));
         }
 
         public  override    void    Reset   ()
@@ -134,7 +134,7 @@ namespace SEN_Project.PresentationLayer.Clients
         private void btnAddCall_Click(object sender, EventArgs e)
         {
             frmSearchList CallSearch = Factory.GetSearchList();
-            List<Call> AllCalls = BusinessLogic.current.GetAllCalls();
+            List<Call> AllCalls = BusinessLogic.current.GetAll<Call>();
             List<string> Options = new List<string>();
             foreach (Call call in AllCalls)
             {
@@ -147,7 +147,7 @@ namespace SEN_Project.PresentationLayer.Clients
 
         public  void    AddCall (int    Index,string    Line)
         {
-            Call NewCall = BusinessLogic.current.GetCallByID(Index);
+            Call NewCall = BusinessLogic.current.GetByID<Call>(Index);
             if (!CallHistory.Contains(NewCall))
             {
                 CallHistory.Add(NewCall);

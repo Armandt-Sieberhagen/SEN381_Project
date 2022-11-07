@@ -202,5 +202,45 @@ namespace SEN_Project.PresentationLayer.Claims
                 Set(SEN_Clipboard._Claim);
             }
         }
+
+        private void btnCopyProcedureInfo_Click(object sender, EventArgs e)
+        {
+            if (Procedure!=null)
+            {
+                SEN_Clipboard._ClinicalProcedure = Procedure;
+            }
+        }
+
+        private void btnPasteProcedureInfo_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._ClinicalProcedure!=null)
+            {
+                SetProcedure(SEN_Clipboard._ClinicalProcedure);
+            }
+        }
+
+        private void btnCopyCallInfo_Click(object sender, EventArgs e)
+        {
+            if (_Call!=null)
+            {
+                SEN_Clipboard._Call = _Call;
+            }
+        }
+
+        private void btnPasteCallInfo_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._Call!=null)
+            {
+                SetCall(SEN_Clipboard._Call);
+            }
+        }
+
+        private void btnCopyPolicyInfo_Click(object sender, EventArgs e)
+        {
+            if (_Policy!=null)
+            {
+                SEN_Clipboard._Policy = _Policy;
+            }
+        }
     }
 }

@@ -46,12 +46,12 @@ namespace SEN_Project.BusinessLogicLayer
 
         public string GetSearchString()
         {
-            throw new NotImplementedException();
+            return "PolicyName='" + Name + "'";
         }
 
         public string GetValuesString()
         {
-            throw new NotImplementedException();
+            return "'" + Name + "','" + Description + "','" + Price + "')";
         }
 
         public string ToLine() { return Name + '\t' + Price + '\t' + Available; }

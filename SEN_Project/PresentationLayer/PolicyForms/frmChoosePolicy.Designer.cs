@@ -250,6 +250,7 @@
             this.btnRemoveMember.TabIndex = 4;
             this.btnRemoveMember.Text = "Remove Member";
             this.btnRemoveMember.UseVisualStyleBackColor = true;
+            this.btnRemoveMember.Click += new System.EventHandler(this.btnRemoveMember_Click);
             // 
             // btnChangeHeadMember
             // 

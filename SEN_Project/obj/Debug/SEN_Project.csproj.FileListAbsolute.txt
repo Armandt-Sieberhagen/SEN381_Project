@@ -28,7 +28,6 @@ C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\bin\Debug\SEN_Projec
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.csproj.AssemblyReference.cache
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.csproj.SuggestedBindingRedirects.cache
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.Form1.resources
-C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.DatabaseForm.resources
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.Properties.Resources.resources
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.csproj.GenerateResource.cache
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.csproj.CoreCompileInputs.cache

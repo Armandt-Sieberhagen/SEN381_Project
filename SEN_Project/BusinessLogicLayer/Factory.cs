@@ -19,6 +19,7 @@ using SEN_Project.PresentationLayer.Procedure;
 using SEN_Project.PresentationLayer.Conditions;
 using SEN_Project.PresentationLayer.Tree;
 using SEN_Project.PresentationLayer.PolicyDetails;
+using SEN_Project.PresentationLayer.Facilities;
 
 namespace SEN_Project.BusinessLogicLayer
 {
@@ -87,7 +88,7 @@ namespace SEN_Project.BusinessLogicLayer
         }
         public static Call CreateCall(DataRow Row)
         {
-            Employee employee = BusinessLogic.current.GetEmployeeByID(int.Parse(Row[1].ToString()));//Add Validation
+            Employee employee = BusinessLogic.current.GetByID < Employee>(int.Parse(Row[1].ToString()));//Add Validation
             DateTime StartTime = DateTime.Parse(Row[2].ToString());
             DateTime EndTime = DateTime.Parse(Row[3].ToString());
             return CreateCall(StartTime, EndTime, employee);
@@ -171,7 +172,7 @@ namespace SEN_Project.BusinessLogicLayer
             string IDNumber = Row[3].ToString();
             string PhoneNumber = Row[4].ToString();
             string Email = Row[5].ToString();
-            Address PersonAddress = BusinessLogic.current.GetAddressByID(int.Parse(Row[6].ToString()));//Add exception handling here!!!****
+            Address PersonAddress = BusinessLogic.current.GetByID<Address>(int.Parse(Row[6].ToString()));//Add exception handling here!!!****
 
             return CreateEmployee(FirstName,LastName,IDNumber,PhoneNumber,Email,PersonAddress,ID);
         }
@@ -238,19 +239,26 @@ namespace SEN_Project.BusinessLogicLayer
         //    return Result;
         //}
 
-        public static MedicalServiceProvider  CreateMedicalServiceProvider    (Address    _Address,List<Policy>   Policies)
+        public static MedicalServiceProvider  CreateMedicalServiceProvider    (string Name,Address    _Address,List<PolicyData>   Policies)
         {
             MedicalServiceProvider Result = new MedicalServiceProvider();
+            Result.Name = Name;
             Result.MyAddress = _Address;
             Result.Policies = Policies;
+
+            BusinessLogic.current.Add<MedicalServiceProvider>(Result);
+
             return Result;
         }
         public static MedicalServiceProvider CreateMedicalServiceProvider(DataRow Row)
         {
             MedicalServiceProvider Result = new MedicalServiceProvider();
-            //Result.MyAddress = _Address;
-            //Result.Policies = Policies;
-            return Result;
+
+            string Name = Row[1].ToString();
+            Address address = BusinessLogic.current.GetByID<Address>(int.Parse(Row[2].ToString()));
+            List<PolicyData> Policies = DatabaseAccess.current.GetPolicyByFacility(int.Parse(Row[0].ToString()));
+
+            return CreateMedicalServiceProvider(Name,address,Policies);
         }
 
         public static PolicyData CreatePolicyData (string Name,string Description,float   Price,List<Treatment>   TreatmentsCovered)
@@ -543,40 +551,20 @@ namespace SEN_Project.BusinessLogicLayer
             }
             return PolicyDetails;
         }
-
-        public  static  Client  GetRandomClient ()
+        static frmFacility FacilityForm;
+        public  static  frmFacility GetFacilityForm ()
         {
-            string[] FirstNames = new string[] { "John", "Sam", "Peter" };
-            string[] LastNames = new string[] { "Smith", "O`Neil", "Jackson" };
-
-            Random Rand = new Random();
-            string FirstName = FirstNames[Rand.Next(FirstNames.Length)];
-            string LastName = LastNames[Rand.Next(LastNames.Length)];
-            string ID = "";
-            for (int i = 0; i < 13; i++)
+            if (FacilityForm != null)
             {
-                ID += Rand.Next(10).ToString();
+                FacilityForm.Reset();
             }
-            string Phone = "";
-            for (int i = 0; i < 10; i++)
+            else
             {
-                Phone += Rand.Next(10).ToString();
+                FacilityForm = new frmFacility();
             }
-            string email = "";
-            if (Rand.Next(2)==0)
-            {
-                email = FirstName + LastName + "@gmail.com";
-            }
-
-
-
-
-
-
-
-
-            return null;
+            return FacilityForm;
         }
+
         static Tree TreeForm;
         public static Tree GetTreeForm()
         {

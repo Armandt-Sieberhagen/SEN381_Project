@@ -134,6 +134,7 @@
             this.btnPasteCall.TabIndex = 5;
             this.btnPasteCall.Text = "P";
             this.btnPasteCall.UseVisualStyleBackColor = true;
+            this.btnPasteCall.Click += new System.EventHandler(this.btnPasteCall_Click);
             // 
             // btnCopyCallDetails
             // 
@@ -143,6 +144,7 @@
             this.btnCopyCallDetails.TabIndex = 4;
             this.btnCopyCallDetails.Text = "C";
             this.btnCopyCallDetails.UseVisualStyleBackColor = true;
+            this.btnCopyCallDetails.Click += new System.EventHandler(this.btnCopyCallDetails_Click);
             // 
             // lblEndTime
             // 

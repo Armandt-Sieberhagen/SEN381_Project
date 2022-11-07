@@ -15,6 +15,7 @@ using SEN_Project.PresentationLayer.Forms.ListSearchForm;
 using SEN_Project.PresentationLayer.Employees;
 using SEN_Project.PresentationLayer.Procedure;
 using SEN_Project;
+using System.Threading;
 
 namespace SEN_Project.PresentationLayer.CallCentre
 {
@@ -27,6 +28,7 @@ namespace SEN_Project.PresentationLayer.CallCentre
         Employee CurrentEmployee;
         bool CallOperating;
         Claim CurrentClaim;
+        Thread TimerThread;
 
         public frmCallCentre()
         {
@@ -52,8 +54,31 @@ namespace SEN_Project.PresentationLayer.CallCentre
             CallStart = DateTime.Now;
             lblStartTime.Text = CallStart.ToString();
             CallOperating = true;
+            CallSeconds = 0;
             Evaluate();
+            TimerThread = new Thread(new ThreadStart(UpdateTimer));
+            TimerThread.Start();
             //Start Timer
+        }
+
+        int CallSeconds;
+        int CallMinutes => (int)(CallSeconds / 60.0f);
+        int CallRemainder => CallSeconds - (CallMinutes * 60);
+        public void UpdateTimer() {
+
+            while (CallOperating)
+            {
+                Thread.Sleep(1000);
+                CallSeconds++;
+                if (lblCallLength.InvokeRequired)
+                {
+                    this.lblCallLength.BeginInvoke((MethodInvoker)delegate () { lblCallLength.Text = "Call Length: " + CallMinutes.ToString() + ":" + CallRemainder.ToString(); });
+                }
+                else
+                {
+                    this.lblCallLength.Text = "Call Length: " + CallMinutes.ToString() + ":" + CallRemainder.ToString();
+                }
+            }
         }
 
         private void btnSelectClient_Click(object sender, EventArgs e)
@@ -208,6 +233,7 @@ namespace SEN_Project.PresentationLayer.CallCentre
             CurrentCall = Factory.CreateCall(CallStart,DateTime.Now,CurrentEmployee);
             CurrentClient.AddCall(CurrentCall);
             CurrentCall = null;
+            lblEndTime.Text = "End Time: "+DateTime.Now.ToString();
         }
 
         private void btnCreateEmployee_Click(object sender, EventArgs e)
@@ -227,7 +253,7 @@ namespace SEN_Project.PresentationLayer.CallCentre
 
         public  void    SetEmployee (int    Index,string    Line)
         {
-            SetEmployee(BusinessLogic.current.GetEmployeeByID(Index));
+            SetEmployee(BusinessLogic.current.GetByID<Employee>(Index));
         }
 
         private void btnSelectEmployee_Click(object sender, EventArgs e)
@@ -259,6 +285,22 @@ namespace SEN_Project.PresentationLayer.CallCentre
             btnEndCall_Click(sender,e);
             Hide();
             Form1.current.Show();
+        }
+
+        private void btnCopyCallDetails_Click(object sender, EventArgs e)
+        {
+            if (CurrentEmployee!=null)
+            {
+                SEN_Clipboard._Employee = CurrentEmployee;
+            }
+        }
+
+        private void btnPasteCall_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._Employee!=null)
+            {
+                SetEmployee(SEN_Clipboard._Employee);
+            }
         }
     }
 }

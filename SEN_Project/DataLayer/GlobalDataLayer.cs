@@ -59,7 +59,7 @@ namespace SEN_Project.DataLayer
             InsertCommands.Add(typeof(IndividualPolicy), "(Data_ID,Client_ID) VALUES (");
             InsertCommands.Add(typeof(MedicalCondition), "(Condition_Name,Condition_Description) VALUES (");
             //InsertCommands.Add(typeof(MedicalPackage), "(Available,Price) VALUES (");
-            InsertCommands.Add(typeof(MedicalServiceProvider), "(Address_ID) VALUES (");
+            InsertCommands.Add(typeof(MedicalServiceProvider), "(Facility_Name,Address_ID) VALUES (");
             InsertCommands.Add(typeof(PolicyData), "(PolicyName,Policy_Description,Price) VALUES (");
             InsertCommands.Add(typeof(PolicyMember), "(MemberRole,Client_ID) VALUES (");
             InsertCommands.Add(typeof(Treatment), "(Treatment_Name,Treatment_Description) VALUES (");
@@ -102,7 +102,16 @@ namespace SEN_Project.DataLayer
 
         public  string  GetTable    (Type   T)
         {
-            return TableNames[T];
+            try
+            {
+                return TableNames[T];
+            }
+            catch (Exception e)
+            {
+                SEN_Project.PresentationLayer.PresentationController.current.ShowError(T.ToString() + "    2");
+                SEN_Project.PresentationLayer.PresentationController.current.ShowError(e.Message + "    3");
+                return "";
+            }
         }
 
         public  string  GetInsertCommand<T> (T Item) where T : IDBItem
@@ -115,7 +124,16 @@ namespace SEN_Project.DataLayer
             {
                 return "";
             }
-            return TableNames[typeof(T)] + " WHERE " + Item.GetSearchString();
+            try
+            {
+                return TableNames[Item.GetType()] + " WHERE " + Item.GetSearchString();
+            }
+            catch (Exception e)
+            {
+                SEN_Project.PresentationLayer.PresentationController.current.ShowError(Item.GetType().ToString());
+                SEN_Project.PresentationLayer.PresentationController.current.ShowError(e.Message);
+            }
+            return "";
         }
 
         public List<Treatment> AllTreatments;

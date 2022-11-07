@@ -157,6 +157,7 @@ namespace SEN_Project.PresentationLayer.PolicyForms
             Family = !Family;
             gbxIndividualPolicy.Enabled = !Family;
             gbxFamilyPolicy.Enabled = Family;
+            btnSwitchType.Text = Family ? "Switch to individual policy" : "Switch to family policy";
         }
 
         void SwitchMode(bool    Mode)
@@ -189,6 +190,10 @@ namespace SEN_Project.PresentationLayer.PolicyForms
 
         public  void    AddMember   (Client NewMember)
         {
+            if (NewMember==HeadMember)
+            {
+                return;
+            }
             Members.Add(Factory.CreatePolicyMember(NewMember));
             lbxFamilyMembers.Items.Add(NewMember.ToLine());
         }
@@ -198,6 +203,19 @@ namespace SEN_Project.PresentationLayer.PolicyForms
             frmSearchList SearchList = GlobalFunctions.CreateSearchForm<PolicyData>();
             SearchList.ConfirmCallback = SetPolicy;
             SearchList.Show();
+        }
+
+        private void btnRemoveMember_Click(object sender, EventArgs e)
+        {
+            if (lbxFamilyMembers.SelectedIndex>-1)
+            {
+                Members.RemoveAt(lbxFamilyMembers.SelectedIndex);
+                lbxFamilyMembers.Items.RemoveAt(lbxFamilyMembers.SelectedIndex);
+            }
+            else
+            {
+                PresentationController.current.ShowError("Please select a member to remove");
+            }
         }
     }
 }

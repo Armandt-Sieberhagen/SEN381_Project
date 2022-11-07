@@ -29,8 +29,7 @@ namespace SEN_Project.PresentationLayer.Clients
 
         private void txtClientID_TextChanged(object sender, EventArgs e)
         {
-            List<Client> Clients = BusinessLogic.current.GetClientsByID(txtClientID.Text);
-            SetItems(Clients);
+            SetItems(BusinessLogic.current.GetByID<Client>(int.Parse(txtClientID.Text)));
         }
 
         void    SetItems    (List<Client>   Clients)
@@ -40,6 +39,13 @@ namespace SEN_Project.PresentationLayer.Clients
             {
                 lbxClients.Items.Add(client.ToLine());
             }
+        }
+
+        void SetItems(Client _client)
+        {
+            CurrentClients.Clear();
+            CurrentClients.Add(_client);
+            lbxClients.Items.Add(_client.ToLine());
         }
 
         private void txtFirstName_TextChanged(object sender, EventArgs e)

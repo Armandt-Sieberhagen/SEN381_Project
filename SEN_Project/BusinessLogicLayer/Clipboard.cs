@@ -22,5 +22,6 @@ namespace SEN_Project.BusinessLogicLayer
         public static PolicyMember _PolicyMember;
         public static Treatment _Treatment;
         public static Employee _Employee;
+        public static Policy _Policy;
     }
 }

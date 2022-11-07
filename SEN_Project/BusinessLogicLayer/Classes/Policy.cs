@@ -21,14 +21,14 @@ namespace SEN_Project.BusinessLogicLayer
             set { id = value; }
         }
 
-        public string GetSearchString()
+        public virtual string GetSearchString()
         {
-            throw new NotImplementedException();
+            return "Policy_ID='" + ID + "'";
         }
 
-        public string GetValuesString()
+        public virtual string GetValuesString()
         {
-            throw new NotImplementedException();
+            return "";
         }
 
         public virtual string ToLine() { return "ID \t" + ID.ToString(); }

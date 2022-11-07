@@ -90,7 +90,7 @@ namespace SEN_Project.PresentationLayer.Employees
         private void btnSelectAddress_Click(object sender, EventArgs e)
         {
             frmSearchList AddressSearch = Factory.GetSearchList();
-            List<Address> AllAddresses = BusinessLogic.current.GetAllAddresses();
+            List<Address> AllAddresses = BusinessLogic.current.GetAll<Address>();
             List<string> Options = new List<string>();
             foreach (Address address in AllAddresses)
             {
@@ -103,7 +103,7 @@ namespace SEN_Project.PresentationLayer.Employees
 
         public  void    SetAddress (int ID,string   Line)
         {
-            SetAddress(BusinessLogic.current.GetAddressByID(ID));
+            SetAddress(BusinessLogic.current.GetByID<Address>(ID));
         }
     }
 }

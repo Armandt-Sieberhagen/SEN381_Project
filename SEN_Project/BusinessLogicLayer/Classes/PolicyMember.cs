@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;//For when we want to convert DataRows to Objects, and vice versa
+using SEN_Project.DataAccessLayer;
 
 namespace SEN_Project.BusinessLogicLayer
 {
@@ -28,17 +29,22 @@ namespace SEN_Project.BusinessLogicLayer
 
         public string ToLine()
         {
-            throw new NotImplementedException();
+            return Person.FullName + "\t" + Role.ToString();
+        }
+
+        public override string ToString()
+        {
+            return "Member Name: \t" + Person.FullName + "\n Role: \t" + Role.ToString();
         }
 
         public string GetValuesString()
         {
-            throw new NotImplementedException();
+            return "'" + Role.ToString() + "','" + DatabaseAccess.current.SearchIndex<Client>(Person)+"')";
         }
 
         public string GetSearchString()
         {
-            throw new NotImplementedException();
+            return "Client_ID='" + DatabaseAccess.current.SearchIndex<Client>(Person) + "'";
         }
 
         public object Create(DataRow Row)

@@ -26,14 +26,6 @@ namespace SEN_Project.PresentationLayer
             TreatmentsOptions.UpdateForm = TreatmentsOptions.AddForm;
         }
 
-        public enum State
-        {
-            CallCenter,
-            Database,
-        }
-        Form1 MainForm => Form1.current ?? new Form1();
-        DatabaseForm DBForm => DatabaseForm.current ?? new DatabaseForm();
-        State currentState;
 
         public TableOptions AddressOptions;
         public TableOptions ConditionsOptions;
@@ -41,28 +33,6 @@ namespace SEN_Project.PresentationLayer
         public TableOptions TreatmentsOptions;
         public TableOptions PackagesOptions;
         public TableOptions PolicyDataOptions;
-
-        public State CurrentState { 
-            get {
-                return currentState;
-            }
-            set {
-                switch (value)
-                {
-                    case State.CallCenter:
-                        MainForm.Show();
-                        DBForm.Hide();
-                        break;
-                    case State.Database:
-                        MainForm.Hide();
-                        DBForm.Show();
-                        break;
-                    default:
-                        break;
-                }
-                currentState = value;
-            }
-        }
 
         public  void    ShowError   (string Message)
         {

@@ -29,7 +29,7 @@ namespace SEN_Project.BusinessLogicLayer
 
         public string GetSearchString()
         {
-            return  "Name='"+Name+"'";
+            return "Facility_Name='" + Name+"'";
         }
 
         public string GetValuesString()

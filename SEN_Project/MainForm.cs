@@ -50,7 +50,6 @@ namespace SEN_Project
 
         private void btnViewDatabase_Click(object sender, EventArgs e)
         {
-            PresentationController.current.CurrentState = PresentationController.State.Database;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -71,25 +70,25 @@ namespace SEN_Project
             //AddClientForm.Show();
         }
 
-        public  void    AddClient   (Client _Client)
-        {
-            //Do stuff here
-            BusinessLogic.current.AddClient(_Client);
-            CloseAddClient();
-        }
+        //public  void    AddClient   (Client _Client)
+        //{
+        //    //Do stuff here
+        //    BusinessLogic.current.AddClient(_Client);
+        //    CloseAddClient();
+        //}
 
-        public  void    SetClient   (Client _Client)
-        {
-            CurrentClient = _Client;
-        }
+        //public  void    SetClient   (Client _Client)
+        //{
+        //    CurrentClient = _Client;
+        //}
 
-        public  void    CloseAddClient  ()
-        {
-            //if (AddClientForm!=null)
-            //{
-            //    AddClientForm.Hide();
-            //}
-        }
+        //public  void    CloseAddClient  ()
+        //{
+        //    //if (AddClientForm!=null)
+        //    //{
+        //    //    AddClientForm.Hide();
+        //    //}
+        //}
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -98,7 +97,6 @@ namespace SEN_Project
 
         private void btnSimulateClient_Click(object sender, EventArgs e)
         {
-            SetClient(Factory.GetRandomClient());
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -118,6 +116,7 @@ namespace SEN_Project
             frmManagement ManagementForm = Factory.GetManagementForm();
             ManagementForm.AddForm = Factory.GetConditionForm();
             ManagementForm.ModifyForm = Factory.GetConditionForm();
+            ManagementForm.DeleteCallback = DeleteCondition;
             List<object> Items = new List<object>();
             List<MedicalCondition> Conditions = BusinessLogic.current.GetAll<MedicalCondition>();
             foreach (MedicalCondition item in Conditions)
@@ -129,11 +128,17 @@ namespace SEN_Project
             Hide();
         }
 
+        public  void    DeleteCondition (object Condition)
+        {
+            BusinessLogic.current.Delete<MedicalCondition>((MedicalCondition)Condition);
+        }
+
         private void btnTreatmentManagement_Click(object sender, EventArgs e)
         {
             frmManagement ManagementForm = Factory.GetManagementForm();
             ManagementForm.AddForm = Factory.GetTreatmentForm();
             ManagementForm.ModifyForm = Factory.GetTreatmentForm();
+            ManagementForm.DeleteCallback = DeleteTreatment;
             List<object> Items = new List<object>();
             List<Treatment> Treatments = BusinessLogic.current.GetAll<Treatment>();
             foreach (Treatment treatment in Treatments)
@@ -145,12 +150,61 @@ namespace SEN_Project
             Hide();
         }
 
+        public void DeleteTreatment(object Condition)
+        {
+            BusinessLogic.current.Delete<Treatment>((Treatment)Condition);
+        }
+
         private void button1_Click_2(object sender, EventArgs e)
         {
             Tree tree = Factory.GetTreeForm();
             
             tree.Show();
             Hide();
+        }
+
+        private void btnPolicy_Click(object sender, EventArgs e)
+        {
+            frmManagement ManagementForm = Factory.GetManagementForm();
+            ManagementForm.AddForm = Factory.GetPolicyDetailsForm();
+            ManagementForm.ModifyForm = Factory.GetPolicyDetailsForm();
+            ManagementForm.DeleteCallback = DeletePolicy;
+            List<object> Items = new List<object>();
+            List<PolicyData> Data = BusinessLogic.current.GetAll<PolicyData>();
+            foreach (PolicyData data in Data)
+            {
+                Items.Add(data);
+            }
+            ManagementForm.SetItems(Items);
+            ManagementForm.Show();
+            Hide();
+        }
+
+        public void DeletePolicy(object Data)
+        {
+            BusinessLogic.current.Delete<PolicyData>((PolicyData)Data);
+        }
+
+        private void btnFacilityManagement_Click(object sender, EventArgs e)
+        {
+            frmManagement ManagementForm = Factory.GetManagementForm();
+            ManagementForm.AddForm = Factory.GetFacilityForm();
+            ManagementForm.ModifyForm = Factory.GetFacilityForm();
+            ManagementForm.DeleteCallback = DeleteFacility;
+            List<object> Items = new List<object>();
+            List<MedicalServiceProvider> Data = BusinessLogic.current.GetAll<MedicalServiceProvider>();
+            foreach (MedicalServiceProvider data in Data)
+            {
+                Items.Add(data);
+            }
+            ManagementForm.SetItems(Items);
+            ManagementForm.Show();
+            Hide();
+        }
+
+        public void DeleteFacility(object Facility)
+        {
+            BusinessLogic.current.Delete<MedicalServiceProvider>((MedicalServiceProvider)Facility);
         }
     }
 }

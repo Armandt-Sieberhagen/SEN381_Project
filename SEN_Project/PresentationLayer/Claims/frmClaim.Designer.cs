@@ -218,6 +218,7 @@
             this.btnCopyPolicyInfo.TabIndex = 7;
             this.btnCopyPolicyInfo.Text = "C";
             this.btnCopyPolicyInfo.UseVisualStyleBackColor = true;
+            this.btnCopyPolicyInfo.Click += new System.EventHandler(this.btnCopyPolicyInfo_Click);
             // 
             // btnSelectCall
             // 
@@ -268,6 +269,7 @@
             this.btnPasteCallInfo.TabIndex = 6;
             this.btnPasteCallInfo.Text = "P";
             this.btnPasteCallInfo.UseVisualStyleBackColor = true;
+            this.btnPasteCallInfo.Click += new System.EventHandler(this.btnPasteCallInfo_Click);
             // 
             // btnCopyCallInfo
             // 
@@ -277,6 +279,7 @@
             this.btnCopyCallInfo.TabIndex = 5;
             this.btnCopyCallInfo.Text = "C";
             this.btnCopyCallInfo.UseVisualStyleBackColor = true;
+            this.btnCopyCallInfo.Click += new System.EventHandler(this.btnCopyCallInfo_Click);
             // 
             // gbxProcedureInfo
             // 
@@ -307,6 +310,7 @@
             this.btnPasteProcedureInfo.TabIndex = 4;
             this.btnPasteProcedureInfo.Text = "P";
             this.btnPasteProcedureInfo.UseVisualStyleBackColor = true;
+            this.btnPasteProcedureInfo.Click += new System.EventHandler(this.btnPasteProcedureInfo_Click);
             // 
             // btnCopyProcedureInfo
             // 
@@ -316,6 +320,7 @@
             this.btnCopyProcedureInfo.TabIndex = 3;
             this.btnCopyProcedureInfo.Text = "C";
             this.btnCopyProcedureInfo.UseVisualStyleBackColor = true;
+            this.btnCopyProcedureInfo.Click += new System.EventHandler(this.btnCopyProcedureInfo_Click);
             // 
             // btnConfirm
             // 

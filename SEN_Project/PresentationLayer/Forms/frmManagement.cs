@@ -22,6 +22,7 @@ namespace SEN_Project.PresentationLayer.Forms
         public List<object> Objects;
         public ManageForm AddForm;
         public ManageForm ModifyForm;
+        public ObjectVoid DeleteCallback;
         int ModifyIndex;
 
         private void frmManagement_Load(object sender, EventArgs e)
@@ -91,9 +92,13 @@ namespace SEN_Project.PresentationLayer.Forms
                 PresentationController.current.ShowError("Please select an item to delete");
                 return;
             }
-            if (MessageBox.Show("Are you sure you want to delete this item?","Delete item?",MessageBoxButtons.YesNo)==DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to delete this item?", "Delete item?", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                BusinessLogic.current.Delete<MedicalCondition>((MedicalCondition)Objects[lbxItems.SelectedIndex]);
+                ////BusinessLogic.current.Delete<MedicalCondition>((MedicalCondition)Objects[lbxItems.SelectedIndex]);
+                ////Type T = Objects[lbxItems.SelectedIndex].GetType();
+                //object _Object = Objects[lbxItems.SelectedIndex];
+                //BusinessLogic.current.Delete(_Object);
+                DeleteCallback.Invoke(Objects[lbxItems.SelectedIndex]);
                 Objects.RemoveAt(lbxItems.SelectedIndex);
                 lbxItems.Items.RemoveAt(lbxItems.SelectedIndex);
             }
