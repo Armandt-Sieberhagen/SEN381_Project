@@ -33,12 +33,12 @@ namespace SEN_Project.BusinessLogicLayer
             return Factory.CreateCall(Row);
         }
 
-        public string GetSearchString()
+        public string GetSearchString() // creates a searchable string
         {
             return "Employee_ID='" + CallTaker.EmployeeID.ToString() + "' AND StartTime='" + StartTime.ToString() + "' AND EndTime='" + EndTime.ToString() + "'";
         }
 
-        public string GetValuesString()
+        public string GetValuesString() // creates a string to be used as a value
         {
             return "'" + CallTaker.EmployeeID.ToString() + "','" + StartTime.ToString() + "'" + EndTime.ToString() + "')";
         }

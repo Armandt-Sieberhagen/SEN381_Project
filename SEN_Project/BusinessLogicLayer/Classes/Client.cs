@@ -64,7 +64,7 @@ namespace SEN_Project.BusinessLogicLayer
         public string PersonalDetails => "Client ID: \t " + ClientID + " \n First Name: \t " + FirstName + " \t Last Name: " + LastName + " \n ID Number: \t" + IDNumber;
         public string AddressDetails => PersonAddress!=null ? PersonAddress.ToString() : "No Address";
 
-        public int CompareTo(Client obj)
+        public int CompareTo(Client obj) //compares clients
         {
             if (obj==null)
             {
@@ -73,7 +73,7 @@ namespace SEN_Project.BusinessLogicLayer
             return this.ClientID.CompareTo(obj.ClientID);
         }
 
-        public  int CompareTo   (Client obj, int Mode)
+        public  int CompareTo   (Client obj, int Mode) //compares clients using a mode, for examples first name, last name etc.
         {
             if (obj == null)
             {
@@ -94,7 +94,7 @@ namespace SEN_Project.BusinessLogicLayer
             }
         }
 
-        public  void    AddClaim    (Claim  NewClaim)
+        public  void    AddClaim    (Claim  NewClaim) // adds a new claim
         {
             if (!ClaimsHistory.Contains(NewClaim))
             {
@@ -102,7 +102,7 @@ namespace SEN_Project.BusinessLogicLayer
             }
         }
 
-        public  void    ModifyClaim (Claim  _Claim)
+        public  void    ModifyClaim (Claim  _Claim) // modifies the claim
         {
             foreach (Claim claim in ClaimsHistory)
             {
@@ -114,7 +114,7 @@ namespace SEN_Project.BusinessLogicLayer
             }
         }
 
-        public  void    RemoveClaim (int    Index)
+        public  void    RemoveClaim (int    Index) //removes claim
         {
             if (Index>-1 && Index<ClaimsHistory.Count)
             {

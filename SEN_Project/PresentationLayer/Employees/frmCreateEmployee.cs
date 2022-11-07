@@ -28,18 +28,100 @@ namespace SEN_Project.PresentationLayer.Employees
 
         }
 
-        Employee GetResult()
+        private bool EmailValidation()
         {
-            //Do Validation
-            string Name = txtFirstName.Text;
-            string Surname = txtLastName.Text;
-            string ID = txtID.Text;
-            string PhoneNumber = txtPhoneNumber.Text;
-            string Email = txtEmail.Text;
-            return Factory.CreateEmployee(Name, Surname, ID, PhoneNumber, Email, _Address);
+            if (txtEmail.Text.Contains("@"))
+            {
+                if (txtEmail.Text.Contains("."))
+                {
+                    if (txtEmail.Text.Contains(" "))
+                    {
+                        MessageBox.Show("Email cannot contain spaces");
+                        return false;
+                    }
+                    else return true;
+                }
+                else
+                {
+                    MessageBox.Show("Email must contain a .");
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Email must contain an @");
+                return false;
+            }
         }
 
-        public  void    SetAddress  (Address    _address)
+        Employee GetResult()
+        {
+
+            if (txtEmail.Text.Length>0 && txtEmail.Text.Length<20 && EmailValidation())
+            {
+                if (txtFirstName.Text.Length>0 && txtFirstName.Text.Length<=20)
+                {
+                    if (txtLastName.Text.Length>0 && txtLastName.Text.Length<=20)
+                    {
+                        if (txtID.Text.Length>0 && txtID.Text.Length<=13)
+                        {
+                            if (txtPhoneNumber.Text.Length>0 && txtPhoneNumber.Text.Length<=20)
+                            {
+                                if (_Address != null)
+                                {
+                                    string Name = txtFirstName.Text;
+                                    string Surname = txtLastName.Text;
+                                    string ID = txtID.Text;
+                                    string PhoneNumber = txtPhoneNumber.Text;
+                                    string Email = txtEmail.Text;
+                                    return Factory.CreateEmployee(Name, Surname, ID, PhoneNumber, Email, _Address);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Please select an address");
+                                    
+                                }
+                                MessageBox.Show("Please Enter a valid phone number");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Please Enter a valid phone number");
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Enter a valid ID number");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please Enter a valid Last Name");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please Enter a valid First Name");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Enter a valid Email");
+            }
+            return null;
+           
+
+        }
+
+        /*	Employee_ID INT IDENTITY( 1 ,1 )PRIMARY  KEY,
+	FirstName VARCHAR(20)	NOT  NULL,
+	LastName VARCHAR(20)	NOT  NULL,
+	ID_Number VARCHAR(13)	NOT  NULL,
+	Email VARCHAR(20)	NOT  NULL,
+	Phone VARCHAR(10)	NOT  NULL,
+	Address_ID INT REFERENCES tbl_Addresses(ID)*/
+
+        public void    SetAddress  (Address    _address)
         {
             _Address = _address;
             rtxtAddressInfo.Text = _Address.ToString();

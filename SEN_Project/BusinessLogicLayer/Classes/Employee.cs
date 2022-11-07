@@ -26,12 +26,12 @@ namespace SEN_Project.BusinessLogicLayer
             return EmployeeID.CompareTo(other.EmployeeID);
         }
 
-        public string GetSearchString()
+        public string GetSearchString() // creates a string to be used in an SQL query
         {
             return "Employee_ID='" + EmployeeID.ToString() + "'";
         }
 
-        public string GetValuesString()
+        public string GetValuesString() // creates a string to be used in a sql query
         {
             return "'" + FirstName + "',"+
             "'" + LastName + "'," +
@@ -50,7 +50,7 @@ namespace SEN_Project.BusinessLogicLayer
                     "\n \n Email: \n" + Email;
         }
 
-        public object Create(DataRow Row)
+        public object Create(DataRow Row) // creates an employee using the factory class
         {
             return Factory.CreateEmployee(Row);
         }

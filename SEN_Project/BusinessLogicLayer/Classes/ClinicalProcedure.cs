@@ -44,22 +44,23 @@ namespace SEN_Project.BusinessLogicLayer
             set { id = value; }
         }
 
-        public string GetSearchString()
+        public string GetSearchString() //creates an SQL search string which can be used
         {
             throw new NotImplementedException();
         }
 
-        public string GetValuesString()
+        public string GetValuesString() //creates an SQL values string which can be used
         {
             throw new NotImplementedException();
         }
+       
 
         public string ToLine()
         {
             return ID.ToString() + "\t" + Patient.FullName + "\t" + Condition.Name + "\t" + ProposedTreatment.Name;
         }
 
-        public object Create(DataRow Row)
+        public object Create(DataRow Row) // creates a new procedure using the factory class
         {
             return Factory.CreateClinicalProcedure(Row);
         }

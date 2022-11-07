@@ -62,13 +62,23 @@ namespace SEN_Project.PresentationLayer.Addresses
 
         private void btnCreateAddress_Click(object sender, EventArgs e)
         {
-            Address Result = GetResult();
-            if (OnConfirm!=null && Result!=null)
+            if (txtStreet.Text != null && txtPostalCode.Text != null && cbxCity.SelectedIndex > -1 && cbxProvince.SelectedIndex > -1)
             {
-               OnConfirm.Invoke(Result);
+                Address Result = GetResult();
+                if (OnConfirm != null && Result != null)
+                {
+                    OnConfirm.Invoke(Result);
+                }
+                Hide();
             }
-            Hide();
+            else
+            {
+                MessageBox.Show("Please fill in all the fields");
+            }
+
         }
+           
+        
 
         Address GetResult   ()
         {

@@ -16,5 +16,10 @@ namespace SEN_Project.PresentationLayer.FamilyPolicies
         {
             InitializeComponent();
         }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
