@@ -296,7 +296,22 @@ namespace SEN_Project.PresentationLayer.PolicyForms
             if (SEN_Clipboard._Policy!=null)
             {
                 SetPolicy(SEN_Clipboard._Policy.DataRef);
-
+                Policy NewPol = SEN_Clipboard._Policy;
+                if (NewPol.GetType()==typeof(FamilyPolicy))
+                {
+                    FamilyPolicy fp = (FamilyPolicy)NewPol;
+                    SetHeadMember(fp.HeadMember.Person);
+                    Members.Clear();
+                    foreach (PolicyMember membe in fp.Members)
+                    {
+                        AddMember(membe.Person);
+                    }
+                }
+                else
+                {
+                    IndividualPolicy pol = (IndividualPolicy)NewPol;
+                    SetHeadMember(pol.Member);
+                }
             }
         }
     }

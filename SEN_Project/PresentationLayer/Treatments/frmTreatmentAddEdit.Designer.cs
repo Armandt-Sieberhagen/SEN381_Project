@@ -120,6 +120,7 @@
             this.btnPaste.TabIndex = 5;
             this.btnPaste.Text = "P";
             this.btnPaste.UseVisualStyleBackColor = true;
+            this.btnPaste.Click += new System.EventHandler(this.btnPaste_Click);
             // 
             // btnCopy
             // 
@@ -129,6 +130,7 @@
             this.btnCopy.TabIndex = 4;
             this.btnCopy.Text = "C";
             this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // rtxtDescription
             // 

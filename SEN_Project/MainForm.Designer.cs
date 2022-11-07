@@ -33,7 +33,7 @@ namespace SEN_Project
             this.btnPolicy = new System.Windows.Forms.Button();
             this.btnTreatmentManagement = new System.Windows.Forms.Button();
             this.btnConditionCentre = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTreeView = new System.Windows.Forms.Button();
             this.btnFacilityManagement = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -77,15 +77,15 @@ namespace SEN_Project
             this.btnConditionCentre.UseVisualStyleBackColor = true;
             this.btnConditionCentre.Click += new System.EventHandler(this.btnConditionCentre_Click);
             // 
-            // button1
+            // btnTreeView
             // 
-            this.button1.Location = new System.Drawing.Point(486, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(231, 127);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Open Condition Centre";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            this.btnTreeView.Location = new System.Drawing.Point(486, 11);
+            this.btnTreeView.Name = "btnTreeView";
+            this.btnTreeView.Size = new System.Drawing.Size(231, 127);
+            this.btnTreeView.TabIndex = 14;
+            this.btnTreeView.Text = "Open Tree View";
+            this.btnTreeView.UseVisualStyleBackColor = true;
+            this.btnTreeView.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // btnFacilityManagement
             // 
@@ -101,9 +101,9 @@ namespace SEN_Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1111, 696);
+            this.ClientSize = new System.Drawing.Size(757, 314);
             this.Controls.Add(this.btnFacilityManagement);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnTreeView);
             this.Controls.Add(this.btnConditionCentre);
             this.Controls.Add(this.btnTreatmentManagement);
             this.Controls.Add(this.btnPolicy);
@@ -121,7 +121,7 @@ namespace SEN_Project
         private System.Windows.Forms.Button btnPolicy;
         private System.Windows.Forms.Button btnTreatmentManagement;
         private System.Windows.Forms.Button btnConditionCentre;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTreeView;
         private System.Windows.Forms.Button btnFacilityManagement;
     }
 }

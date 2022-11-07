@@ -27,6 +27,18 @@ namespace SEN_Project.PresentationLayer.Procedure
         MedicalServiceProvider Facility;
         Policy SelectedPolicy;
 
+        public  void    SetProcedure    (ClinicalProcedure Procedure)
+        {
+            if (Procedure!=null)
+            {
+                SetClient(Procedure.Patient);
+                SetCondition(Procedure.Condition);
+                SetTreatment(Procedure.ProposedTreatment);
+                SetFacility(Procedure.Facility);
+                SetPolicy(Procedure.PolicySelected);
+            }
+        }
+
         private void frmProcedure_Load(object sender, EventArgs e)
         {
 
@@ -155,6 +167,103 @@ namespace SEN_Project.PresentationLayer.Procedure
                 CancelCallback.Invoke();
             }
             Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ClinicalProcedure Result = GetResult();
+            if (Result!=null)
+            {
+                SEN_Clipboard._ClinicalProcedure = Result;
+            }
+        }
+
+        private void btnPasteProcedure_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._ClinicalProcedure!=null)
+            {
+                SetProcedure(SEN_Clipboard._ClinicalProcedure);
+            }
+        }
+
+        private void btnCopyClient_Click(object sender, EventArgs e)
+        {
+            if (SelectedClient!=null)
+            {
+                SEN_Clipboard._Client = SelectedClient;
+            }
+        }
+
+        private void btnPasteClient_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._Client!=null)
+            {
+                SetClient(SEN_Clipboard._Client);
+            }
+        }
+
+        private void btnCopyCondition_Click(object sender, EventArgs e)
+        {
+            if (Condition!=null)
+            {
+                SEN_Clipboard._MedicalCondition = Condition;
+            }
+        }
+
+        private void btnPasteCondition_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._MedicalCondition!=null)
+            {
+                SetCondition(SEN_Clipboard._MedicalCondition);
+            }
+        }
+
+        private void btnCopyTreatment_Click(object sender, EventArgs e)
+        {
+            if (_Treatment!=null)
+            {
+                SEN_Clipboard._Treatment = _Treatment;
+            }
+        }
+
+        private void btnPasteTreatment_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._Treatment!=null)
+            {
+                SetTreatment(SEN_Clipboard._Treatment);
+            }
+        }
+
+        private void btnCopyFacility_Click(object sender, EventArgs e)
+        {
+            if (Facility!=null)
+            {
+                SEN_Clipboard._MedicalServiceProvider = Facility;
+            }
+        }
+
+        private void btnPasteFacility_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._MedicalServiceProvider!=null)
+            {
+                SetFacility(SEN_Clipboard._MedicalServiceProvider);
+            }
+        }
+
+        private void btnCopyPolicy_Click(object sender, EventArgs e)
+        {
+            if (SelectedPolicy!=null)
+            {
+                SEN_Clipboard._Policy = SelectedPolicy;
+            }
+        }
+
+        private void btnPastePolicy_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._Policy!=null)
+            {
+                SetPolicy(SEN_Clipboard._Policy);
+            }
         }
     }
 }
