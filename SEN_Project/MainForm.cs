@@ -143,5 +143,21 @@ namespace SEN_Project
             ManagementForm.Show();
             Hide();
         }
+
+        private void btnPolicy_Click(object sender, EventArgs e)
+        {
+            frmManagement ManagementForm = Factory.GetManagementForm();
+            ManagementForm.AddForm = Factory.GetPolicyDetailsForm();
+            ManagementForm.ModifyForm = Factory.GetPolicyDetailsForm();
+            List<object> Items = new List<object>();
+            List<PolicyData> Data = BusinessLogic.current.GetAll<PolicyData>();
+            foreach (PolicyData data in Data)
+            {
+                Items.Add(data);
+            }
+            ManagementForm.SetItems(Items);
+            ManagementForm.Show();
+            Hide();
+        }
     }
 }

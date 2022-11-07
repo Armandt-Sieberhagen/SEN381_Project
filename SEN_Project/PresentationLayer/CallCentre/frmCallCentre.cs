@@ -13,6 +13,7 @@ using SEN_Project.PresentationLayer.Claims;
 using SEN_Project.PresentationLayer.PolicyForms;
 using SEN_Project.PresentationLayer.Forms.ListSearchForm;
 using SEN_Project.PresentationLayer.Employees;
+using SEN_Project.PresentationLayer.Procedure;
 
 namespace SEN_Project.PresentationLayer.CallCentre
 {
@@ -233,6 +234,23 @@ namespace SEN_Project.PresentationLayer.CallCentre
             frmSearchList SearchList = GlobalFunctions.CreateSearchForm<Employee>();
             SearchList.ConfirmCallback = SetEmployee;
             SearchList.Show();
+        }
+
+        private void btnAddProcedure_Click(object sender, EventArgs e)
+        {
+            frmProcedure ProcedureForm = Factory.GetProcedureForm();
+            ProcedureForm.SetClient(CurrentClient);
+            ProcedureForm.ConfirmCallback = AddProcedure;
+            ProcedureForm.Show();
+        }
+
+        public  void    AddProcedure    (ClinicalProcedure  newProcedure)
+        {
+            if (!CurrentClient.ClinicalHistory.Contains(newProcedure))
+            {
+                CurrentClient.ClinicalHistory.Add(newProcedure);
+                lbxProcedures.Items.Add(newProcedure.ToLine());
+            }
         }
     }
 }

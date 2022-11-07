@@ -394,6 +394,7 @@
             this.btnAddProcedure.TabIndex = 13;
             this.btnAddProcedure.Text = "Add Procedure";
             this.btnAddProcedure.UseVisualStyleBackColor = true;
+            this.btnAddProcedure.Click += new System.EventHandler(this.btnAddProcedure_Click);
             // 
             // lbxProcedures
             // 

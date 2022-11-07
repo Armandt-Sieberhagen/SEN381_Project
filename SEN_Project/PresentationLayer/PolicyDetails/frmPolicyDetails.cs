@@ -7,14 +7,89 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SEN_Project.BusinessLogicLayer;
+using SEN_Project.PresentationLayer.Forms;
 
 namespace SEN_Project.PresentationLayer.PolicyDetails
 {
-    public partial class frmPolicyDetails : Form
+    public partial class frmPolicyDetails : ManageForm
     {
         public frmPolicyDetails()
         {
             InitializeComponent();
+            Reset();
+        }
+        List<Treatment> TreatmentsCovered;
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            PolicyData Result = GetResult();
+            if (ConfirmCallback!=null && Result!=null)
+            {
+                ConfirmCallback.Invoke(Result);
+            }
+            Hide();
+        }
+
+        public override void Reset()
+        {
+            if (TreatmentsCovered==null)
+            {
+                TreatmentsCovered = new List<Treatment>();
+            }
+            else
+            {
+                TreatmentsCovered.Clear();
+            }
+            txtPolicyName.Clear();
+            rtxtPolicyDescription.Clear();
+            rtxtTreatmentCovered.Clear();
+        }
+
+        public  PolicyData  GetResult   ()
+        {
+            //Validation!!
+            return Factory.CreatePolicyData(txtPolicyName.Text,rtxtPolicyDescription.Text,(float)numPrice.Value,TreatmentsCovered);
+        }
+
+        private void frmPolicyDetails_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnChangeTreatments_Click(object sender, EventArgs e)
+        {
+            ChangeList TreatmentSelection = GlobalFunctions.CreateChangeList<Treatment>(TreatmentsCovered, true);
+            TreatmentSelection.ConfirmCallback = SetTreatments;
+            TreatmentSelection.Show();
+        }
+
+        public  void    SetTreatments   (List<object>    Treatments)
+        {
+            TreatmentsCovered.Clear();
+            foreach (object item in Treatments)
+            {
+                AddTreatment((Treatment)item);
+            }
+        }
+
+        public  void    AddTreatment    (Treatment  treatment)
+        {
+            if (!TreatmentsCovered.Contains(treatment))
+            {
+                TreatmentsCovered.Add(treatment);
+                rtxtTreatmentCovered.Text += treatment.ToLine() + '\n';
+            }
+        }
+
+        private void rtxtTreatmentCovered_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Hide();
         }
     }
 }

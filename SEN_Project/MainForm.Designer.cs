@@ -53,6 +53,7 @@ namespace SEN_Project
             this.btnPolicy.TabIndex = 11;
             this.btnPolicy.Text = "Policy Management";
             this.btnPolicy.UseVisualStyleBackColor = true;
+            this.btnPolicy.Click += new System.EventHandler(this.btnPolicy_Click);
             // 
             // btnTreatmentManagement
             // 

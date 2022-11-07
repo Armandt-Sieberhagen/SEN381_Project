@@ -49,13 +49,17 @@ namespace SEN_Project.BusinessLogicLayer
             return SearchForm;
         }
 
-        public static ChangeList CreateChangeList<T>(List<T>  RightItems = null) where T : IDBItem,new()
+        public static ChangeList CreateChangeList<T>(List<T>  RightItems = null,bool Deduct = false) where T : IDBItem,new()
         {
             ChangeList ChangeForm = Factory.GetChangeForm();
             List<T> LeftItems = BusinessLogic.current.GetAll<T>();
             List<object> Objects = new List<object>();
             foreach (T item in LeftItems)
             {
+                if (Deduct == true && RightItems.Contains(item))
+                {
+                    continue;
+                }
                 Objects.Add(item);
             }
             ChangeForm.SetLeftItems(Objects);

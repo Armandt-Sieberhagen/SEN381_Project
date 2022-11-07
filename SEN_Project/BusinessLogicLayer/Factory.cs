@@ -17,6 +17,7 @@ using SEN_Project.PresentationLayer.Employees;
 using SEN_Project.PresentationLayer.Addresses;
 using SEN_Project.PresentationLayer.Procedure;
 using SEN_Project.PresentationLayer.Conditions;
+using SEN_Project.PresentationLayer.PolicyDetails;
 
 namespace SEN_Project.BusinessLogicLayer
 {
@@ -527,6 +528,19 @@ namespace SEN_Project.BusinessLogicLayer
                 TreatmentForm = new frmTreatmentAddEdit();
             }
             return TreatmentForm;
+        }
+        static frmPolicyDetails PolicyDetails;
+        public static frmPolicyDetails GetPolicyDetailsForm()
+        {
+            if (PolicyDetails != null)
+            {
+                PolicyDetails.Reset();
+            }
+            else
+            {
+                PolicyDetails = new frmPolicyDetails();
+            }
+            return PolicyDetails;
         }
 
         public  static  Client  GetRandomClient ()

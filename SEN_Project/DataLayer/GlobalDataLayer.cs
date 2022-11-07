@@ -53,7 +53,7 @@ namespace SEN_Project.DataLayer
             InsertCommands.Add(typeof(Call), "(StartTime,EndTime,Employee_ID) VALUES (");
             InsertCommands.Add(typeof(Claim), "(ClientID,ProcedureID) VALUES (");
             InsertCommands.Add(typeof(Client), "(FirstName,LastName,ID_Number,Email,Phone,Address_ID) VALUES (");
-            InsertCommands.Add(typeof(ClinicalProcedure), "(Condition_ID,Service_Provider,Proposed_Treatment,Medical_Package) VALUES (");
+            InsertCommands.Add(typeof(ClinicalProcedure), "(Condition_ID,Service_Provider,Proposed_Treatment,Policy_ID,Patient) VALUES (");
             InsertCommands.Add(typeof(Employee), "(FirstName,LastName,ID_Number,Phone,Email,Address_ID) VALUES (");
             InsertCommands.Add(typeof(FamilyPolicy), "(Data_ID) VALUES (");
             InsertCommands.Add(typeof(IndividualPolicy), "(Data_ID,Client_ID) VALUES (");

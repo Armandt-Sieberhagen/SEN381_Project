@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbxProcedureDetails = new System.Windows.Forms.GroupBox();
             this.gbxPolicy = new System.Windows.Forms.GroupBox();
             this.btnSelectPolicy = new System.Windows.Forms.Button();
             this.rtxtPolicyInfo = new System.Windows.Forms.RichTextBox();
@@ -59,7 +59,7 @@
             this.btnCopyCondition = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.gbxProcedureDetails.SuspendLayout();
             this.gbxPolicy.SuspendLayout();
             this.gbxServiceProvider.SuspendLayout();
             this.gbxClientDetails.SuspendLayout();
@@ -67,22 +67,22 @@
             this.gbxCondition.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gbxProcedureDetails
             // 
-            this.groupBox1.Controls.Add(this.gbxPolicy);
-            this.groupBox1.Controls.Add(this.gbxServiceProvider);
-            this.groupBox1.Controls.Add(this.gbxClientDetails);
-            this.groupBox1.Controls.Add(this.lblProcedureID);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.gbxTreatmentDetails);
-            this.groupBox1.Controls.Add(this.gbxCondition);
-            this.groupBox1.Location = new System.Drawing.Point(11, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(472, 808);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.gbxProcedureDetails.Controls.Add(this.gbxPolicy);
+            this.gbxProcedureDetails.Controls.Add(this.gbxServiceProvider);
+            this.gbxProcedureDetails.Controls.Add(this.gbxClientDetails);
+            this.gbxProcedureDetails.Controls.Add(this.lblProcedureID);
+            this.gbxProcedureDetails.Controls.Add(this.button3);
+            this.gbxProcedureDetails.Controls.Add(this.button4);
+            this.gbxProcedureDetails.Controls.Add(this.gbxTreatmentDetails);
+            this.gbxProcedureDetails.Controls.Add(this.gbxCondition);
+            this.gbxProcedureDetails.Location = new System.Drawing.Point(11, 12);
+            this.gbxProcedureDetails.Name = "gbxProcedureDetails";
+            this.gbxProcedureDetails.Size = new System.Drawing.Size(472, 808);
+            this.gbxProcedureDetails.TabIndex = 0;
+            this.gbxProcedureDetails.TabStop = false;
+            this.gbxProcedureDetails.Text = "Procedure";
             // 
             // gbxPolicy
             // 
@@ -383,12 +383,12 @@
             this.ClientSize = new System.Drawing.Size(495, 897);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbxProcedureDetails);
             this.Name = "frmProcedure";
             this.Text = "frmProcedure";
             this.Load += new System.EventHandler(this.frmProcedure_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbxProcedureDetails.ResumeLayout(false);
+            this.gbxProcedureDetails.PerformLayout();
             this.gbxPolicy.ResumeLayout(false);
             this.gbxServiceProvider.ResumeLayout(false);
             this.gbxClientDetails.ResumeLayout(false);
@@ -400,7 +400,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbxProcedureDetails;
         private System.Windows.Forms.GroupBox gbxCondition;
         private System.Windows.Forms.Button btnPasteCondition;
         private System.Windows.Forms.Button btnCopyCondition;
