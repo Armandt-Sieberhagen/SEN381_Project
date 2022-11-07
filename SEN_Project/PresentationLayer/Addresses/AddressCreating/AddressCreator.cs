@@ -145,5 +145,10 @@ namespace SEN_Project.PresentationLayer.Addresses
         {
             QuickValidate();
         }
+
+        private void lblStreet_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
