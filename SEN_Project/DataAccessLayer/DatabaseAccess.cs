@@ -683,7 +683,7 @@ namespace SEN_Project.DataAccessLayer
 
         public List<Claim> GetClaimByClientID(int ID)
         {
-            string Command = "SELECT * FROM tbl_Claims WHERE ClientID = '" + ID+"'";
+            string Command = "SELECT * FROM tbl_Claims WHERE ClientID = '" + ID+ "'";
             DataTable DT = DatabaseController.current.GetTable(Command);
             List<Claim> Result = new List<Claim>();
             foreach (DataRow row in DT.Rows)

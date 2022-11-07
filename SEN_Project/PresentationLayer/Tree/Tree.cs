@@ -30,15 +30,20 @@ namespace SEN_Project.PresentationLayer.Tree
             int count = 0;
             foreach (Client client in Clients)
             {
-                TreeNode node = new TreeNode(client.FirstName + " " + client.LastName);
+                TreeNode node = new TreeNode(client.FirstName );//+ " " + client.LastName
                 treeView1.Nodes.Add(node);
+                treeView1.Nodes[count].Nodes.Add("Test");
+                treeView1.Nodes[count].Nodes[0].Nodes.Add(client.ClientID.ToString());
                 List<Claim> claims = databaseAccess.GetClaimByClientID(client.ClientID);
                 foreach (Claim claim in claims)
                 {
                     treeView1.Nodes[count].Nodes.Add(claim.ID);
+                    treeView1.Nodes[count].Nodes.Add("Test");
                     treeView1.Nodes[count].Nodes[0].Nodes.Add(claim.ToLine());
+                    treeView1.Nodes[count].Nodes[0].Nodes.Add("Test");
 
                 }
+                count++;
             }
 
 
