@@ -57,14 +57,12 @@ C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.csproj.SuggestedBindingRedirects.cache
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.Form1.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Addresses.AddressCreator.resources
-C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Addresses.AddressSelector.AddressSelector.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.CallCentre.frmCallCentre.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Claims.frmClaim.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Claims.frmViewPastClaims.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Clients.frmClient.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Clients.frmSearchClient.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Conditions.frmCondition.resources
-C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.DatabaseForm.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Forms.ChangeList.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Employees.frmCreateEmployee.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.FamilyPolicies.frmFamilyPolicy.resources
@@ -75,7 +73,6 @@ C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.PolicyForms.frmChoosePolicy.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.PolicyForms.frmSearchPolicy.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Procedure.frmProcedure.resources
-C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.SinglePolicies.frmSinglePolicy.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.TableForm.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Treatments.frmTreatmentAddEdit.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.Properties.Resources.resources
@@ -86,3 +83,4 @@ C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Tree.Tree.resources
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Tree.Tree.resources
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Facilities.frmFacility.resources
+C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Facilities.frmFacility.resources
