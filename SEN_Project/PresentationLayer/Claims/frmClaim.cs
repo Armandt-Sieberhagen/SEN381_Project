@@ -176,5 +176,10 @@ namespace SEN_Project.PresentationLayer.Claims
             _Policy = Pol;
             rtxtPolicyInfo.Text = Pol.ToString();
         }
+
+        private void btnCopyClaim_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

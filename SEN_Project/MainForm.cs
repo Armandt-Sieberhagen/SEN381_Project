@@ -16,6 +16,7 @@ using SEN_Project.DataLayer;
 using SEN_Project.PresentationLayer.Forms;
 using SEN_Project.PresentationLayer.Treatments;
 using SEN_Project.PresentationLayer.CallCentre;
+using SEN_Project.PresentationLayer.Tree;
 
 namespace SEN_Project
 {
@@ -144,19 +145,11 @@ namespace SEN_Project
             Hide();
         }
 
-        private void btnPolicy_Click(object sender, EventArgs e)
+        private void button1_Click_2(object sender, EventArgs e)
         {
-            frmManagement ManagementForm = Factory.GetManagementForm();
-            ManagementForm.AddForm = Factory.GetPolicyDetailsForm();
-            ManagementForm.ModifyForm = Factory.GetPolicyDetailsForm();
-            List<object> Items = new List<object>();
-            List<PolicyData> Data = BusinessLogic.current.GetAll<PolicyData>();
-            foreach (PolicyData data in Data)
-            {
-                Items.Add(data);
-            }
-            ManagementForm.SetItems(Items);
-            ManagementForm.Show();
+            Tree tree = Factory.GetTreeForm();
+            
+            tree.Show();
             Hide();
         }
     }

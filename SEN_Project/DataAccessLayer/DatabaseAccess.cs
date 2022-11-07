@@ -680,5 +680,17 @@ namespace SEN_Project.DataAccessLayer
             }
             return Result;
         }
+
+        public List<Claim> GetClaimByClientID(int ID)
+        {
+            string Command = "SELECT * FROM tbl_Claims WHERE Client_ID = " + ID;
+            DataTable DT = DatabaseController.current.GetTable(Command);
+            List<Claim> Result = new List<Claim>();
+            foreach (DataRow row in DT.Rows)
+            {
+                Result.Add(Factory.CreateClaim(row));
+            }
+            return Result;
+        }
     }
 }

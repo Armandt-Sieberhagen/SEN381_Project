@@ -72,9 +72,10 @@
             // 
             // btnSimulateCall
             // 
-            this.btnSimulateCall.Location = new System.Drawing.Point(12, 12);
+            this.btnSimulateCall.Location = new System.Drawing.Point(16, 15);
+            this.btnSimulateCall.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSimulateCall.Name = "btnSimulateCall";
-            this.btnSimulateCall.Size = new System.Drawing.Size(146, 90);
+            this.btnSimulateCall.Size = new System.Drawing.Size(195, 111);
             this.btnSimulateCall.TabIndex = 0;
             this.btnSimulateCall.Text = "Simulate Call";
             this.btnSimulateCall.UseVisualStyleBackColor = true;
@@ -89,18 +90,21 @@
             this.gbxCallDetails.Controls.Add(this.btnCopyCallDetails);
             this.gbxCallDetails.Controls.Add(this.lblEndTime);
             this.gbxCallDetails.Controls.Add(this.lblStartTime);
-            this.gbxCallDetails.Location = new System.Drawing.Point(540, 12);
+            this.gbxCallDetails.Location = new System.Drawing.Point(720, 15);
+            this.gbxCallDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gbxCallDetails.Name = "gbxCallDetails";
-            this.gbxCallDetails.Size = new System.Drawing.Size(302, 175);
+            this.gbxCallDetails.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxCallDetails.Size = new System.Drawing.Size(403, 215);
             this.gbxCallDetails.TabIndex = 2;
             this.gbxCallDetails.TabStop = false;
             this.gbxCallDetails.Text = "Call Details";
             // 
             // btnCreateEmployee
             // 
-            this.btnCreateEmployee.Location = new System.Drawing.Point(147, 38);
+            this.btnCreateEmployee.Location = new System.Drawing.Point(196, 47);
+            this.btnCreateEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCreateEmployee.Name = "btnCreateEmployee";
-            this.btnCreateEmployee.Size = new System.Drawing.Size(75, 23);
+            this.btnCreateEmployee.Size = new System.Drawing.Size(100, 28);
             this.btnCreateEmployee.TabIndex = 8;
             this.btnCreateEmployee.Text = "Create";
             this.btnCreateEmployee.UseVisualStyleBackColor = true;
@@ -108,9 +112,10 @@
             // 
             // btnSelectEmployee
             // 
-            this.btnSelectEmployee.Location = new System.Drawing.Point(147, 67);
+            this.btnSelectEmployee.Location = new System.Drawing.Point(196, 82);
+            this.btnSelectEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSelectEmployee.Name = "btnSelectEmployee";
-            this.btnSelectEmployee.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectEmployee.Size = new System.Drawing.Size(100, 28);
             this.btnSelectEmployee.TabIndex = 7;
             this.btnSelectEmployee.Text = "Select Employee";
             this.btnSelectEmployee.UseVisualStyleBackColor = true;
@@ -118,27 +123,30 @@
             // 
             // rtxtEmployeeDetails
             // 
-            this.rtxtEmployeeDetails.Location = new System.Drawing.Point(23, 19);
+            this.rtxtEmployeeDetails.Location = new System.Drawing.Point(31, 23);
+            this.rtxtEmployeeDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rtxtEmployeeDetails.Name = "rtxtEmployeeDetails";
             this.rtxtEmployeeDetails.ReadOnly = true;
-            this.rtxtEmployeeDetails.Size = new System.Drawing.Size(118, 71);
+            this.rtxtEmployeeDetails.Size = new System.Drawing.Size(156, 86);
             this.rtxtEmployeeDetails.TabIndex = 6;
             this.rtxtEmployeeDetails.Text = "";
             // 
             // btnPasteCall
             // 
-            this.btnPasteCall.Location = new System.Drawing.Point(265, 19);
+            this.btnPasteCall.Location = new System.Drawing.Point(353, 23);
+            this.btnPasteCall.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPasteCall.Name = "btnPasteCall";
-            this.btnPasteCall.Size = new System.Drawing.Size(25, 23);
+            this.btnPasteCall.Size = new System.Drawing.Size(33, 28);
             this.btnPasteCall.TabIndex = 5;
             this.btnPasteCall.Text = "P";
             this.btnPasteCall.UseVisualStyleBackColor = true;
             // 
             // btnCopyCallDetails
             // 
-            this.btnCopyCallDetails.Location = new System.Drawing.Point(236, 19);
+            this.btnCopyCallDetails.Location = new System.Drawing.Point(315, 23);
+            this.btnCopyCallDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCopyCallDetails.Name = "btnCopyCallDetails";
-            this.btnCopyCallDetails.Size = new System.Drawing.Size(25, 23);
+            this.btnCopyCallDetails.Size = new System.Drawing.Size(33, 28);
             this.btnCopyCallDetails.TabIndex = 4;
             this.btnCopyCallDetails.Text = "C";
             this.btnCopyCallDetails.UseVisualStyleBackColor = true;
@@ -146,18 +154,20 @@
             // lblEndTime
             // 
             this.lblEndTime.AutoSize = true;
-            this.lblEndTime.Location = new System.Drawing.Point(20, 140);
+            this.lblEndTime.Location = new System.Drawing.Point(27, 172);
+            this.lblEndTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEndTime.Name = "lblEndTime";
-            this.lblEndTime.Size = new System.Drawing.Size(52, 13);
+            this.lblEndTime.Size = new System.Drawing.Size(65, 16);
             this.lblEndTime.TabIndex = 1;
             this.lblEndTime.Text = "End Time";
             // 
             // lblStartTime
             // 
             this.lblStartTime.AutoSize = true;
-            this.lblStartTime.Location = new System.Drawing.Point(20, 111);
+            this.lblStartTime.Location = new System.Drawing.Point(27, 137);
+            this.lblStartTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStartTime.Name = "lblStartTime";
-            this.lblStartTime.Size = new System.Drawing.Size(55, 13);
+            this.lblStartTime.Size = new System.Drawing.Size(68, 16);
             this.lblStartTime.TabIndex = 0;
             this.lblStartTime.Text = "Start Time";
             // 
@@ -167,27 +177,31 @@
             this.gbxClientDetails.Controls.Add(this.btnPasteClient);
             this.gbxClientDetails.Controls.Add(this.btnCopyClient);
             this.gbxClientDetails.Controls.Add(this.rtxtClientInfo);
-            this.gbxClientDetails.Location = new System.Drawing.Point(12, 152);
+            this.gbxClientDetails.Location = new System.Drawing.Point(16, 187);
+            this.gbxClientDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gbxClientDetails.Name = "gbxClientDetails";
-            this.gbxClientDetails.Size = new System.Drawing.Size(505, 120);
+            this.gbxClientDetails.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxClientDetails.Size = new System.Drawing.Size(673, 148);
             this.gbxClientDetails.TabIndex = 3;
             this.gbxClientDetails.TabStop = false;
             this.gbxClientDetails.Text = "Client Details";
             // 
             // rtxtAddressInfo
             // 
-            this.rtxtAddressInfo.Location = new System.Drawing.Point(220, 19);
+            this.rtxtAddressInfo.Location = new System.Drawing.Point(293, 23);
+            this.rtxtAddressInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rtxtAddressInfo.Name = "rtxtAddressInfo";
             this.rtxtAddressInfo.ReadOnly = true;
-            this.rtxtAddressInfo.Size = new System.Drawing.Size(208, 95);
+            this.rtxtAddressInfo.Size = new System.Drawing.Size(276, 116);
             this.rtxtAddressInfo.TabIndex = 8;
             this.rtxtAddressInfo.Text = "";
             // 
             // btnPasteClient
             // 
-            this.btnPasteClient.Location = new System.Drawing.Point(468, 12);
+            this.btnPasteClient.Location = new System.Drawing.Point(624, 15);
+            this.btnPasteClient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPasteClient.Name = "btnPasteClient";
-            this.btnPasteClient.Size = new System.Drawing.Size(25, 23);
+            this.btnPasteClient.Size = new System.Drawing.Size(33, 28);
             this.btnPasteClient.TabIndex = 7;
             this.btnPasteClient.Text = "P";
             this.btnPasteClient.UseVisualStyleBackColor = true;
@@ -195,9 +209,10 @@
             // 
             // btnCopyClient
             // 
-            this.btnCopyClient.Location = new System.Drawing.Point(439, 12);
+            this.btnCopyClient.Location = new System.Drawing.Point(585, 15);
+            this.btnCopyClient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCopyClient.Name = "btnCopyClient";
-            this.btnCopyClient.Size = new System.Drawing.Size(25, 23);
+            this.btnCopyClient.Size = new System.Drawing.Size(33, 28);
             this.btnCopyClient.TabIndex = 6;
             this.btnCopyClient.Text = "C";
             this.btnCopyClient.UseVisualStyleBackColor = true;
@@ -205,18 +220,20 @@
             // 
             // rtxtClientInfo
             // 
-            this.rtxtClientInfo.Location = new System.Drawing.Point(6, 19);
+            this.rtxtClientInfo.Location = new System.Drawing.Point(8, 23);
+            this.rtxtClientInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rtxtClientInfo.Name = "rtxtClientInfo";
             this.rtxtClientInfo.ReadOnly = true;
-            this.rtxtClientInfo.Size = new System.Drawing.Size(208, 95);
+            this.rtxtClientInfo.Size = new System.Drawing.Size(276, 116);
             this.rtxtClientInfo.TabIndex = 0;
             this.rtxtClientInfo.Text = "";
             // 
             // btnSelectClient
             // 
-            this.btnSelectClient.Location = new System.Drawing.Point(12, 123);
+            this.btnSelectClient.Location = new System.Drawing.Point(16, 151);
+            this.btnSelectClient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSelectClient.Name = "btnSelectClient";
-            this.btnSelectClient.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectClient.Size = new System.Drawing.Size(100, 28);
             this.btnSelectClient.TabIndex = 4;
             this.btnSelectClient.Text = "Select Client";
             this.btnSelectClient.UseVisualStyleBackColor = true;
@@ -224,9 +241,10 @@
             // 
             // btnEndCall
             // 
-            this.btnEndCall.Location = new System.Drawing.Point(11, 825);
+            this.btnEndCall.Location = new System.Drawing.Point(15, 1015);
+            this.btnEndCall.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEndCall.Name = "btnEndCall";
-            this.btnEndCall.Size = new System.Drawing.Size(146, 61);
+            this.btnEndCall.Size = new System.Drawing.Size(195, 75);
             this.btnEndCall.TabIndex = 9;
             this.btnEndCall.Text = "End Call";
             this.btnEndCall.UseVisualStyleBackColor = true;
@@ -238,18 +256,21 @@
             this.gbxClaimOptions.Controls.Add(this.btnModifyClaim);
             this.gbxClaimOptions.Controls.Add(this.btnViewPastClaims);
             this.gbxClaimOptions.Controls.Add(this.btnCreateNewClaim);
-            this.gbxClaimOptions.Location = new System.Drawing.Point(12, 278);
+            this.gbxClaimOptions.Location = new System.Drawing.Point(16, 342);
+            this.gbxClaimOptions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gbxClaimOptions.Name = "gbxClaimOptions";
-            this.gbxClaimOptions.Size = new System.Drawing.Size(601, 121);
+            this.gbxClaimOptions.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxClaimOptions.Size = new System.Drawing.Size(801, 149);
             this.gbxClaimOptions.TabIndex = 10;
             this.gbxClaimOptions.TabStop = false;
             this.gbxClaimOptions.Text = "Claim Options";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(435, 30);
+            this.button1.Location = new System.Drawing.Point(580, 37);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 70);
+            this.button1.Size = new System.Drawing.Size(179, 86);
             this.button1.TabIndex = 12;
             this.button1.Text = "Remove Claim";
             this.button1.UseVisualStyleBackColor = true;
@@ -257,9 +278,10 @@
             // 
             // btnModifyClaim
             // 
-            this.btnModifyClaim.Location = new System.Drawing.Point(295, 30);
+            this.btnModifyClaim.Location = new System.Drawing.Point(393, 37);
+            this.btnModifyClaim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnModifyClaim.Name = "btnModifyClaim";
-            this.btnModifyClaim.Size = new System.Drawing.Size(134, 70);
+            this.btnModifyClaim.Size = new System.Drawing.Size(179, 86);
             this.btnModifyClaim.TabIndex = 11;
             this.btnModifyClaim.Text = "Modify Claim";
             this.btnModifyClaim.UseVisualStyleBackColor = true;
@@ -267,9 +289,10 @@
             // 
             // btnViewPastClaims
             // 
-            this.btnViewPastClaims.Location = new System.Drawing.Point(155, 30);
+            this.btnViewPastClaims.Location = new System.Drawing.Point(207, 37);
+            this.btnViewPastClaims.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnViewPastClaims.Name = "btnViewPastClaims";
-            this.btnViewPastClaims.Size = new System.Drawing.Size(134, 70);
+            this.btnViewPastClaims.Size = new System.Drawing.Size(179, 86);
             this.btnViewPastClaims.TabIndex = 10;
             this.btnViewPastClaims.Text = "View past Claims";
             this.btnViewPastClaims.UseVisualStyleBackColor = true;
@@ -277,9 +300,10 @@
             // 
             // btnCreateNewClaim
             // 
-            this.btnCreateNewClaim.Location = new System.Drawing.Point(12, 30);
+            this.btnCreateNewClaim.Location = new System.Drawing.Point(16, 37);
+            this.btnCreateNewClaim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCreateNewClaim.Name = "btnCreateNewClaim";
-            this.btnCreateNewClaim.Size = new System.Drawing.Size(134, 70);
+            this.btnCreateNewClaim.Size = new System.Drawing.Size(179, 86);
             this.btnCreateNewClaim.TabIndex = 9;
             this.btnCreateNewClaim.Text = "Create Claim";
             this.btnCreateNewClaim.UseVisualStyleBackColor = true;
@@ -291,45 +315,51 @@
             this.gbxPolicyInfo.Controls.Add(this.btnPasteSelectedPolicy);
             this.gbxPolicyInfo.Controls.Add(this.btnCopySelectedPolicy);
             this.gbxPolicyInfo.Controls.Add(this.btnChangePolicy);
-            this.gbxPolicyInfo.Location = new System.Drawing.Point(12, 405);
+            this.gbxPolicyInfo.Location = new System.Drawing.Point(16, 498);
+            this.gbxPolicyInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gbxPolicyInfo.Name = "gbxPolicyInfo";
-            this.gbxPolicyInfo.Size = new System.Drawing.Size(601, 204);
+            this.gbxPolicyInfo.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxPolicyInfo.Size = new System.Drawing.Size(801, 251);
             this.gbxPolicyInfo.TabIndex = 11;
             this.gbxPolicyInfo.TabStop = false;
             this.gbxPolicyInfo.Text = "Police Info";
             // 
             // rtxtPolicyInfo
             // 
-            this.rtxtPolicyInfo.Location = new System.Drawing.Point(12, 58);
+            this.rtxtPolicyInfo.Location = new System.Drawing.Point(16, 71);
+            this.rtxtPolicyInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rtxtPolicyInfo.Name = "rtxtPolicyInfo";
             this.rtxtPolicyInfo.ReadOnly = true;
-            this.rtxtPolicyInfo.Size = new System.Drawing.Size(569, 140);
+            this.rtxtPolicyInfo.Size = new System.Drawing.Size(757, 171);
             this.rtxtPolicyInfo.TabIndex = 18;
             this.rtxtPolicyInfo.Text = "";
             // 
             // btnPasteSelectedPolicy
             // 
-            this.btnPasteSelectedPolicy.Location = new System.Drawing.Point(557, 19);
+            this.btnPasteSelectedPolicy.Location = new System.Drawing.Point(743, 23);
+            this.btnPasteSelectedPolicy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPasteSelectedPolicy.Name = "btnPasteSelectedPolicy";
-            this.btnPasteSelectedPolicy.Size = new System.Drawing.Size(25, 23);
+            this.btnPasteSelectedPolicy.Size = new System.Drawing.Size(33, 28);
             this.btnPasteSelectedPolicy.TabIndex = 17;
             this.btnPasteSelectedPolicy.Text = "P";
             this.btnPasteSelectedPolicy.UseVisualStyleBackColor = true;
             // 
             // btnCopySelectedPolicy
             // 
-            this.btnCopySelectedPolicy.Location = new System.Drawing.Point(528, 19);
+            this.btnCopySelectedPolicy.Location = new System.Drawing.Point(704, 23);
+            this.btnCopySelectedPolicy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCopySelectedPolicy.Name = "btnCopySelectedPolicy";
-            this.btnCopySelectedPolicy.Size = new System.Drawing.Size(25, 23);
+            this.btnCopySelectedPolicy.Size = new System.Drawing.Size(33, 28);
             this.btnCopySelectedPolicy.TabIndex = 16;
             this.btnCopySelectedPolicy.Text = "C";
             this.btnCopySelectedPolicy.UseVisualStyleBackColor = true;
             // 
             // btnChangePolicy
             // 
-            this.btnChangePolicy.Location = new System.Drawing.Point(12, 19);
+            this.btnChangePolicy.Location = new System.Drawing.Point(16, 23);
+            this.btnChangePolicy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChangePolicy.Name = "btnChangePolicy";
-            this.btnChangePolicy.Size = new System.Drawing.Size(134, 33);
+            this.btnChangePolicy.Size = new System.Drawing.Size(179, 41);
             this.btnChangePolicy.TabIndex = 15;
             this.btnChangePolicy.Text = "Change Policy";
             this.btnChangePolicy.UseVisualStyleBackColor = true;
@@ -343,54 +373,61 @@
             this.gbxProcedureInfo.Controls.Add(this.button5);
             this.gbxProcedureInfo.Controls.Add(this.btnAddProcedure);
             this.gbxProcedureInfo.Controls.Add(this.lbxProcedures);
-            this.gbxProcedureInfo.Location = new System.Drawing.Point(11, 615);
+            this.gbxProcedureInfo.Location = new System.Drawing.Point(15, 757);
+            this.gbxProcedureInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gbxProcedureInfo.Name = "gbxProcedureInfo";
-            this.gbxProcedureInfo.Size = new System.Drawing.Size(601, 204);
+            this.gbxProcedureInfo.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxProcedureInfo.Size = new System.Drawing.Size(801, 251);
             this.gbxProcedureInfo.TabIndex = 18;
             this.gbxProcedureInfo.TabStop = false;
             this.gbxProcedureInfo.Text = "Procedure Info";
             // 
             // btnPasteProcedure
             // 
-            this.btnPasteProcedure.Location = new System.Drawing.Point(557, 19);
+            this.btnPasteProcedure.Location = new System.Drawing.Point(743, 23);
+            this.btnPasteProcedure.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPasteProcedure.Name = "btnPasteProcedure";
-            this.btnPasteProcedure.Size = new System.Drawing.Size(25, 23);
+            this.btnPasteProcedure.Size = new System.Drawing.Size(33, 28);
             this.btnPasteProcedure.TabIndex = 17;
             this.btnPasteProcedure.Text = "P";
             this.btnPasteProcedure.UseVisualStyleBackColor = true;
             // 
             // btnCopyProcedure
             // 
-            this.btnCopyProcedure.Location = new System.Drawing.Point(528, 19);
+            this.btnCopyProcedure.Location = new System.Drawing.Point(704, 23);
+            this.btnCopyProcedure.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCopyProcedure.Name = "btnCopyProcedure";
-            this.btnCopyProcedure.Size = new System.Drawing.Size(25, 23);
+            this.btnCopyProcedure.Size = new System.Drawing.Size(33, 28);
             this.btnCopyProcedure.TabIndex = 16;
             this.btnCopyProcedure.Text = "C";
             this.btnCopyProcedure.UseVisualStyleBackColor = true;
             // 
             // btnEditProcedure
             // 
-            this.btnEditProcedure.Location = new System.Drawing.Point(357, 138);
+            this.btnEditProcedure.Location = new System.Drawing.Point(476, 170);
+            this.btnEditProcedure.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditProcedure.Name = "btnEditProcedure";
-            this.btnEditProcedure.Size = new System.Drawing.Size(134, 54);
+            this.btnEditProcedure.Size = new System.Drawing.Size(179, 66);
             this.btnEditProcedure.TabIndex = 15;
             this.btnEditProcedure.Text = "Edit Procedure";
             this.btnEditProcedure.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(357, 82);
+            this.button5.Location = new System.Drawing.Point(476, 101);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(134, 50);
+            this.button5.Size = new System.Drawing.Size(179, 62);
             this.button5.TabIndex = 14;
             this.button5.Text = "Remove Procedure";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // btnAddProcedure
             // 
-            this.btnAddProcedure.Location = new System.Drawing.Point(357, 19);
+            this.btnAddProcedure.Location = new System.Drawing.Point(476, 23);
+            this.btnAddProcedure.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddProcedure.Name = "btnAddProcedure";
-            this.btnAddProcedure.Size = new System.Drawing.Size(134, 57);
+            this.btnAddProcedure.Size = new System.Drawing.Size(179, 70);
             this.btnAddProcedure.TabIndex = 13;
             this.btnAddProcedure.Text = "Add Procedure";
             this.btnAddProcedure.UseVisualStyleBackColor = true;
@@ -399,26 +436,30 @@
             // lbxProcedures
             // 
             this.lbxProcedures.FormattingEnabled = true;
-            this.lbxProcedures.Location = new System.Drawing.Point(12, 19);
+            this.lbxProcedures.ItemHeight = 16;
+            this.lbxProcedures.Location = new System.Drawing.Point(16, 23);
+            this.lbxProcedures.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbxProcedures.Name = "lbxProcedures";
-            this.lbxProcedures.Size = new System.Drawing.Size(339, 173);
+            this.lbxProcedures.Size = new System.Drawing.Size(451, 212);
             this.lbxProcedures.TabIndex = 0;
             // 
             // lblCallLength
             // 
             this.lblCallLength.AutoSize = true;
             this.lblCallLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCallLength.Location = new System.Drawing.Point(199, 36);
+            this.lblCallLength.Location = new System.Drawing.Point(265, 44);
+            this.lblCallLength.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCallLength.Name = "lblCallLength";
-            this.lblCallLength.Size = new System.Drawing.Size(293, 31);
+            this.lblCallLength.Size = new System.Drawing.Size(361, 39);
             this.lblCallLength.TabIndex = 19;
             this.lblCallLength.Text = "Call Length: 00:00:00";
             // 
             // btnCreateNewClient
             // 
-            this.btnCreateNewClient.Location = new System.Drawing.Point(93, 123);
+            this.btnCreateNewClient.Location = new System.Drawing.Point(124, 151);
+            this.btnCreateNewClient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCreateNewClient.Name = "btnCreateNewClient";
-            this.btnCreateNewClient.Size = new System.Drawing.Size(75, 23);
+            this.btnCreateNewClient.Size = new System.Drawing.Size(100, 28);
             this.btnCreateNewClient.TabIndex = 20;
             this.btnCreateNewClient.Text = "Create Client";
             this.btnCreateNewClient.UseVisualStyleBackColor = true;
@@ -426,9 +467,10 @@
             // 
             // frmCallCentre
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 898);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1180, 1055);
             this.Controls.Add(this.btnCreateNewClient);
             this.Controls.Add(this.lblCallLength);
             this.Controls.Add(this.gbxProcedureInfo);
@@ -439,6 +481,7 @@
             this.Controls.Add(this.gbxClientDetails);
             this.Controls.Add(this.gbxCallDetails);
             this.Controls.Add(this.btnSimulateCall);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmCallCentre";
             this.Text = "Call Centre";
             this.Load += new System.EventHandler(this.frmCallCentre_Load);
