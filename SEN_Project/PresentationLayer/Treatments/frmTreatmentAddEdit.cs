@@ -126,5 +126,22 @@ namespace SEN_Project.PresentationLayer.Treatments
                 lbxConditionsCovered.Items.Add(Condition.ToLine());
             }
         }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            Treatment Result = GetResult();
+            if (Result!=null)
+            {
+                SEN_Clipboard._Treatment = Result;
+            }
+        }
+
+        private void btnPaste_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._Treatment!=null)
+            {
+                SetTreatment(SEN_Clipboard._Treatment);
+            }
+        }
     }
 }

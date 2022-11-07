@@ -32,26 +32,26 @@
             this.gbxPolicy = new System.Windows.Forms.GroupBox();
             this.btnSelectPolicy = new System.Windows.Forms.Button();
             this.rtxtPolicyInfo = new System.Windows.Forms.RichTextBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btnPastePolicy = new System.Windows.Forms.Button();
+            this.btnCopyPolicy = new System.Windows.Forms.Button();
             this.gbxServiceProvider = new System.Windows.Forms.GroupBox();
             this.btnSelectFacility = new System.Windows.Forms.Button();
             this.rtxtFacilityDisplay = new System.Windows.Forms.RichTextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnPasteFacility = new System.Windows.Forms.Button();
+            this.btnCopyFacility = new System.Windows.Forms.Button();
             this.gbxClientDetails = new System.Windows.Forms.GroupBox();
             this.btnSelectClient = new System.Windows.Forms.Button();
             this.btnPasteClient = new System.Windows.Forms.Button();
             this.btnCopyClient = new System.Windows.Forms.Button();
             this.rtxtClientInfo = new System.Windows.Forms.RichTextBox();
             this.lblProcedureID = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnPasteProcedure = new System.Windows.Forms.Button();
+            this.btnCopyProcedure = new System.Windows.Forms.Button();
             this.gbxTreatmentDetails = new System.Windows.Forms.GroupBox();
             this.btnSelectTreatment = new System.Windows.Forms.Button();
             this.rtxtTreatmentInfo = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnPasteTreatment = new System.Windows.Forms.Button();
+            this.btnCopyTreatment = new System.Windows.Forms.Button();
             this.gbxCondition = new System.Windows.Forms.GroupBox();
             this.btnSelectCondition = new System.Windows.Forms.Button();
             this.rtxtConditionInfo = new System.Windows.Forms.RichTextBox();
@@ -73,8 +73,8 @@
             this.gbxProcedureDetails.Controls.Add(this.gbxServiceProvider);
             this.gbxProcedureDetails.Controls.Add(this.gbxClientDetails);
             this.gbxProcedureDetails.Controls.Add(this.lblProcedureID);
-            this.gbxProcedureDetails.Controls.Add(this.button3);
-            this.gbxProcedureDetails.Controls.Add(this.button4);
+            this.gbxProcedureDetails.Controls.Add(this.btnPasteProcedure);
+            this.gbxProcedureDetails.Controls.Add(this.btnCopyProcedure);
             this.gbxProcedureDetails.Controls.Add(this.gbxTreatmentDetails);
             this.gbxProcedureDetails.Controls.Add(this.gbxCondition);
             this.gbxProcedureDetails.Location = new System.Drawing.Point(11, 12);
@@ -88,8 +88,8 @@
             // 
             this.gbxPolicy.Controls.Add(this.btnSelectPolicy);
             this.gbxPolicy.Controls.Add(this.rtxtPolicyInfo);
-            this.gbxPolicy.Controls.Add(this.button8);
-            this.gbxPolicy.Controls.Add(this.button9);
+            this.gbxPolicy.Controls.Add(this.btnPastePolicy);
+            this.gbxPolicy.Controls.Add(this.btnCopyPolicy);
             this.gbxPolicy.Location = new System.Drawing.Point(32, 672);
             this.gbxPolicy.Name = "gbxPolicy";
             this.gbxPolicy.Size = new System.Drawing.Size(412, 130);
@@ -115,30 +115,32 @@
             this.rtxtPolicyInfo.TabIndex = 6;
             this.rtxtPolicyInfo.Text = "";
             // 
-            // button8
+            // btnPastePolicy
             // 
-            this.button8.Location = new System.Drawing.Point(365, 19);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(28, 23);
-            this.button8.TabIndex = 5;
-            this.button8.Text = "P";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnPastePolicy.Location = new System.Drawing.Point(365, 19);
+            this.btnPastePolicy.Name = "btnPastePolicy";
+            this.btnPastePolicy.Size = new System.Drawing.Size(28, 23);
+            this.btnPastePolicy.TabIndex = 5;
+            this.btnPastePolicy.Text = "P";
+            this.btnPastePolicy.UseVisualStyleBackColor = true;
+            this.btnPastePolicy.Click += new System.EventHandler(this.btnPastePolicy_Click);
             // 
-            // button9
+            // btnCopyPolicy
             // 
-            this.button9.Location = new System.Drawing.Point(331, 19);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(28, 23);
-            this.button9.TabIndex = 4;
-            this.button9.Text = "C";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnCopyPolicy.Location = new System.Drawing.Point(331, 19);
+            this.btnCopyPolicy.Name = "btnCopyPolicy";
+            this.btnCopyPolicy.Size = new System.Drawing.Size(28, 23);
+            this.btnCopyPolicy.TabIndex = 4;
+            this.btnCopyPolicy.Text = "C";
+            this.btnCopyPolicy.UseVisualStyleBackColor = true;
+            this.btnCopyPolicy.Click += new System.EventHandler(this.btnCopyPolicy_Click);
             // 
             // gbxServiceProvider
             // 
             this.gbxServiceProvider.Controls.Add(this.btnSelectFacility);
             this.gbxServiceProvider.Controls.Add(this.rtxtFacilityDisplay);
-            this.gbxServiceProvider.Controls.Add(this.button6);
-            this.gbxServiceProvider.Controls.Add(this.button7);
+            this.gbxServiceProvider.Controls.Add(this.btnPasteFacility);
+            this.gbxServiceProvider.Controls.Add(this.btnCopyFacility);
             this.gbxServiceProvider.Location = new System.Drawing.Point(32, 490);
             this.gbxServiceProvider.Name = "gbxServiceProvider";
             this.gbxServiceProvider.Size = new System.Drawing.Size(412, 170);
@@ -164,23 +166,25 @@
             this.rtxtFacilityDisplay.TabIndex = 6;
             this.rtxtFacilityDisplay.Text = "";
             // 
-            // button6
+            // btnPasteFacility
             // 
-            this.button6.Location = new System.Drawing.Point(365, 19);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(28, 23);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "P";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnPasteFacility.Location = new System.Drawing.Point(365, 19);
+            this.btnPasteFacility.Name = "btnPasteFacility";
+            this.btnPasteFacility.Size = new System.Drawing.Size(28, 23);
+            this.btnPasteFacility.TabIndex = 5;
+            this.btnPasteFacility.Text = "P";
+            this.btnPasteFacility.UseVisualStyleBackColor = true;
+            this.btnPasteFacility.Click += new System.EventHandler(this.btnPasteFacility_Click);
             // 
-            // button7
+            // btnCopyFacility
             // 
-            this.button7.Location = new System.Drawing.Point(331, 19);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(28, 23);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "C";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnCopyFacility.Location = new System.Drawing.Point(331, 19);
+            this.btnCopyFacility.Name = "btnCopyFacility";
+            this.btnCopyFacility.Size = new System.Drawing.Size(28, 23);
+            this.btnCopyFacility.TabIndex = 4;
+            this.btnCopyFacility.Text = "C";
+            this.btnCopyFacility.UseVisualStyleBackColor = true;
+            this.btnCopyFacility.Click += new System.EventHandler(this.btnCopyFacility_Click);
             // 
             // gbxClientDetails
             // 
@@ -213,6 +217,7 @@
             this.btnPasteClient.TabIndex = 14;
             this.btnPasteClient.Text = "P";
             this.btnPasteClient.UseVisualStyleBackColor = true;
+            this.btnPasteClient.Click += new System.EventHandler(this.btnPasteClient_Click);
             // 
             // btnCopyClient
             // 
@@ -222,6 +227,7 @@
             this.btnCopyClient.TabIndex = 13;
             this.btnCopyClient.Text = "C";
             this.btnCopyClient.UseVisualStyleBackColor = true;
+            this.btnCopyClient.Click += new System.EventHandler(this.btnCopyClient_Click);
             // 
             // rtxtClientInfo
             // 
@@ -240,30 +246,32 @@
             this.lblProcedureID.TabIndex = 9;
             this.lblProcedureID.Text = "Procedure ID:";
             // 
-            // button3
+            // btnPasteProcedure
             // 
-            this.button3.Location = new System.Drawing.Point(438, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 23);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "P";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnPasteProcedure.Location = new System.Drawing.Point(438, 19);
+            this.btnPasteProcedure.Name = "btnPasteProcedure";
+            this.btnPasteProcedure.Size = new System.Drawing.Size(28, 23);
+            this.btnPasteProcedure.TabIndex = 7;
+            this.btnPasteProcedure.Text = "P";
+            this.btnPasteProcedure.UseVisualStyleBackColor = true;
+            this.btnPasteProcedure.Click += new System.EventHandler(this.btnPasteProcedure_Click);
             // 
-            // button4
+            // btnCopyProcedure
             // 
-            this.button4.Location = new System.Drawing.Point(404, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(28, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "C";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnCopyProcedure.Location = new System.Drawing.Point(404, 19);
+            this.btnCopyProcedure.Name = "btnCopyProcedure";
+            this.btnCopyProcedure.Size = new System.Drawing.Size(28, 23);
+            this.btnCopyProcedure.TabIndex = 6;
+            this.btnCopyProcedure.Text = "C";
+            this.btnCopyProcedure.UseVisualStyleBackColor = true;
+            this.btnCopyProcedure.Click += new System.EventHandler(this.button4_Click);
             // 
             // gbxTreatmentDetails
             // 
             this.gbxTreatmentDetails.Controls.Add(this.btnSelectTreatment);
             this.gbxTreatmentDetails.Controls.Add(this.rtxtTreatmentInfo);
-            this.gbxTreatmentDetails.Controls.Add(this.button1);
-            this.gbxTreatmentDetails.Controls.Add(this.button2);
+            this.gbxTreatmentDetails.Controls.Add(this.btnPasteTreatment);
+            this.gbxTreatmentDetails.Controls.Add(this.btnCopyTreatment);
             this.gbxTreatmentDetails.Location = new System.Drawing.Point(32, 314);
             this.gbxTreatmentDetails.Name = "gbxTreatmentDetails";
             this.gbxTreatmentDetails.Size = new System.Drawing.Size(412, 170);
@@ -289,23 +297,25 @@
             this.rtxtTreatmentInfo.TabIndex = 6;
             this.rtxtTreatmentInfo.Text = "";
             // 
-            // button1
+            // btnPasteTreatment
             // 
-            this.button1.Location = new System.Drawing.Point(365, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(28, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "P";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPasteTreatment.Location = new System.Drawing.Point(365, 19);
+            this.btnPasteTreatment.Name = "btnPasteTreatment";
+            this.btnPasteTreatment.Size = new System.Drawing.Size(28, 23);
+            this.btnPasteTreatment.TabIndex = 5;
+            this.btnPasteTreatment.Text = "P";
+            this.btnPasteTreatment.UseVisualStyleBackColor = true;
+            this.btnPasteTreatment.Click += new System.EventHandler(this.btnPasteTreatment_Click);
             // 
-            // button2
+            // btnCopyTreatment
             // 
-            this.button2.Location = new System.Drawing.Point(331, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(28, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "C";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCopyTreatment.Location = new System.Drawing.Point(331, 19);
+            this.btnCopyTreatment.Name = "btnCopyTreatment";
+            this.btnCopyTreatment.Size = new System.Drawing.Size(28, 23);
+            this.btnCopyTreatment.TabIndex = 4;
+            this.btnCopyTreatment.Text = "C";
+            this.btnCopyTreatment.UseVisualStyleBackColor = true;
+            this.btnCopyTreatment.Click += new System.EventHandler(this.btnCopyTreatment_Click);
             // 
             // gbxCondition
             // 
@@ -346,6 +356,7 @@
             this.btnPasteCondition.TabIndex = 11;
             this.btnPasteCondition.Text = "P";
             this.btnPasteCondition.UseVisualStyleBackColor = true;
+            this.btnPasteCondition.Click += new System.EventHandler(this.btnPasteCondition_Click);
             // 
             // btnCopyCondition
             // 
@@ -355,6 +366,7 @@
             this.btnCopyCondition.TabIndex = 10;
             this.btnCopyCondition.Text = "C";
             this.btnCopyCondition.UseVisualStyleBackColor = true;
+            this.btnCopyCondition.Click += new System.EventHandler(this.btnCopyCondition_Click);
             // 
             // btnConfirm
             // 
@@ -404,11 +416,11 @@
         private System.Windows.Forms.GroupBox gbxCondition;
         private System.Windows.Forms.Button btnPasteCondition;
         private System.Windows.Forms.Button btnCopyCondition;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnPasteProcedure;
+        private System.Windows.Forms.Button btnCopyProcedure;
         private System.Windows.Forms.GroupBox gbxTreatmentDetails;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnPasteTreatment;
+        private System.Windows.Forms.Button btnCopyTreatment;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.GroupBox gbxClientDetails;
@@ -424,12 +436,12 @@
         private System.Windows.Forms.GroupBox gbxPolicy;
         private System.Windows.Forms.Button btnSelectPolicy;
         private System.Windows.Forms.RichTextBox rtxtPolicyInfo;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnPastePolicy;
+        private System.Windows.Forms.Button btnCopyPolicy;
         private System.Windows.Forms.GroupBox gbxServiceProvider;
         private System.Windows.Forms.Button btnSelectFacility;
         private System.Windows.Forms.RichTextBox rtxtFacilityDisplay;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnPasteFacility;
+        private System.Windows.Forms.Button btnCopyFacility;
     }
 }
