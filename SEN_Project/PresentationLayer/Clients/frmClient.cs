@@ -29,6 +29,27 @@ namespace SEN_Project.PresentationLayer.Clients
         List<Call> CallHistory;
         List<string> Perscriptions;
 
+        public void SetClient(Client NewClient)
+        {
+            SetAddress(NewClient.PersonAddress);
+            CallHistory.Clear();
+            foreach (Call call in NewClient.CallHistory)
+            {
+                AddCall(call);
+            }
+            Perscriptions.Clear();
+            foreach (string perscription in NewClient.ActivePerscriptions)
+            {
+                AddPerscription(perscription);
+            }
+            txtFirstName.Text = NewClient.FirstName;
+            txtLastName.Text = NewClient.LastName;
+            txtIDNumber.Text = NewClient.IDNumber;
+            txtPhoneNumber.Text = NewClient.PhoneNumber;
+            txtEmail.Text = NewClient.Email;
+        }
+
+
         private void frmClient_Load(object sender, EventArgs e)
         {
             Reset();
@@ -193,7 +214,11 @@ namespace SEN_Project.PresentationLayer.Clients
 
         public  void    AddCall (int    Index,string    Line)
         {
-            Call NewCall = BusinessLogic.current.GetByID<Call>(Index);
+            AddCall(BusinessLogic.current.GetByID<Call>(Index));
+        }
+
+        public  void    AddCall (Call   NewCall)
+        {
             if (!CallHistory.Contains(NewCall))
             {
                 CallHistory.Add(NewCall);
@@ -262,9 +287,17 @@ namespace SEN_Project.PresentationLayer.Clients
 
         private void btnAddPerscription_Click(object sender, EventArgs e)
         {
-            lbxPerscriptions.Items.Add(txtPerscription.Text.Trim());
-            Perscriptions.Add(txtPerscription.Text.Trim());
-            txtPerscription.Clear();
+            AddPerscription(txtPerscription.Text.Trim());
+        }
+
+        public  void    AddPerscription (string Perscription)
+        {
+            if (Perscription.Length>0 && !Perscriptions.Contains(Perscription))
+            {
+                lbxPerscriptions.Items.Add(Perscription);
+                Perscriptions.Add(Perscription);
+                txtPerscription.Clear();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -274,6 +307,23 @@ namespace SEN_Project.PresentationLayer.Clients
                 CancelCallback.Invoke();
             }
             Hide();
+        }
+
+        private void btnCopyClient_Click(object sender, EventArgs e)
+        {
+            Client Result = GetResult();
+            if (Result!=null)
+            {
+                SEN_Clipboard._Client = Result;
+            }
+        }
+
+        private void btnPasteClient_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._Client != null)
+            {
+                SetClient(SEN_Clipboard._Client);
+            }
         }
     }
 }

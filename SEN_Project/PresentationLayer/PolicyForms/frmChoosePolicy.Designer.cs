@@ -97,6 +97,7 @@
             this.btnPastePolicy.TabIndex = 8;
             this.btnPastePolicy.Text = "P";
             this.btnPastePolicy.UseVisualStyleBackColor = true;
+            this.btnPastePolicy.Click += new System.EventHandler(this.btnPastePolicy_Click);
             // 
             // btnCopyPolicy
             // 
@@ -106,6 +107,7 @@
             this.btnCopyPolicy.TabIndex = 7;
             this.btnCopyPolicy.Text = "C";
             this.btnCopyPolicy.UseVisualStyleBackColor = true;
+            this.btnCopyPolicy.Click += new System.EventHandler(this.btnCopyPolicy_Click);
             // 
             // gbxPolicyData
             // 
@@ -128,6 +130,7 @@
             this.btnPastePolicyData.TabIndex = 8;
             this.btnPastePolicyData.Text = "P";
             this.btnPastePolicyData.UseVisualStyleBackColor = true;
+            this.btnPastePolicyData.Click += new System.EventHandler(this.btnPastePolicyData_Click);
             // 
             // btnCopyPolicyData
             // 
@@ -137,6 +140,7 @@
             this.btnCopyPolicyData.TabIndex = 7;
             this.btnCopyPolicyData.Text = "C";
             this.btnCopyPolicyData.UseVisualStyleBackColor = true;
+            this.btnCopyPolicyData.Click += new System.EventHandler(this.btnCopyPolicyData_Click);
             // 
             // btnSelectPolicyData
             // 
@@ -196,6 +200,7 @@
             this.btnPasteMember.TabIndex = 10;
             this.btnPasteMember.Text = "P";
             this.btnPasteMember.UseVisualStyleBackColor = true;
+            this.btnPasteMember.Click += new System.EventHandler(this.btnPasteMember_Click);
             // 
             // btnCopyMember
             // 
@@ -205,6 +210,7 @@
             this.btnCopyMember.TabIndex = 9;
             this.btnCopyMember.Text = "C";
             this.btnCopyMember.UseVisualStyleBackColor = true;
+            this.btnCopyMember.Click += new System.EventHandler(this.btnCopyMember_Click);
             // 
             // btnPasteHeadMember
             // 
@@ -214,6 +220,7 @@
             this.btnPasteHeadMember.TabIndex = 8;
             this.btnPasteHeadMember.Text = "P";
             this.btnPasteHeadMember.UseVisualStyleBackColor = true;
+            this.btnPasteHeadMember.Click += new System.EventHandler(this.btnPasteHeadMember_Click);
             // 
             // btnCopyHeadMember
             // 
@@ -223,6 +230,7 @@
             this.btnCopyHeadMember.TabIndex = 7;
             this.btnCopyHeadMember.Text = "C";
             this.btnCopyHeadMember.UseVisualStyleBackColor = true;
+            this.btnCopyHeadMember.Click += new System.EventHandler(this.btnCopyHeadMember_Click);
             // 
             // lblFamilyMembers
             // 
@@ -321,6 +329,7 @@
             this.btnPasteIndividual.TabIndex = 3;
             this.btnPasteIndividual.Text = "P";
             this.btnPasteIndividual.UseVisualStyleBackColor = true;
+            this.btnPasteIndividual.Click += new System.EventHandler(this.btnPasteIndividual_Click);
             // 
             // btnCopyIndividual
             // 
@@ -330,6 +339,7 @@
             this.btnCopyIndividual.TabIndex = 2;
             this.btnCopyIndividual.Text = "C";
             this.btnCopyIndividual.UseVisualStyleBackColor = true;
+            this.btnCopyIndividual.Click += new System.EventHandler(this.btnCopyIndividual_Click);
             // 
             // rtxtIndividualAddress
             // 

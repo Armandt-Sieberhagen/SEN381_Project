@@ -132,12 +132,6 @@
     <Compile Include="PresentationLayer\Facilities\frmFacility.Designer.cs">
       <DependentUpon>frmFacility.cs</DependentUpon>
     </Compile>
-    <Compile Include="PresentationLayer\FamilyPolicies\frmFamilyPolicy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PresentationLayer\FamilyPolicies\frmFamilyPolicy.Designer.cs">
-      <DependentUpon>frmFamilyPolicy.cs</DependentUpon>
-    </Compile>
     <Compile Include="PresentationLayer\Forms\ListSearchForm\frmSearchList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,12 +162,6 @@
     </Compile>
     <Compile Include="PresentationLayer\PolicyForms\frmChoosePolicy.Designer.cs">
       <DependentUpon>frmChoosePolicy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PresentationLayer\PolicyForms\frmSearchPolicy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PresentationLayer\PolicyForms\frmSearchPolicy.Designer.cs">
-      <DependentUpon>frmSearchPolicy.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\Procedure\frmProcedure.cs">
       <SubType>Form</SubType>
@@ -239,9 +227,6 @@
     <EmbeddedResource Include="PresentationLayer\Employees\frmCreateEmployee.resx">
       <DependentUpon>frmCreateEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PresentationLayer\FamilyPolicies\frmFamilyPolicy.resx">
-      <DependentUpon>frmFamilyPolicy.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Forms\ListSearchForm\frmSearchList.resx">
       <DependentUpon>frmSearchList.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,9 +241,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\PolicyForms\frmChoosePolicy.resx">
       <DependentUpon>frmChoosePolicy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PresentationLayer\PolicyForms\frmSearchPolicy.resx">
-      <DependentUpon>frmSearchPolicy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Procedure\frmProcedure.resx">
       <DependentUpon>frmProcedure.cs</DependentUpon>

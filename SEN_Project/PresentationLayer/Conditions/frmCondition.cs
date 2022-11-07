@@ -72,5 +72,28 @@ namespace SEN_Project.PresentationLayer.Conditions
             }
             Hide();
         }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            MedicalCondition Result = GetResult();
+            if (Result!=null)
+            {
+                SEN_Clipboard._MedicalCondition = Result;
+            }
+        }
+
+        private void btnPaste_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._MedicalCondition!=null)
+            {
+                SetCondition(SEN_Clipboard._MedicalCondition);
+            }
+        }
+
+        public  void SetCondition   (MedicalCondition   condition)
+        {
+            txtName.Text = condition.Name;
+            rtxtDescription.Text = condition.Description;
+        }
     }
 }

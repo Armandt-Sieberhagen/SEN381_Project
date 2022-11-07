@@ -242,5 +242,13 @@ namespace SEN_Project.PresentationLayer.Claims
                 SEN_Clipboard._Policy = _Policy;
             }
         }
+
+        private void btnPastePolicyInfo_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._Policy!=null)
+            {
+                SetPolicy(SEN_Clipboard._Policy);
+            }
+        }
     }
 }

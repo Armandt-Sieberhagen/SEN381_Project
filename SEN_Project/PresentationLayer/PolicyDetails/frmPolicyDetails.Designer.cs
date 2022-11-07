@@ -85,6 +85,7 @@
             this.btnPaste.TabIndex = 14;
             this.btnPaste.Text = "P";
             this.btnPaste.UseVisualStyleBackColor = true;
+            this.btnPaste.Click += new System.EventHandler(this.btnPaste_Click);
             // 
             // btnCopy
             // 
@@ -94,6 +95,7 @@
             this.btnCopy.TabIndex = 13;
             this.btnCopy.Text = "C";
             this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // numPrice
             // 

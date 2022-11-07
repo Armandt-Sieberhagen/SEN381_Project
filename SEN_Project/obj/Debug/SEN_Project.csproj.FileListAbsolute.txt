@@ -33,7 +33,6 @@ C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Projec
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.csproj.CoreCompileInputs.cache
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.exe
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.pdb
-C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Addresses.AddressSelector.AddressSelector.resources
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Treatments.frmTreatmentAddEdit.resources
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.TableForm.resources
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.CallCentre.frmCallCentre.resources
@@ -41,14 +40,12 @@ C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Projec
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Claims.frmViewPastClaims.resources
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Clients.frmSearchClient.resources
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Conditions.frmCondition.resources
-C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.FamilyPolicies.frmFamilyPolicy.resources
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Forms.ListSearchForm.frmSearchList.resources
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.PolicyDetails.frmPolicyDetails.resources
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.PolicyForms.frmChoosePolicy.resources
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Procedure.frmProcedure.resources
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Employees.frmCreateEmployee.resources
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Addresses.AddressCreator.resources
-C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.PolicyForms.frmSearchPolicy.resources
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Clients.frmClient.resources
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.ManageForm.resources
 C:\Users\Thenus\Documents\BC\ThirdYear\SEN\Repo\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Forms.frmManagement.resources

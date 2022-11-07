@@ -122,5 +122,49 @@ namespace SEN_Project.PresentationLayer.Facilities
             //DO validation
             return Factory.CreateMedicalServiceProvider(txtName.Text,_Address,PolicyDetails);
         }
+
+        private void btnCopyFacility_Click(object sender, EventArgs e)
+        {
+            MedicalServiceProvider Facility = GetResult();
+            if (Facility!=null)
+            {
+                SEN_Clipboard._MedicalServiceProvider = Facility;
+            }
+        }
+
+        private void btnPasteFacility_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._MedicalServiceProvider!=null)
+            {
+                SetFacility(SEN_Clipboard._MedicalServiceProvider);
+            }
+        }
+
+        public  void    SetFacility (MedicalServiceProvider Facility)
+        {
+            txtName.Text = Facility.Name;
+            SetAddress(Facility.MyAddress);
+            PolicyDetails.Clear();
+            foreach (PolicyData data in Facility.Policies)
+            {
+                AddPolicy(data);
+            }
+        }
+
+        private void btnCopyAddress_Click(object sender, EventArgs e)
+        {
+            if (_Address!=null)
+            {
+                SEN_Clipboard._Address = _Address;
+            }
+        }
+
+        private void btnPasteAddress_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._Address!=null)
+            {
+                SetAddress(SEN_Clipboard._Address);
+            }
+        }
     }
 }

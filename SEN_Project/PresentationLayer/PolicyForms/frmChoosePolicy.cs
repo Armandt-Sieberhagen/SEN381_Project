@@ -119,7 +119,7 @@ namespace SEN_Project.PresentationLayer.PolicyForms
         {
             if (Family)
             {
-                Members.Add(Factory.CreatePolicyMember(HeadMember, PolicyMember.PolicyRole.Head));
+                Members.Add(Factory.CreatePolicyMember(HeadMember, BusinessLogic.current.GetAll<FamilyPolicy>().Count,PolicyMember.PolicyRole.Head));
                 return Factory.CreateFamilyPolicy(Members, DataRef);
             }
             else
@@ -194,7 +194,7 @@ namespace SEN_Project.PresentationLayer.PolicyForms
             {
                 return;
             }
-            Members.Add(Factory.CreatePolicyMember(NewMember));
+            Members.Add(Factory.CreatePolicyMember(NewMember, BusinessLogic.current.GetAll<FamilyPolicy>().Count));
             lbxFamilyMembers.Items.Add(NewMember.ToLine());
         }
 
@@ -215,6 +215,88 @@ namespace SEN_Project.PresentationLayer.PolicyForms
             else
             {
                 PresentationController.current.ShowError("Please select a member to remove");
+            }
+        }
+
+        private void btnCopyIndividual_Click(object sender, EventArgs e)
+        {
+            if (HeadMember!=null && !Family)
+            {
+                SEN_Clipboard._Client = HeadMember;
+            }
+        }
+
+        private void btnPasteIndividual_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._Client!=null &&  !Family)
+            {
+                SetHeadMember(SEN_Clipboard._Client);
+            }
+        }
+
+        private void btnCopyHeadMember_Click(object sender, EventArgs e)
+        {
+            if (HeadMember != null && Family)
+            {
+                SEN_Clipboard._Client = HeadMember;
+            }
+        }
+
+        private void btnPasteHeadMember_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._Client != null && Family)
+            {
+                SetHeadMember(SEN_Clipboard._Client);
+            }
+        }
+
+        private void btnCopyMember_Click(object sender, EventArgs e)
+        {
+            if (lbxFamilyMembers.SelectedIndex>-1)
+            {
+                SEN_Clipboard._PolicyMember = Members[lbxFamilyMembers.SelectedIndex];
+            }
+        }
+
+        private void btnPasteMember_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._PolicyMember!=null)
+            {
+                AddMember(SEN_Clipboard._PolicyMember.Person);
+            }
+        }
+
+        private void btnCopyPolicyData_Click(object sender, EventArgs e)
+        {
+            if (DataRef!=null)
+            {
+                SEN_Clipboard._PolicyData = DataRef;
+            }
+        }
+
+        private void btnPastePolicyData_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._PolicyData!=null)
+            {
+                SetPolicy(SEN_Clipboard._PolicyData);
+            }
+        }
+
+        private void btnCopyPolicy_Click(object sender, EventArgs e)
+        {
+            Policy Result = GetResult();
+            if (Result!=null)
+            {
+                SEN_Clipboard._Policy = Result;
+            }
+        }
+
+        private void btnPastePolicy_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._Policy!=null)
+            {
+                SetPolicy(SEN_Clipboard._Policy.DataRef);
+
             }
         }
     }
