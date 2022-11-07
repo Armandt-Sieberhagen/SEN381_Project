@@ -34,7 +34,14 @@ namespace SEN_Project.BusinessLogicLayer
                 //GlobalDataLayer.current.GetCache<T>() = new List<T>();
                 GlobalDataLayer.current.SetCache<T>(DatabaseAccess.current.GetAll<T>());
             }
-            GlobalDataLayer.current.GetCache<T>().Sort();
+            try
+            {
+                GlobalDataLayer.current.GetCache<T>().Sort();
+            }
+            catch (Exception)
+            {
+             
+            }
             return GlobalDataLayer.current.GetCache<T>();
         }
 

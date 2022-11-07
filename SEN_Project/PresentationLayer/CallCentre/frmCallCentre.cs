@@ -14,6 +14,7 @@ using SEN_Project.PresentationLayer.PolicyForms;
 using SEN_Project.PresentationLayer.Forms.ListSearchForm;
 using SEN_Project.PresentationLayer.Employees;
 using SEN_Project.PresentationLayer.Procedure;
+using SEN_Project;
 
 namespace SEN_Project.PresentationLayer.CallCentre
 {
@@ -251,6 +252,13 @@ namespace SEN_Project.PresentationLayer.CallCentre
                 CurrentClient.ClinicalHistory.Add(newProcedure);
                 lbxProcedures.Items.Add(newProcedure.ToLine());
             }
+        }
+
+        private void btnMainForm_Click(object sender, EventArgs e)
+        {
+            btnEndCall_Click(sender,e);
+            Hide();
+            Form1.current.Show();
         }
     }
 }

@@ -683,7 +683,7 @@ namespace SEN_Project.DataAccessLayer
 
         public List<Claim> GetClaimByClientID(int ID)
         {
-            string Command = "SELECT * FROM tbl_Claims WHERE Client_ID = " + ID;
+            string Command = "SELECT * FROM tbl_Claims WHERE ClientID = '" + ID+"'";
             DataTable DT = DatabaseController.current.GetTable(Command);
             List<Claim> Result = new List<Claim>();
             foreach (DataRow row in DT.Rows)
@@ -691,6 +691,19 @@ namespace SEN_Project.DataAccessLayer
                 Result.Add(Factory.CreateClaim(row));
             }
             return Result;
+        }
+
+        public  List<PolicyData> GetPolicyByFacility    (int    FacilityID)
+        {
+            string Command = "SELECT * FROM tbl_Facility_PolicyData WHERE Facility_ID = '" + FacilityID + "'";
+            DataTable DT = DatabaseController.current.GetTable(Command);
+            List<PolicyData> Result = new List<PolicyData>();
+            foreach (DataRow row in DT.Rows)
+            {
+                Result.Add(Factory.CreatePolicyData(row));
+            }
+            return Result;
+
         }
     }
 }

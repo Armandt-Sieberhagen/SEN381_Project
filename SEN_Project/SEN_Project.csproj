@@ -132,6 +132,12 @@
     <Compile Include="PresentationLayer\Employees\frmCreateEmployee.Designer.cs">
       <DependentUpon>frmCreateEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\Facilities\frmFacility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Facilities\frmFacility.Designer.cs">
+      <DependentUpon>frmFacility.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\FamilyPolicies\frmFamilyPolicy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\DatabaseForm.resx">
       <DependentUpon>DatabaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Facilities\frmFacility.resx">
+      <DependentUpon>frmFacility.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Forms\ChangeList.resx">
       <DependentUpon>ChangeList.cs</DependentUpon>
