@@ -110,6 +110,8 @@ namespace SEN_Project.PresentationLayer.Treatments
 
         public  void    SetConditions   (List<object>   Objects)
         {
+            Conditions.Clear();
+            lbxConditionsCovered.Items.Clear();
             foreach (object item in Objects)
             {
                 AddCondition((MedicalCondition)item);

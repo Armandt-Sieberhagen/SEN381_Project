@@ -28,6 +28,15 @@ namespace SEN_Project.PresentationLayer.Claims
         int Status => cbxStatus.SelectedIndex > -1 ? cbxStatus.SelectedIndex : 2;
 
 
+        public void Set(Claim _Claim)
+        {
+            CurrentClient = _Claim.MyClient;
+            Procedure = _Claim.Procedure;
+            _Call = _Claim._Call;
+            _Policy = _Claim._Policy;
+            cbxStatus.SelectedIndex = (int)_Claim.Status;
+        }
+
         private void gbxProcedureInfo_Enter(object sender, EventArgs e)
         {
 
@@ -90,7 +99,7 @@ namespace SEN_Project.PresentationLayer.Claims
         public  void    SetClient   (Client _Client)
         {
             CurrentClient = _Client;
-            rtxtClientInfo.Text = _Client.ToString();
+            rtxtClientInfo.Text = _Client.PersonalDetails;
         }
 
         private void btnSelectProcedure_Click(object sender, EventArgs e)
@@ -179,7 +188,19 @@ namespace SEN_Project.PresentationLayer.Claims
 
         private void btnCopyClaim_Click(object sender, EventArgs e)
         {
+            Claim Result = GetResult();
+            if (Result != null)
+            {
+                SEN_Clipboard._Claim = Result;
+            }
+        }
 
+        private void btnPasteClaim_Click(object sender, EventArgs e)
+        {
+            if (SEN_Clipboard._Claim!=null)
+            {
+                Set(SEN_Clipboard._Claim);
+            }
         }
     }
 }

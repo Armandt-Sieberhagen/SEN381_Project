@@ -46,9 +46,10 @@
             // 
             // btnCreateAddress
             // 
-            this.btnCreateAddress.Location = new System.Drawing.Point(44, 212);
+            this.btnCreateAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateAddress.Location = new System.Drawing.Point(49, 203);
             this.btnCreateAddress.Name = "btnCreateAddress";
-            this.btnCreateAddress.Size = new System.Drawing.Size(117, 57);
+            this.btnCreateAddress.Size = new System.Drawing.Size(117, 43);
             this.btnCreateAddress.TabIndex = 10;
             this.btnCreateAddress.Text = "Confirm";
             this.btnCreateAddress.UseVisualStyleBackColor = true;
@@ -56,9 +57,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(167, 212);
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(172, 203);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(117, 57);
+            this.btnCancel.Size = new System.Drawing.Size(117, 43);
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -76,6 +78,7 @@
             this.gbxAddressInfo.Controls.Add(this.cbxProvince);
             this.gbxAddressInfo.Controls.Add(this.txtPostalCode);
             this.gbxAddressInfo.Controls.Add(this.txtStreet);
+            this.gbxAddressInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxAddressInfo.Location = new System.Drawing.Point(12, 12);
             this.gbxAddressInfo.Name = "gbxAddressInfo";
             this.gbxAddressInfo.Size = new System.Drawing.Size(315, 185);
@@ -106,71 +109,72 @@
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(186, 123);
+            this.lblCity.Location = new System.Drawing.Point(182, 55);
             this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(24, 13);
+            this.lblCity.Size = new System.Drawing.Size(26, 15);
             this.lblCity.TabIndex = 17;
             this.lblCity.Text = "City";
             // 
             // lblProvince
             // 
             this.lblProvince.AutoSize = true;
-            this.lblProvince.Location = new System.Drawing.Point(183, 64);
+            this.lblProvince.Location = new System.Drawing.Point(19, 111);
             this.lblProvince.Name = "lblProvince";
-            this.lblProvince.Size = new System.Drawing.Size(49, 13);
+            this.lblProvince.Size = new System.Drawing.Size(54, 15);
             this.lblProvince.TabIndex = 16;
             this.lblProvince.Text = "Province";
             // 
             // lblPostalCode
             // 
             this.lblPostalCode.AutoSize = true;
-            this.lblPostalCode.Location = new System.Drawing.Point(10, 118);
+            this.lblPostalCode.Location = new System.Drawing.Point(179, 111);
             this.lblPostalCode.Name = "lblPostalCode";
-            this.lblPostalCode.Size = new System.Drawing.Size(61, 13);
+            this.lblPostalCode.Size = new System.Drawing.Size(70, 15);
             this.lblPostalCode.TabIndex = 15;
             this.lblPostalCode.Text = "PostalCode";
             // 
             // lblStreet
             // 
             this.lblStreet.AutoSize = true;
-            this.lblStreet.Location = new System.Drawing.Point(10, 57);
+            this.lblStreet.Location = new System.Drawing.Point(19, 55);
             this.lblStreet.Name = "lblStreet";
-            this.lblStreet.Size = new System.Drawing.Size(35, 13);
+            this.lblStreet.Size = new System.Drawing.Size(39, 15);
             this.lblStreet.TabIndex = 14;
             this.lblStreet.Text = "Street";
+            this.lblStreet.Click += new System.EventHandler(this.lblStreet_Click);
             // 
             // cbxCity
             // 
             this.cbxCity.Enabled = false;
             this.cbxCity.FormattingEnabled = true;
-            this.cbxCity.Location = new System.Drawing.Point(186, 139);
+            this.cbxCity.Location = new System.Drawing.Point(182, 73);
             this.cbxCity.Name = "cbxCity";
-            this.cbxCity.Size = new System.Drawing.Size(121, 21);
+            this.cbxCity.Size = new System.Drawing.Size(121, 23);
             this.cbxCity.TabIndex = 13;
             this.cbxCity.SelectedIndexChanged += new System.EventHandler(this.cbxCity_SelectedIndexChanged_1);
             // 
             // cbxProvince
             // 
             this.cbxProvince.FormattingEnabled = true;
-            this.cbxProvince.Location = new System.Drawing.Point(186, 81);
+            this.cbxProvince.Location = new System.Drawing.Point(22, 129);
             this.cbxProvince.Name = "cbxProvince";
-            this.cbxProvince.Size = new System.Drawing.Size(121, 21);
+            this.cbxProvince.Size = new System.Drawing.Size(121, 23);
             this.cbxProvince.TabIndex = 12;
             this.cbxProvince.SelectedIndexChanged += new System.EventHandler(this.cbxProvince_SelectedIndexChanged_1);
             // 
             // txtPostalCode
             // 
-            this.txtPostalCode.Location = new System.Drawing.Point(13, 134);
+            this.txtPostalCode.Location = new System.Drawing.Point(182, 128);
             this.txtPostalCode.Name = "txtPostalCode";
-            this.txtPostalCode.Size = new System.Drawing.Size(100, 20);
+            this.txtPostalCode.Size = new System.Drawing.Size(100, 21);
             this.txtPostalCode.TabIndex = 11;
             this.txtPostalCode.TextChanged += new System.EventHandler(this.txtPostalCode_TextChanged_1);
             // 
             // txtStreet
             // 
-            this.txtStreet.Location = new System.Drawing.Point(13, 81);
+            this.txtStreet.Location = new System.Drawing.Point(22, 74);
             this.txtStreet.Name = "txtStreet";
-            this.txtStreet.Size = new System.Drawing.Size(100, 20);
+            this.txtStreet.Size = new System.Drawing.Size(121, 21);
             this.txtStreet.TabIndex = 10;
             this.txtStreet.TextChanged += new System.EventHandler(this.txtStreet_TextChanged_1);
             // 
@@ -178,7 +182,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 315);
+            this.ClientSize = new System.Drawing.Size(341, 259);
             this.ControlBox = false;
             this.Controls.Add(this.gbxAddressInfo);
             this.Controls.Add(this.btnCancel);
