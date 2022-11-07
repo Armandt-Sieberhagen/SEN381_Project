@@ -39,9 +39,10 @@ namespace SEN_Project
             // 
             // btnCallCentre
             // 
-            this.btnCallCentre.Location = new System.Drawing.Point(12, 12);
+            this.btnCallCentre.Location = new System.Drawing.Point(16, 15);
+            this.btnCallCentre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCallCentre.Name = "btnCallCentre";
-            this.btnCallCentre.Size = new System.Drawing.Size(231, 127);
+            this.btnCallCentre.Size = new System.Drawing.Size(308, 156);
             this.btnCallCentre.TabIndex = 10;
             this.btnCallCentre.Text = "Open Call Centre";
             this.btnCallCentre.UseVisualStyleBackColor = true;
@@ -49,9 +50,10 @@ namespace SEN_Project
             // 
             // btnPolicy
             // 
-            this.btnPolicy.Location = new System.Drawing.Point(249, 145);
+            this.btnPolicy.Location = new System.Drawing.Point(332, 178);
+            this.btnPolicy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPolicy.Name = "btnPolicy";
-            this.btnPolicy.Size = new System.Drawing.Size(231, 127);
+            this.btnPolicy.Size = new System.Drawing.Size(308, 156);
             this.btnPolicy.TabIndex = 11;
             this.btnPolicy.Text = "Policy Management";
             this.btnPolicy.UseVisualStyleBackColor = true;
@@ -59,9 +61,10 @@ namespace SEN_Project
             // 
             // btnTreatmentManagement
             // 
-            this.btnTreatmentManagement.Location = new System.Drawing.Point(12, 145);
+            this.btnTreatmentManagement.Location = new System.Drawing.Point(16, 178);
+            this.btnTreatmentManagement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTreatmentManagement.Name = "btnTreatmentManagement";
-            this.btnTreatmentManagement.Size = new System.Drawing.Size(231, 127);
+            this.btnTreatmentManagement.Size = new System.Drawing.Size(308, 156);
             this.btnTreatmentManagement.TabIndex = 12;
             this.btnTreatmentManagement.Text = "Open Treatment Management";
             this.btnTreatmentManagement.UseVisualStyleBackColor = true;
@@ -69,9 +72,10 @@ namespace SEN_Project
             // 
             // btnConditionCentre
             // 
-            this.btnConditionCentre.Location = new System.Drawing.Point(249, 12);
+            this.btnConditionCentre.Location = new System.Drawing.Point(332, 15);
+            this.btnConditionCentre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConditionCentre.Name = "btnConditionCentre";
-            this.btnConditionCentre.Size = new System.Drawing.Size(231, 127);
+            this.btnConditionCentre.Size = new System.Drawing.Size(308, 156);
             this.btnConditionCentre.TabIndex = 13;
             this.btnConditionCentre.Text = "Open Condition Centre";
             this.btnConditionCentre.UseVisualStyleBackColor = true;
@@ -79,19 +83,21 @@ namespace SEN_Project
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(486, 11);
+            this.button1.Location = new System.Drawing.Point(648, 14);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(231, 127);
+            this.button1.Size = new System.Drawing.Size(308, 156);
             this.button1.TabIndex = 14;
-            this.button1.Text = "Open Condition Centre";
+            this.button1.Text = "tree view";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // btnFacilityManagement
             // 
-            this.btnFacilityManagement.Location = new System.Drawing.Point(486, 144);
+            this.btnFacilityManagement.Location = new System.Drawing.Point(648, 177);
+            this.btnFacilityManagement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFacilityManagement.Name = "btnFacilityManagement";
-            this.btnFacilityManagement.Size = new System.Drawing.Size(231, 127);
+            this.btnFacilityManagement.Size = new System.Drawing.Size(308, 156);
             this.btnFacilityManagement.TabIndex = 15;
             this.btnFacilityManagement.Text = "Facility Managmenet";
             this.btnFacilityManagement.UseVisualStyleBackColor = true;
@@ -99,15 +105,16 @@ namespace SEN_Project
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1111, 696);
+            this.ClientSize = new System.Drawing.Size(1481, 857);
             this.Controls.Add(this.btnFacilityManagement);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnConditionCentre);
             this.Controls.Add(this.btnTreatmentManagement);
             this.Controls.Add(this.btnPolicy);
             this.Controls.Add(this.btnCallCentre);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);

@@ -89,8 +89,20 @@ namespace SEN_Project.BusinessLogicLayer
         public static Call CreateCall(DataRow Row)
         {
             Employee employee = BusinessLogic.current.GetByID < Employee>(int.Parse(Row[1].ToString()));//Add Validation
-            DateTime StartTime = DateTime.Parse(Row[2].ToString());
-            DateTime EndTime = DateTime.Parse(Row[3].ToString());
+            DateTime StartTime = DateTime.Now;
+            DateTime EndTime = DateTime.Now;
+            try
+            {
+                StartTime = DateTime.Parse(Row[2].ToString());
+                EndTime = DateTime.Parse(Row[3].ToString());
+            }
+            catch (Exception)
+            {
+                StartTime = DateTime.Now;
+                EndTime = DateTime.Now;
+
+            }
+            
             return CreateCall(StartTime, EndTime, employee);
         }
 
