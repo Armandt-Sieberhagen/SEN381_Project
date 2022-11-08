@@ -130,15 +130,15 @@ namespace SEN_Project.PresentationLayer.Clients
             string Phone = txtPhoneNumber.Text.Trim();
             string Email = txtEmail.Text.Trim();
 
-            if (FirstName.Length > 0 && FirstName.Length < 20)
+            if (FirstName.Length > 0 && FirstName.Length <= 20)
             {
-                if (LastName.Length > 0 && LastName.Length < 20)
+                if (LastName.Length > 0 && LastName.Length <= 20)
                 {
-                    if (IDnumber.Length > 0 && IDnumber.Length < 20)
+                    if (IDnumber.Length > 0 && IDnumber.Length <= 20)
                     {
-                        if (Phone.Length > 0 && Phone.Length < 10)
+                        if (Phone.Length > 0 && Phone.Length <= 10)
                         {
-                            if (Email.Length > 0 && Email.Length < 20)
+                            if (Email.Length > 0 && Email.Length <= 20)
                             {
                                 if (_Address != null)
                                 {

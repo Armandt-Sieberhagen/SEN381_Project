@@ -27,6 +27,7 @@ namespace SEN_Project.PresentationLayer.Tree
         private void UpdateNodes() //This looks in the database and adds the appropriate nodes
         {
             List<Client> Clients =  BusinessLogic.current.GetAll<Client>();
+            DatabaseAccess databaseAccess = new DatabaseAccess();
             int count = 0;
             foreach (Client client in Clients)
             {
@@ -49,6 +50,12 @@ namespace SEN_Project.PresentationLayer.Tree
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Form1.current.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             Hide();
             Form1.current.Show();

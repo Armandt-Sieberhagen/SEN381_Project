@@ -283,8 +283,8 @@ namespace SEN_Project.BusinessLogicLayer
         {
             PolicyData Result = new PolicyData();
 
-            string Name = Row[1].ToString();
-            string Description = Row[2].ToString();
+            string Name = Row[0].ToString();
+            string Description = Row[1].ToString();
             float Price = float.Parse(Row[3].ToString());
             List<Treatment> TreatmentsCovered = DatabaseAccess.current.GetTreatmentByPolicyData(int.Parse(Row[0].ToString()));
 
@@ -326,8 +326,8 @@ namespace SEN_Project.BusinessLogicLayer
         }
         public static Treatment CreateTreatment(DataRow row)
         {
-            string Name = row[1].ToString();
-            string Description = row[2].ToString();
+            string Name = row[0].ToString();
+            string Description = row[1].ToString();
 
             List<MedicalCondition> Conditions = BusinessLogic.current.GetConditionsTreatmentsByID(int.Parse(row[0].ToString()));
 
