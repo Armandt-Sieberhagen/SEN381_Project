@@ -166,5 +166,10 @@ namespace SEN_Project.PresentationLayer.Facilities
                 SetAddress(SEN_Clipboard._Address);
             }
         }
+
+        private void frmFacility_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

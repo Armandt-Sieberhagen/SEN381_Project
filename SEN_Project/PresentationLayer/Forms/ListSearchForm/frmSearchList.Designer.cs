@@ -35,18 +35,21 @@
             // 
             // lbxItems
             // 
+            this.lbxItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxItems.FormattingEnabled = true;
-            this.lbxItems.Location = new System.Drawing.Point(22, 12);
+            this.lbxItems.ItemHeight = 15;
+            this.lbxItems.Location = new System.Drawing.Point(12, 12);
             this.lbxItems.Name = "lbxItems";
-            this.lbxItems.Size = new System.Drawing.Size(626, 290);
+            this.lbxItems.Size = new System.Drawing.Size(626, 289);
             this.lbxItems.TabIndex = 0;
             this.lbxItems.SelectedIndexChanged += new System.EventHandler(this.lbxItems_SelectedIndexChanged);
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(114, 324);
+            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Location = new System.Drawing.Point(137, 319);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(161, 95);
+            this.btnConfirm.Size = new System.Drawing.Size(161, 67);
             this.btnConfirm.TabIndex = 1;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
@@ -54,9 +57,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(328, 324);
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(351, 319);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(161, 95);
+            this.btnCancel.Size = new System.Drawing.Size(161, 67);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -66,12 +70,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 450);
+            this.ClientSize = new System.Drawing.Size(649, 396);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.lbxItems);
             this.Name = "frmSearchList";
-            this.Text = "frmSearchList";
+            this.ShowIcon = false;
+            this.Text = "Search List";
             this.Load += new System.EventHandler(this.frmSearchList_Load);
             this.ResumeLayout(false);
 
