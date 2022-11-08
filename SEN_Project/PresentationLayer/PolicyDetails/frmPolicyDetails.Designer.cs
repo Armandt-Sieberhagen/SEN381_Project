@@ -61,9 +61,10 @@
             this.gbxPolicyDataDetails.Controls.Add(this.txtPolicyName);
             this.gbxPolicyDataDetails.Controls.Add(this.lblPolicyDescription);
             this.gbxPolicyDataDetails.Controls.Add(this.lblName);
+            this.gbxPolicyDataDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxPolicyDataDetails.Location = new System.Drawing.Point(12, 12);
             this.gbxPolicyDataDetails.Name = "gbxPolicyDataDetails";
-            this.gbxPolicyDataDetails.Size = new System.Drawing.Size(311, 528);
+            this.gbxPolicyDataDetails.Size = new System.Drawing.Size(311, 490);
             this.gbxPolicyDataDetails.TabIndex = 0;
             this.gbxPolicyDataDetails.TabStop = false;
             this.gbxPolicyDataDetails.Text = "Policy Details";
@@ -71,17 +72,17 @@
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(6, 434);
+            this.lblPrice.Location = new System.Drawing.Point(6, 398);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(31, 13);
+            this.lblPrice.Size = new System.Drawing.Size(35, 15);
             this.lblPrice.TabIndex = 15;
             this.lblPrice.Text = "Price";
             // 
             // btnPaste
             // 
-            this.btnPaste.Location = new System.Drawing.Point(248, 18);
+            this.btnPaste.Location = new System.Drawing.Point(269, 15);
             this.btnPaste.Name = "btnPaste";
-            this.btnPaste.Size = new System.Drawing.Size(36, 23);
+            this.btnPaste.Size = new System.Drawing.Size(33, 23);
             this.btnPaste.TabIndex = 14;
             this.btnPaste.Text = "P";
             this.btnPaste.UseVisualStyleBackColor = true;
@@ -89,9 +90,9 @@
             // 
             // btnCopy
             // 
-            this.btnCopy.Location = new System.Drawing.Point(206, 18);
+            this.btnCopy.Location = new System.Drawing.Point(229, 15);
             this.btnCopy.Name = "btnCopy";
-            this.btnCopy.Size = new System.Drawing.Size(36, 23);
+            this.btnCopy.Size = new System.Drawing.Size(33, 23);
             this.btnCopy.TabIndex = 13;
             this.btnCopy.Text = "C";
             this.btnCopy.UseVisualStyleBackColor = true;
@@ -99,26 +100,28 @@
             // 
             // numPrice
             // 
-            this.numPrice.Location = new System.Drawing.Point(9, 450);
+            this.numPrice.Location = new System.Drawing.Point(9, 416);
             this.numPrice.Name = "numPrice";
-            this.numPrice.Size = new System.Drawing.Size(120, 20);
+            this.numPrice.Size = new System.Drawing.Size(120, 21);
             this.numPrice.TabIndex = 12;
             // 
             // cbxAvailable
             // 
             this.cbxAvailable.AutoSize = true;
-            this.cbxAvailable.Location = new System.Drawing.Point(9, 491);
+            this.cbxAvailable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxAvailable.Location = new System.Drawing.Point(9, 458);
             this.cbxAvailable.Name = "cbxAvailable";
-            this.cbxAvailable.Size = new System.Drawing.Size(69, 17);
+            this.cbxAvailable.Size = new System.Drawing.Size(83, 20);
             this.cbxAvailable.TabIndex = 11;
             this.cbxAvailable.Text = "Available";
             this.cbxAvailable.UseVisualStyleBackColor = true;
             // 
             // btnChangeTreatments
             // 
-            this.btnChangeTreatments.Location = new System.Drawing.Point(9, 393);
+            this.btnChangeTreatments.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangeTreatments.Location = new System.Drawing.Point(65, 369);
             this.btnChangeTreatments.Name = "btnChangeTreatments";
-            this.btnChangeTreatments.Size = new System.Drawing.Size(178, 23);
+            this.btnChangeTreatments.Size = new System.Drawing.Size(178, 25);
             this.btnChangeTreatments.TabIndex = 10;
             this.btnChangeTreatments.Text = "Change Selection";
             this.btnChangeTreatments.UseVisualStyleBackColor = true;
@@ -127,18 +130,18 @@
             // lblTreatmentsCovered
             // 
             this.lblTreatmentsCovered.AutoSize = true;
-            this.lblTreatmentsCovered.Location = new System.Drawing.Point(6, 234);
+            this.lblTreatmentsCovered.Location = new System.Drawing.Point(6, 215);
             this.lblTreatmentsCovered.Name = "lblTreatmentsCovered";
-            this.lblTreatmentsCovered.Size = new System.Drawing.Size(103, 13);
+            this.lblTreatmentsCovered.Size = new System.Drawing.Size(117, 15);
             this.lblTreatmentsCovered.TabIndex = 9;
             this.lblTreatmentsCovered.Text = "Treatments Covered";
             // 
             // rtxtTreatmentCovered
             // 
-            this.rtxtTreatmentCovered.Location = new System.Drawing.Point(9, 250);
+            this.rtxtTreatmentCovered.Location = new System.Drawing.Point(9, 231);
             this.rtxtTreatmentCovered.Name = "rtxtTreatmentCovered";
             this.rtxtTreatmentCovered.ReadOnly = true;
-            this.rtxtTreatmentCovered.Size = new System.Drawing.Size(178, 137);
+            this.rtxtTreatmentCovered.Size = new System.Drawing.Size(296, 123);
             this.rtxtTreatmentCovered.TabIndex = 8;
             this.rtxtTreatmentCovered.Text = "";
             this.rtxtTreatmentCovered.TextChanged += new System.EventHandler(this.rtxtTreatmentCovered_TextChanged);
@@ -147,15 +150,15 @@
             // 
             this.rtxtPolicyDescription.Location = new System.Drawing.Point(9, 83);
             this.rtxtPolicyDescription.Name = "rtxtPolicyDescription";
-            this.rtxtPolicyDescription.Size = new System.Drawing.Size(178, 143);
+            this.rtxtPolicyDescription.Size = new System.Drawing.Size(296, 125);
             this.rtxtPolicyDescription.TabIndex = 7;
             this.rtxtPolicyDescription.Text = "";
             // 
             // txtPolicyName
             // 
-            this.txtPolicyName.Location = new System.Drawing.Point(9, 44);
+            this.txtPolicyName.Location = new System.Drawing.Point(88, 36);
             this.txtPolicyName.Name = "txtPolicyName";
-            this.txtPolicyName.Size = new System.Drawing.Size(100, 20);
+            this.txtPolicyName.Size = new System.Drawing.Size(109, 21);
             this.txtPolicyName.TabIndex = 6;
             // 
             // lblPolicyDescription
@@ -163,24 +166,25 @@
             this.lblPolicyDescription.AutoSize = true;
             this.lblPolicyDescription.Location = new System.Drawing.Point(6, 67);
             this.lblPolicyDescription.Name = "lblPolicyDescription";
-            this.lblPolicyDescription.Size = new System.Drawing.Size(60, 13);
+            this.lblPolicyDescription.Size = new System.Drawing.Size(69, 15);
             this.lblPolicyDescription.TabIndex = 5;
             this.lblPolicyDescription.Text = "Description";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(6, 28);
+            this.lblName.Location = new System.Drawing.Point(6, 39);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(66, 13);
+            this.lblName.Size = new System.Drawing.Size(76, 15);
             this.lblName.TabIndex = 4;
             this.lblName.Text = "Policy Name";
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(12, 555);
+            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Location = new System.Drawing.Point(34, 520);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(129, 107);
+            this.btnConfirm.Size = new System.Drawing.Size(129, 59);
             this.btnConfirm.TabIndex = 1;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
@@ -188,9 +192,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(167, 555);
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(176, 520);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(129, 107);
+            this.btnCancel.Size = new System.Drawing.Size(129, 59);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -200,12 +205,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 694);
+            this.ClientSize = new System.Drawing.Size(335, 592);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.gbxPolicyDataDetails);
             this.Name = "frmPolicyDetails";
-            this.Text = "frmPolicyDetails";
+            this.ShowIcon = false;
+            this.Text = "Policy Details";
             this.Load += new System.EventHandler(this.frmPolicyDetails_Load);
             this.gbxPolicyDataDetails.ResumeLayout(false);
             this.gbxPolicyDataDetails.PerformLayout();

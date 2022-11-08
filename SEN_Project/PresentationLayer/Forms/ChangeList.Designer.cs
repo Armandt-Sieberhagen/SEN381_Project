@@ -41,7 +41,7 @@
             // lbxAll
             // 
             this.lbxAll.FormattingEnabled = true;
-            this.lbxAll.Location = new System.Drawing.Point(12, 48);
+            this.lbxAll.Location = new System.Drawing.Point(12, 30);
             this.lbxAll.Name = "lbxAll";
             this.lbxAll.Size = new System.Drawing.Size(258, 238);
             this.lbxAll.TabIndex = 0;
@@ -50,7 +50,7 @@
             // btnAdd
             // 
             this.btnAdd.Enabled = false;
-            this.btnAdd.Location = new System.Drawing.Point(276, 110);
+            this.btnAdd.Location = new System.Drawing.Point(276, 112);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(126, 31);
             this.btnAdd.TabIndex = 1;
@@ -61,7 +61,7 @@
             // btnRemove
             // 
             this.btnRemove.Enabled = false;
-            this.btnRemove.Location = new System.Drawing.Point(276, 147);
+            this.btnRemove.Location = new System.Drawing.Point(276, 149);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(126, 31);
             this.btnRemove.TabIndex = 2;
@@ -72,7 +72,7 @@
             // lbxSelected
             // 
             this.lbxSelected.FormattingEnabled = true;
-            this.lbxSelected.Location = new System.Drawing.Point(408, 48);
+            this.lbxSelected.Location = new System.Drawing.Point(408, 30);
             this.lbxSelected.Name = "lbxSelected";
             this.lbxSelected.Size = new System.Drawing.Size(258, 238);
             this.lbxSelected.TabIndex = 3;
@@ -80,9 +80,10 @@
             // 
             // btnDone
             // 
-            this.btnDone.Location = new System.Drawing.Point(227, 317);
+            this.btnDone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDone.Location = new System.Drawing.Point(199, 284);
             this.btnDone.Name = "btnDone";
-            this.btnDone.Size = new System.Drawing.Size(107, 52);
+            this.btnDone.Size = new System.Drawing.Size(121, 52);
             this.btnDone.TabIndex = 4;
             this.btnDone.Text = "Confirm";
             this.btnDone.UseVisualStyleBackColor = true;
@@ -90,9 +91,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(363, 317);
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(358, 284);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(107, 52);
+            this.btnCancel.Size = new System.Drawing.Size(121, 52);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -101,18 +103,20 @@
             // lblAll
             // 
             this.lblAll.AutoSize = true;
-            this.lblAll.Location = new System.Drawing.Point(9, 21);
+            this.lblAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAll.Location = new System.Drawing.Point(9, 12);
             this.lblAll.Name = "lblAll";
-            this.lblAll.Size = new System.Drawing.Size(46, 13);
+            this.lblAll.Size = new System.Drawing.Size(53, 15);
             this.lblAll.TabIndex = 6;
             this.lblAll.Text = "All Items";
             // 
             // lblSelectedItems
             // 
             this.lblSelectedItems.AutoSize = true;
-            this.lblSelectedItems.Location = new System.Drawing.Point(405, 21);
+            this.lblSelectedItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectedItems.Location = new System.Drawing.Point(405, 12);
             this.lblSelectedItems.Name = "lblSelectedItems";
-            this.lblSelectedItems.Size = new System.Drawing.Size(77, 13);
+            this.lblSelectedItems.Size = new System.Drawing.Size(88, 15);
             this.lblSelectedItems.TabIndex = 7;
             this.lblSelectedItems.Text = "Selected Items";
             // 
@@ -120,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 391);
+            this.ClientSize = new System.Drawing.Size(678, 348);
             this.ControlBox = false;
             this.Controls.Add(this.lblSelectedItems);
             this.Controls.Add(this.lblAll);
@@ -131,7 +135,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lbxAll);
             this.Name = "ChangeList";
-            this.Text = "ChangeList";
+            this.Text = "Change List";
             this.Load += new System.EventHandler(this.ChangeList_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

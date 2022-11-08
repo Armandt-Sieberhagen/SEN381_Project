@@ -72,18 +72,20 @@
             this.gbxPolicy.Controls.Add(this.gbxPolicyData);
             this.gbxPolicy.Controls.Add(this.gbxFamilyPolicy);
             this.gbxPolicy.Controls.Add(this.gbxIndividualPolicy);
-            this.gbxPolicy.Location = new System.Drawing.Point(12, 12);
+            this.gbxPolicy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbxPolicy.Location = new System.Drawing.Point(10, 10);
             this.gbxPolicy.Name = "gbxPolicy";
-            this.gbxPolicy.Size = new System.Drawing.Size(851, 535);
+            this.gbxPolicy.Size = new System.Drawing.Size(816, 535);
             this.gbxPolicy.TabIndex = 0;
             this.gbxPolicy.TabStop = false;
             this.gbxPolicy.Text = "Policy";
             // 
             // btnSwitchType
             // 
-            this.btnSwitchType.Location = new System.Drawing.Point(105, 224);
+            this.btnSwitchType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSwitchType.Location = new System.Drawing.Point(120, 207);
             this.btnSwitchType.Name = "btnSwitchType";
-            this.btnSwitchType.Size = new System.Drawing.Size(164, 23);
+            this.btnSwitchType.Size = new System.Drawing.Size(164, 25);
             this.btnSwitchType.TabIndex = 9;
             this.btnSwitchType.Text = "Switch To Family Policy";
             this.btnSwitchType.UseVisualStyleBackColor = true;
@@ -91,7 +93,7 @@
             // 
             // btnPastePolicy
             // 
-            this.btnPastePolicy.Location = new System.Drawing.Point(804, 19);
+            this.btnPastePolicy.Location = new System.Drawing.Point(781, 10);
             this.btnPastePolicy.Name = "btnPastePolicy";
             this.btnPastePolicy.Size = new System.Drawing.Size(25, 22);
             this.btnPastePolicy.TabIndex = 8;
@@ -101,7 +103,7 @@
             // 
             // btnCopyPolicy
             // 
-            this.btnCopyPolicy.Location = new System.Drawing.Point(773, 19);
+            this.btnCopyPolicy.Location = new System.Drawing.Point(750, 10);
             this.btnCopyPolicy.Name = "btnCopyPolicy";
             this.btnCopyPolicy.Size = new System.Drawing.Size(25, 22);
             this.btnCopyPolicy.TabIndex = 7;
@@ -117,7 +119,7 @@
             this.gbxPolicyData.Controls.Add(this.rtxtPolicyData);
             this.gbxPolicyData.Location = new System.Drawing.Point(417, 30);
             this.gbxPolicyData.Name = "gbxPolicyData";
-            this.gbxPolicyData.Size = new System.Drawing.Size(327, 476);
+            this.gbxPolicyData.Size = new System.Drawing.Size(327, 469);
             this.gbxPolicyData.TabIndex = 2;
             this.gbxPolicyData.TabStop = false;
             this.gbxPolicyData.Text = "Policy Data";
@@ -144,9 +146,10 @@
             // 
             // btnSelectPolicyData
             // 
-            this.btnSelectPolicyData.Location = new System.Drawing.Point(6, 447);
+            this.btnSelectPolicyData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelectPolicyData.Location = new System.Drawing.Point(126, 438);
             this.btnSelectPolicyData.Name = "btnSelectPolicyData";
-            this.btnSelectPolicyData.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectPolicyData.Size = new System.Drawing.Size(75, 25);
             this.btnSelectPolicyData.TabIndex = 1;
             this.btnSelectPolicyData.Text = "Select";
             this.btnSelectPolicyData.UseVisualStyleBackColor = true;
@@ -154,10 +157,10 @@
             // 
             // rtxtPolicyData
             // 
-            this.rtxtPolicyData.Location = new System.Drawing.Point(6, 67);
+            this.rtxtPolicyData.Location = new System.Drawing.Point(19, 45);
             this.rtxtPolicyData.Name = "rtxtPolicyData";
             this.rtxtPolicyData.ReadOnly = true;
-            this.rtxtPolicyData.Size = new System.Drawing.Size(304, 374);
+            this.rtxtPolicyData.Size = new System.Drawing.Size(291, 376);
             this.rtxtPolicyData.TabIndex = 0;
             this.rtxtPolicyData.Text = "";
             // 
@@ -176,9 +179,9 @@
             this.gbxFamilyPolicy.Controls.Add(this.lbxFamilyMembers);
             this.gbxFamilyPolicy.Controls.Add(this.rtxtHeadMemberInfo);
             this.gbxFamilyPolicy.Enabled = false;
-            this.gbxFamilyPolicy.Location = new System.Drawing.Point(18, 253);
+            this.gbxFamilyPolicy.Location = new System.Drawing.Point(18, 247);
             this.gbxFamilyPolicy.Name = "gbxFamilyPolicy";
-            this.gbxFamilyPolicy.Size = new System.Drawing.Size(366, 259);
+            this.gbxFamilyPolicy.Size = new System.Drawing.Size(372, 259);
             this.gbxFamilyPolicy.TabIndex = 1;
             this.gbxFamilyPolicy.TabStop = false;
             this.gbxFamilyPolicy.Text = "Family Policy";
@@ -188,13 +191,13 @@
             this.rtxtHeadMemberAddress.Location = new System.Drawing.Point(152, 32);
             this.rtxtHeadMemberAddress.Name = "rtxtHeadMemberAddress";
             this.rtxtHeadMemberAddress.ReadOnly = true;
-            this.rtxtHeadMemberAddress.Size = new System.Drawing.Size(110, 78);
+            this.rtxtHeadMemberAddress.Size = new System.Drawing.Size(119, 78);
             this.rtxtHeadMemberAddress.TabIndex = 11;
             this.rtxtHeadMemberAddress.Text = "";
             // 
             // btnPasteMember
             // 
-            this.btnPasteMember.Location = new System.Drawing.Point(318, 129);
+            this.btnPasteMember.Location = new System.Drawing.Point(335, 230);
             this.btnPasteMember.Name = "btnPasteMember";
             this.btnPasteMember.Size = new System.Drawing.Size(25, 22);
             this.btnPasteMember.TabIndex = 10;
@@ -204,7 +207,7 @@
             // 
             // btnCopyMember
             // 
-            this.btnCopyMember.Location = new System.Drawing.Point(287, 129);
+            this.btnCopyMember.Location = new System.Drawing.Point(304, 230);
             this.btnCopyMember.Name = "btnCopyMember";
             this.btnCopyMember.Size = new System.Drawing.Size(25, 22);
             this.btnCopyMember.TabIndex = 9;
@@ -214,7 +217,7 @@
             // 
             // btnPasteHeadMember
             // 
-            this.btnPasteHeadMember.Location = new System.Drawing.Point(335, 32);
+            this.btnPasteHeadMember.Location = new System.Drawing.Point(335, 16);
             this.btnPasteHeadMember.Name = "btnPasteHeadMember";
             this.btnPasteHeadMember.Size = new System.Drawing.Size(25, 22);
             this.btnPasteHeadMember.TabIndex = 8;
@@ -224,7 +227,7 @@
             // 
             // btnCopyHeadMember
             // 
-            this.btnCopyHeadMember.Location = new System.Drawing.Point(304, 32);
+            this.btnCopyHeadMember.Location = new System.Drawing.Point(304, 16);
             this.btnCopyHeadMember.Name = "btnCopyHeadMember";
             this.btnCopyHeadMember.Size = new System.Drawing.Size(25, 22);
             this.btnCopyHeadMember.TabIndex = 7;
@@ -237,7 +240,7 @@
             this.lblFamilyMembers.AutoSize = true;
             this.lblFamilyMembers.Location = new System.Drawing.Point(6, 113);
             this.lblFamilyMembers.Name = "lblFamilyMembers";
-            this.lblFamilyMembers.Size = new System.Drawing.Size(82, 13);
+            this.lblFamilyMembers.Size = new System.Drawing.Size(99, 15);
             this.lblFamilyMembers.TabIndex = 6;
             this.lblFamilyMembers.Text = "Family Members";
             // 
@@ -246,15 +249,15 @@
             this.lblHeadMember.AutoSize = true;
             this.lblHeadMember.Location = new System.Drawing.Point(6, 16);
             this.lblHeadMember.Name = "lblHeadMember";
-            this.lblHeadMember.Size = new System.Drawing.Size(74, 13);
+            this.lblHeadMember.Size = new System.Drawing.Size(87, 15);
             this.lblHeadMember.TabIndex = 5;
             this.lblHeadMember.Text = "Head Member";
             // 
             // btnRemoveMember
             // 
-            this.btnRemoveMember.Location = new System.Drawing.Point(87, 129);
+            this.btnRemoveMember.Location = new System.Drawing.Point(124, 228);
             this.btnRemoveMember.Name = "btnRemoveMember";
-            this.btnRemoveMember.Size = new System.Drawing.Size(109, 23);
+            this.btnRemoveMember.Size = new System.Drawing.Size(109, 25);
             this.btnRemoveMember.TabIndex = 4;
             this.btnRemoveMember.Text = "Remove Member";
             this.btnRemoveMember.UseVisualStyleBackColor = true;
@@ -262,9 +265,9 @@
             // 
             // btnChangeHeadMember
             // 
-            this.btnChangeHeadMember.Location = new System.Drawing.Point(268, 76);
+            this.btnChangeHeadMember.Location = new System.Drawing.Point(277, 85);
             this.btnChangeHeadMember.Name = "btnChangeHeadMember";
-            this.btnChangeHeadMember.Size = new System.Drawing.Size(92, 34);
+            this.btnChangeHeadMember.Size = new System.Drawing.Size(77, 25);
             this.btnChangeHeadMember.TabIndex = 3;
             this.btnChangeHeadMember.Text = "Select";
             this.btnChangeHeadMember.UseVisualStyleBackColor = true;
@@ -272,9 +275,9 @@
             // 
             // btnAddMember
             // 
-            this.btnAddMember.Location = new System.Drawing.Point(6, 129);
+            this.btnAddMember.Location = new System.Drawing.Point(9, 228);
             this.btnAddMember.Name = "btnAddMember";
-            this.btnAddMember.Size = new System.Drawing.Size(75, 23);
+            this.btnAddMember.Size = new System.Drawing.Size(109, 25);
             this.btnAddMember.TabIndex = 2;
             this.btnAddMember.Text = "Add Member";
             this.btnAddMember.UseVisualStyleBackColor = true;
@@ -283,9 +286,10 @@
             // lbxFamilyMembers
             // 
             this.lbxFamilyMembers.FormattingEnabled = true;
-            this.lbxFamilyMembers.Location = new System.Drawing.Point(6, 158);
+            this.lbxFamilyMembers.ItemHeight = 15;
+            this.lbxFamilyMembers.Location = new System.Drawing.Point(10, 131);
             this.lbxFamilyMembers.Name = "lbxFamilyMembers";
-            this.lbxFamilyMembers.Size = new System.Drawing.Size(354, 95);
+            this.lbxFamilyMembers.Size = new System.Drawing.Size(354, 94);
             this.lbxFamilyMembers.TabIndex = 1;
             // 
             // rtxtHeadMemberInfo
@@ -306,14 +310,15 @@
             this.gbxIndividualPolicy.Controls.Add(this.rtxtIndividualInfo);
             this.gbxIndividualPolicy.Location = new System.Drawing.Point(18, 30);
             this.gbxIndividualPolicy.Name = "gbxIndividualPolicy";
-            this.gbxIndividualPolicy.Size = new System.Drawing.Size(372, 178);
+            this.gbxIndividualPolicy.Size = new System.Drawing.Size(372, 171);
             this.gbxIndividualPolicy.TabIndex = 0;
             this.gbxIndividualPolicy.TabStop = false;
             this.gbxIndividualPolicy.Text = "Individual Policy";
             // 
             // btnChangeIndividual
             // 
-            this.btnChangeIndividual.Location = new System.Drawing.Point(266, 143);
+            this.btnChangeIndividual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangeIndividual.Location = new System.Drawing.Point(281, 83);
             this.btnChangeIndividual.Name = "btnChangeIndividual";
             this.btnChangeIndividual.Size = new System.Drawing.Size(83, 29);
             this.btnChangeIndividual.TabIndex = 4;
@@ -343,10 +348,10 @@
             // 
             // rtxtIndividualAddress
             // 
-            this.rtxtIndividualAddress.Location = new System.Drawing.Point(136, 19);
+            this.rtxtIndividualAddress.Location = new System.Drawing.Point(147, 19);
             this.rtxtIndividualAddress.Name = "rtxtIndividualAddress";
             this.rtxtIndividualAddress.ReadOnly = true;
-            this.rtxtIndividualAddress.Size = new System.Drawing.Size(124, 153);
+            this.rtxtIndividualAddress.Size = new System.Drawing.Size(124, 140);
             this.rtxtIndividualAddress.TabIndex = 1;
             this.rtxtIndividualAddress.Text = "";
             // 
@@ -355,15 +360,16 @@
             this.rtxtIndividualInfo.Location = new System.Drawing.Point(6, 19);
             this.rtxtIndividualInfo.Name = "rtxtIndividualInfo";
             this.rtxtIndividualInfo.ReadOnly = true;
-            this.rtxtIndividualInfo.Size = new System.Drawing.Size(124, 153);
+            this.rtxtIndividualInfo.Size = new System.Drawing.Size(124, 140);
             this.rtxtIndividualInfo.TabIndex = 0;
             this.rtxtIndividualInfo.Text = "";
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(257, 563);
+            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Location = new System.Drawing.Point(237, 550);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(145, 103);
+            this.btnConfirm.Size = new System.Drawing.Size(145, 50);
             this.btnConfirm.TabIndex = 1;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
@@ -371,9 +377,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(408, 563);
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(428, 550);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(145, 103);
+            this.btnCancel.Size = new System.Drawing.Size(145, 50);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -383,12 +390,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 686);
+            this.ClientSize = new System.Drawing.Size(838, 609);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.gbxPolicy);
             this.Name = "frmChoosePolicy";
-            this.Text = "frmChoosePolicy";
+            this.ShowIcon = false;
+            this.Text = "Choose Policy";
             this.Load += new System.EventHandler(this.frmChoosePolicy_Load);
             this.gbxPolicy.ResumeLayout(false);
             this.gbxPolicyData.ResumeLayout(false);

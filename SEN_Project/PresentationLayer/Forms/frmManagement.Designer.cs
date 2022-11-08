@@ -37,9 +37,10 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(12, 12);
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(12, 13);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(127, 32);
+            this.btnAdd.Size = new System.Drawing.Size(127, 41);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -47,9 +48,10 @@
             // 
             // btnModify
             // 
-            this.btnModify.Location = new System.Drawing.Point(145, 12);
+            this.btnModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModify.Location = new System.Drawing.Point(145, 13);
             this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(127, 32);
+            this.btnModify.Size = new System.Drawing.Size(127, 41);
             this.btnModify.TabIndex = 1;
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = true;
@@ -57,9 +59,10 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(278, 12);
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(278, 13);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(127, 32);
+            this.btnDelete.Size = new System.Drawing.Size(127, 41);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -67,17 +70,20 @@
             // 
             // lbxItems
             // 
+            this.lbxItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxItems.FormattingEnabled = true;
-            this.lbxItems.Location = new System.Drawing.Point(12, 50);
+            this.lbxItems.ItemHeight = 15;
+            this.lbxItems.Location = new System.Drawing.Point(12, 60);
             this.lbxItems.Name = "lbxItems";
-            this.lbxItems.Size = new System.Drawing.Size(393, 225);
+            this.lbxItems.Size = new System.Drawing.Size(393, 214);
             this.lbxItems.TabIndex = 3;
             // 
             // btnMainForm
             // 
-            this.btnMainForm.Location = new System.Drawing.Point(97, 298);
+            this.btnMainForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMainForm.Location = new System.Drawing.Point(127, 282);
             this.btnMainForm.Name = "btnMainForm";
-            this.btnMainForm.Size = new System.Drawing.Size(175, 80);
+            this.btnMainForm.Size = new System.Drawing.Size(159, 60);
             this.btnMainForm.TabIndex = 4;
             this.btnMainForm.Text = "Back to Main ";
             this.btnMainForm.UseVisualStyleBackColor = true;
@@ -87,14 +93,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 404);
+            this.ClientSize = new System.Drawing.Size(418, 355);
             this.Controls.Add(this.btnMainForm);
             this.Controls.Add(this.lbxItems);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.btnAdd);
             this.Name = "frmManagement";
-            this.Text = "frmPolicyManagement";
+            this.ShowIcon = false;
+            this.Text = "Policy Management";
             this.Load += new System.EventHandler(this.frmManagement_Load);
             this.ResumeLayout(false);
 
