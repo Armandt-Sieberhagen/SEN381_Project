@@ -45,9 +45,10 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(76, 549);
+            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Location = new System.Drawing.Point(74, 507);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(97, 77);
+            this.btnConfirm.Size = new System.Drawing.Size(120, 60);
             this.btnConfirm.TabIndex = 2;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
@@ -57,9 +58,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(179, 549);
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(240, 507);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(97, 77);
+            this.btnCancel.Size = new System.Drawing.Size(120, 60);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -78,18 +80,19 @@
             this.gbxTreatmentDetails.Controls.Add(this.txtTreatmentName);
             this.gbxTreatmentDetails.Controls.Add(this.lblDescription);
             this.gbxTreatmentDetails.Controls.Add(this.lblName);
+            this.gbxTreatmentDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxTreatmentDetails.Location = new System.Drawing.Point(12, 12);
             this.gbxTreatmentDetails.Name = "gbxTreatmentDetails";
-            this.gbxTreatmentDetails.Size = new System.Drawing.Size(412, 531);
+            this.gbxTreatmentDetails.Size = new System.Drawing.Size(412, 482);
             this.gbxTreatmentDetails.TabIndex = 4;
             this.gbxTreatmentDetails.TabStop = false;
             this.gbxTreatmentDetails.Text = "Treatment Details";
             // 
             // btnSelect
             // 
-            this.btnSelect.Location = new System.Drawing.Point(26, 267);
+            this.btnSelect.Location = new System.Drawing.Point(258, 225);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(135, 23);
+            this.btnSelect.Size = new System.Drawing.Size(135, 27);
             this.btnSelect.TabIndex = 8;
             this.btnSelect.Text = "Change Selection";
             this.btnSelect.UseVisualStyleBackColor = true;
@@ -98,18 +101,19 @@
             // lblConditionsCovered
             // 
             this.lblConditionsCovered.AutoSize = true;
-            this.lblConditionsCovered.Location = new System.Drawing.Point(23, 241);
+            this.lblConditionsCovered.Location = new System.Drawing.Point(23, 242);
             this.lblConditionsCovered.Name = "lblConditionsCovered";
-            this.lblConditionsCovered.Size = new System.Drawing.Size(99, 13);
+            this.lblConditionsCovered.Size = new System.Drawing.Size(113, 15);
             this.lblConditionsCovered.TabIndex = 7;
             this.lblConditionsCovered.Text = "Conditions Covered";
             // 
             // lbxConditionsCovered
             // 
             this.lbxConditionsCovered.FormattingEnabled = true;
-            this.lbxConditionsCovered.Location = new System.Drawing.Point(26, 296);
+            this.lbxConditionsCovered.ItemHeight = 15;
+            this.lbxConditionsCovered.Location = new System.Drawing.Point(26, 264);
             this.lbxConditionsCovered.Name = "lbxConditionsCovered";
-            this.lbxConditionsCovered.Size = new System.Drawing.Size(367, 212);
+            this.lbxConditionsCovered.Size = new System.Drawing.Size(367, 199);
             this.lbxConditionsCovered.TabIndex = 6;
             // 
             // btnPaste
@@ -134,34 +138,34 @@
             // 
             // rtxtDescription
             // 
-            this.rtxtDescription.Location = new System.Drawing.Point(26, 104);
+            this.rtxtDescription.Location = new System.Drawing.Point(26, 95);
             this.rtxtDescription.Name = "rtxtDescription";
-            this.rtxtDescription.Size = new System.Drawing.Size(213, 118);
+            this.rtxtDescription.Size = new System.Drawing.Size(367, 118);
             this.rtxtDescription.TabIndex = 3;
             this.rtxtDescription.Text = "";
             // 
             // txtTreatmentName
             // 
-            this.txtTreatmentName.Location = new System.Drawing.Point(26, 50);
+            this.txtTreatmentName.Location = new System.Drawing.Point(129, 34);
             this.txtTreatmentName.Name = "txtTreatmentName";
-            this.txtTreatmentName.Size = new System.Drawing.Size(100, 20);
+            this.txtTreatmentName.Size = new System.Drawing.Size(124, 21);
             this.txtTreatmentName.TabIndex = 2;
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(23, 79);
+            this.lblDescription.Location = new System.Drawing.Point(23, 73);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(60, 13);
+            this.lblDescription.Size = new System.Drawing.Size(69, 15);
             this.lblDescription.TabIndex = 1;
             this.lblDescription.Text = "Description";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(23, 34);
+            this.lblName.Location = new System.Drawing.Point(23, 37);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(86, 13);
+            this.lblName.Size = new System.Drawing.Size(100, 15);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Treatment Name";
             // 
@@ -170,7 +174,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(442, 640);
+            this.ClientSize = new System.Drawing.Size(436, 579);
             this.ControlBox = false;
             this.Controls.Add(this.gbxTreatmentDetails);
             this.Controls.Add(this.btnCancel);

@@ -33,7 +33,7 @@
             // 
             // treeView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(28, 34);
+            this.treeView1.Location = new System.Drawing.Point(12, 12);
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(374, 438);
             this.treeView1.TabIndex = 0;
@@ -41,9 +41,10 @@
             // 
             // Tree
             // 
-            this.ClientSize = new System.Drawing.Size(483, 561);
+            this.ClientSize = new System.Drawing.Size(398, 462);
             this.Controls.Add(this.treeView1);
             this.Name = "Tree";
+            this.ShowIcon = false;
             this.ResumeLayout(false);
 
         }
