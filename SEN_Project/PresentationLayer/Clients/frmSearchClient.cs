@@ -16,6 +16,7 @@ namespace SEN_Project.PresentationLayer.Clients
         public frmSearchClient()
         {
             InitializeComponent();
+            Reset();
         }
         List<SEN_Project.BusinessLogicLayer.Client> CurrentClients;
         public ClientVoid ConfirmCallback;
@@ -24,7 +25,6 @@ namespace SEN_Project.PresentationLayer.Clients
 
         private void frmSearchClient_Load(object sender, EventArgs e)
         {
-            Reset();
         }
 
         private void txtClientID_TextChanged(object sender, EventArgs e)

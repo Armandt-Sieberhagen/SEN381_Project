@@ -30,6 +30,10 @@ namespace SEN_Project.DataAccessLayer
 
         public  DataTable   SearchForTable<T>   (T Item) where T: IDBItem
         {
+            if (Item==null)
+            {
+                return null;
+            }
             string Command = @"SELECT * FROM " + GlobalDataLayer.current.GetSearchCommand<T>(Item);
             DataTable DT = DatabaseController.current.GetTable(Command);
             return DT;
@@ -56,6 +60,7 @@ namespace SEN_Project.DataAccessLayer
         {
             string Command = "SELECT * FROM " + GlobalDataLayer.current.GetTable(typeof(T));
             DataTable DT = DatabaseController.current.GetTable(Command);
+
             List<T> Result = new List<T>();
             T Instance = new T();
             foreach (DataRow row in DT.Rows)
@@ -683,7 +688,7 @@ namespace SEN_Project.DataAccessLayer
 
         public List<Claim> GetClaimByClientID(int ID)
         {
-            string Command = "SELECT * FROM tbl_Claims WHERE ClientID = '" + ID+ "'";
+            string Command = "SELECT * FROM tbl_Claims WHERE ClientID='" + ID+ "'";
             DataTable DT = DatabaseController.current.GetTable(Command);
             List<Claim> Result = new List<Claim>();
             foreach (DataRow row in DT.Rows)
@@ -704,6 +709,18 @@ namespace SEN_Project.DataAccessLayer
             }
             return Result;
 
+        }
+
+        public  List<Treatment> GetTreatmentByPolicyData    (int    ID)
+        {
+            string Command = "SELECT * FROM tbl_Policy_Data_Treatment WHERE Policy_Data_ID = '" + ID + "'";
+            DataTable DT = DatabaseController.current.GetTable(Command);
+            List<Treatment> Result = new List<Treatment>();
+            foreach (DataRow row in DT.Rows)
+            {
+                Result.Add(Factory.CreateTreatment(row));
+            }
+            return Result;
         }
 
         public  List<Call> GetCallsByClient (int    ID)

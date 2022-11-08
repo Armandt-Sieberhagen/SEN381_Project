@@ -23,7 +23,7 @@ namespace SEN_Project.BusinessLogicLayer
 
         public virtual string GetSearchString()
         {
-            return "Policy_ID='" + ID + "'";
+            return "ID='" + ID + "'";
         }
 
         public virtual string GetValuesString()

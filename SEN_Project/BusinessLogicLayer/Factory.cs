@@ -76,9 +76,12 @@ namespace SEN_Project.BusinessLogicLayer
         public  static  Call    CreateCall  (DateTime   StartTime,DateTime  EndTime,Employee    employee)
         {
             Call Result = new Call();
-            Result.StartTime = StartTime;
-            Result.EndTime = EndTime;
+            Result.StartTime = StartTime != null ? StartTime : DateTime.Now;
+            Result.EndTime = EndTime != null ? EndTime : DateTime.Now;
             Result.CallTaker = employee;
+
+            BusinessLogic.current.Add<Call>(Result);
+
             return Result;
         }
         public  static  Call    CreateCall  (DateTime   StartTime,float LengthInMinutes,Employee employee)
@@ -89,8 +92,9 @@ namespace SEN_Project.BusinessLogicLayer
         public static Call CreateCall(DataRow Row)
         {
             Employee employee = BusinessLogic.current.GetByID < Employee>(int.Parse(Row[1].ToString()));//Add Validation
-            DateTime StartTime = DateTime.Parse(Row[2].ToString());
-            DateTime EndTime = DateTime.Parse(Row[3].ToString());
+            Client _Client = BusinessLogic.current.GetByID < Client>(int.Parse(Row[2].ToString()));//Add Validation
+            DateTime StartTime = DateTime.Parse(Row[3].ToString());
+            DateTime EndTime = DateTime.Parse(Row[4].ToString());
             return CreateCall(StartTime, EndTime, employee);
         }
 
@@ -103,8 +107,8 @@ namespace SEN_Project.BusinessLogicLayer
             Result.Price = Price;
             Result._Call = _Call;
             Result._Policy = Pol;
-
             DatabaseAccess.current.Add<Claim>(Result);
+
 
             return Result;
         }
@@ -200,8 +204,8 @@ namespace SEN_Project.BusinessLogicLayer
             Result.Member = Member;
             Result.DataRef = DataRef;
 
-            DatabaseAccess.current.Add<IndividualPolicy>(Result);
 
+            DatabaseAccess.current.Add<IndividualPolicy>(Result);
             return Result;
         }
         public static IndividualPolicy CreateIndividualPolicy(DataRow Row)
@@ -268,16 +272,21 @@ namespace SEN_Project.BusinessLogicLayer
             Result.Description = Description;
             Result.Price = Price;
             Result.TreatmentsCovered = TreatmentsCovered;
+
+            BusinessLogic.current.Add<PolicyData>(Result);
+
             return Result;
         }
         public static PolicyData CreatePolicyData(DataRow Row)
         {
             PolicyData Result = new PolicyData();
-            //Result.Name = Name;
-            //Result.Description = Description;
-            //Result.Price = Price;
-            //Result.TreatmentsCovered = TreatmentsCovered;
-            return Result;
+
+            string Name = Row[1].ToString();
+            string Description = Row[2].ToString();
+            float Price = float.Parse(Row[3].ToString());
+            List<Treatment> TreatmentsCovered = DatabaseAccess.current.GetTreatmentByPolicyData(int.Parse(Row[0].ToString()));
+
+            return CreatePolicyData(Name,Description,Price,TreatmentsCovered);
         }
 
         public static PolicyMember    CreatePolicyMember  (Client Person, int PolicyID, PolicyMember.PolicyRole  Role    =   PolicyMember.PolicyRole.Secondary)
@@ -357,10 +366,8 @@ namespace SEN_Project.BusinessLogicLayer
             int ClientID = int.Parse(Row[0].ToString());
             List<Call> Calls = DatabaseAccess.current.GetCallsByClient(ClientID);
             Policy Pol = DatabaseAccess.current.GetPolicyByClient(ClientID);
-            List<Claim> Claims = DatabaseAccess.current.GetClaimByClientID(ClientID);
+            List<Claim> Claims =DatabaseAccess.current.GetClaimByClientID(ClientID);
             List<ClinicalProcedure> Procedures = DatabaseAccess.current.GetProceduresByClient(ClientID);
-
-
             return CreateClient(FirstName, LastName, Calls, Pol, ID_Number, _Address, Email, Phone, Claims, Procedures, new List<string>());
         }
 

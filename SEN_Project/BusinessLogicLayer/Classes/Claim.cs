@@ -71,7 +71,7 @@ namespace SEN_Project.BusinessLogicLayer
 
         public string GetValuesString() //creates a string to be used as a value in a sql query
         {
-            return DatabaseAccess.current.SearchIndex<Client>(MyClient) + "','" + DatabaseAccess.current.SearchIndex(Procedure) + "')";
+            return "'"+DatabaseAccess.current.SearchIndex<Client>(MyClient) + "','" + DatabaseAccess.current.SearchIndex(Procedure) + "')";
         }
 
         public object Create(DataRow Row) //creates a claim using the factory object

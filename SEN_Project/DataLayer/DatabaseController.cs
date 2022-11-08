@@ -11,7 +11,7 @@ namespace SEN_Project.DataLayer
 {
     public class DatabaseController
     {
-        public const string ConnectionString = @"Data Source=LAPTOP-H72V6H51\SQLEXPRESS;Initial Catalog=Healthcare_Database;Integrated Security=True";
+        public const string ConnectionString = @"Data Source=DESKTOP-M2MPA17\SQLEXPRESS;Initial Catalog=Healthcare_Database;Integrated Security=True";
         SqlConnection Con;
 
         public static DatabaseController current;

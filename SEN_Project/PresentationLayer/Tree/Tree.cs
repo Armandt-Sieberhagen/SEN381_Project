@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using SEN_Project.DataAccessLayer;
 using SEN_Project.BusinessLogicLayer;
+using SEN_Project.PresentationLayer;
 
 namespace SEN_Project.PresentationLayer.Tree
 {
@@ -25,8 +26,7 @@ namespace SEN_Project.PresentationLayer.Tree
 
         private void UpdateNodes() //This looks in the database and adds the appropriate nodes
         {
-            DataAccessLayer.DatabaseAccess databaseAccess = new DataAccessLayer.DatabaseAccess();
-            List<Client> Clients =  databaseAccess.GetAllClients();
+            List<Client> Clients =  BusinessLogic.current.GetAll<Client>();
             int count = 0;
             foreach (Client client in Clients)
             {
@@ -34,7 +34,7 @@ namespace SEN_Project.PresentationLayer.Tree
                 treeView1.Nodes.Add(node);
                 treeView1.Nodes[count].Nodes.Add("Test");
                 treeView1.Nodes[count].Nodes[0].Nodes.Add(client.ClientID.ToString());
-                List<Claim> claims = databaseAccess.GetClaimByClientID(client.ClientID);
+                List<Claim> claims = DatabaseAccess.current.GetClaimByClientID(client.ClientID);
                 foreach (Claim claim in claims)
                 {
                     treeView1.Nodes[count].Nodes.Add(claim.ID);
@@ -46,6 +46,11 @@ namespace SEN_Project.PresentationLayer.Tree
                 count++;
             }
 
+
+        }
+
+        private void Tree_Load(object sender, EventArgs e)
+        {
 
         }
     }

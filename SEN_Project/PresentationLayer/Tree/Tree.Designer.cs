@@ -44,6 +44,7 @@
             this.ClientSize = new System.Drawing.Size(483, 561);
             this.Controls.Add(this.treeView1);
             this.Name = "Tree";
+            this.Load += new System.EventHandler(this.Tree_Load);
             this.ResumeLayout(false);
 
         }
