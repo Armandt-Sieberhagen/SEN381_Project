@@ -46,12 +46,12 @@ namespace SEN_Project.BusinessLogicLayer
 
         public string GetSearchString() //creates an SQL search string which can be used
         {
-            throw new NotImplementedException();
+            return "";
         }
 
         public string GetValuesString() //creates an SQL values string which can be used
         {
-            throw new NotImplementedException();
+            return "";
         }
        
 

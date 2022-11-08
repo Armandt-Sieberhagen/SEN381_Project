@@ -10,7 +10,7 @@ namespace SEN_Project.BusinessLogicLayer
 {
     public class Claim : ILineable, IDBItem
     {
-        public  enum ClaimStatus
+        public enum ClaimStatus
         {
             Approved,
             Declined,
@@ -48,17 +48,58 @@ namespace SEN_Project.BusinessLogicLayer
             get { return policy; }
             set { policy = value; }
         }
-        public string ID => MyClient.ClientID.ToString() +"|"+ Procedure.ID.ToString();
+        public string ID => MyClientCheck() + "|" + ProcedureCheck();
 
-        public string ToLine() { return Procedure.ID.ToString() + '\t' + Price.ToString() + '\t' + Status.ToString(); }
+        string ProcedureCheck()
+        {
+            if (procedure != null)
+            {
+                return Procedure.ID.ToString();
+            }
+            else return "";
+        }
+        string MyClientCheck()
+        {
+            if (MyClient != null)
+            {
+                return MyClient.ClientID.ToString();
+            }
+            else return "";
+        }
+
+
+        public string ToLine() {
+            if (Procedure != null)
+            {
+                return ProcedureCheck() + '\t' + Price.ToString() + '\t' + Status.ToString();
+            }
+            else
+            {
+                return "No Procedure" + '\t' + Price.ToString() + '\t' + Status.ToString();
+            }
+        }
+
 
         public  override    string  ToString    ()
         {
-            return  "Procedure ID: \t" + Procedure.ID.ToString() +
+            if (Procedure != null)
+            {
+                return "Procedure ID: \t" + Procedure.ID.ToString() +
                     "\n Condition Name: \t" + Procedure.Condition.Name +
                     "\n Treatment Name: \t" + Procedure.ProposedTreatment.Name +
                     "\n Patient Name: \t" + Procedure.Patient.FullName +
                     "\n Price: \t R" + Price;
+            }
+            else
+            {
+                return "Procedure ID: \t" + "No Procedure" +
+                    "\n Condition Name: \t" + "No Condition" +
+                    "\n Treatment Name: \t" + "No Treatment" +
+                    "\n Patient Name: \t" + "No Patient" +
+                    "\n Price: \t R" + Price;
+            }
+            
+            
         }
 
         public  void    Set (Claim  _Other) //sets the value of the current claim
@@ -71,7 +112,7 @@ namespace SEN_Project.BusinessLogicLayer
 
         public string GetValuesString() //creates a string to be used as a value in a sql query
         {
-            return DatabaseAccess.current.SearchIndex<Client>(MyClient) + "','" + DatabaseAccess.current.SearchIndex(Procedure) + "')";
+            return "'"+DatabaseAccess.current.SearchIndex<Client>(MyClient) + "','" + DatabaseAccess.current.SearchIndex(Procedure) + "')";
         }
 
         public object Create(DataRow Row) //creates a claim using the factory object

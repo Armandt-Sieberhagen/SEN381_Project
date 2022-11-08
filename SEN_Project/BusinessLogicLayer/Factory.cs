@@ -88,21 +88,10 @@ namespace SEN_Project.BusinessLogicLayer
         }
         public static Call CreateCall(DataRow Row)
         {
-            Employee employee = BusinessLogic.current.GetByID < Employee>(int.Parse(Row[1].ToString()));//Add Validation
-            DateTime StartTime = DateTime.Now;
-            DateTime EndTime = DateTime.Now;
-            try
-            {
-                StartTime = DateTime.Parse(Row[2].ToString());
-                EndTime = DateTime.Parse(Row[3].ToString());
-            }
-            catch (Exception)
-            {
-                StartTime = DateTime.Now;
-                EndTime = DateTime.Now;
-
-            }
-            
+            Employee employee = BusinessLogic.current.GetByID<Employee>(int.Parse(Row[1].ToString()));//Add Validation
+            Client _Client = BusinessLogic.current.GetByID<Client>(int.Parse(Row[2].ToString()));//Add Validation
+            DateTime StartTime = DateTime.Parse(Row[3].ToString());
+            DateTime EndTime = DateTime.Parse(Row[4].ToString());
             return CreateCall(StartTime, EndTime, employee);
         }
 
@@ -123,7 +112,9 @@ namespace SEN_Project.BusinessLogicLayer
         public static Claim CreateClaim(DataRow Row)
         {
             Client MyClient = BusinessLogic.current.GetByID<Client>(int.Parse(Row[0].ToString()));
+  
             ClinicalProcedure Procedure = BusinessLogic.current.GetByID<ClinicalProcedure>(int.Parse(Row[1].ToString()));
+        
             float Price = float.Parse(Row[2].ToString());
             Claim.ClaimStatus Status = (Claim.ClaimStatus)int.Parse(Row[3].ToString());
             Call _Call = BusinessLogic.current.GetByID<Call>(int.Parse(Row[4].ToString()));
@@ -238,7 +229,7 @@ namespace SEN_Project.BusinessLogicLayer
         {
             MedicalCondition Result = new MedicalCondition();
 
-            return CreateCondition(Row[1].ToString(), Row[2].ToString());
+            return CreateCondition(Row[0].ToString(), Row[1].ToString());
         }
 
         //public static MedicalPackage  CreatePackage   (bool   Available,List<Policy>  Policies,float  Price,List<Treatment>    AdditionalTreatments = null)
