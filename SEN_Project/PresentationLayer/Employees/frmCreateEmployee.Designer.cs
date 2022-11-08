@@ -72,9 +72,10 @@
             this.gbxEmployee.Controls.Add(this.lblLastName);
             this.gbxEmployee.Controls.Add(this.txtFirstName);
             this.gbxEmployee.Controls.Add(this.lblFirstName);
+            this.gbxEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxEmployee.Location = new System.Drawing.Point(12, 12);
             this.gbxEmployee.Name = "gbxEmployee";
-            this.gbxEmployee.Size = new System.Drawing.Size(289, 415);
+            this.gbxEmployee.Size = new System.Drawing.Size(289, 421);
             this.gbxEmployee.TabIndex = 0;
             this.gbxEmployee.TabStop = false;
             this.gbxEmployee.Text = "Employee Details";
@@ -82,7 +83,7 @@
             // 
             // btnPasteEmployee
             // 
-            this.btnPasteEmployee.Location = new System.Drawing.Point(255, 20);
+            this.btnPasteEmployee.Location = new System.Drawing.Point(255, 16);
             this.btnPasteEmployee.Name = "btnPasteEmployee";
             this.btnPasteEmployee.Size = new System.Drawing.Size(28, 23);
             this.btnPasteEmployee.TabIndex = 17;
@@ -92,7 +93,7 @@
             // 
             // btnCopyEmployee
             // 
-            this.btnCopyEmployee.Location = new System.Drawing.Point(221, 20);
+            this.btnCopyEmployee.Location = new System.Drawing.Point(221, 16);
             this.btnCopyEmployee.Name = "btnCopyEmployee";
             this.btnCopyEmployee.Size = new System.Drawing.Size(28, 23);
             this.btnCopyEmployee.TabIndex = 16;
@@ -102,55 +103,55 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(21, 202);
+            this.txtEmail.Location = new System.Drawing.Point(115, 178);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.Size = new System.Drawing.Size(134, 21);
             this.txtEmail.TabIndex = 15;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(18, 186);
+            this.lblEmail.Location = new System.Drawing.Point(18, 181);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(73, 13);
+            this.lblEmail.Size = new System.Drawing.Size(86, 15);
             this.lblEmail.TabIndex = 14;
             this.lblEmail.Text = "Email Address";
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(21, 163);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(115, 143);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(100, 20);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(100, 21);
             this.txtPhoneNumber.TabIndex = 13;
             // 
             // lblPhoneNumber
             // 
             this.lblPhoneNumber.AutoSize = true;
-            this.lblPhoneNumber.Location = new System.Drawing.Point(18, 147);
+            this.lblPhoneNumber.Location = new System.Drawing.Point(18, 146);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
-            this.lblPhoneNumber.Size = new System.Drawing.Size(78, 13);
+            this.lblPhoneNumber.Size = new System.Drawing.Size(91, 15);
             this.lblPhoneNumber.TabIndex = 12;
             this.lblPhoneNumber.Text = "Phone Number";
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(21, 124);
+            this.txtID.Location = new System.Drawing.Point(115, 109);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(100, 20);
+            this.txtID.Size = new System.Drawing.Size(100, 21);
             this.txtID.TabIndex = 11;
             // 
             // lblIDNumber
             // 
             this.lblIDNumber.AutoSize = true;
-            this.lblIDNumber.Location = new System.Drawing.Point(18, 108);
+            this.lblIDNumber.Location = new System.Drawing.Point(18, 112);
             this.lblIDNumber.Name = "lblIDNumber";
-            this.lblIDNumber.Size = new System.Drawing.Size(58, 13);
+            this.lblIDNumber.Size = new System.Drawing.Size(67, 15);
             this.lblIDNumber.TabIndex = 10;
             this.lblIDNumber.Text = "ID Number";
             // 
             // btnPasteAddress
             // 
-            this.btnPasteAddress.Location = new System.Drawing.Point(217, 249);
+            this.btnPasteAddress.Location = new System.Drawing.Point(227, 235);
             this.btnPasteAddress.Name = "btnPasteAddress";
             this.btnPasteAddress.Size = new System.Drawing.Size(28, 23);
             this.btnPasteAddress.TabIndex = 9;
@@ -160,7 +161,7 @@
             // 
             // btnCopyAddress
             // 
-            this.btnCopyAddress.Location = new System.Drawing.Point(183, 249);
+            this.btnCopyAddress.Location = new System.Drawing.Point(193, 235);
             this.btnCopyAddress.Name = "btnCopyAddress";
             this.btnCopyAddress.Size = new System.Drawing.Size(28, 23);
             this.btnCopyAddress.TabIndex = 8;
@@ -170,9 +171,10 @@
             // 
             // btnSelectAddress
             // 
-            this.btnSelectAddress.Location = new System.Drawing.Point(102, 370);
+            this.btnSelectAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelectAddress.Location = new System.Drawing.Point(161, 366);
             this.btnSelectAddress.Name = "btnSelectAddress";
-            this.btnSelectAddress.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectAddress.Size = new System.Drawing.Size(78, 25);
             this.btnSelectAddress.TabIndex = 7;
             this.btnSelectAddress.Text = "Select";
             this.btnSelectAddress.UseVisualStyleBackColor = true;
@@ -180,9 +182,10 @@
             // 
             // btnCreateAddress
             // 
-            this.btnCreateAddress.Location = new System.Drawing.Point(21, 370);
+            this.btnCreateAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateAddress.Location = new System.Drawing.Point(53, 366);
             this.btnCreateAddress.Name = "btnCreateAddress";
-            this.btnCreateAddress.Size = new System.Drawing.Size(75, 23);
+            this.btnCreateAddress.Size = new System.Drawing.Size(78, 25);
             this.btnCreateAddress.TabIndex = 6;
             this.btnCreateAddress.Text = "Create";
             this.btnCreateAddress.UseVisualStyleBackColor = true;
@@ -191,58 +194,60 @@
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(18, 233);
+            this.lblAddress.Location = new System.Drawing.Point(29, 245);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(45, 13);
+            this.lblAddress.Size = new System.Drawing.Size(51, 15);
             this.lblAddress.TabIndex = 5;
             this.lblAddress.Text = "Address";
             // 
             // rtxtAddressInfo
             // 
-            this.rtxtAddressInfo.Location = new System.Drawing.Point(21, 249);
+            this.rtxtAddressInfo.Location = new System.Drawing.Point(32, 261);
             this.rtxtAddressInfo.Name = "rtxtAddressInfo";
             this.rtxtAddressInfo.ReadOnly = true;
-            this.rtxtAddressInfo.Size = new System.Drawing.Size(156, 115);
+            this.rtxtAddressInfo.Size = new System.Drawing.Size(228, 88);
             this.rtxtAddressInfo.TabIndex = 4;
             this.rtxtAddressInfo.Text = "";
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(21, 85);
+            this.txtLastName.Location = new System.Drawing.Point(115, 74);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(100, 20);
+            this.txtLastName.Size = new System.Drawing.Size(100, 21);
             this.txtLastName.TabIndex = 3;
             // 
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(18, 69);
+            this.lblLastName.Location = new System.Drawing.Point(18, 77);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(58, 13);
+            this.lblLastName.Size = new System.Drawing.Size(67, 15);
             this.lblLastName.TabIndex = 2;
             this.lblLastName.Text = "Last Name";
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(21, 46);
+            this.txtFirstName.Location = new System.Drawing.Point(115, 40);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(100, 20);
+            this.txtFirstName.Size = new System.Drawing.Size(100, 21);
             this.txtFirstName.TabIndex = 1;
+            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(18, 30);
+            this.lblFirstName.Location = new System.Drawing.Point(18, 43);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(57, 13);
+            this.lblFirstName.Size = new System.Drawing.Size(67, 15);
             this.lblFirstName.TabIndex = 0;
             this.lblFirstName.Text = "First Name";
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(12, 443);
+            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Location = new System.Drawing.Point(12, 453);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(121, 96);
+            this.btnConfirm.Size = new System.Drawing.Size(121, 67);
             this.btnConfirm.TabIndex = 1;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
@@ -250,9 +255,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(180, 443);
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(180, 453);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(121, 96);
+            this.btnCancel.Size = new System.Drawing.Size(121, 67);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -262,12 +268,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(335, 564);
+            this.ClientSize = new System.Drawing.Size(312, 534);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.gbxEmployee);
             this.Name = "frmCreateEmployee";
-            this.Text = "frmCreateEmployee";
+            this.ShowIcon = false;
+            this.Text = "Create Employee";
             this.Load += new System.EventHandler(this.frmCreateEmployee_Load);
             this.gbxEmployee.ResumeLayout(false);
             this.gbxEmployee.PerformLayout();
