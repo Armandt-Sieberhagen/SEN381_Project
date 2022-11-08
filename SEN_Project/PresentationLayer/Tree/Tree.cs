@@ -33,11 +33,14 @@ namespace SEN_Project.PresentationLayer.Tree
                 TreeNode node = new TreeNode(client.FirstName + " " + client.LastName);//
                 treeView1.Nodes.Add(node);
                 List<Claim> claims = databaseAccess.GetClaimByClientID(count);
+                int ClaimCount = 0;                
                 foreach (Claim claim in claims)
                 {
-                    treeView1.Nodes[count].Nodes.Add(claim.ToString());
-                    treeView1.Nodes[count].Nodes[0].Nodes.Add(claim.ToLine());
-                    treeView1.Nodes[count].Nodes.Add(count.ToString());
+                    treeView1.Nodes[count].Nodes.Add(claim.TreeViewID());
+                    treeView1.Nodes[count].Nodes[ClaimCount].Nodes.Add(claim.TreeViewStatus());
+                    treeView1.Nodes[count].Nodes[ClaimCount].Nodes.Add(claim.TreeViewPrice());
+                    treeView1.Nodes[count].Nodes[ClaimCount].Nodes.Add(claim.TreeViewProcedure());
+                    ClaimCount++;
                 }
                 count++;
             }

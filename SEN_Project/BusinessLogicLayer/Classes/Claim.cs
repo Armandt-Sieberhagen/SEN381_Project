@@ -78,6 +78,28 @@ namespace SEN_Project.BusinessLogicLayer
                 return "No Procedure" + '\t' + Price.ToString() + '\t' + Status.ToString();
             }
         }
+        public string TreeViewID() {
+            return "Claim: " + ID;
+        }
+        public string TreeViewPrice()
+        {
+            return "Price: " + Price.ToString();
+        }
+        public string TreeViewStatus()
+        {
+            return "Status: " + Status.ToString();
+        }
+        public string TreeViewProcedure()
+        {
+            if (Procedure != null)
+            {
+                return "Procedure: " + Procedure.ID;
+            }
+            else
+            {
+                return "Procedure: No Procedure";
+            }
+        }
 
 
         public  override    string  ToString    ()
