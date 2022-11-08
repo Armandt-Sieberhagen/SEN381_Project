@@ -115,7 +115,9 @@ namespace SEN_Project.BusinessLogicLayer
         public static Claim CreateClaim(DataRow Row)
         {
             Client MyClient = BusinessLogic.current.GetByID<Client>(int.Parse(Row[0].ToString()));
+  
             ClinicalProcedure Procedure = BusinessLogic.current.GetByID<ClinicalProcedure>(int.Parse(Row[1].ToString()));
+        
             float Price = float.Parse(Row[2].ToString());
             Claim.ClaimStatus Status = (Claim.ClaimStatus)int.Parse(Row[3].ToString());
             Call _Call = BusinessLogic.current.GetByID<Call>(int.Parse(Row[4].ToString()));
@@ -230,7 +232,7 @@ namespace SEN_Project.BusinessLogicLayer
         {
             MedicalCondition Result = new MedicalCondition();
 
-            return CreateCondition(Row[1].ToString(), Row[2].ToString());
+            return CreateCondition(Row[0].ToString(), Row[1].ToString());
         }
 
         //public static MedicalPackage  CreatePackage   (bool   Available,List<Policy>  Policies,float  Price,List<Treatment>    AdditionalTreatments = null)

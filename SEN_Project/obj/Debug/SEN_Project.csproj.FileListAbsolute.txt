@@ -65,13 +65,11 @@ C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Conditions.frmCondition.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Forms.ChangeList.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Employees.frmCreateEmployee.resources
-C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.FamilyPolicies.frmFamilyPolicy.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Forms.ListSearchForm.frmSearchList.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.ManageForm.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.PolicyDetails.frmPolicyDetails.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Forms.frmManagement.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.PolicyForms.frmChoosePolicy.resources
-C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.PolicyForms.frmSearchPolicy.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Procedure.frmProcedure.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.TableForm.resources
 C:\Users\arman\Downloads\yeeet\SEN381_Project\SEN_Project\obj\Debug\SEN_Project.PresentationLayer.Treatments.frmTreatmentAddEdit.resources

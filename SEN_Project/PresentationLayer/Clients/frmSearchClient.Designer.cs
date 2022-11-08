@@ -45,7 +45,7 @@
             // lbxClients
             // 
             this.lbxClients.FormattingEnabled = true;
-            this.lbxClients.Location = new System.Drawing.Point(12, 92);
+            this.lbxClients.Location = new System.Drawing.Point(12, 79);
             this.lbxClients.Name = "lbxClients";
             this.lbxClients.Size = new System.Drawing.Size(767, 264);
             this.lbxClients.TabIndex = 0;
@@ -53,9 +53,10 @@
             // 
             // btnConfirm
             // 
+            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.Location = new System.Drawing.Point(199, 362);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(113, 77);
+            this.btnConfirm.Size = new System.Drawing.Size(113, 54);
             this.btnConfirm.TabIndex = 1;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
@@ -63,9 +64,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(318, 362);
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(456, 362);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(113, 77);
+            this.btnCancel.Size = new System.Drawing.Size(113, 54);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -74,7 +76,7 @@
             // lblClientID
             // 
             this.lblClientID.AutoSize = true;
-            this.lblClientID.Location = new System.Drawing.Point(9, 47);
+            this.lblClientID.Location = new System.Drawing.Point(9, 34);
             this.lblClientID.Name = "lblClientID";
             this.lblClientID.Size = new System.Drawing.Size(47, 13);
             this.lblClientID.TabIndex = 3;
@@ -92,15 +94,15 @@
             // 
             // txtClientID
             // 
-            this.txtClientID.Location = new System.Drawing.Point(12, 63);
+            this.txtClientID.Location = new System.Drawing.Point(12, 50);
             this.txtClientID.Name = "txtClientID";
-            this.txtClientID.Size = new System.Drawing.Size(67, 20);
+            this.txtClientID.Size = new System.Drawing.Size(79, 20);
             this.txtClientID.TabIndex = 5;
             this.txtClientID.TextChanged += new System.EventHandler(this.txtClientID_TextChanged);
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(85, 63);
+            this.txtFirstName.Location = new System.Drawing.Point(110, 50);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(100, 20);
             this.txtFirstName.TabIndex = 7;
@@ -109,7 +111,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(82, 47);
+            this.label1.Location = new System.Drawing.Point(107, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 6;
@@ -117,7 +119,7 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(191, 63);
+            this.txtLastName.Location = new System.Drawing.Point(229, 50);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(100, 20);
             this.txtLastName.TabIndex = 9;
@@ -126,7 +128,7 @@
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(188, 47);
+            this.lblLastName.Location = new System.Drawing.Point(226, 34);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(58, 13);
             this.lblLastName.TabIndex = 8;
@@ -134,7 +136,8 @@
             // 
             // btnSort
             // 
-            this.btnSort.Location = new System.Drawing.Point(679, 63);
+            this.btnSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSort.Location = new System.Drawing.Point(667, 50);
             this.btnSort.Name = "btnSort";
             this.btnSort.Size = new System.Drawing.Size(100, 23);
             this.btnSort.TabIndex = 10;
@@ -156,7 +159,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 432);
             this.Controls.Add(this.btnPasteClient);
             this.Controls.Add(this.btnSort);
             this.Controls.Add(this.txtLastName);
@@ -170,7 +173,7 @@
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.lbxClients);
             this.Name = "frmSearchClient";
-            this.Text = "frmSearchClient";
+            this.Text = "Search Client";
             this.Load += new System.EventHandler(this.frmSearchClient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

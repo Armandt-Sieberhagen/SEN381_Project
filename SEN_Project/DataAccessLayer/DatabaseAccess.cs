@@ -21,7 +21,8 @@ namespace SEN_Project.DataAccessLayer
 
         public  void    Add<T>  (T  Item) where T : IDBItem
         {
-            if (SearchIndex<T>(Item)==-1)
+            
+            if (SearchIndex<T>(Item)==-1 && Item!=null)
             {
                 string Command = "INSERT INTO " + GlobalDataLayer.current.GetInsertCommand<T>(Item);
                 DatabaseController.current.ExecuteCommand(Command);
@@ -41,14 +42,19 @@ namespace SEN_Project.DataAccessLayer
 
         public int SearchIndex<T>(T Item) where T : IDBItem
         {
+            if (Item == null)
+            {
+                return 0;
+            }
             DataTable DT = null;
             return (DT = SearchForTable<T>(Item)) != null ? (DT.Rows.Count>0 ? (DT.Rows[0] != null ? int.Parse(DT.Rows[0][0].ToString()) : -1) : -1) : -1;
         }
 
         public  void    Delete<T>   (T  Item) where T: IDBItem
         {
+                     
             int Index = SearchIndex<T>(Item);
-            if (Index > -1)
+            if (Index > -1 && Item != null)
             {
                 string Command = "DELETE FROM "+ GlobalDataLayer.current.GetTable(typeof(T)) +" WHERE ID='" + Index.ToString() + "'";
                 DatabaseController.current.ExecuteCommand(Command);
@@ -58,6 +64,7 @@ namespace SEN_Project.DataAccessLayer
 
         public List<T> GetAll<T>() where T : IDBItem,new()
         {
+            
             string Command = "SELECT * FROM " + GlobalDataLayer.current.GetTable(typeof(T));
             DataTable DT = DatabaseController.current.GetTable(Command);
 
@@ -74,14 +81,20 @@ namespace SEN_Project.DataAccessLayer
 
         public  List<MedicalCondition> GetConditionsTreatmentsByID  (int    Index)
         {
-            string Command = "SELECT * FROM tbl_Treatments_Conditions WHERE Treatment_ID='" + Index.ToString() + "'";
-            DataTable TableResult = DatabaseController.current.GetTable(Command);
-            List<MedicalCondition> Result = new List<MedicalCondition>();
-            foreach (DataRow row in TableResult.Rows)
+            if (Index >= -1)
             {
-                Result.Add(Factory.CreateCondition(row));
+                string Command = "SELECT * FROM tbl_Treatments_Conditions WHERE Treatment_ID='" + Index.ToString() + "'";
+                DataTable TableResult = DatabaseController.current.GetTable(Command);
+                List<MedicalCondition> Result = new List<MedicalCondition>();
+                foreach (DataRow row in TableResult.Rows)
+                {
+                    Result.Add(Factory.CreateCondition(row));
+                }
+                return Result;
             }
-            return Result;
+            return null;
+
+
         }
 
 
@@ -597,14 +610,19 @@ namespace SEN_Project.DataAccessLayer
 
         public  List<Client>    GetClientsByID  (string ID)
         {
-            List<Client> Result = new List<Client>();
-            string Command = "SELECT * FROM tbl_Clients WHERE Client_ID LIKE '" + ID + "%'";
-            DataTable DT = DatabaseController.current.GetTable(Command);
-            foreach (DataRow row in DT.Rows)
+            if (Int32.Parse(ID)>-1)
             {
-                Result.Add(Factory.CreateClient(row));
+                List<Client> Result = new List<Client>();
+                string Command = "SELECT * FROM tbl_Clients WHERE Client_ID LIKE '" + ID + "%'";
+                DataTable DT = DatabaseController.current.GetTable(Command);
+                foreach (DataRow row in DT.Rows)
+                {
+                    Result.Add(Factory.CreateClient(row));
+                }
+                return Result;
             }
-            return Result;
+            return null;
+            
         }
 
         public  List<Client>    GetClientsByFirstName   (string FirstName)
@@ -688,26 +706,37 @@ namespace SEN_Project.DataAccessLayer
 
         public List<Claim> GetClaimByClientID(int ID)
         {
-            string Command = "SELECT * FROM tbl_Claims WHERE ClientID='" + ID+ "'";
-            DataTable DT = DatabaseController.current.GetTable(Command);
-            List<Claim> Result = new List<Claim>();
-            foreach (DataRow row in DT.Rows)
+            if (ID>-1)
             {
-                Result.Add(Factory.CreateClaim(row));
+                
+                string Command = "SELECT * FROM tbl_Claims WHERE ClientID = '" + ID + "'";
+                Console.WriteLine("SELECT * FROM tbl_Claims WHERE ClientID = '" + ID + "'");
+                DataTable DT = DatabaseController.current.GetTable(Command);
+                List<Claim> Result = new List<Claim>();
+                foreach (DataRow row in DT.Rows)
+                {
+                    Result.Add(Factory.CreateClaim(row));
+                }
+                return Result;
             }
-            return Result;
+            return null;
+            
         }
 
         public  List<PolicyData> GetPolicyByFacility    (int    FacilityID)
         {
-            string Command = "SELECT * FROM tbl_Facility_PolicyData WHERE Facility_ID = '" + FacilityID + "'";
-            DataTable DT = DatabaseController.current.GetTable(Command);
-            List<PolicyData> Result = new List<PolicyData>();
-            foreach (DataRow row in DT.Rows)
+            if (FacilityID>-1)
             {
-                Result.Add(Factory.CreatePolicyData(row));
+                string Command = "SELECT * FROM tbl_Facility_PolicyData WHERE Facility_ID = '" + FacilityID + "'";
+                DataTable DT = DatabaseController.current.GetTable(Command);
+                List<PolicyData> Result = new List<PolicyData>();
+                foreach (DataRow row in DT.Rows)
+                {
+                    Result.Add(Factory.CreatePolicyData(row));
+                }
+                return Result;
             }
-            return Result;
+            return null;
 
         }
 
@@ -725,52 +754,65 @@ namespace SEN_Project.DataAccessLayer
 
         public  List<Call> GetCallsByClient (int    ID)
         {
-            string Command = "SELECT * FROM tbl_Calls WHERE Client_ID = '" + ID + "'";
-            DataTable DT = DatabaseController.current.GetTable(Command);
-            List<Call> Result = new List<Call>();
-            foreach (DataRow row in DT.Rows)
+            if (ID>-1)
             {
-                Result.Add(Factory.CreateCall(row));
-            }
-            return Result;
+                string Command = "SELECT * FROM tbl_Calls WHERE Client_ID = '" + ID + "'";
+                DataTable DT = DatabaseController.current.GetTable(Command);
+                List<Call> Result = new List<Call>();
+                foreach (DataRow row in DT.Rows)
+                {
+                    Result.Add(Factory.CreateCall(row));
+                }
+                return Result;
+            }return null;
+            
         }
 
         public  Policy GetPolicyByClient    (int    ID)
         {
-            string Command = "SELECT * FROM tbl_Individual_Policies WHERE Client_ID = '" + ID + "'";
-            DataTable DT = DatabaseController.current.GetTable(Command);
-            if (DT!=null ? DT.Rows.Count>0 : false)
+            if (ID>-1)
             {
-                return Factory.CreateIndividualPolicy(DT.Rows[0]);
-            }
-            else
-            {
-                Command = "SELECT * FROM tbl_Policy_Members WHERE Client_ID = '" + ID + "'";
-                DT = DatabaseController.current.GetTable(Command);
+                string Command = "SELECT * FROM tbl_Individual_Policies WHERE Client_ID = '" + ID + "'";
+                DataTable DT = DatabaseController.current.GetTable(Command);
                 if (DT != null ? DT.Rows.Count > 0 : false)
                 {
-                    PolicyMember Member = Factory.CreatePolicyMember(DT.Rows[0]);
-                    Command = "SELECT * FROM tbl_Family_Policies WHERE ID = '" + Member.PolicyID + "'";
+                    return Factory.CreateIndividualPolicy(DT.Rows[0]);
+                }
+                else
+                {
+                    Command = "SELECT * FROM tbl_Policy_Members WHERE Client_ID = '" + ID + "'";
                     DT = DatabaseController.current.GetTable(Command);
                     if (DT != null ? DT.Rows.Count > 0 : false)
                     {
-                        return Factory.CreateFamilyPolicy(DT.Rows[0]);
+                        PolicyMember Member = Factory.CreatePolicyMember(DT.Rows[0]);
+                        Command = "SELECT * FROM tbl_Family_Policies WHERE ID = '" + Member.PolicyID + "'";
+                        DT = DatabaseController.current.GetTable(Command);
+                        if (DT != null ? DT.Rows.Count > 0 : false)
+                        {
+                            return Factory.CreateFamilyPolicy(DT.Rows[0]);
+                        }
                     }
                 }
             }
+            
             return null;
         }
 
         public List<ClinicalProcedure> GetProceduresByClient    (int    ID)
         {
-            string Command = "SELECT * FROM tbl_Procedures WHERE Patient = '" + ID + "'";
-            DataTable DT = DatabaseController.current.GetTable(Command);
-            List<ClinicalProcedure> Result = new List<ClinicalProcedure>();
-            foreach (DataRow row in DT.Rows)
+            if (ID > -1)
             {
-                Result.Add(Factory.CreateClinicalProcedure(row));
+                string Command = "SELECT * FROM tbl_Procedures WHERE Patient = '" + ID + "'";
+                DataTable DT = DatabaseController.current.GetTable(Command);
+                List<ClinicalProcedure> Result = new List<ClinicalProcedure>();
+                foreach (DataRow row in DT.Rows)
+                {
+                    Result.Add(Factory.CreateClinicalProcedure(row));
+                }
+                return Result;
             }
-            return Result;
+            else return null;
+            
         }
     }
 }

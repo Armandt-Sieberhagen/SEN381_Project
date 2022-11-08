@@ -77,7 +77,8 @@
             this.gbxProcedureDetails.Controls.Add(this.btnCopyProcedure);
             this.gbxProcedureDetails.Controls.Add(this.gbxTreatmentDetails);
             this.gbxProcedureDetails.Controls.Add(this.gbxCondition);
-            this.gbxProcedureDetails.Location = new System.Drawing.Point(11, 12);
+            this.gbxProcedureDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbxProcedureDetails.Location = new System.Drawing.Point(11, 10);
             this.gbxProcedureDetails.Name = "gbxProcedureDetails";
             this.gbxProcedureDetails.Size = new System.Drawing.Size(472, 808);
             this.gbxProcedureDetails.TabIndex = 0;
@@ -90,7 +91,7 @@
             this.gbxPolicy.Controls.Add(this.rtxtPolicyInfo);
             this.gbxPolicy.Controls.Add(this.btnPastePolicy);
             this.gbxPolicy.Controls.Add(this.btnCopyPolicy);
-            this.gbxPolicy.Location = new System.Drawing.Point(32, 672);
+            this.gbxPolicy.Location = new System.Drawing.Point(32, 665);
             this.gbxPolicy.Name = "gbxPolicy";
             this.gbxPolicy.Size = new System.Drawing.Size(412, 130);
             this.gbxPolicy.TabIndex = 17;
@@ -240,9 +241,9 @@
             // lblProcedureID
             // 
             this.lblProcedureID.AutoSize = true;
-            this.lblProcedureID.Location = new System.Drawing.Point(29, 24);
+            this.lblProcedureID.Location = new System.Drawing.Point(31, 23);
             this.lblProcedureID.Name = "lblProcedureID";
-            this.lblProcedureID.Size = new System.Drawing.Size(73, 13);
+            this.lblProcedureID.Size = new System.Drawing.Size(82, 15);
             this.lblProcedureID.TabIndex = 9;
             this.lblProcedureID.Text = "Procedure ID:";
             // 
@@ -370,9 +371,10 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(43, 826);
+            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Location = new System.Drawing.Point(76, 826);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(171, 69);
+            this.btnConfirm.Size = new System.Drawing.Size(160, 60);
             this.btnConfirm.TabIndex = 1;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
@@ -380,9 +382,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(220, 826);
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(253, 826);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(171, 69);
+            this.btnCancel.Size = new System.Drawing.Size(160, 60);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -397,7 +400,8 @@
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.gbxProcedureDetails);
             this.Name = "frmProcedure";
-            this.Text = "frmProcedure";
+            this.ShowIcon = false;
+            this.Text = "Procedure";
             this.Load += new System.EventHandler(this.frmProcedure_Load);
             this.gbxProcedureDetails.ResumeLayout(false);
             this.gbxProcedureDetails.PerformLayout();

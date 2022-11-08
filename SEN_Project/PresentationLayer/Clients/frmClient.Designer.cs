@@ -92,14 +92,14 @@
             this.gbxClient.Controls.Add(this.lblFirstName);
             this.gbxClient.Location = new System.Drawing.Point(12, 12);
             this.gbxClient.Name = "gbxClient";
-            this.gbxClient.Size = new System.Drawing.Size(677, 456);
+            this.gbxClient.Size = new System.Drawing.Size(602, 456);
             this.gbxClient.TabIndex = 0;
             this.gbxClient.TabStop = false;
             this.gbxClient.Text = "Client Form";
             // 
             // txtPerscription
             // 
-            this.txtPerscription.Location = new System.Drawing.Point(21, 407);
+            this.txtPerscription.Location = new System.Drawing.Point(149, 416);
             this.txtPerscription.Name = "txtPerscription";
             this.txtPerscription.Size = new System.Drawing.Size(142, 20);
             this.txtPerscription.TabIndex = 47;
@@ -107,7 +107,7 @@
             // 
             // btnRemovePerscription
             // 
-            this.btnRemovePerscription.Location = new System.Drawing.Point(251, 407);
+            this.btnRemovePerscription.Location = new System.Drawing.Point(379, 416);
             this.btnRemovePerscription.Name = "btnRemovePerscription";
             this.btnRemovePerscription.Size = new System.Drawing.Size(75, 23);
             this.btnRemovePerscription.TabIndex = 46;
@@ -117,7 +117,7 @@
             // 
             // btnAddPerscription
             // 
-            this.btnAddPerscription.Location = new System.Drawing.Point(168, 407);
+            this.btnAddPerscription.Location = new System.Drawing.Point(296, 416);
             this.btnAddPerscription.Name = "btnAddPerscription";
             this.btnAddPerscription.Size = new System.Drawing.Size(75, 23);
             this.btnAddPerscription.TabIndex = 45;
@@ -128,7 +128,7 @@
             // lblPerscriptions
             // 
             this.lblPerscriptions.AutoSize = true;
-            this.lblPerscriptions.Location = new System.Drawing.Point(18, 290);
+            this.lblPerscriptions.Location = new System.Drawing.Point(146, 299);
             this.lblPerscriptions.Name = "lblPerscriptions";
             this.lblPerscriptions.Size = new System.Drawing.Size(100, 13);
             this.lblPerscriptions.TabIndex = 44;
@@ -137,7 +137,7 @@
             // lbxPerscriptions
             // 
             this.lbxPerscriptions.FormattingEnabled = true;
-            this.lbxPerscriptions.Location = new System.Drawing.Point(21, 306);
+            this.lbxPerscriptions.Location = new System.Drawing.Point(149, 315);
             this.lbxPerscriptions.Name = "lbxPerscriptions";
             this.lbxPerscriptions.Size = new System.Drawing.Size(306, 95);
             this.lbxPerscriptions.TabIndex = 43;
@@ -145,7 +145,7 @@
             // 
             // btnRemoveCall
             // 
-            this.btnRemoveCall.Location = new System.Drawing.Point(375, 238);
+            this.btnRemoveCall.Location = new System.Drawing.Point(477, 258);
             this.btnRemoveCall.Name = "btnRemoveCall";
             this.btnRemoveCall.Size = new System.Drawing.Size(75, 23);
             this.btnRemoveCall.TabIndex = 36;
@@ -155,7 +155,7 @@
             // 
             // btnAddCall
             // 
-            this.btnAddCall.Location = new System.Drawing.Point(292, 238);
+            this.btnAddCall.Location = new System.Drawing.Point(382, 258);
             this.btnAddCall.Name = "btnAddCall";
             this.btnAddCall.Size = new System.Drawing.Size(75, 23);
             this.btnAddCall.TabIndex = 31;
@@ -166,7 +166,7 @@
             // lblCallsHistory
             // 
             this.lblCallsHistory.AutoSize = true;
-            this.lblCallsHistory.Location = new System.Drawing.Point(289, 121);
+            this.lblCallsHistory.Location = new System.Drawing.Point(367, 141);
             this.lblCallsHistory.Name = "lblCallsHistory";
             this.lblCallsHistory.Size = new System.Drawing.Size(64, 13);
             this.lblCallsHistory.TabIndex = 30;
@@ -175,7 +175,7 @@
             // lbxCallsHistory
             // 
             this.lbxCallsHistory.FormattingEnabled = true;
-            this.lbxCallsHistory.Location = new System.Drawing.Point(292, 137);
+            this.lbxCallsHistory.Location = new System.Drawing.Point(370, 157);
             this.lbxCallsHistory.Name = "lbxCallsHistory";
             this.lbxCallsHistory.Size = new System.Drawing.Size(191, 95);
             this.lbxCallsHistory.TabIndex = 29;
@@ -203,7 +203,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(218, 135);
+            this.button3.Location = new System.Drawing.Point(315, 155);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(27, 23);
             this.button3.TabIndex = 18;
@@ -212,7 +212,7 @@
             // 
             // btnCopyAddress
             // 
-            this.btnCopyAddress.Location = new System.Drawing.Point(185, 135);
+            this.btnCopyAddress.Location = new System.Drawing.Point(282, 155);
             this.btnCopyAddress.Name = "btnCopyAddress";
             this.btnCopyAddress.Size = new System.Drawing.Size(27, 23);
             this.btnCopyAddress.TabIndex = 17;
@@ -221,7 +221,7 @@
             // 
             // btnSelect
             // 
-            this.btnSelect.Location = new System.Drawing.Point(104, 239);
+            this.btnSelect.Location = new System.Drawing.Point(186, 259);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(75, 23);
             this.btnSelect.TabIndex = 13;
@@ -231,7 +231,7 @@
             // 
             // btnCreateAddress
             // 
-            this.btnCreateAddress.Location = new System.Drawing.Point(21, 239);
+            this.btnCreateAddress.Location = new System.Drawing.Point(44, 259);
             this.btnCreateAddress.Name = "btnCreateAddress";
             this.btnCreateAddress.Size = new System.Drawing.Size(75, 23);
             this.btnCreateAddress.TabIndex = 12;
@@ -242,7 +242,7 @@
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(18, 121);
+            this.lblAddress.Location = new System.Drawing.Point(33, 141);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(80, 13);
             this.lblAddress.TabIndex = 11;
@@ -250,16 +250,16 @@
             // 
             // rtxtAddress
             // 
-            this.rtxtAddress.Location = new System.Drawing.Point(21, 137);
+            this.rtxtAddress.Location = new System.Drawing.Point(36, 157);
             this.rtxtAddress.Name = "rtxtAddress";
             this.rtxtAddress.ReadOnly = true;
-            this.rtxtAddress.Size = new System.Drawing.Size(158, 96);
+            this.rtxtAddress.Size = new System.Drawing.Size(234, 96);
             this.rtxtAddress.TabIndex = 10;
             this.rtxtAddress.Text = "";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(185, 87);
+            this.txtEmail.Location = new System.Drawing.Point(184, 101);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(158, 20);
             this.txtEmail.TabIndex = 9;
@@ -267,7 +267,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(182, 71);
+            this.lblEmail.Location = new System.Drawing.Point(181, 85);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(73, 13);
             this.lblEmail.TabIndex = 8;
@@ -275,7 +275,7 @@
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(21, 87);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(20, 101);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(158, 20);
             this.txtPhoneNumber.TabIndex = 7;
@@ -283,7 +283,7 @@
             // lblPhoneNumber
             // 
             this.lblPhoneNumber.AutoSize = true;
-            this.lblPhoneNumber.Location = new System.Drawing.Point(18, 71);
+            this.lblPhoneNumber.Location = new System.Drawing.Point(17, 85);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
             this.lblPhoneNumber.Size = new System.Drawing.Size(78, 13);
             this.lblPhoneNumber.TabIndex = 6;
@@ -291,7 +291,7 @@
             // 
             // txtIDNumber
             // 
-            this.txtIDNumber.Location = new System.Drawing.Point(349, 42);
+            this.txtIDNumber.Location = new System.Drawing.Point(348, 56);
             this.txtIDNumber.Name = "txtIDNumber";
             this.txtIDNumber.Size = new System.Drawing.Size(158, 20);
             this.txtIDNumber.TabIndex = 5;
@@ -299,7 +299,7 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(346, 26);
+            this.lblID.Location = new System.Drawing.Point(345, 40);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(58, 13);
             this.lblID.TabIndex = 4;
@@ -307,14 +307,14 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(185, 42);
+            this.txtLastName.Location = new System.Drawing.Point(184, 56);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(158, 20);
             this.txtLastName.TabIndex = 3;
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(21, 42);
+            this.txtFirstName.Location = new System.Drawing.Point(20, 56);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(158, 20);
             this.txtFirstName.TabIndex = 2;
@@ -322,7 +322,7 @@
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(182, 26);
+            this.lblLastName.Location = new System.Drawing.Point(181, 40);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(58, 13);
             this.lblLastName.TabIndex = 1;
@@ -332,7 +332,7 @@
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(18, 26);
+            this.lblFirstName.Location = new System.Drawing.Point(17, 40);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(57, 13);
             this.lblFirstName.TabIndex = 0;
@@ -340,9 +340,10 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(180, 474);
+            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Location = new System.Drawing.Point(161, 474);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(145, 103);
+            this.btnConfirm.Size = new System.Drawing.Size(145, 60);
             this.btnConfirm.TabIndex = 1;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
@@ -350,9 +351,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(334, 474);
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(315, 474);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(145, 103);
+            this.btnCancel.Size = new System.Drawing.Size(145, 60);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -362,11 +364,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 598);
+            this.ClientSize = new System.Drawing.Size(624, 549);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.gbxClient);
             this.Name = "frmClient";
+            this.ShowIcon = false;
             this.Text = "frmClient";
             this.Load += new System.EventHandler(this.frmClient_Load);
             this.gbxClient.ResumeLayout(false);

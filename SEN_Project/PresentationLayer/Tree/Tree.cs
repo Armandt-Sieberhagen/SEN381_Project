@@ -30,18 +30,17 @@ namespace SEN_Project.PresentationLayer.Tree
             int count = 0;
             foreach (Client client in Clients)
             {
-                TreeNode node = new TreeNode(client.FirstName );//+ " " + client.LastName
+                TreeNode node = new TreeNode(client.FirstName + " " + client.LastName);//
                 treeView1.Nodes.Add(node);
-                treeView1.Nodes[count].Nodes.Add("Test");
-                treeView1.Nodes[count].Nodes[0].Nodes.Add(client.ClientID.ToString());
-                List<Claim> claims = DatabaseAccess.current.GetClaimByClientID(client.ClientID);
+                List<Claim> claims = databaseAccess.GetClaimByClientID(count);
+                int ClaimCount = 0;                
                 foreach (Claim claim in claims)
                 {
-                    treeView1.Nodes[count].Nodes.Add(claim.ID);
-                    treeView1.Nodes[count].Nodes.Add("Test");
-                    treeView1.Nodes[count].Nodes[0].Nodes.Add(claim.ToLine());
-                    treeView1.Nodes[count].Nodes[0].Nodes.Add("Test");
-
+                    treeView1.Nodes[count].Nodes.Add(claim.TreeViewID());
+                    treeView1.Nodes[count].Nodes[ClaimCount].Nodes.Add(claim.TreeViewStatus());
+                    treeView1.Nodes[count].Nodes[ClaimCount].Nodes.Add(claim.TreeViewPrice());
+                    treeView1.Nodes[count].Nodes[ClaimCount].Nodes.Add(claim.TreeViewProcedure());
+                    ClaimCount++;
                 }
                 count++;
             }
@@ -49,9 +48,10 @@ namespace SEN_Project.PresentationLayer.Tree
 
         }
 
-        private void Tree_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            Hide();
+            Form1.current.Show();
         }
     }
 }
