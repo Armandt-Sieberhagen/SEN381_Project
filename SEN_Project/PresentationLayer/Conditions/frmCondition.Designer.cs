@@ -48,16 +48,17 @@
             this.gbxCondition.Controls.Add(this.txtName);
             this.gbxCondition.Controls.Add(this.lblConditionDescription);
             this.gbxCondition.Controls.Add(this.lblConditionName);
+            this.gbxCondition.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxCondition.Location = new System.Drawing.Point(12, 12);
             this.gbxCondition.Name = "gbxCondition";
-            this.gbxCondition.Size = new System.Drawing.Size(228, 216);
+            this.gbxCondition.Size = new System.Drawing.Size(327, 216);
             this.gbxCondition.TabIndex = 0;
             this.gbxCondition.TabStop = false;
             this.gbxCondition.Text = "Condition Details";
             // 
             // btnPaste
             // 
-            this.btnPaste.Location = new System.Drawing.Point(191, 19);
+            this.btnPaste.Location = new System.Drawing.Point(287, 20);
             this.btnPaste.Name = "btnPaste";
             this.btnPaste.Size = new System.Drawing.Size(28, 23);
             this.btnPaste.TabIndex = 11;
@@ -67,7 +68,7 @@
             // 
             // btnCopy
             // 
-            this.btnCopy.Location = new System.Drawing.Point(157, 19);
+            this.btnCopy.Location = new System.Drawing.Point(253, 20);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(28, 23);
             this.btnCopy.TabIndex = 10;
@@ -79,7 +80,7 @@
             // 
             this.rtxtDescription.Location = new System.Drawing.Point(29, 98);
             this.rtxtDescription.Name = "rtxtDescription";
-            this.rtxtDescription.Size = new System.Drawing.Size(190, 96);
+            this.rtxtDescription.Size = new System.Drawing.Size(268, 96);
             this.rtxtDescription.TabIndex = 3;
             this.rtxtDescription.Text = "";
             // 
@@ -87,32 +88,35 @@
             // 
             this.txtName.Location = new System.Drawing.Point(29, 51);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(100, 20);
+            this.txtName.Size = new System.Drawing.Size(100, 21);
             this.txtName.TabIndex = 2;
             // 
             // lblConditionDescription
             // 
             this.lblConditionDescription.AutoSize = true;
+            this.lblConditionDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConditionDescription.Location = new System.Drawing.Point(26, 82);
             this.lblConditionDescription.Name = "lblConditionDescription";
-            this.lblConditionDescription.Size = new System.Drawing.Size(60, 13);
+            this.lblConditionDescription.Size = new System.Drawing.Size(69, 15);
             this.lblConditionDescription.TabIndex = 1;
             this.lblConditionDescription.Text = "Description";
             // 
             // lblConditionName
             // 
             this.lblConditionName.AutoSize = true;
+            this.lblConditionName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConditionName.Location = new System.Drawing.Point(26, 35);
             this.lblConditionName.Name = "lblConditionName";
-            this.lblConditionName.Size = new System.Drawing.Size(35, 13);
+            this.lblConditionName.Size = new System.Drawing.Size(41, 15);
             this.lblConditionName.TabIndex = 0;
             this.lblConditionName.Text = "Name";
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(13, 247);
+            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Location = new System.Drawing.Point(12, 244);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(170, 112);
+            this.btnConfirm.Size = new System.Drawing.Size(150, 70);
             this.btnConfirm.TabIndex = 1;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
@@ -120,9 +124,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(189, 247);
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(188, 244);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(170, 112);
+            this.btnCancel.Size = new System.Drawing.Size(150, 70);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -132,7 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 397);
+            this.ClientSize = new System.Drawing.Size(351, 326);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.gbxCondition);

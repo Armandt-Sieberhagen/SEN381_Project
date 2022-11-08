@@ -226,5 +226,10 @@ namespace SEN_Project.PresentationLayer.Employees
                 SetAddress(SEN_Clipboard._Address);
             }
         }
+
+        private void txtFirstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
